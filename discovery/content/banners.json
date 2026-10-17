@@ -1,0 +1,56 @@
+{
+ "note": "D15: feeds the STATIC hero component; no banner content type. slides = hero grid DOM order.",
+ "gridId": "100",
+ "slides": [
+  {
+   "postId": 95,
+   "heading": "Ruth's Marriage",
+   "sub": "At Ruth’s Marriage, we believe you too can enjoy your marriage!",
+   "button": {
+    "text": "About Us",
+    "href": "https://ruthsmarriage.com/about"
+   },
+   "image": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Runway-2023-10-23T08_30_02.310Z-Expand-Image-scaled-1.jpg"
+  },
+  {
+   "postId": 96,
+   "heading": "Support and Counsel",
+   "sub": "We are here to provide you with the support and counsel that you need to transform your marriage positively",
+   "button": {
+    "text": "Services",
+    "href": "/service"
+   },
+   "image": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/pexels-antoni-shkraba-6207751-scaled-1.jpg"
+  },
+  {
+   "postId": 478,
+   "heading": "Resources and Tools",
+   "sub": "We believe most marriage problems can be solved with the right resources and tools",
+   "button": {
+    "text": "Resources",
+    "href": "/resources"
+   },
+   "image": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/depositphotos_289363352-stock-photo-young-afro-couple-holding-hands-transformed-1.jpeg"
+  }
+ ],
+ "restBanners": [
+  {
+   "id": 478,
+   "title": "Resources and Tools",
+   "link": "https://www.ruthsmarriage.com/banner/resources-and-tools/",
+   "image": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/depositphotos_289363352-stock-photo-young-afro-couple-holding-hands-transformed-1.jpeg"
+  },
+  {
+   "id": 96,
+   "title": "Support and Counsel",
+   "link": "https://www.ruthsmarriage.com/banner/support-and-counsel/",
+   "image": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/pexels-antoni-shkraba-6207751-scaled-1.jpg"
+  },
+  {
+   "id": 95,
+   "title": "Ruth&#8217;s Marriage",
+   "link": "https://www.ruthsmarriage.com/banner/ruths-marriage/",
+   "image": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Runway-2023-10-23T08_30_02.310Z-Expand-Image-scaled-1.jpg"
+  }
+ ]
+}

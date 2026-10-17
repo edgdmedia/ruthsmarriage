@@ -1,0 +1,48 @@
+{
+ "url": "https://www.ruthsmarriage.com/askcoach/",
+ "title": "Ask Coach - Ruths Marriage",
+ "site": {
+  "menu": [],
+  "marquee": null,
+  "footer": null,
+  "socials": [],
+  "logo": null
+ },
+ "sections": [
+  {
+   "i": 0,
+   "widgets": [
+    {
+     "type": "heading",
+     "heading": {
+      "tag": "h2",
+      "text": "Need Advice?"
+     }
+    },
+    {
+     "type": "divider"
+    },
+    {
+     "type": "heading",
+     "heading": {
+      "tag": "h5",
+      "text": "Send your questions below to get helpful answers from Coach Ruth in one of the YouTube episodes on Ask Coach Ruth! Your questions may also be shared with our Instagram channel community.\nDon't worry, it's strictly anonymous!"
+     }
+    },
+    {
+     "type": "form"
+    },
+    {
+     "type": "social-icons",
+     "links": [
+      {
+       "text": "Instagram",
+       "href": "https://instagram.com/askcoachruth"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "replacements": []
+}

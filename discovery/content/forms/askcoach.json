@@ -1,0 +1,51 @@
+{
+ "action": null,
+ "selectField": "form_fields[name]",
+ "selectOptions": [
+  {
+   "value": "Love",
+   "label": "Love"
+  },
+  {
+   "value": "Dating",
+   "label": "Dating"
+  },
+  {
+   "value": "Marriage",
+   "label": "Marriage"
+  },
+  {
+   "value": "Sex",
+   "label": "Sex"
+  },
+  {
+   "value": "Faith",
+   "label": "Faith"
+  },
+  {
+   "value": "Life",
+   "label": "Life"
+  }
+ ],
+ "textareaField": "form_fields[message]",
+ "submitLabel": "Send",
+ "hiddenFields": [
+  {
+   "name": "post_id",
+   "value": "54"
+  },
+  {
+   "name": "form_id",
+   "value": "e7add2f"
+  },
+  {
+   "name": "referer_title",
+   "value": "Ask Coach"
+  },
+  {
+   "name": "queried_id",
+   "value": "54"
+  }
+ ],
+ "rawFormHtml": "<form class=\"elementor-form\" method=\"post\" name=\"New Form\" aria-label=\"New Form\">\n\t\t\t<input type=\"hidden\" name=\"post_id\" value=\"54\"/>\n\t\t\t<input type=\"hidden\" name=\"form_id\" value=\"e7add2f\"/>\n\t\t\t<input type=\"hidden\" name=\"referer_title\" value=\"Ask Coach\" />\n\n\t\t\t\t\t\t\t<input type=\"hidden\" name=\"queried_id\" value=\"54\"/>\n\t\t\t\n\t\t\t<div class=\"elementor-form-fields-wrapper elementor-labels-above\">\n\t\t\t\t\t\t\t\t<div class=\"elementor-field-type-select elementor-field-group elementor-column elementor-field-group-name elementor-col-100\">\n\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"form-field-name\" class=\"elementor-field-label\">\n\t\t\t\t\t\t\t\tCategory\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t<div class=\"elementor-field elementor-select-wrapper remove-before \">\n\t\t\t<div class=\"select-caret-down-wrapper\">\n\t\t\t\t<svg aria-hidden=\"true\" class=\"e-font-icon-svg e-eicon-caret-down\" viewBox=\"0 0 571.4 571.4\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M571 393Q571 407 561 418L311 668Q300 679 286 679T261 668L11 418Q0 407 0 393T11 368 36 357H536Q550 357 561 368T571 393Z\"></path></svg>\t\t\t</div>\n\t\t\t<select name=\"form_fields[name]\" id=\"form-field-name\" class=\"elementor-field-textual elementor-size-sm\">\n\t\t\t\t\t\t\t\t\t<option value=\"Love\">Love</option>\n\t\t\t\t\t\t\t\t\t<option value=\"Dating\">Dating</option>\n\t\t\t\t\t\t\t\t\t<option value=\"Marriage\">Marriage</option>\n\t\t\t\t\t\t\t\t\t<option value=\"Sex\">Sex</option>\n\t\t\t\t\t\t\t\t\t<option value=\"Faith\">Faith</option>\n\t\t\t\t\t\t\t\t\t<option value=\"Life\">Life</option>\n\t\t\t\t\t\t\t</select>\n\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-message elementor-col-100\">\n\t\t\t\t\t\t\t\t\t\t\t\t<label for=\"form-field-message\" class=\"elementor-field-label\">\n\t\t\t\t\t\t\t\tQuestion\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t<textarea class=\"elementor-field-textual elementor-field  elementor-size-sm\" name=\"form_fields[message]\" id=\"form-field-message\" rows=\"4\" placeholder=\"Question\"></textarea>\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"elementor-field-group elementor-column elementor-field-type-submit elementor-col-25 e-form__buttons\">\n\t\t\t\t\t<button class=\"elementor-button elementor-size-sm\" type=\"submit\">\n\t\t\t\t\t\t<span class=\"elementor-button-content-wrapper\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"elementor-button-text\">Send</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>"
+}

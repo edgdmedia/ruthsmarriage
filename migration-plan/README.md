@@ -44,6 +44,7 @@ Browser ─▶ Cloudflare (ruthsmarriage.com zone, already proxied)
 | D10b | Other singletons | Contact emails, socials and footer copy live in **EmDash site settings** (or a plugin's `ctx.settings`), never a one-row collection | AGENTS.md trap 7 |
 | D13 | Brand name | **"Ruth's Marriage"** everywhere, including `<title>` and SEO (live's "Ruths Marriage" is corrected) | Decided 2026-10-16 |
 | D14 | Socials | Twitter `https://twitter.com/ruthsmarriage`, Facebook `https://facebook.com/RuthsMarriage`, Threads `https://threads.com/RuthsMarriage`; Instagram `https://instagram.com/askcoachruth` (Ask Coach page). YouTube: `TODO(G3)` | Decided 2026-10-16 |
+| D15 | Hero banners | **No `banner` content type.** The 3 hero slides ship as static content in the homepage hero component (copy/images from `discovery/content/banners.json`, which feeds Phase 3/4 code, not the CMS). Decided by human 2026-10-17, overrides the audit's `banner` CPT and README's "banners" sample content | Ruth doesn't edit hero slides; they're page furniture |
 | D11 | Editor entry | `/admin/` landing page links to `/_emdash/admin`. `/wp-admin*` and `/wp-login.php` → 302 `/admin/`. `/wp-json/*` and `/xmlrpc.php` → 410 | Ruth's team keeps their habits |
 | D12 | Repo | `~/Projects/ruthsmarriage` (this folder), pnpm | |
 
