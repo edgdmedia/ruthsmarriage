@@ -1,6 +1,5 @@
 /* HeroSlider — homepage hero with portrait/overlay slide layouts (home.md §1).
-   Arrows + autoplay 9000ms, dots off. SSR first slide, client hydrates. */
-import { useEffect, useRef, useState } from "react";
+   SSR renders all slides; Swiper client hydration added later. */
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -16,91 +15,12 @@ interface Slide {
 }
 
 export const HeroSlider = ({ slides = [] }: { slides?: Slide[] } = {}) => {
-	const [isClient, setIsClient] = useState(false);
-
-	useEffect(() => {
-		setIsClient(true);
-	}, []);
-
-	if (!isClient) {
-		// SSR: render first slide only
-		const s = slides[0];
-		if (!s) return null;
-		return (
-			<div class="heroslider heroslider--ssr" style={{ position: "relative", minHeight: "100vh", padding: "10px" }}>
-				<div
-					class="slide"
-					style={{
-						minHeight: "95vh",
-						display: "flex",
-						flexDirection: "column",
-						justifyContent: "flex-end",
-						padding: s.layout === "portrait" ? "50px 50px 100px 80px" : "50px",
-						backgroundImage: `url(${s.image})`,
-						backgroundSize: s.layout === "portrait" ? "130% auto" : "cover",
-						backgroundPosition: s.layout === "portrait" ? "center left" : "center right",
-					}}
-				>
-					<div style={{ width: s.layout === "portrait" ? "76%" : "70%", padding: "10px", gap: "30px" }}>
-						<h1
-							style={{
-								fontFamily: "Nunito, sans-serif",
-								fontSize: s.layout === "portrait" ? "99px" : "70px",
-								lineHeight: s.layout === "portrait" ? "99px" : "70px",
-								fontWeight: 800,
-								color: "#ffffff",
-								textShadow: "4px 0 22px rgba(0,0,0,.3)",
-								margin: 0,
-							}}
-						>
-							{s.title}
-						</h1>
-						<p
-							style={{
-								fontFamily: "Poppins, sans-serif",
-								fontSize: s.layout === "portrait" ? "24px" : "24px",
-								lineHeight: "24px",
-								fontWeight: 400,
-								color: "#ffffff",
-								margin: 0,
-							}}
-						>
-							{s.subtitle}
-						</p>
-						<a
-							href={s.buttonUrl}
-							style={{
-								color: "#BF1E72",
-								backgroundColor: "#ffffff",
-								borderRadius: "20px",
-								padding: s.layout === "portrait" ? "12px 24px" : "15px 30px",
-								fontFamily: "Nunito, sans-serif",
-								fontSize: s.layout === "portrait" ? "15px" : "16px",
-								lineHeight: s.layout === "portrait" ? "15px" : "16px",
-								fontWeight: s.layout === "portrait" ? 500 : 600,
-								textDecoration: "none",
-								display: "inline-flex",
-								alignItems: "center",
-								gap: "5px",
-							}}
-						>
-							<svg width="15" height="15" viewBox="0 0 512 512" fill="currentColor" style={{ marginRight: "5px" }}>
-								<path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm-32-316v116h-67c-10.7 0-16 12.9-8.5 20.5l99 99c4.7 4.7 12.3 4.7 17 0l99-99c7.6-7.6 2.2-20.5-8.5-20.5h-67V140c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12z" />
-							</svg>
-							{s.buttonLabel}
-						</a>
-					</div>
-				</div>
-			</div>
-		);
-	}
-
-	const reduce = typeof matchMedia !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches;
+	const reduce =
+		typeof matchMedia !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 	return (
-		<div class="heroslider" style={{ position: "relative", minHeight: "100vh", padding: "10px" }}>
+		<div className="heroslider" style={{ position: "relative", minHeight: "100vh", padding: "10px" }}>
 			<Swiper
-				ref={useRef(null)}
 				modules={[Navigation, Autoplay]}
 				slidesPerView={1}
 				spaceBetween={0}
@@ -110,13 +30,13 @@ export const HeroSlider = ({ slides = [] }: { slides?: Slide[] } = {}) => {
 				navigation={true}
 				observer={true}
 				observeParents={true}
-				class="swiper my-swiper"
+				className="swiper my-swiper"
 				style={{ marginLeft: "-10px", marginRight: "-10px", overflow: "hidden" }}
 			>
 				{slides.map((s, i) => (
 					<SwiperSlide key={i} style={{ padding: "0 10px" }}>
 						<div
-							class="slide"
+							className="slide"
 							style={{
 								minHeight: "95vh",
 								display: "flex",

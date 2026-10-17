@@ -65,6 +65,7 @@ export const PageHero = ({ variant = "photo", title, image, className = "" } = {
 			</div>
 			{isPattern && (
 				<img
+					className="page-hero-waves"
 					src="/assets/waves.svg"
 					alt=""
 					style={{
@@ -79,20 +80,5 @@ export const PageHero = ({ variant = "photo", title, image, className = "" } = {
 					}}
 				/>
 			)}
-			<style>{`
-				@media (max-width: 1024px) {
-					.page-hero--photo { min-height: 309px; padding: 0 25px; }
-					.page-hero--photo h1 { font-size: 40px; padding-bottom: 25px; }
-					.page-hero--pattern, .page-hero--pattern-flat { min-height: 300px; padding: 0 50px; }
-					.page-hero--pattern h1 { font-size: 40px; }
-				}
-				@media (max-width: 767px) {
-					.page-hero--photo { min-height: 259px; padding: 0 25px; }
-					.page-hero--photo h1 { font-size: 30px; padding-bottom: 25px; }
-					.page-hero--pattern, .page-hero--pattern-flat { min-height: 250px; padding: 0 30px; }
-					.page-hero--pattern h1 { font-size: 35px; }
-					.page-hero--pattern .wave-divider-bottom, .page-hero--pattern-flat img[src*="waves"] { height: 17px; }
-				}
-			`}</style>
-		</div>
+					</div>
 	);

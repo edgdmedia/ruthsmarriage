@@ -6,6 +6,7 @@ export const ResourceCard = ({ resource }: { resource: { slug: string; title: st
 	const hasBadge = !!resource.badgeLabel;
 	return (
 		<a
+			className="resource-card"
 			href={`/resource/${resource.slug}/`}
 			style={{
 				display: "block",
@@ -47,14 +48,11 @@ export const ResourceCard = ({ resource }: { resource: { slug: string; title: st
 				)}
 				<div style={{ width: "111px", height: "2px", borderTop: "2px solid #FFFFFF", margin: "0 auto" }} />
 				<h2
-					style="font-family:'Nunito',sans-serif;font-size:22px;line-height:22px;font-weight:700;color:#ffffff;margin:0;text-align:center;"
+					style={{ fontFamily: "'Nunito',sans-serif", fontSize: "22px", lineHeight: "22px", fontWeight: "700", color: "#ffffff", margin: "0", textAlign: "center" }}
 				>
 					{resource.title}
 				</h2>
 			</div>
-			<style>{`
-				a:hover { opacity: 0.5; }
-			`}</style>
-		</a>
+					</a>
 	);
 };

@@ -34,13 +34,13 @@ export const ServiceCard = ({ service }) => {
 				>
 					<div style={{ width: "40px", height: "2px", borderTop: "2px solid #BF1E72", marginBottom: "0" }} />
 					<h3
-						style="font-family:'Nunito',sans-serif;font-size:19px;line-height:19px;font-weight:600;color:#ffffff;margin:0;"
+						style={{ fontFamily: "'Nunito',sans-serif", fontSize: "19px", lineHeight: "19px", fontWeight: "600", color: "#ffffff", margin: "0" }}
 					>
 						{service.title}
 					</h3>
 					{service.audienceLabel && (
 						<h4
-							style="font-family:'Nunito',sans-serif;font-size:17px;line-height:17px;font-weight:600;font-style:italic;color:#ffffff;margin:0;"
+							style={{ fontFamily: "'Nunito',sans-serif", fontSize: "17px", lineHeight: "17px", fontWeight: "600", fontStyle: "italic", color: "#ffffff", margin: "0" }}
 						>
 							{service.audienceLabel}
 						</h4>

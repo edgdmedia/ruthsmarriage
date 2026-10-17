@@ -50,7 +50,7 @@ export const Footer = ({ menus, settings }: { menus?: FooterMenus; settings?: Fo
 				{/* 1. Contact */}
 				<div className="footer-col" style={{ flex: "1 1 270px", minWidth: "232px", padding: "10px", display: "flex", flexDirection: "column", gap: "20px" }}>
 					<h5
-						style="font-family:'Nunito',sans-serif;font-size:20px;line-height:20px;font-weight:600;color:#DFDFDF;margin:0 0 8px 0;"
+						style={{ fontFamily: "'Nunito',sans-serif", fontSize: "20px", lineHeight: "20px", fontWeight: "600", color: "#DFDFDF", margin: "0 0 8px 0" }}
 					>
 						Contact
 					</h5>
@@ -58,7 +58,7 @@ export const Footer = ({ menus, settings }: { menus?: FooterMenus; settings?: Fo
 						<a
 							key={i}
 							href={`mailto:${email}`}
-							style="font-family:'Poppins',sans-serif;font-size:15px;line-height:22.5px;font-weight:400;color:#CCCCCC;text-decoration:underline;"
+							style={{ fontFamily: "'Poppins',sans-serif", fontSize: "15px", lineHeight: "22.5px", fontWeight: "400", color: "#CCCCCC", textDecoration: "underline" }}
 						>
 							{email}
 						</a>
@@ -88,7 +88,7 @@ export const Footer = ({ menus, settings }: { menus?: FooterMenus; settings?: Fo
 				{/* 4. Links (vertical primary menu) */}
 				<div className="footer-col" style={{ flex: "1 1 270px", minWidth: "232px", padding: "10px", display: "flex", flexDirection: "column", gap: "20px" }}>
 					<h5
-						style="font-family:'Nunito',sans-serif;font-size:20px;line-height:20px;font-weight:600;color:#DFDFDF;margin:0;"
+						style={{ fontFamily: "'Nunito',sans-serif", fontSize: "20px", lineHeight: "20px", fontWeight: "600", color: "#DFDFDF", margin: "0" }}
 					>
 						Links
 					</h5>
@@ -126,33 +126,26 @@ export const Footer = ({ menus, settings }: { menus?: FooterMenus; settings?: Fo
 				>
 					<a
 						href="/cancellation-policy/"
-						style="font-family:'Nunito',sans-serif;font-size:16px;line-height:20px;font-weight:600;color:#CCCCCC;padding:13px 20px;"
+						style={{ fontFamily: "'Nunito',sans-serif", fontSize: "16px", lineHeight: "20px", fontWeight: "600", color: "#CCCCCC", padding: "13px 20px" }}
 					>
 						Cancellation Policy
 					</a>
 					<a
 						href="/confidentiality-policy/"
-						style="font-family:'Nunito',sans-serif;font-size:16px;line-height:20px;font-weight:600;color:#CCCCCC;padding:13px 20px;"
+						style={{ fontFamily: "'Nunito',sans-serif", fontSize: "16px", lineHeight: "20px", fontWeight: "600", color: "#CCCCCC", padding: "13px 20px" }}
 					>
 						Confidentiality Policy
 					</a>
 				</nav>
 			</div>
-			<style>{`
-				@media (max-width: 767px) {
-					.site-footer .footer-inner { flex-direction: column-reverse; gap: 20px; }
-					.site-footer .footer-bottom { flex-direction: row-reverse; flex-wrap: wrap-reverse; justify-content: center; text-align: center; }
-					.site-footer .footer-bottom a { padding: 2px 4px !important; }
-				}
-			`}</style>
-		</footer>
+					</footer>
 	);
 };
 
 const MenuColumn = ({ title, items }) => (
 	<div style={{ flex: "1 1 270px", minWidth: "232px", padding: "10px", display: "flex", flexDirection: "column", gap: "20px" }}>
 		<h5
-			style="font-family:'Nunito',sans-serif;font-size:20px;line-height:20px;font-weight:600;color:#DFDFDF;margin:0 0 8px 0;"
+			style={{ fontFamily: "'Nunito',sans-serif", fontSize: "20px", lineHeight: "20px", fontWeight: "600", color: "#DFDFDF", margin: "0 0 8px 0" }}
 		>
 			{title}
 		</h5>
@@ -160,7 +153,7 @@ const MenuColumn = ({ title, items }) => (
 			<a
 				key={i}
 				href={item.url || "#"}
-				style="font-family:'Poppins',sans-serif;font-size:14px;line-height:16.8px;font-weight:400;color:#CCCCCC;text-decoration:underline;display:block;"
+				style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", lineHeight: "16.8px", fontWeight: "400", color: "#CCCCCC", textDecoration: "underline", display: "block" }}
 			>
 				{item.label}
 			</a>
@@ -193,7 +186,7 @@ const VerticalMenuItem = ({ item }) => (
 					<a
 						key={j}
 						href={c.url || "#"}
-						style="font-family:'Nunito',sans-serif;font-size:16px;line-height:20px;font-weight:600;color:#CCCCCC;text-decoration:underline;padding-left:20px;display:block;"
+						style={{ fontFamily: "'Nunito',sans-serif", fontSize: "16px", lineHeight: "20px", fontWeight: "600", color: "#CCCCCC", textDecoration: "underline", paddingLeft: "20px", display: "block" }}
 					>
 						{c.label}
 					</a>
@@ -202,7 +195,7 @@ const VerticalMenuItem = ({ item }) => (
 		) : (
 			<a
 				href={item.url || "#"}
-				style="font-family:'Nunito',sans-serif;font-size:16px;line-height:20px;font-weight:600;color:#CCCCCC;text-decoration:underline;padding:5px 0;display:block;"
+				style={{ fontFamily: "'Nunito',sans-serif", fontSize: "16px", lineHeight: "20px", fontWeight: "600", color: "#CCCCCC", textDecoration: "underline", padding: "5px 0", display: "block" }}
 			>
 				{item.label}
 			</a>

@@ -6,23 +6,23 @@ export const SectionHeading = ({
 } = {}) => (
 	<div
 		className={`section-heading ${className}`}
-		style="text-align:center;margin-bottom:20px;"
+		style={{ textAlign: "center", marginBottom: "20px" }}
 	>
 		{title && (
 			<h2
-				style="font-family:'Nunito',sans-serif;font-size:32px;line-height:32px;font-weight:600;color:#000000;margin:0 0 8px 0;"
+				style={{ fontFamily: "'Nunito',sans-serif", fontSize: "32px", lineHeight: "32px", fontWeight: "600", color: "#000000", margin: "0 0 8px 0" }}
 			>
 				{title}
 			</h2>
 		)}
 		{title && (
 			<div
-				style="width:66px;height:3px;border-top:3px solid #BF1E72;margin:8px auto 0 auto;"
+				style={{ width: "66px", height: "3px", borderTop: "3px solid #BF1E72", margin: "8px auto 0 auto" }}
 			/>
 		)}
 		{subtitle && (
 			<p
-				style="font-family:'Poppins',sans-serif;font-size:16px;line-height:21px;font-weight:500;color:#000000;margin:20px 0 0 0;"
+				style={{ fontFamily: "'Poppins',sans-serif", fontSize: "16px", lineHeight: "21px", fontWeight: "500", color: "#000000", margin: "20px 0 0 0" }}
 			>
 				{subtitle}
 			</p>

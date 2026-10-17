@@ -1,5 +1,4 @@
 ---
-import { getEmDashCollection, getSiteSettings } from "emdash";
 import Base from "../layouts/Base.astro";
 import { HeroSlider } from "../components/HeroSlider";
 import { SectionHeading } from "../components/SectionHeading";
@@ -10,17 +9,12 @@ import { TestimonialCard } from "../components/TestimonialCard";
 import { ResourceCard } from "../components/ResourceCard";
 import { PostCard } from "../components/PostCard";
 import { Button } from "../components/Button";
+import { getEmDashCollection, getSiteSettings } from "emdash";
 import { setCacheHint } from "../lib/cache";
 
 const settingsResult = await getSiteSettings();
 setCacheHint(Astro.cache, settingsResult.cacheHint);
 const settings = settingsResult.data;
-
-const banners = await getEmDashCollection("marquee_items", {
-	limit: 100,
-	orderBy: { order: "asc" },
-});
-setCacheHint(Astro.cache, banners.cacheHint);
 
 const services = await getEmDashCollection("services", {
 	limit: 100,
@@ -61,7 +55,7 @@ const heroSlides = [
 		subtitle: "We are here to provide you with the support and counsel that you need to transform your marriage positively.",
 		buttonLabel: "Services",
 		buttonUrl: "/services/",
-		image: "/assets/placeholder.jpg",
+		image: "/assets/logo.png",
 	},
 	{
 		layout: "overlay",
@@ -69,15 +63,13 @@ const heroSlides = [
 		subtitle: "We believe most marriage problems can be solved with the right resources and tools",
 		buttonLabel: "Resources",
 		buttonUrl: "/resources/",
-		image: "/assets/placeholder.jpg",
+		image: "/assets/logo.png",
 	},
 ];
 ---
 <Base title={settings?.title ?? "Ruth's Marriage"}>
-	{/* 1. Hero slider */}
 	<HeroSlider slides={heroSlides} />
 
-	{/* 2. Intro statement */}
 	<section style={{ padding: "0 50px", maxWidth: "1140px", margin: "0 auto", textAlign: "center" }}>
 		<h2
 			style={{
@@ -96,62 +88,50 @@ const heroSlides = [
 		</Button>
 	</section>
 
-	{/* 3. Counseling Services (wave) */}
 	<WaveSection>
 		<SectionHeading
 			title="Counseling Services"
 			subtitle="We provide counseling services for married couples and singles across different parts of the globe. Our services range from individual sessions to couples sessions and are held virtually."
 		/>
-		<Carousel
-			slides={services.entries.map((s) => (
+		<Carousel variant="content" autoplayMs={5000}>
+			{services.entries.map((s) => (
 				<ServiceCard key={s.data.slug} service={s.data} />
 			))}
-			variant="content"
-			autoplayMs={5000}
-		/>
+		</Carousel>
 		<Button variant="pink" href="/services/" style={{ display: "block", width: "fit-content", margin: "20px auto 0 auto" }}>
 			All Services
 		</Button>
 	</WaveSection>
 
-	{/* 4. Testimonials */}
 	<section style={{ padding: "0 50px", maxWidth: "1140px", margin: "0 auto" }}>
 		<SectionHeading
 			title="We believe you too can experience a positive transformation in your marriage. Hear what some of our clients are saying!!"
 		/>
-		<Carousel
-			slides={testimonials.entries.map((t, i) => (
+		<Carousel variant="content" autoplayMs={5000}>
+			{testimonials.entries.map((t, i) => (
 				<TestimonialCard key={i} testimonial={t.data} variant={i % 2 === 0 ? "dark" : "pink"} />
 			))}
-			variant="content"
-			autoplayMs={5000}
-		/>
+		</Carousel>
 	</section>
 
-	{/* 5. Resources (wave) */}
 	<WaveSection>
 		<SectionHeading title="Resources" />
-		<Carousel
-			slides={resources.entries.map((r) => (
+		<Carousel variant="content" autoplayMs={5000}>
+			{resources.entries.map((r) => (
 				<ResourceCard key={r.data.slug} resource={r.data} />
 			))}
-			variant="content"
-			autoplayMs={5000}
-		/>
+		</Carousel>
 		<Button variant="pink" href="/resources/" style={{ display: "block", width: "fit-content", margin: "20px auto 0 auto" }}>
 			All Resources
 		</Button>
 	</WaveSection>
 
-	{/* 6. Inspired Features */}
 	<section style={{ padding: "0 50px", maxWidth: "1140px", margin: "0 auto" }}>
 		<SectionHeading title="Inspired Features" />
-		<Carousel
-			slides={posts.entries.map((p) => (
+		<Carousel variant="content" autoplayMs={5000}>
+			{posts.entries.map((p) => (
 				<PostCard key={p.data.slug} post={p.data} />
 			))}
-			variant="content"
-			autoplayMs={5000}
-		/>
+		</Carousel>
 	</section>
 </Base>

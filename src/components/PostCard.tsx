@@ -6,6 +6,7 @@ export const PostCard = ({ post }: { post: { slug: string; title: string; featur
 	const catSlug = typeof post.category === "string" ? post.category : post.category?.slug;
 	return (
 		<a
+			className="post-card"
 			href={`/${post.slug}/`}
 			style={{
 				display: "block",
@@ -65,21 +66,18 @@ export const PostCard = ({ post }: { post: { slug: string; title: string; featur
 					</a>
 				)}
 				<h2
-					style="font-family:'Nunito',sans-serif;font-size:16px;line-height:16px;font-weight:700;color:#BF1E72;margin:0;text-align:left;"
+					style={{ fontFamily: "'Nunito',sans-serif", fontSize: "16px", lineHeight: "16px", fontWeight: "700", color: "#BF1E72", margin: "0", textAlign: "left" }}
 				>
 					{post.title}
 				</h2>
 				{excerpt && (
 					<p
-						style="font-family:'Poppins',sans-serif;font-size:14px;line-height:21px;font-weight:400;color:#333333;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;"
+						style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", lineHeight: "21px", fontWeight: "400", color: "#333333", margin: "0", display: "-webkit-box", WebkitLineClamp: "2", WebkitBoxOrient: "vertical", overflow: "hidden" }}
 					>
 						{excerpt}
 					</p>
 				)}
 			</div>
-			<style>{`
-				a:hover { box-shadow: 0 0 22px -1px rgba(0,0,0,0.5); }
-			`}</style>
-		</a>
+					</a>
 	);
 };

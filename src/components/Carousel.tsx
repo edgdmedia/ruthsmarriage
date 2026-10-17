@@ -2,8 +2,7 @@
    Behaves like slick: 3/2/1 per view (hero: 1), infinite, 500ms speed,
    autoplay with pauseOnHover (5000ms content / 9000ms hero),
    dots for content carousels / arrows for hero.
-   SSR renders the first slidesToShow slides so there's no layout shift;
-   Swiper hydrates on client via `client:load`. */
+   Children are rendered as slides; Swiper hydrates on client. */
 import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -13,30 +12,36 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { IconSliderPrevArrow } from "./icons/slider-prev-arrow";
 
 export const Carousel = ({
-	slides,
-	variant = "content", // "content" | "hero"
+	children,
+	variant = "content",
 	autoplayMs,
 	slidesPerViewOverride,
-} = {}) => {
+}: {
+	children?: any;
+	variant?: string;
+	autoplayMs?: number;
+	slidesPerViewOverride?: number;
+}) => {
 	const swiperRef = useRef(null);
 	const [isClient, setIsClient] = useState(false);
 	const count = slidesPerViewOverride || (variant === "hero" ? 1 : 3);
 	const delay = autoplayMs ?? (variant === "hero" ? 9000 : 5000);
 	const reduce =
 		typeof matchMedia !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches;
-	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
 		setIsClient(true);
 	}, []);
 
-	// SSR: always render slides; client hydrates Swiper once mounted.
+	const slideArray = Array.isArray(children) ? children : [children];
+
+	// SSR: render slides as plain Swiper markup
 	if (!isClient) {
 		return (
 			<div className="carousel carousel--ssr" style={{ position: "relative" }}>
 				<div className="swiper" style={{ overflow: "hidden" }}>
 					<div className="swiper-wrapper">
-						{slides.slice(0, count).map((slide, i) => (
+						{slideArray.map((slide, i) => (
 							<SwiperSlide key={i} style={{ flex: `0 0 ${100 / count}%`, padding: "0 10px" }}>
 								{slide}
 							</SwiperSlide>
@@ -63,14 +68,13 @@ export const Carousel = ({
 				observer={true}
 				observeParents={true}
 				onSwiper={(swiper) => {
-					// pull the track a touch wider than the box like slick (-10px each side)
 					const track = swiperRef?.current?.querySelector?.(".swiper-wrapper");
 					if (track) track.style.margin = "0 -10px";
 				}}
 				className="swiper my-swiper"
 				style={{ marginLeft: "-10px", marginRight: "-10px", overflow: "hidden" }}
 			>
-				{slides.map((slide, i) => (
+				{slideArray.map((slide, i) => (
 					<SwiperSlide key={i} style={{ padding: "0 10px" }}>
 						{slide}
 					</SwiperSlide>
@@ -89,24 +93,6 @@ export const Carousel = ({
 					</>
 				)}
 			</Swiper>
-			<style>{`
-				.swiper-pagination .swiper-pagination-bullet {
-					width: 12px !important;
-					height: 12px !important;
-					background: #BF1E7224 !important;
-					border-radius: 100% !important;
-					margin: 0 3px !important;
-					opacity: 1 !important;
-				}
-				.swiper-pagination .swiper-pagination-bullet-active {
-					background: #ED0D82 !important;
-				}
-				.swiper-button-prev, .swiper-button-next {
-					width: 50px !important;
-					height: 50px !important;
-					color: #ffffff !important;
-				}
-			`}</style>
 		</div>
 	);
 };

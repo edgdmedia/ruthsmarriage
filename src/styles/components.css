@@ -1,0 +1,53 @@
+/* Extracted from React island components (Astro <style> blocks don't work in .tsx). */
+
+/* MarqueeBar */
+@keyframes marquee {
+	from { transform: translateX(0); }
+	to { transform: translateX(-50%); }
+}
+
+/* Carousel */
+.swiper-pagination .swiper-pagination-bullet {
+	width: 12px !important;
+	height: 12px !important;
+	background: #BF1E7224 !important;
+	border-radius: 100% !important;
+	margin: 0 3px !important;
+	opacity: 1 !important;
+}
+.swiper-pagination .swiper-pagination-bullet-active {
+	background: #ED0D82 !important;
+}
+.swiper-button-prev, .swiper-button-next {
+	width: 50px !important;
+	height: 50px !important;
+	color: #ffffff !important;
+}
+
+/* Footer mobile */
+@media (max-width: 767px) {
+	.site-footer .footer-inner { flex-direction: column-reverse; gap: 20px; }
+	.site-footer .footer-bottom { flex-direction: row-reverse; flex-wrap: wrap-reverse; justify-content: center; text-align: center; }
+	.site-footer .footer-bottom a { padding: 2px 4px !important; }
+}
+
+/* ResourceCard hover */
+a.resource-card:hover { opacity: 0.5; }
+
+/* PostCard hover */
+a.post-card:hover { box-shadow: 0 0 22px -1px rgba(0,0,0,0.5); }
+
+/* PageHero responsive */
+@media (max-width: 1024px) {
+	.page-hero--photo { min-height: 309px; padding: 0 25px; }
+	.page-hero--photo h1 { font-size: 40px; padding-bottom: 25px; }
+	.page-hero--pattern, .page-hero--pattern-flat { min-height: 300px; padding: 0 50px; }
+	.page-hero--pattern h1 { font-size: 40px; }
+}
+@media (max-width: 767px) {
+	.page-hero--photo { min-height: 259px; padding: 0 25px; }
+	.page-hero--photo h1 { font-size: 30px; padding-bottom: 25px; }
+	.page-hero--pattern, .page-hero--pattern-flat { min-height: 250px; padding: 0 30px; }
+	.page-hero--pattern h1 { font-size: 35px; }
+	.page-hero--pattern .page-hero-waves, .page-hero--pattern-flat img[src*="waves"] { height: 17px; }
+}
