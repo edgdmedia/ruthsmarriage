@@ -13,3 +13,8 @@ discovery/media/
 discovery/.gitignore
 node-compile-cache/
 v8-compile-cache-501/
+
+# EmDash template additions (merged Phase 2)
+.emdash/migrations.json
+uploads/
+.dev.vars*

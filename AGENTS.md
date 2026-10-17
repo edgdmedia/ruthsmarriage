@@ -39,3 +39,10 @@ The plan lives at `~/Projects/ruthsmarriage/migration-plan/` (`$PLAN`). Read `$P
 - `npx emdash --help`: CLI (content, schema, media, taxonomy, menu, seed, site export/import)
 - `pnpm test`: vitest (cache helper, legacy resolver)
 - `pnpm qa:visual`, `pnpm qa:links`, `pnpm qa:urls`, `pnpm qa:a11y`: Phase 8 checks (all take `--base`)
+
+## Template notes (from the EmDash `cloudflare:starter` AGENTS.md, Phase 2)
+
+- Key files: `astro.config.mjs` (emdash integration), `src/live.config.ts` (loader boilerplate — don't modify), `seed/seed.json` (schema + demo content), `emdash-env.d.ts` (auto-regenerated types), `src/layouts/Base.astro` (base layout with EmDash wiring), `src/pages/` (all server-rendered).
+- Agent skills ship with the template in `.agents/skills/` (`building-emdash-site`, `creating-plugins`, `emdash-cli`) — load them per task.
+- EmDash docs MCP: `https://docs.emdashcms.com/mcp` (`.mcp.json` shipped). Verify APIs against live docs, not recall.
+- `npx emdash types` regenerates types from a running site; the dev server also writes `emdash-env.d.ts` on start.

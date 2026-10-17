@@ -1,0 +1,69 @@
+---
+import { getMenuWithCacheHint, getSiteSettingsWithCacheHint } from "emdash";
+import { EmDashHead, EmDashBodyStart, EmDashBodyEnd } from "emdash/ui";
+import { createPublicPageContext } from "emdash/page";
+import { resolveStarterSiteIdentity } from "../utils/site-identity";
+
+interface Props {
+	title: string;
+	pageTitle?: string | null;
+	description?: null | string;
+	image?: null | string;
+	canonical?: null | string;
+	/** Pass content reference for plugin page contributions on content pages */
+	content?: { collection: string; id: string; slug?: null | string };
+}
+
+const { title, pageTitle, description, image, canonical, content } = Astro.props;
+const [settingsResult, menuResult] = await Promise.all([
+	getSiteSettingsWithCacheHint(),
+	getMenuWithCacheHint("primary"),
+]);
+if (Astro.cache?.enabled && settingsResult.cacheHint) Astro.cache.set(settingsResult.cacheHint);
+if (Astro.cache?.enabled && menuResult.cacheHint) Astro.cache.set(menuResult.cacheHint);
+
+const { siteTitle } = resolveStarterSiteIdentity(settingsResult.data);
+const titleIncludesSiteName =
+	title === siteTitle ||
+	title.endsWith(` | ${siteTitle}`) ||
+	title.endsWith(` — ${siteTitle}`);
+const fullTitle = titleIncludesSiteName ? title : `${title} — ${siteTitle}`;
+const pageDescription = description ?? null;
+
+const pageCtx = createPublicPageContext({
+	Astro,
+	kind: content ? "content" : "custom",
+	pageType: "website",
+	title: fullTitle,
+	pageTitle: pageTitle ?? title,
+	description: pageDescription,
+	canonical,
+	image,
+	content,
+	siteName: siteTitle,
+});
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{fullTitle}</title>
+		<EmDashHead page={pageCtx} />
+	</head>
+	<body>
+		<EmDashBodyStart page={pageCtx} />
+
+		<!-- Phase 2 placeholder: the real Elementor-matched header/footer arrive in Phase 4 (page-maps/_global.md). -->
+		<header style="padding:16px 24px;background:#5A0F36;color:#fff;font-family:sans-serif;">
+			<strong>{siteTitle || "Ruth's Marriage"}</strong> — rebuild in progress
+		</header>
+
+		<main>
+			<slot />
+		</main>
+
+		<EmDashBodyEnd page={pageCtx} />
+	</body>
+</html>
