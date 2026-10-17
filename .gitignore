@@ -9,5 +9,6 @@ data.db*
 discovery/raw/
 discovery/screenshots/
 discovery/images/
+discovery/.gitignore
 node-compile-cache/
 v8-compile-cache-501/
