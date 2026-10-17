@@ -1,0 +1,2443 @@
+{
+ "url": "https://www.ruthsmarriage.com/how-to-handle-a-difficult-spouse/",
+ "viewport": [
+  1024,
+  768
+ ],
+ "pageHeight": 4062,
+ "bodyFont": {
+  "fontFamily": "-apple-system",
+  "fontSize": "16px",
+  "fontWeight": "400",
+  "lineHeight": "24px",
+  "color": "rgb(51, 51, 51)"
+ },
+ "documents": [
+  {
+   "type": "header",
+   "id": "63",
+   "box": [
+    0,
+    0,
+    1009,
+    137
+   ],
+   "children": [
+    {
+     "id": "69a5270",
+     "type": "container",
+     "cls": "e-flex e-con-boxed e-con e-parent",
+     "box": [
+      0,
+      0,
+      1009,
+      52
+     ],
+     "display": "flex",
+     "flexDirection": "column",
+     "width": "1009px",
+     "maxWidth": "100%",
+     "paddingRight": "10px",
+     "paddingLeft": "10px",
+     "backgroundColor": "rgb(90, 15, 54)",
+     "position": "relative",
+     "children": [
+      {
+       "id": "2fd997b",
+       "type": "html",
+       "cls": "",
+       "box": [
+        10,
+        10,
+        989,
+        32
+       ],
+       "gap": "20px",
+       "width": "989px",
+       "maxWidth": "100%",
+       "position": "relative",
+       "html": " <marquee class=\"ruth-marquee\"><a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a> <span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a><span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a><span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a></marquee> ",
+       "text": "Join the 28 Days Lovers Again Challenge with Coach Ruth | Join the 28 Days Lovers Again Challenge with Coach Ruth | Join the 28 Days Lovers Again Challenge with Coach Ruth | Join the 28 Days Lovers Again Challenge with Coach Ruth"
+      }
+     ]
+    },
+    {
+     "id": "e9d8317",
+     "type": "container",
+     "cls": "e-con-full e-flex e-con e-parent elementor-sticky",
+     "box": [
+      0,
+      52,
+      1009,
+      85
+     ],
+     "display": "flex",
+     "gap": "10px",
+     "width": "1009px",
+     "maxWidth": "100%",
+     "paddingTop": "10px",
+     "paddingRight": "20px",
+     "paddingBottom": "10px",
+     "paddingLeft": "20px",
+     "backgroundColor": "rgb(255, 255, 255)",
+     "boxShadow": "rgba(86, 86, 86, 0.23) 0px 0px 31px -11px",
+     "position": "relative",
+     "zIndex": "1000",
+     "settings": {
+      "sticky": "top",
+      "sticky_on": [
+       "desktop",
+       "tablet",
+       "mobile"
+      ],
+      "sticky_offset": 0,
+      "sticky_effects_offset": 0,
+      "sticky_anchor_link_offset": 0
+     },
+     "children": [
+      {
+       "id": "5a9c508",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        20,
+        62,
+        142,
+        65
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "justifyContent": "center",
+       "gap": "20px",
+       "width": "142.344px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "cd2eff3",
+         "type": "theme-site-logo",
+         "cls": "",
+         "box": [
+          20,
+          62,
+          142,
+          65
+         ],
+         "gap": "20px",
+         "width": "142.344px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "img",
+           "box": [
+            33,
+            62,
+            116,
+            65
+           ],
+           "fontFamily": "-apple-system",
+           "fontSize": "16px",
+           "fontWeight": "400",
+           "lineHeight": "24px",
+           "color": "rgb(204, 51, 102)",
+           "textAlign": "center",
+           "display": "inline-block",
+           "width": "116px",
+           "maxWidth": "100%",
+           "overflow": "clip",
+           "src": "uploads/2025/06/logo-2-1.png",
+           "natural": [
+            1000,
+            563
+           ],
+           "alt": "",
+           "objectFit": "fill"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "689f944",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        894,
+        62,
+        95,
+        65
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "justifyContent": "center",
+       "alignItems": "center",
+       "gap": "20px",
+       "width": "94.8906px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "1e0d83a",
+         "type": "nav-menu",
+         "cls": "",
+         "box": [
+          920,
+          72,
+          44,
+          44
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "44px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "div",
+           "box": [
+            920,
+            72,
+            44,
+            44
+           ],
+           "fontFamily": "-apple-system",
+           "fontSize": "28px",
+           "fontWeight": "400",
+           "lineHeight": "42px",
+           "color": "rgb(237, 13, 130)",
+           "display": "flex",
+           "justifyContent": "center",
+           "alignItems": "center",
+           "width": "44px",
+           "paddingTop": "7px",
+           "paddingRight": "7px",
+           "paddingBottom": "7px",
+           "paddingLeft": "7px",
+           "backgroundColor": "rgba(2, 1, 1, 0)",
+           "borderRadius": "3px",
+           "borderTop": "1px solid rgb(237, 13, 130)",
+           "borderBottom": "1px solid rgb(237, 13, 130)",
+           "borderLeft": "1px solid rgb(237, 13, 130)",
+           "borderRight": "1px solid rgb(237, 13, 130)"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "8406e16",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        172,
+        62,
+        712,
+        65
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "justifyContent": "center",
+       "alignItems": "flex-end",
+       "gap": "20px",
+       "width": "711.766px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "55521df",
+         "type": "button",
+         "cls": "",
+         "box": [
+          778,
+          78,
+          106,
+          32
+         ],
+         "gap": "20px",
+         "width": "106.219px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "a",
+           "box": [
+            778,
+            78,
+            106,
+            32
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "12px",
+           "fontWeight": "500",
+           "lineHeight": "12px",
+           "color": "rgb(255, 255, 255)",
+           "textAlign": "center",
+           "display": "inline-block",
+           "width": "106.219px",
+           "paddingTop": "10px",
+           "paddingRight": "10px",
+           "paddingBottom": "10px",
+           "paddingLeft": "10px",
+           "backgroundColor": "rgb(114, 22, 70)",
+           "borderRadius": "10px",
+           "href": "/askcoach",
+           "text": "Ask Coach Ruth"
+          },
+          {
+           "tag": "span",
+           "box": [
+            788,
+            88,
+            86,
+            12
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "12px",
+           "fontWeight": "500",
+           "lineHeight": "12px",
+           "color": "rgb(255, 255, 255)",
+           "textAlign": "center",
+           "width": "86.2188px",
+           "text": "Ask Coach Ruth"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "footer",
+   "id": "329",
+   "box": [
+    0,
+    3559,
+    1009,
+    503
+   ],
+   "children": [
+    {
+     "id": "e79eafb",
+     "type": "container",
+     "cls": "e-flex e-con-boxed e-con e-parent",
+     "box": [
+      0,
+      3559,
+      1009,
+      503
+     ],
+     "display": "flex",
+     "flexDirection": "column",
+     "width": "1009px",
+     "maxWidth": "100%",
+     "paddingRight": "10px",
+     "paddingLeft": "10px",
+     "backgroundColor": "rgb(14, 13, 13)",
+     "position": "relative",
+     "children": [
+      {
+       "id": "1a1b138",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        10,
+        3569,
+        989,
+        397
+       ],
+       "display": "flex",
+       "gap": "20px",
+       "width": "989px",
+       "paddingTop": "50px",
+       "paddingBottom": "40px",
+       "position": "relative",
+       "children": [
+        {
+         "id": "6cc34bb",
+         "type": "container",
+         "cls": "e-con-full e-flex e-con e-child",
+         "box": [
+          10,
+          3619,
+          232,
+          307
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "232.25px",
+         "paddingTop": "10px",
+         "paddingRight": "10px",
+         "paddingBottom": "10px",
+         "paddingLeft": "10px",
+         "position": "relative",
+         "children": [
+          {
+           "id": "ad8f5ce",
+           "type": "heading",
+           "cls": "",
+           "box": [
+            20,
+            3629,
+            212,
+            20
+           ],
+           "gap": "20px",
+           "width": "212.25px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "h5",
+             "box": [
+              20,
+              3629,
+              212,
+              20
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "20px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(223, 223, 223)",
+             "width": "212.25px",
+             "text": "Contact"
+            }
+           ]
+          },
+          {
+           "id": "81d0d30",
+           "type": "text-editor",
+           "cls": "",
+           "box": [
+            20,
+            3669,
+            212,
+            59
+           ],
+           "gap": "20px",
+           "width": "212.25px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "p",
+             "box": [
+              20,
+              3669,
+              212,
+              45
+             ],
+             "fontFamily": "Poppins",
+             "fontSize": "15px",
+             "fontWeight": "400",
+             "lineHeight": "22.5px",
+             "color": "rgb(204, 204, 204)",
+             "width": "212.25px",
+             "marginBottom": "14.4px",
+             "text": "admin@ruthsmarriage.com, ruthsmarriage@gmail.com"
+            },
+            {
+             "tag": "a",
+             "box": [
+              24,
+              3669,
+              210,
+              21
+             ],
+             "fontFamily": "Poppins",
+             "fontSize": "15px",
+             "fontWeight": "400",
+             "lineHeight": "22.5px",
+             "color": "rgb(204, 204, 204)",
+             "display": "inline",
+             "href": "mailto:admin@ruthsmarriage.com",
+             "text": "admin@ruthsmarriage.com"
+            },
+            {
+             "tag": "a",
+             "box": [
+              20,
+              3692,
+              204,
+              21
+             ],
+             "fontFamily": "Poppins",
+             "fontSize": "15px",
+             "fontWeight": "400",
+             "lineHeight": "22.5px",
+             "color": "rgb(204, 204, 204)",
+             "display": "inline",
+             "href": "mailto:ruthsmarriage@gmail.com",
+             "text": "ruthsmarriage@gmail.com"
+            }
+           ]
+          },
+          {
+           "id": "7ab6fd5",
+           "type": "social-icons",
+           "cls": "e-grid-align-left",
+           "box": [
+            20,
+            3749,
+            212,
+            34
+           ],
+           "gap": "20px",
+           "width": "212.25px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "a",
+             "box": [
+              20,
+              3749,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(105, 114, 125)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(59, 89, 152)",
+             "borderRadius": "50%",
+             "href": "https://facebook.com/RuthsMarriage",
+             "text": "Facebook"
+            },
+            {
+             "tag": "a",
+             "box": [
+              59,
+              3749,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(105, 114, 125)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(29, 161, 242)",
+             "borderRadius": "50%",
+             "href": "https://web.archive.org/web/20250601131836/https://twitter.com/ruthsmarriage",
+             "text": "Twitter"
+            },
+            {
+             "tag": "a",
+             "box": [
+              98,
+              3749,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(51, 51, 51)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(38, 38, 38)",
+             "borderRadius": "50%",
+             "href": null,
+             "text": "Instagram"
+            },
+            {
+             "tag": "a",
+             "box": [
+              137,
+              3749,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(51, 51, 51)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(205, 32, 31)",
+             "borderRadius": "50%",
+             "href": null,
+             "text": "Youtube"
+            },
+            {
+             "tag": "a",
+             "box": [
+              176,
+              3749,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(51, 51, 51)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(0, 0, 0)",
+             "borderRadius": "50%",
+             "href": null,
+             "text": "Threads"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "0df761a",
+         "type": "container",
+         "cls": "e-con-full e-flex e-con e-child",
+         "box": [
+          262,
+          3619,
+          232,
+          307
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "232.25px",
+         "paddingTop": "10px",
+         "paddingRight": "10px",
+         "paddingBottom": "10px",
+         "paddingLeft": "10px",
+         "position": "relative",
+         "children": [
+          {
+           "id": "93ad02b",
+           "type": "heading",
+           "cls": "",
+           "box": [
+            272,
+            3629,
+            212,
+            20
+           ],
+           "gap": "20px",
+           "width": "212.25px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "h5",
+             "box": [
+              272,
+              3629,
+              212,
+              20
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "20px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(223, 223, 223)",
+             "width": "212.25px",
+             "text": "Services"
+            }
+           ]
+          },
+          {
+           "id": "dfc86f1",
+           "type": "posts",
+           "cls": "",
+           "box": [
+            272,
+            3669,
+            212,
+            247
+           ],
+           "gap": "20px",
+           "width": "212.25px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "settings": {
+            "classic_columns": "1",
+            "classic_columns_tablet": "1",
+            "classic_columns_mobile": "1"
+           },
+           "items": 6,
+           "carousel": false,
+           "grid": {
+            "display": "grid",
+            "gridTemplateColumns": "212.25px",
+            "gap": "9px 30px",
+            "columnGap": "30px",
+            "rowGap": "9px"
+           },
+           "children": [
+            {
+             "item": true,
+             "box": [
+              272,
+              3669,
+              212,
+              34
+             ],
+             "children": [
+              {
+               "tag": "h3",
+               "box": [
+                272,
+                3669,
+                212,
+                34
+               ],
+               "fontFamily": "Poppins",
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "16.8px",
+               "color": "rgb(204, 204, 204)",
+               "width": "212.25px",
+               "text": "One Hour Relationship Clarity Session"
+              }
+             ]
+            },
+            {
+             "item": true,
+             "box": [
+              272,
+              3712,
+              212,
+              34
+             ],
+             "children": [
+              {
+               "tag": "h3",
+               "box": [
+                272,
+                3712,
+                212,
+                34
+               ],
+               "fontFamily": "Poppins",
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "16.8px",
+               "color": "rgb(204, 204, 204)",
+               "width": "212.25px",
+               "text": "One Hour Dating Couples Counseling Session"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "ed4ce69",
+         "type": "container",
+         "cls": "e-con-full e-flex e-con e-child",
+         "box": [
+          515,
+          3619,
+          232,
+          307
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "232.25px",
+         "paddingTop": "10px",
+         "paddingRight": "10px",
+         "paddingBottom": "10px",
+         "paddingLeft": "10px",
+         "position": "relative",
+         "children": [
+          {
+           "id": "a5f5988",
+           "type": "heading",
+           "cls": "",
+           "box": [
+            525,
+            3629,
+            212,
+            20
+           ],
+           "gap": "20px",
+           "width": "212.25px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "h5",
+             "box": [
+              525,
+              3629,
+              212,
+              20
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "20px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(223, 223, 223)",
+             "width": "212.25px",
+             "text": "Resources"
+            }
+           ]
+          },
+          {
+           "id": "c1bc417",
+           "type": "posts",
+           "cls": "",
+           "box": [
+            525,
+            3669,
+            212,
+            247
+           ],
+           "gap": "20px",
+           "width": "212.25px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "settings": {
+            "classic_columns": "1",
+            "classic_columns_tablet": "1",
+            "classic_columns_mobile": "1"
+           },
+           "items": 6,
+           "carousel": false,
+           "grid": {
+            "display": "grid",
+            "gridTemplateColumns": "212.25px",
+            "gap": "9px 30px",
+            "columnGap": "30px",
+            "rowGap": "9px"
+           },
+           "children": [
+            {
+             "item": true,
+             "box": [
+              525,
+              3669,
+              212,
+              34
+             ],
+             "children": [
+              {
+               "tag": "h3",
+               "box": [
+                525,
+                3669,
+                212,
+                34
+               ],
+               "fontFamily": "Poppins",
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "16.8px",
+               "color": "rgb(204, 204, 204)",
+               "width": "212.25px",
+               "text": "52 Rules of Dating and Relationships"
+              }
+             ]
+            },
+            {
+             "item": true,
+             "box": [
+              525,
+              3712,
+              212,
+              17
+             ],
+             "children": [
+              {
+               "tag": "h3",
+               "box": [
+                525,
+                3712,
+                212,
+                17
+               ],
+               "fontFamily": "Poppins",
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "16.8px",
+               "color": "rgb(204, 204, 204)",
+               "width": "212.25px",
+               "text": "Have Sex & Pray"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "c1178b5",
+         "type": "container",
+         "cls": "e-con-full e-flex e-con e-child",
+         "box": [
+          767,
+          3619,
+          232,
+          307
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "232.25px",
+         "paddingTop": "10px",
+         "paddingRight": "10px",
+         "paddingBottom": "10px",
+         "paddingLeft": "10px",
+         "position": "relative",
+         "children": [
+          {
+           "id": "7975d50",
+           "type": "heading",
+           "cls": "",
+           "box": [
+            777,
+            3629,
+            212,
+            20
+           ],
+           "gap": "20px",
+           "width": "212.25px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "h5",
+             "box": [
+              777,
+              3629,
+              212,
+              20
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "20px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(223, 223, 223)",
+             "width": "212.25px",
+             "text": "Links"
+            }
+           ]
+          },
+          {
+           "id": "9d6474f",
+           "type": "nav-menu",
+           "cls": "",
+           "box": [
+            777,
+            3669,
+            212,
+            150
+           ],
+           "display": "flex",
+           "flexDirection": "column",
+           "gap": "20px",
+           "width": "212.25px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "a",
+             "box": [
+              777,
+              3669,
+              212,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "212.25px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "About"
+            },
+            {
+             "tag": "a",
+             "box": [
+              777,
+              3699,
+              212,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "212.25px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "Counseling Services"
+            },
+            {
+             "tag": "a",
+             "box": [
+              777,
+              3729,
+              212,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "212.25px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "Resources"
+            },
+            {
+             "tag": "a",
+             "box": [
+              777,
+              3759,
+              212,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "212.25px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "Freebies"
+            },
+            {
+             "tag": "a",
+             "box": [
+              777,
+              3789,
+              212,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "212.25px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "Media"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "526d652",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        10,
+        3986,
+        989,
+        66
+       ],
+       "display": "flex",
+       "justifyContent": "space-between",
+       "alignItems": "center",
+       "gap": "20px",
+       "width": "989px",
+       "paddingTop": "10px",
+       "paddingRight": "10px",
+       "paddingBottom": "10px",
+       "paddingLeft": "10px",
+       "position": "relative",
+       "children": [
+        {
+         "id": "650e720",
+         "type": "heading",
+         "cls": "",
+         "box": [
+          20,
+          4011,
+          323,
+          16
+         ],
+         "gap": "20px",
+         "width": "323.031px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "div",
+           "box": [
+            20,
+            4011,
+            323,
+            16
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "16px",
+           "fontWeight": "600",
+           "lineHeight": "16px",
+           "color": "rgb(204, 204, 204)",
+           "width": "323.031px",
+           "text": "Ruth's Marriage © 2025. All rights reserved."
+          }
+         ]
+        },
+        {
+         "id": "60d6dc4",
+         "type": "nav-menu",
+         "cls": "",
+         "box": [
+          616,
+          3996,
+          373,
+          46
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "373.016px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "a",
+           "box": [
+            616,
+            3996,
+            179,
+            46
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "16px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(204, 204, 204)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "178.594px",
+           "paddingTop": "13px",
+           "paddingRight": "20px",
+           "paddingBottom": "13px",
+           "paddingLeft": "20px",
+           "position": "relative",
+           "href": "https://www.ruthsmarriage.com/cancellation-policy/",
+           "text": "Cancellation Policy"
+          },
+          {
+           "tag": "a",
+           "box": [
+            795,
+            3996,
+            194,
+            46
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "16px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(204, 204, 204)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "194.422px",
+           "paddingTop": "13px",
+           "paddingRight": "20px",
+           "paddingBottom": "13px",
+           "paddingLeft": "20px",
+           "position": "relative",
+           "href": "https://www.ruthsmarriage.com/confidentiality-policy/",
+           "text": "Confidentiality Policy"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "helloMain": {
+  "box": [
+   105,
+   145,
+   800,
+   3400
+  ],
+  "width": "800px",
+  "maxWidth": "800px",
+  "parts": [
+   {
+    "tag": "h1",
+    "box": [
+     105,
+     145,
+     800,
+     48
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "40px",
+    "fontWeight": "600",
+    "lineHeight": "48px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "maxWidth": "800px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "How to Handle a Difficult Spouse"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     209,
+     800,
+     96
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Handling a difficult spouse can be one of the most challenging aspects of any marriage. Handling a difficult spouse can be one of the most challenging aspects of any marriage. It is crucial to approach the situation with understanding and patience, seeking open communication and professional guidanc"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     319,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "When your partner acts difficult, one of the things to consider is it may not be about you, it may be as a result of their experiences and traumas and you are only a beneficiary of the impact that has caused on them."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     382,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "It is easy to be overwhelmed or frustrated when dealing with a partner whose behaviour feels negative or uncooperative."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     444,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "However, learning how to approach the situation with understanding and constructive strategies can make all the difference. In this guide, we will explore effective ways to handle a difficult partner."
+   },
+   {
+    "tag": "h2",
+    "box": [
+     105,
+     506,
+     800,
+     38
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "1. Don’t victimize yourself"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     561,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Know that you are not the enemy. You are only a recipient of their internal struggles and habits. Knowing this gives you a mental shift from victimizing yourself to empathizing."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     623,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "If your partner is acting difficult towards you- negativity, frustration or anger, the tendency for you to internalize these things and feel personally attacked is very high."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     686,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "In turn, these internalized feelings can make you feel like a victim making the situation worse by reinforcing feelings of resentment, defensiveness or hurt."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     748,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "However, it is important to note that your partner’s behaviour reveals their own interns struggles and not likely yours."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     810,
+     800,
+     72
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "This could be as a result of stress, past traumas, formed habits or unresolved issues. Knowing this can help you detach from the automatic response of personalizing your partner’s actions and decreasing the level of intimacy in your marriage."
+   },
+   {
+    "tag": "a",
+    "box": [
+     105,
+     837,
+     775,
+     42
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://web.archive.org/web/20250213155214/https://ruthsmarriage.com/four-perspectives-for-building-an-intimate-marriage/",
+    "text": "the level of intimacy in your marriage."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     897,
+     800,
+     24
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "When you approach it this way, it causes a mindset shift from “victim” to “empathizer.”"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     935,
+     800,
+     96
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "You start to see their negative behaviour as a reflection of their own struggles rather than a direct attack on you. Instead of reacting with defensiveness or anger, you can respond with compassion. This further opens the door to understanding. Instead of getting stuck in a cycle of hurt and retalia"
+   },
+   {
+    "tag": "h2",
+    "box": [
+     105,
+     1045,
+     800,
+     38
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "2. Combat Negativity with Positivity"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     1100,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "You can’t change them by becoming difficult yourself. Be the light, be much better instead and you can model and influence change."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     1162,
+     800,
+     72
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "A popular maxim says, “Two wrongs do not make a right.” In other words, you cannot correct negative behaviour with negativity. When your partner is acting difficult, upset, or stuck in unhealthy patterns, it can be tempting to respond in kind—either out of frustration, self-defence, or a desire to a"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     1249,
+     800,
+     24
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "This often takes the conflict to a whole new level, further reinforcing the behaviour you wish to change."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     1287,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "When you respond to your partner’s behaviour with your form of resistance, you mirror the behaviour of your partner which results in a negative cycle of conflict."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     1349,
+     800,
+     72
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "It’s a basic principle of human interaction that we cannot directly change others—people must be willing to change themselves. But you can influence the environment and set a powerful example for how to behave under stress, frustration, or disagreement."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     1436,
+     800,
+     72
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "When you remain calm, composed, and positive, you are basically showing your partner that difficult circumstances don’t have to dictate your behaviour. It creates a kind of social pressure to meet that standard, as people often mirror the emotional tone of those around them."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     1522,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Choosing not to be a difficult person in response to your partner’s behaviour can effectively disrupt their negative pattern of behaviour."
+   },
+   {
+    "tag": "h2",
+    "box": [
+     105,
+     1585,
+     800,
+     38
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "3. Be Accountable for Your Actions Too"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     1639,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Put things into perspective and pick your battles. Are they that difficult or you are expecting perfection, or for them to think or act like you?"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     1701,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Marriage is a partnership between you and your partner. Your relationship is not always going to be smooth. Relationships are long-term, and occasional misunderstandings or differences are inevitable."
+   },
+   {
+    "tag": "a",
+    "box": [
+     510,
+     1704,
+     367,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://web.archive.org/web/20250213155214/https://ruthsmarriage.com/how-to-rebuild-your-marriage-from-a-difficult-place/",
+    "text": "Your relationship is not always going to be smooth"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     1764,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Ask yourself: Is this disagreement or behaviour going to matter in a week, a month, or a year? If not, it may be more beneficial to let it pass rather than escalate the situation."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     1826,
+     800,
+     72
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "One of the biggest sources of frustration in relationships is the expectation that your partner will behave perfectly or live up to your idealized standards. But no one is perfect, and expecting others to meet unrealistic standards can be frustrating."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     1913,
+     800,
+     72
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "People have bad days and make mistakes that may not align with your expectations. Instead of focusing on these flaws, allow space for imperfections. This builds a healthier, more compassionate relationship where your partner feels accepted for who they are, rather than pressured to meet an impossibl"
+   },
+   {
+    "tag": "h2",
+    "box": [
+     105,
+     1999,
+     800,
+     77
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "4. Focus on Positive Reinforcement and Not the Negative"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     2092,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Focus on the positive and reinforce positive energy. Even the most difficult person would have some areas they are doing well. Most people respond to praise and positivity as opposed to complaints and criticism."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     2154,
+     800,
+     72
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Positive reinforcement is a psychological principle where you motivate a person to behave a certain way through rewards, recognition or praise. In relationships, this means actively encouraging your partner when they do well."
+   },
+   {
+    "tag": "a",
+    "box": [
+     105,
+     2157,
+     162,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://web.archive.org/web/20250213155214/https://positivepsychology.com/positive-reinforcement-psychology/",
+    "text": "Positive reinforcement"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     2241,
+     800,
+     72
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "When someone is recognized for doing something good, they are more likely to repeat that behaviour. On the other hand, when you constantly criticize them, they may become defensive and eventually withdraw from you."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     2327,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Instead of focusing on what your partner is doing wrong, focus on what they are doing right. Focusing on what they are doing well shifts your mindset from problem-oriented to solution-oriented."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     2389,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "This does not mean you will ignore the problems your partner is causing, but by highlighting what they are doing right, you are choosing to create an environment where they feel comfortable doing the right thing."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     2452,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Most people have an innate need to be valued and appreciated. When you acknowledge your partner’s strengths, you’re telling them you notice their efforts and appreciate them."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     2514,
+     800,
+     24
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Wrapping Up"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     2552,
+     800,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "If you have a partner you’re having difficulties dealing with, you would need a more long-term effective resource for your marriage."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     2615,
+     800,
+     96
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "My first recommendation would be to sign up for the 30-Day Couples Reconnecting Challenge. By joining this challenge, you can move your marriage to a place of reconnection without sitting in marriage therapy and the great thing about this challenge is that, it’s structured yo be effective even if yo"
+   },
+   {
+    "tag": "a",
+    "box": [
+     483,
+     2618,
+     307,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://web.archive.org/web/20250213155214/https://ruthsmarriage.com/resources/",
+    "text": "30-Day Couples Reconnecting Challenge."
+   },
+   {
+    "tag": "a",
+    "box": [
+     348,
+     2690,
+     89,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://web.archive.org/web/20250213155214/https://ruthsmarriage.my.canva.site/30-day-couples-reconnecting-challenge",
+    "text": "sign up here"
+   },
+   {
+    "tag": "div",
+    "box": [
+     105,
+     2725,
+     800,
+     24
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "text": "Tagged Instagram"
+   },
+   {
+    "tag": "a",
+    "box": [
+     163,
+     2728,
+     72,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/tag/instagram/",
+    "text": "Instagram"
+   },
+   {
+    "tag": "h2",
+    "box": [
+     105,
+     2757,
+     800,
+     38
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "Leave a Reply"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     2812,
+     800,
+     24
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Your email address will not be published. Required fields are marked *"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     2850,
+     800,
+     240
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Comment *"
+   },
+   {
+    "tag": "label",
+    "box": [
+     105,
+     2856,
+     82,
+     16
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "16px",
+    "color": "rgb(51, 51, 51)",
+    "display": "inline-block",
+    "width": "82.2812px",
+    "text": "Comment *"
+   },
+   {
+    "tag": "textarea",
+    "box": [
+     105,
+     2874,
+     800,
+     210
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(0, 0, 0)",
+    "display": "inline-block",
+    "width": "800px",
+    "paddingTop": "8px",
+    "paddingRight": "16px",
+    "paddingBottom": "8px",
+    "paddingLeft": "16px",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "3px",
+    "borderTop": "1px solid rgb(102, 102, 102)",
+    "borderBottom": "1px solid rgb(102, 102, 102)",
+    "borderLeft": "1px solid rgb(102, 102, 102)",
+    "borderRight": "1px solid rgb(102, 102, 102)"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     3104,
+     800,
+     66
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Name *"
+   },
+   {
+    "tag": "label",
+    "box": [
+     105,
+     3110,
+     54,
+     16
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "16px",
+    "color": "rgb(51, 51, 51)",
+    "display": "inline-block",
+    "width": "53.9375px",
+    "text": "Name *"
+   },
+   {
+    "tag": "input",
+    "box": [
+     105,
+     3128,
+     800,
+     42
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(0, 0, 0)",
+    "display": "inline-block",
+    "width": "800px",
+    "paddingTop": "8px",
+    "paddingRight": "16px",
+    "paddingBottom": "8px",
+    "paddingLeft": "16px",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "3px",
+    "borderTop": "1px solid rgb(102, 102, 102)",
+    "borderBottom": "1px solid rgb(102, 102, 102)",
+    "borderLeft": "1px solid rgb(102, 102, 102)",
+    "borderRight": "1px solid rgb(102, 102, 102)",
+    "overflow": "clip"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     3185,
+     800,
+     66
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Email *"
+   },
+   {
+    "tag": "label",
+    "box": [
+     105,
+     3191,
+     50,
+     16
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "16px",
+    "color": "rgb(51, 51, 51)",
+    "display": "inline-block",
+    "width": "50.1406px",
+    "text": "Email *"
+   },
+   {
+    "tag": "input",
+    "box": [
+     105,
+     3209,
+     800,
+     42
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(0, 0, 0)",
+    "display": "inline-block",
+    "width": "800px",
+    "paddingTop": "8px",
+    "paddingRight": "16px",
+    "paddingBottom": "8px",
+    "paddingLeft": "16px",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "3px",
+    "borderTop": "1px solid rgb(102, 102, 102)",
+    "borderBottom": "1px solid rgb(102, 102, 102)",
+    "borderLeft": "1px solid rgb(102, 102, 102)",
+    "borderRight": "1px solid rgb(102, 102, 102)",
+    "overflow": "clip"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     3265,
+     800,
+     66
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Website"
+   },
+   {
+    "tag": "label",
+    "box": [
+     105,
+     3271,
+     59,
+     16
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "16px",
+    "color": "rgb(51, 51, 51)",
+    "display": "inline-block",
+    "width": "58.6562px",
+    "text": "Website"
+   },
+   {
+    "tag": "input",
+    "box": [
+     105,
+     3289,
+     800,
+     42
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(0, 0, 0)",
+    "display": "inline-block",
+    "width": "800px",
+    "paddingTop": "8px",
+    "paddingRight": "16px",
+    "paddingBottom": "8px",
+    "paddingLeft": "16px",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "3px",
+    "borderTop": "1px solid rgb(102, 102, 102)",
+    "borderBottom": "1px solid rgb(102, 102, 102)",
+    "borderLeft": "1px solid rgb(102, 102, 102)",
+    "borderRight": "1px solid rgb(102, 102, 102)",
+    "overflow": "clip"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     3346,
+     800,
+     24
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Save my name, email, and website in this browser for the next time I comment."
+   },
+   {
+    "tag": "input",
+    "box": [
+     105,
+     3351,
+     13,
+     13
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(0, 0, 0)",
+    "display": "inline-block",
+    "width": "13px"
+   },
+   {
+    "tag": "label",
+    "box": [
+     122,
+     3351,
+     566,
+     16
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "16px",
+    "color": "rgb(51, 51, 51)",
+    "display": "inline-block",
+    "width": "565.828px",
+    "text": "Save my name, email, and website in this browser for the next time I comment."
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     3384,
+     800,
+     24
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px",
+    "text": "Please enter an answer in digits:"
+   },
+   {
+    "tag": "label",
+    "box": [
+     105,
+     3390,
+     233,
+     16
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "16px",
+    "color": "rgb(51, 51, 51)",
+    "display": "inline-block",
+    "width": "232.625px",
+    "text": "Please enter an answer in digits:"
+   },
+   {
+    "tag": "input",
+    "box": [
+     105,
+     3446,
+     800,
+     42
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(0, 0, 0)",
+    "display": "inline-block",
+    "width": "800px",
+    "paddingTop": "8px",
+    "paddingRight": "16px",
+    "paddingBottom": "8px",
+    "paddingLeft": "16px",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "3px",
+    "borderTop": "1px solid rgb(102, 102, 102)",
+    "borderBottom": "1px solid rgb(102, 102, 102)",
+    "borderLeft": "1px solid rgb(102, 102, 102)",
+    "borderRight": "1px solid rgb(102, 102, 102)",
+    "overflow": "clip"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     3488,
+     800,
+     0
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     3503,
+     800,
+     42
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px"
+   },
+   {
+    "tag": "input",
+    "box": [
+     105,
+     3503,
+     141,
+     42
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textAlign": "center",
+    "display": "inline-block",
+    "width": "141.281px",
+    "paddingTop": "8px",
+    "paddingRight": "16px",
+    "paddingBottom": "8px",
+    "paddingLeft": "16px",
+    "borderRadius": "3px",
+    "borderTop": "1px solid rgb(204, 51, 102)",
+    "borderBottom": "1px solid rgb(204, 51, 102)",
+    "borderLeft": "1px solid rgb(204, 51, 102)",
+    "borderRight": "1px solid rgb(204, 51, 102)",
+    "overflow": "clip"
+   },
+   {
+    "tag": "p",
+    "box": [
+     105,
+     3559,
+     800,
+     0
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "800px",
+    "marginBottom": "14.4px"
+   }
+  ]
+ }
+}

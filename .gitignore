@@ -1,0 +1,13 @@
+node_modules/
+.env*
+.wrangler/
+dist/
+.astro/
+data.db*
+*.emdash
+.DS_Store
+discovery/raw/
+discovery/screenshots/
+discovery/images/
+node-compile-cache/
+v8-compile-cache-501/

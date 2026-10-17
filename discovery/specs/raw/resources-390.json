@@ -1,0 +1,2239 @@
+{
+ "url": "https://www.ruthsmarriage.com/resources/",
+ "viewport": [
+  390,
+  844
+ ],
+ "pageHeight": 8148,
+ "bodyFont": {
+  "fontFamily": "-apple-system",
+  "fontSize": "16px",
+  "fontWeight": "400",
+  "lineHeight": "24px",
+  "color": "rgb(51, 51, 51)"
+ },
+ "documents": [
+  {
+   "type": "header",
+   "id": "63",
+   "box": [
+    0,
+    0,
+    375,
+    128
+   ],
+   "children": [
+    {
+     "id": "69a5270",
+     "type": "container",
+     "cls": "e-flex e-con-boxed e-con e-parent",
+     "box": [
+      0,
+      0,
+      375,
+      52
+     ],
+     "display": "flex",
+     "flexDirection": "column",
+     "width": "375px",
+     "maxWidth": "100%",
+     "paddingRight": "10px",
+     "paddingLeft": "10px",
+     "backgroundColor": "rgb(90, 15, 54)",
+     "position": "relative",
+     "children": [
+      {
+       "id": "2fd997b",
+       "type": "html",
+       "cls": "",
+       "box": [
+        10,
+        10,
+        355,
+        32
+       ],
+       "gap": "20px",
+       "width": "355px",
+       "maxWidth": "100%",
+       "position": "relative",
+       "html": " <marquee class=\"ruth-marquee\"><a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a> <span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a><span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a><span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a></marquee> ",
+       "text": "Join the 28 Days Lovers Again Challenge with Coach Ruth | Join the 28 Days Lovers Again Challenge with Coach Ruth | Join the 28 Days Lovers Again Challenge with Coach Ruth | Join the 28 Days Lovers Again Challenge with Coach Ruth"
+      }
+     ]
+    },
+    {
+     "id": "e9d8317",
+     "type": "container",
+     "cls": "e-con-full e-flex e-con e-parent elementor-sticky elementor-sticky--active elementor-section--handles-inside elementor-sticky--effects",
+     "box": [
+      0,
+      217,
+      375,
+      76
+     ],
+     "display": "flex",
+     "justifyContent": "space-between",
+     "gap": "10px",
+     "width": "375px",
+     "maxWidth": "100%",
+     "paddingTop": "10px",
+     "paddingRight": "20px",
+     "paddingBottom": "10px",
+     "paddingLeft": "20px",
+     "backgroundColor": "rgb(255, 255, 255)",
+     "boxShadow": "rgba(86, 86, 86, 0.23) 0px 0px 31px -11px",
+     "position": "fixed",
+     "zIndex": "1000",
+     "settings": {
+      "sticky": "top",
+      "sticky_on": [
+       "desktop",
+       "tablet",
+       "mobile"
+      ],
+      "sticky_offset": 0,
+      "sticky_effects_offset": 0,
+      "sticky_anchor_link_offset": 0
+     },
+     "children": [
+      {
+       "id": "5a9c508",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        20,
+        227,
+        99,
+        56
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "flexWrap": "wrap",
+       "justifyContent": "center",
+       "gap": "20px",
+       "width": "99.4688px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "cd2eff3",
+         "type": "theme-site-logo",
+         "cls": "",
+         "box": [
+          20,
+          227,
+          99,
+          56
+         ],
+         "gap": "20px",
+         "width": "99.4688px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "img",
+           "box": [
+            20,
+            227,
+            99,
+            56
+           ],
+           "fontFamily": "-apple-system",
+           "fontSize": "16px",
+           "fontWeight": "400",
+           "lineHeight": "24px",
+           "color": "rgb(204, 51, 102)",
+           "textAlign": "center",
+           "display": "inline-block",
+           "width": "99.4688px",
+           "maxWidth": "100%",
+           "overflow": "clip",
+           "src": "uploads/2025/06/logo-2-1.png",
+           "natural": [
+            390,
+            219
+           ],
+           "alt": "",
+           "objectFit": "fill"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "689f944",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        305,
+        227,
+        50,
+        56
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "flexWrap": "wrap",
+       "justifyContent": "center",
+       "alignItems": "center",
+       "gap": "20px",
+       "width": "49.7344px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "1e0d83a",
+         "type": "nav-menu",
+         "cls": "",
+         "box": [
+          310,
+          235,
+          40,
+          40
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "39.5px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "div",
+           "box": [
+            310,
+            235,
+            40,
+            40
+           ],
+           "fontFamily": "-apple-system",
+           "fontSize": "25px",
+           "fontWeight": "400",
+           "lineHeight": "37.5px",
+           "color": "rgb(237, 13, 130)",
+           "display": "flex",
+           "justifyContent": "center",
+           "alignItems": "center",
+           "width": "39.5px",
+           "paddingTop": "6.25px",
+           "paddingRight": "6.25px",
+           "paddingBottom": "6.25px",
+           "paddingLeft": "6.25px",
+           "backgroundColor": "rgba(2, 1, 1, 0)",
+           "borderRadius": "3px",
+           "borderTop": "1px solid rgb(237, 13, 130)",
+           "borderBottom": "1px solid rgb(237, 13, 130)",
+           "borderLeft": "1px solid rgb(237, 13, 130)",
+           "borderRight": "1px solid rgb(237, 13, 130)"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "8406e16",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        129,
+        227,
+        166,
+        56
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "flexWrap": "wrap",
+       "justifyContent": "center",
+       "alignItems": "flex-end",
+       "gap": "20px",
+       "width": "165.797px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "55521df",
+         "type": "button",
+         "cls": "",
+         "box": [
+          189,
+          239,
+          106,
+          32
+         ],
+         "gap": "20px",
+         "width": "106.219px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "a",
+           "box": [
+            189,
+            239,
+            106,
+            32
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "12px",
+           "fontWeight": "500",
+           "lineHeight": "12px",
+           "color": "rgb(255, 255, 255)",
+           "textAlign": "center",
+           "display": "inline-block",
+           "width": "106.219px",
+           "paddingTop": "10px",
+           "paddingRight": "10px",
+           "paddingBottom": "10px",
+           "paddingLeft": "10px",
+           "backgroundColor": "rgb(114, 22, 70)",
+           "borderRadius": "10px",
+           "href": "/askcoach",
+           "text": "Ask Coach Ruth"
+          },
+          {
+           "tag": "span",
+           "box": [
+            199,
+            249,
+            86,
+            12
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "12px",
+           "fontWeight": "500",
+           "lineHeight": "12px",
+           "color": "rgb(255, 255, 255)",
+           "textAlign": "center",
+           "width": "86.2188px",
+           "text": "Ask Coach Ruth"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "e9d8317",
+     "type": "container",
+     "cls": "e-con-full e-flex e-con e-parent elementor-sticky elementor-sticky__spacer",
+     "box": [
+      0,
+      52,
+      375,
+      76
+     ],
+     "display": "flex",
+     "justifyContent": "space-between",
+     "gap": "10px",
+     "width": "375px",
+     "maxWidth": "100%",
+     "paddingTop": "10px",
+     "paddingRight": "20px",
+     "paddingBottom": "10px",
+     "paddingLeft": "20px",
+     "backgroundColor": "rgb(255, 255, 255)",
+     "boxShadow": "rgba(86, 86, 86, 0.23) 0px 0px 31px -11px",
+     "position": "relative",
+     "zIndex": "1000",
+     "settings": {
+      "sticky": "top",
+      "sticky_on": [
+       "desktop",
+       "tablet",
+       "mobile"
+      ],
+      "sticky_offset": 0,
+      "sticky_effects_offset": 0,
+      "sticky_anchor_link_offset": 0
+     },
+     "children": [
+      {
+       "id": "5a9c508",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        20,
+        62,
+        99,
+        56
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "flexWrap": "wrap",
+       "justifyContent": "center",
+       "gap": "20px",
+       "width": "99.4688px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "cd2eff3",
+         "type": "theme-site-logo",
+         "cls": "",
+         "box": [
+          20,
+          62,
+          99,
+          56
+         ],
+         "gap": "20px",
+         "width": "99.4688px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "img",
+           "box": [
+            20,
+            62,
+            99,
+            56
+           ],
+           "fontFamily": "-apple-system",
+           "fontSize": "16px",
+           "fontWeight": "400",
+           "lineHeight": "24px",
+           "color": "rgb(204, 51, 102)",
+           "textAlign": "center",
+           "display": "inline-block",
+           "width": "99.4688px",
+           "maxWidth": "100%",
+           "overflow": "clip",
+           "src": "uploads/2025/06/logo-2-1.png",
+           "natural": [
+            390,
+            219
+           ],
+           "alt": "",
+           "objectFit": "fill"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "689f944",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        305,
+        62,
+        50,
+        56
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "flexWrap": "wrap",
+       "justifyContent": "center",
+       "alignItems": "center",
+       "gap": "20px",
+       "width": "49.7344px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "1e0d83a",
+         "type": "nav-menu",
+         "cls": "",
+         "box": [
+          310,
+          70,
+          40,
+          40
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "39.5px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "div",
+           "box": [
+            310,
+            70,
+            40,
+            40
+           ],
+           "fontFamily": "-apple-system",
+           "fontSize": "25px",
+           "fontWeight": "400",
+           "lineHeight": "37.5px",
+           "color": "rgb(237, 13, 130)",
+           "display": "flex",
+           "justifyContent": "center",
+           "alignItems": "center",
+           "width": "39.5px",
+           "paddingTop": "6.25px",
+           "paddingRight": "6.25px",
+           "paddingBottom": "6.25px",
+           "paddingLeft": "6.25px",
+           "backgroundColor": "rgba(2, 1, 1, 0)",
+           "borderRadius": "3px",
+           "borderTop": "1px solid rgb(237, 13, 130)",
+           "borderBottom": "1px solid rgb(237, 13, 130)",
+           "borderLeft": "1px solid rgb(237, 13, 130)",
+           "borderRight": "1px solid rgb(237, 13, 130)"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "8406e16",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        129,
+        62,
+        166,
+        56
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "flexWrap": "wrap",
+       "justifyContent": "center",
+       "alignItems": "flex-end",
+       "gap": "20px",
+       "width": "165.797px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "55521df",
+         "type": "button",
+         "cls": "",
+         "box": [
+          189,
+          74,
+          106,
+          32
+         ],
+         "gap": "20px",
+         "width": "106.219px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "a",
+           "box": [
+            189,
+            74,
+            106,
+            32
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "12px",
+           "fontWeight": "500",
+           "lineHeight": "12px",
+           "color": "rgb(255, 255, 255)",
+           "textAlign": "center",
+           "display": "inline-block",
+           "width": "106.219px",
+           "paddingTop": "10px",
+           "paddingRight": "10px",
+           "paddingBottom": "10px",
+           "paddingLeft": "10px",
+           "backgroundColor": "rgb(114, 22, 70)",
+           "borderRadius": "10px",
+           "href": "/askcoach"
+          },
+          {
+           "tag": "span",
+           "box": [
+            199,
+            84,
+            86,
+            12
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "12px",
+           "fontWeight": "500",
+           "lineHeight": "12px",
+           "color": "rgb(255, 255, 255)",
+           "textAlign": "center",
+           "width": "86.2188px"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "wp-page",
+   "id": "37",
+   "box": [
+    0,
+    128,
+    375,
+    6922
+   ],
+   "children": [
+    {
+     "id": "0253779",
+     "type": "container",
+     "cls": "e-flex e-con-boxed e-con e-parent",
+     "box": [
+      0,
+      128,
+      375,
+      350
+     ],
+     "display": "flex",
+     "flexDirection": "column",
+     "width": "375px",
+     "maxWidth": "100%",
+     "minHeight": "350px",
+     "paddingRight": "20px",
+     "paddingLeft": "20px",
+     "backgroundImage": "url(\"uploads/2025/06/pink-overlapping-circles-pattern-beautiful-elegant-illustration-graphic-art-design-pink-overlapping-circles-pattern-204064734-1.webp\")",
+     "backgroundPosition": "50% 50%",
+     "position": "relative",
+     "settings": {
+      "shape_divider_bottom": "waves"
+     },
+     "children": [
+      {
+       "id": "b053bbc",
+       "type": "heading",
+       "cls": "",
+       "box": [
+        20,
+        266,
+        335,
+        74
+       ],
+       "gap": "20px",
+       "width": "335px",
+       "maxWidth": "100%",
+       "position": "relative",
+       "parts": [
+        {
+         "tag": "h2",
+         "box": [
+          20,
+          266,
+          335,
+          74
+         ],
+         "fontFamily": "Nunito",
+         "fontSize": "37px",
+         "fontWeight": "600",
+         "lineHeight": "37px",
+         "color": "rgb(255, 255, 255)",
+         "textAlign": "center",
+         "width": "335px",
+         "text": "Courses, Guides & Intimacy Builders"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "e95bd23",
+     "type": "container",
+     "cls": "e-con-full e-flex e-con e-parent",
+     "box": [
+      0,
+      478,
+      375,
+      6572
+     ],
+     "display": "flex",
+     "flexDirection": "column",
+     "flexWrap": "wrap",
+     "gap": "20px",
+     "width": "375px",
+     "maxWidth": "100%",
+     "position": "relative",
+     "children": [
+      {
+       "id": "1965636",
+       "type": "jet-listing-grid",
+       "cls": "",
+       "box": [
+        0,
+        478,
+        375,
+        6572
+       ],
+       "gap": "20px",
+       "width": "375px",
+       "maxWidth": "100%",
+       "position": "relative",
+       "settings": {
+        "columns": "1"
+       },
+       "items": 6,
+       "carousel": false,
+       "grid": {
+        "display": "flex"
+       },
+       "children": [
+        {
+         "item": true,
+         "box": [
+          -10,
+          478,
+          395,
+          1176
+         ],
+         "template": "301",
+         "children": [
+          {
+           "id": "e3f99c5",
+           "type": "container",
+           "cls": "e-flex e-con-boxed e-con e-parent",
+           "box": [
+            0,
+            488,
+            375,
+            1156
+           ],
+           "display": "flex",
+           "flexDirection": "column",
+           "width": "375px",
+           "maxWidth": "100%",
+           "paddingRight": "10px",
+           "paddingLeft": "10px",
+           "position": "relative",
+           "children": [
+            {
+             "id": "afd09ec",
+             "type": "container",
+             "cls": "e-con-full e-flex e-con e-child",
+             "box": [
+              10,
+              498,
+              355,
+              597
+             ],
+             "display": "flex",
+             "flexDirection": "column",
+             "flexWrap": "wrap",
+             "justifyContent": "center",
+             "gap": "20px",
+             "width": "355px",
+             "paddingTop": "20px",
+             "paddingRight": "20px",
+             "paddingBottom": "20px",
+             "paddingLeft": "20px",
+             "position": "relative",
+             "settings": {
+              "sticky": "top",
+              "sticky_parent": "yes",
+              "sticky_on": [
+               "desktop",
+               "tablet"
+              ],
+              "sticky_offset": 0,
+              "sticky_effects_offset": 0,
+              "sticky_anchor_link_offset": 0
+             },
+             "children": [
+              {
+               "id": "2fbdf4c",
+               "type": "theme-post-featured-image",
+               "cls": "",
+               "box": [
+                30,
+                518,
+                315,
+                557
+               ],
+               "gap": "20px",
+               "width": "315px",
+               "maxWidth": "100%",
+               "position": "relative",
+               "parts": [
+                {
+                 "tag": "img",
+                 "box": [
+                  30,
+                  518,
+                  315,
+                  557
+                 ],
+                 "fontFamily": "-apple-system",
+                 "fontSize": "16px",
+                 "fontWeight": "400",
+                 "lineHeight": "24px",
+                 "color": "rgb(51, 51, 51)",
+                 "textAlign": "center",
+                 "display": "inline-block",
+                 "width": "315px",
+                 "maxWidth": "100%",
+                 "borderRadius": "5px",
+                 "borderTop": "2px solid rgba(191, 30, 114, 0.14)",
+                 "borderBottom": "2px solid rgba(191, 30, 114, 0.14)",
+                 "borderLeft": "2px solid rgba(191, 30, 114, 0.14)",
+                 "borderRight": "2px solid rgba(191, 30, 114, 0.14)",
+                 "overflow": "clip",
+                 "src": "uploads/2025/06/WhatsApp-Image-2025-12-17-at-5.06.03-PM.jpeg",
+                 "natural": [
+                  390,
+                  693
+                 ],
+                 "alt": "",
+                 "objectFit": "fill"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "id": "b70f906",
+             "type": "container",
+             "cls": "e-con-full e-flex e-con e-child",
+             "box": [
+              10,
+              1114,
+              355,
+              519
+             ],
+             "display": "flex",
+             "flexDirection": "column",
+             "flexWrap": "wrap",
+             "justifyContent": "center",
+             "gap": "20px",
+             "width": "355px",
+             "paddingTop": "20px",
+             "paddingRight": "20px",
+             "paddingBottom": "20px",
+             "paddingLeft": "20px",
+             "position": "relative",
+             "children": [
+              {
+               "id": "4bf887a",
+               "type": "heading",
+               "cls": "",
+               "box": [
+                30,
+                1134,
+                315,
+                64
+               ],
+               "gap": "20px",
+               "width": "315px",
+               "maxWidth": "100%",
+               "position": "relative",
+               "parts": [
+                {
+                 "tag": "h2",
+                 "box": [
+                  30,
+                  1134,
+                  315,
+                  64
+                 ],
+                 "fontFamily": "Nunito",
+                 "fontSize": "32px",
+                 "fontWeight": "700",
+                 "lineHeight": "32px",
+                 "color": "rgb(0, 0, 0)",
+                 "textAlign": "center",
+                 "width": "315px",
+                 "text": "The 28 Days Lovers Again Challenge"
+                }
+               ]
+              },
+              {
+               "id": "2700345",
+               "type": "theme-post-content",
+               "cls": "",
+               "box": [
+                30,
+                1218,
+                315,
+                336
+               ],
+               "gap": "20px",
+               "width": "315px",
+               "maxWidth": "100%",
+               "position": "relative",
+               "parts": [
+                {
+                 "tag": "p",
+                 "box": [
+                  30,
+                  1218,
+                  315,
+                  68
+                 ],
+                 "fontFamily": "Poppins",
+                 "fontSize": "15px",
+                 "fontWeight": "400",
+                 "lineHeight": "22.5px",
+                 "color": "rgb(46, 46, 46)",
+                 "textAlign": "center",
+                 "width": "315px",
+                 "marginBottom": "14.4px",
+                 "text": "The 28 Days Lovers Again Challenge is a daily, doable and deeply intentional experience."
+                },
+                {
+                 "tag": "p",
+                 "box": [
+                  30,
+                  1300,
+                  315,
+                  135
+                 ],
+                 "fontFamily": "Poppins",
+                 "fontSize": "15px",
+                 "fontWeight": "400",
+                 "lineHeight": "22.5px",
+                 "color": "rgb(46, 46, 46)",
+                 "textAlign": "center",
+                 "width": "315px",
+                 "marginBottom": "14.4px",
+                 "text": "Each daily practice is designed to help you rebuild intimacy, gently shift old communication patterns, strengthen emotional closeness, and rebuild the sense of “us” that may have faded under the weight of daily life."
+                },
+                {
+                 "tag": "p",
+                 "box": [
+                  30,
+                  1450,
+                  315,
+                  90
+                 ],
+                 "fontFamily": "Poppins",
+                 "fontSize": "15px",
+                 "fontWeight": "400",
+                 "lineHeight": "22.5px",
+                 "color": "rgb(46, 46, 46)",
+                 "textAlign": "center",
+                 "width": "315px",
+                 "marginBottom": "14.4px",
+                 "text": "It’s practical enough to start today, yet powerful & deep enough to create meaningful, lasting change in your marriage."
+                }
+               ]
+              },
+              {
+               "id": "4f33123",
+               "type": "button",
+               "cls": "",
+               "box": [
+                101,
+                1574,
+                174,
+                39
+               ],
+               "gap": "20px",
+               "width": "173.641px",
+               "maxWidth": "100%",
+               "position": "relative",
+               "parts": [
+                {
+                 "tag": "a",
+                 "box": [
+                  101,
+                  1574,
+                  174,
+                  39
+                 ],
+                 "fontFamily": "Nunito",
+                 "fontSize": "15px",
+                 "fontWeight": "600",
+                 "lineHeight": "15px",
+                 "color": "rgb(255, 255, 255)",
+                 "textAlign": "center",
+                 "display": "inline-block",
+                 "width": "173.641px",
+                 "paddingTop": "12px",
+                 "paddingRight": "24px",
+                 "paddingBottom": "12px",
+                 "paddingLeft": "24px",
+                 "backgroundColor": "rgb(191, 30, 114)",
+                 "borderRadius": "20px",
+                 "href": "https://www.ruthsmarriage.com/resource/28-days-lovers-again-challenge/",
+                 "text": "Join the Challenge"
+                },
+                {
+                 "tag": "span",
+                 "box": [
+                  125,
+                  1586,
+                  126,
+                  15
+                 ],
+                 "fontFamily": "Nunito",
+                 "fontSize": "15px",
+                 "fontWeight": "600",
+                 "lineHeight": "15px",
+                 "color": "rgb(255, 255, 255)",
+                 "textAlign": "center",
+                 "width": "125.641px",
+                 "text": "Join the Challenge"
+                }
+               ]
+              },
+              {
+               "id": "5e5c5fc",
+               "type": "container",
+               "cls": "e-con-full elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile e-flex e-con e-child",
+               "box": [
+                0,
+                217,
+                0,
+                0
+               ],
+               "flexWrap": "wrap",
+               "justifyContent": "center",
+               "alignItems": "center",
+               "gap": "5px",
+               "width": "100%",
+               "position": "relative",
+               "children": [
+                {
+                 "id": "2b35599",
+                 "type": "button",
+                 "cls": "",
+                 "box": [
+                  0,
+                  217,
+                  0,
+                  0
+                 ],
+                 "gap": "5px",
+                 "maxWidth": "100%",
+                 "position": "relative",
+                 "parts": [],
+                 "text": "Join the Challenge"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "item": true,
+         "box": [
+          -10,
+          1653,
+          395,
+          1203
+         ],
+         "template": "305",
+         "children": [
+          {
+           "id": "2e9a484",
+           "type": "container",
+           "cls": "e-flex e-con-boxed e-con e-parent",
+           "box": [
+            0,
+            1663,
+            375,
+            1183
+           ],
+           "display": "flex",
+           "flexDirection": "column",
+           "width": "375px",
+           "maxWidth": "100%",
+           "paddingRight": "20px",
+           "paddingLeft": "20px",
+           "backgroundColor": "rgba(191, 30, 114, 0.14)",
+           "position": "relative",
+           "settings": {
+            "shape_divider_top": "wave-brush",
+            "shape_divider_bottom": "wave-brush"
+           },
+           "children": [
+            {
+             "id": "41edc5c",
+             "type": "container",
+             "cls": "e-con-full e-flex e-con e-child",
+             "box": [
+              20,
+              2256,
+              335,
+              540
+             ],
+             "display": "flex",
+             "flexDirection": "column",
+             "flexWrap": "wrap",
+             "justifyContent": "center",
+             "gap": "20px",
+             "width": "335px",
+             "paddingTop": "20px",
+             "paddingRight": "20px",
+             "paddingBottom": "20px",
+             "paddingLeft": "20px",
+             "position": "relative",
+             "children": [
+              {
+               "id": "e1cd1b1",
+               "type": "heading",
+               "cls": "",
+               "box": [
+                40,
+                2276,
+                295,
+                128
+               ],
+               "gap": "20px",
+               "width": "295px",
+               "maxWidth": "100%",
+               "position": "relative",
+               "parts": [
+                {
+                 "tag": "h2",
+                 "box": [
+                  40,
+                  2276,
+                  295,
+                  128
+                 ],
+                 "fontFamily": "Nunito",
+                 "fontSize": "32px",
+                 "fontWeight": "700",
+                 "lineHeight": "32px",
+                 "color": "rgb(68, 69, 71)",
+                 "textAlign": "center",
+                 "width": "295px",
+                 "text": "The Ultimate Couples Hard Conversations Guide"
+                }
+               ]
+              },
+              {
+               "id": "0ee610c",
+               "type": "theme-post-content",
+               "cls": "",
+               "box": [
+                40,
+                2424,
+                295,
+                293
+               ],
+               "gap": "20px",
+               "width": "295px",
+               "maxWidth": "100%",
+               "position": "relative",
+               "parts": [
+                {
+                 "tag": "p",
+                 "box": [
+                  40,
+                  2424,
+                  295,
+                  144
+                 ],
+                 "fontFamily": "Poppins",
+                 "fontSize": "16px",
+                 "fontWeight": "400",
+                 "lineHeight": "24px",
+                 "color": "rgb(46, 46, 46)",
+                 "textAlign": "center",
+                 "width": "295px",
+                 "marginBottom": "14.4px",
+                 "text": "Before Another Issue or Argument Pushes You Apart – This guide is a proven resource to help you talk about ANYTHING no matter how difficult…without fighting, shutting down or walking away"
+                },
+                {
+                 "tag": "p",
+                 "box": [
+                  40,
+                  2583,
+                  295,
+                  120
+                 ],
+                 "fontFamily": "Poppins",
+                 "fontSize": "16px",
+                 "fontWeight": "400",
+                 "lineHeight": "24px",
+                 "color": "rgb(46, 46, 46)",
+                 "textAlign": "center",
+                 "width": "295px",
+                 "marginBottom": "14.4px",
+                 "text": "The Ultimate Couples Hard Conversations Guide” is a step by step blueprint for navigating difficult topics with compassion, clarity and understanding."
+                }
+               ]
+              },
+              {
+               "id": "24abf01",
+               "type": "button",
+               "cls": "",
+               "box": [
+                125,
+                2737,
+                125,
+                39
+               ],
+               "gap": "20px",
+               "width": "125.438px",
+               "maxWidth": "100%",
+               "position": "relative",
+               "parts": [
+                {
+                 "tag": "a",
+                 "box": [
+                  125,
+                  2737,
+                  125,
+                  39
+                 ],
+                 "fontFamily": "Nunito",
+                 "fontSize": "15px",
+                 "fontWeight": "600",
+                 "lineHeight": "15px",
+                 "color": "rgb(255, 255, 255)",
+                 "textAlign": "center",
+                 "display": "inline-block",
+                 "width": "125.438px",
+                 "paddingTop": "12px",
+                 "paddingRight": "24px",
+                 "paddingBottom": "12px",
+                 "paddingLeft": "24px",
+                 "backgroundColor": "rgb(191, 30, 114)",
+                 "borderRadius": "20px",
+                 "href": "https://www.ruthsmarriage.com/resource/the-ultimate-couples-hard-conversations-guide/",
+                 "text": "Learn More"
+                },
+                {
+                 "tag": "span",
+                 "box": [
+                  149,
+                  2749,
+                  77,
+                  15
+                 ],
+                 "fontFamily": "Nunito",
+                 "fontSize": "15px",
+                 "fontWeight": "600",
+                 "lineHeight": "15px",
+                 "color": "rgb(255, 255, 255)",
+                 "textAlign": "center",
+                 "width": "77.4375px",
+                 "text": "Learn More"
+                }
+               ]
+              },
+              {
+               "id": "be9d2c6",
+               "type": "container",
+               "cls": "e-con-full elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile e-flex e-con e-child",
+               "box": [
+                0,
+                217,
+                0,
+                0
+               ],
+               "flexWrap": "wrap",
+               "justifyContent": "center",
+               "alignItems": "center",
+               "gap": "5px",
+               "width": "100%",
+               "position": "relative",
+               "children": [
+                {
+                 "id": "58b6f68",
+                 "type": "button",
+                 "cls": "",
+                 "box": [
+                  0,
+                  217,
+                  0,
+                  0
+                 ],
+                 "gap": "5px",
+                 "maxWidth": "100%",
+                 "position": "relative",
+                 "parts": [],
+                 "text": "Learn More"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "id": "696d26b",
+             "type": "container",
+             "cls": "e-con-full e-flex e-con e-child",
+             "box": [
+              20,
+              1713,
+              335,
+              523
+             ],
+             "display": "flex",
+             "flexDirection": "column",
+             "flexWrap": "wrap",
+             "gap": "20px",
+             "width": "335px",
+             "position": "relative",
+             "settings": {
+              "sticky": "top",
+              "sticky_parent": "yes",
+              "sticky_on": [
+               "desktop",
+               "tablet"
+              ],
+              "sticky_offset": 0,
+              "sticky_effects_offset": 0,
+              "sticky_anchor_link_offset": 0
+             },
+             "children": [
+              {
+               "id": "ea7d897",
+               "type": "theme-post-featured-image",
+               "cls": "",
+               "box": [
+                20,
+                1713,
+                335,
+                523
+               ],
+               "gap": "20px",
+               "width": "335px",
+               "maxWidth": "100%",
+               "position": "relative",
+               "parts": [
+                {
+                 "tag": "img",
+                 "box": [
+                  20,
+                  1713,
+                  335,
+                  523
+                 ],
+                 "fontFamily": "-apple-system",
+                 "fontSize": "16px",
+                 "fontWeight": "400",
+                 "lineHeight": "24px",
+                 "color": "rgb(51, 51, 51)",
+                 "textAlign": "center",
+                 "display": "inline-block",
+                 "width": "335px",
+                 "maxWidth": "100%",
+                 "overflow": "clip",
+                 "src": "uploads/2025/06/IMG_1053.png",
+                 "natural": [
+                  390,
+                  609
+                 ],
+                 "alt": "",
+                 "objectFit": "fill"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "footer",
+   "id": "329",
+   "box": [
+    0,
+    7049,
+    375,
+    1099
+   ],
+   "children": [
+    {
+     "id": "e79eafb",
+     "type": "container",
+     "cls": "e-flex e-con-boxed e-con e-parent",
+     "box": [
+      0,
+      7049,
+      375,
+      1099
+     ],
+     "display": "flex",
+     "flexDirection": "column",
+     "width": "375px",
+     "maxWidth": "100%",
+     "paddingRight": "10px",
+     "paddingLeft": "10px",
+     "backgroundColor": "rgb(14, 13, 13)",
+     "position": "relative",
+     "children": [
+      {
+       "id": "1a1b138",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        10,
+        7059,
+        355,
+        979
+       ],
+       "display": "flex",
+       "flexWrap": "wrap",
+       "gap": "20px",
+       "width": "355px",
+       "paddingTop": "50px",
+       "paddingBottom": "40px",
+       "position": "relative",
+       "children": [
+        {
+         "id": "6cc34bb",
+         "type": "container",
+         "cls": "e-con-full e-flex e-con e-child",
+         "box": [
+          10,
+          7109,
+          355,
+          173
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "flexWrap": "wrap",
+         "gap": "20px",
+         "width": "355px",
+         "paddingTop": "10px",
+         "paddingRight": "10px",
+         "paddingBottom": "10px",
+         "paddingLeft": "10px",
+         "position": "relative",
+         "children": [
+          {
+           "id": "ad8f5ce",
+           "type": "heading",
+           "cls": "",
+           "box": [
+            20,
+            7119,
+            335,
+            20
+           ],
+           "gap": "20px",
+           "width": "335px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "h5",
+             "box": [
+              20,
+              7119,
+              335,
+              20
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "20px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(223, 223, 223)",
+             "width": "335px",
+             "text": "Contact"
+            }
+           ]
+          },
+          {
+           "id": "81d0d30",
+           "type": "text-editor",
+           "cls": "",
+           "box": [
+            20,
+            7159,
+            335,
+            59
+           ],
+           "gap": "20px",
+           "width": "335px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "p",
+             "box": [
+              20,
+              7159,
+              335,
+              45
+             ],
+             "fontFamily": "Poppins",
+             "fontSize": "15px",
+             "fontWeight": "400",
+             "lineHeight": "22.5px",
+             "color": "rgb(204, 204, 204)",
+             "width": "335px",
+             "marginBottom": "14.4px",
+             "text": "admin@ruthsmarriage.com, ruthsmarriage@gmail.com"
+            },
+            {
+             "tag": "a",
+             "box": [
+              24,
+              7159,
+              210,
+              21
+             ],
+             "fontFamily": "Poppins",
+             "fontSize": "15px",
+             "fontWeight": "400",
+             "lineHeight": "22.5px",
+             "color": "rgb(204, 204, 204)",
+             "display": "inline",
+             "href": "mailto:admin@ruthsmarriage.com",
+             "text": "admin@ruthsmarriage.com"
+            },
+            {
+             "tag": "a",
+             "box": [
+              20,
+              7182,
+              204,
+              21
+             ],
+             "fontFamily": "Poppins",
+             "fontSize": "15px",
+             "fontWeight": "400",
+             "lineHeight": "22.5px",
+             "color": "rgb(204, 204, 204)",
+             "display": "inline",
+             "href": "mailto:ruthsmarriage@gmail.com",
+             "text": "ruthsmarriage@gmail.com"
+            }
+           ]
+          },
+          {
+           "id": "7ab6fd5",
+           "type": "social-icons",
+           "cls": "e-grid-align-left",
+           "box": [
+            20,
+            7239,
+            335,
+            34
+           ],
+           "gap": "20px",
+           "width": "335px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "a",
+             "box": [
+              20,
+              7239,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(105, 114, 125)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(59, 89, 152)",
+             "borderRadius": "50%",
+             "href": "https://facebook.com/RuthsMarriage",
+             "text": "Facebook"
+            },
+            {
+             "tag": "a",
+             "box": [
+              59,
+              7239,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(105, 114, 125)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(29, 161, 242)",
+             "borderRadius": "50%",
+             "href": "https://web.archive.org/web/20250601131836/https://twitter.com/ruthsmarriage",
+             "text": "Twitter"
+            },
+            {
+             "tag": "a",
+             "box": [
+              98,
+              7239,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(51, 51, 51)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(38, 38, 38)",
+             "borderRadius": "50%",
+             "href": null,
+             "text": "Instagram"
+            },
+            {
+             "tag": "a",
+             "box": [
+              137,
+              7239,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(51, 51, 51)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(205, 32, 31)",
+             "borderRadius": "50%",
+             "href": null,
+             "text": "Youtube"
+            },
+            {
+             "tag": "a",
+             "box": [
+              176,
+              7239,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(51, 51, 51)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(0, 0, 0)",
+             "borderRadius": "50%",
+             "href": null,
+             "text": "Threads"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "0df761a",
+         "type": "container",
+         "cls": "e-con-full e-flex e-con e-child",
+         "box": [
+          10,
+          7303,
+          355,
+          206
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "flexWrap": "wrap",
+         "gap": "20px",
+         "width": "355px",
+         "paddingTop": "10px",
+         "paddingRight": "10px",
+         "paddingBottom": "10px",
+         "paddingLeft": "10px",
+         "position": "relative",
+         "children": [
+          {
+           "id": "93ad02b",
+           "type": "heading",
+           "cls": "",
+           "box": [
+            20,
+            7313,
+            335,
+            20
+           ],
+           "gap": "20px",
+           "width": "335px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "h5",
+             "box": [
+              20,
+              7313,
+              335,
+              20
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "20px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(223, 223, 223)",
+             "width": "335px",
+             "text": "Services"
+            }
+           ]
+          },
+          {
+           "id": "dfc86f1",
+           "type": "posts",
+           "cls": "",
+           "box": [
+            20,
+            7353,
+            335,
+            146
+           ],
+           "gap": "20px",
+           "width": "335px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "settings": {
+            "classic_columns": "1",
+            "classic_columns_tablet": "1",
+            "classic_columns_mobile": "1"
+           },
+           "items": 6,
+           "carousel": false,
+           "grid": {
+            "display": "grid",
+            "gridTemplateColumns": "335px",
+            "gap": "9px 30px",
+            "columnGap": "30px",
+            "rowGap": "9px"
+           },
+           "children": [
+            {
+             "item": true,
+             "box": [
+              20,
+              7353,
+              335,
+              17
+             ],
+             "children": [
+              {
+               "tag": "h3",
+               "box": [
+                20,
+                7353,
+                335,
+                17
+               ],
+               "fontFamily": "Poppins",
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "16.8px",
+               "color": "rgb(204, 204, 204)",
+               "width": "335px",
+               "text": "One Hour Relationship Clarity Session"
+              }
+             ]
+            },
+            {
+             "item": true,
+             "box": [
+              20,
+              7379,
+              335,
+              17
+             ],
+             "children": [
+              {
+               "tag": "h3",
+               "box": [
+                20,
+                7379,
+                335,
+                17
+               ],
+               "fontFamily": "Poppins",
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "16.8px",
+               "color": "rgb(204, 204, 204)",
+               "width": "335px",
+               "text": "One Hour Dating Couples Counseling Session"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "ed4ce69",
+         "type": "container",
+         "cls": "e-con-full e-flex e-con e-child",
+         "box": [
+          10,
+          7529,
+          355,
+          239
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "flexWrap": "wrap",
+         "gap": "20px",
+         "width": "355px",
+         "paddingTop": "10px",
+         "paddingRight": "10px",
+         "paddingBottom": "10px",
+         "paddingLeft": "10px",
+         "position": "relative",
+         "children": [
+          {
+           "id": "a5f5988",
+           "type": "heading",
+           "cls": "",
+           "box": [
+            20,
+            7539,
+            335,
+            20
+           ],
+           "gap": "20px",
+           "width": "335px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "h5",
+             "box": [
+              20,
+              7539,
+              335,
+              20
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "20px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(223, 223, 223)",
+             "width": "335px",
+             "text": "Resources"
+            }
+           ]
+          },
+          {
+           "id": "c1bc417",
+           "type": "posts",
+           "cls": "",
+           "box": [
+            20,
+            7579,
+            335,
+            179
+           ],
+           "gap": "20px",
+           "width": "335px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "settings": {
+            "classic_columns": "1",
+            "classic_columns_tablet": "1",
+            "classic_columns_mobile": "1"
+           },
+           "items": 6,
+           "carousel": false,
+           "grid": {
+            "display": "grid",
+            "gridTemplateColumns": "335px",
+            "gap": "9px 30px",
+            "columnGap": "30px",
+            "rowGap": "9px"
+           },
+           "children": [
+            {
+             "item": true,
+             "box": [
+              20,
+              7579,
+              335,
+              17
+             ],
+             "children": [
+              {
+               "tag": "h3",
+               "box": [
+                20,
+                7579,
+                335,
+                17
+               ],
+               "fontFamily": "Poppins",
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "16.8px",
+               "color": "rgb(204, 204, 204)",
+               "width": "335px",
+               "text": "52 Rules of Dating and Relationships"
+              }
+             ]
+            },
+            {
+             "item": true,
+             "box": [
+              20,
+              7604,
+              335,
+              17
+             ],
+             "children": [
+              {
+               "tag": "h3",
+               "box": [
+                20,
+                7604,
+                335,
+                17
+               ],
+               "fontFamily": "Poppins",
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "16.8px",
+               "color": "rgb(204, 204, 204)",
+               "width": "335px",
+               "text": "Have Sex & Pray"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "c1178b5",
+         "type": "container",
+         "cls": "e-con-full e-flex e-con e-child",
+         "box": [
+          10,
+          7788,
+          355,
+          210
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "flexWrap": "wrap",
+         "gap": "20px",
+         "width": "355px",
+         "paddingTop": "10px",
+         "paddingRight": "10px",
+         "paddingBottom": "10px",
+         "paddingLeft": "10px",
+         "position": "relative",
+         "children": [
+          {
+           "id": "7975d50",
+           "type": "heading",
+           "cls": "",
+           "box": [
+            20,
+            7798,
+            335,
+            20
+           ],
+           "gap": "20px",
+           "width": "335px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "h5",
+             "box": [
+              20,
+              7798,
+              335,
+              20
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "20px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(223, 223, 223)",
+             "width": "335px",
+             "text": "Links"
+            }
+           ]
+          },
+          {
+           "id": "9d6474f",
+           "type": "nav-menu",
+           "cls": "",
+           "box": [
+            20,
+            7838,
+            335,
+            150
+           ],
+           "display": "flex",
+           "flexDirection": "column",
+           "gap": "20px",
+           "width": "335px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "a",
+             "box": [
+              20,
+              7838,
+              335,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "335px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "About"
+            },
+            {
+             "tag": "a",
+             "box": [
+              20,
+              7868,
+              335,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "335px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "Counseling Services"
+            },
+            {
+             "tag": "a",
+             "box": [
+              20,
+              7898,
+              335,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "335px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "Resources"
+            },
+            {
+             "tag": "a",
+             "box": [
+              20,
+              7928,
+              335,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "335px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "Freebies"
+            },
+            {
+             "tag": "a",
+             "box": [
+              20,
+              7958,
+              335,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "335px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "Media"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "526d652",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        10,
+        8058,
+        355,
+        80
+       ],
+       "display": "flex",
+       "flexDirection": "row-reverse",
+       "flexWrap": "wrap-reverse",
+       "justifyContent": "space-between",
+       "alignItems": "center",
+       "gap": "20px",
+       "width": "355px",
+       "paddingTop": "10px",
+       "paddingRight": "10px",
+       "paddingBottom": "10px",
+       "paddingLeft": "10px",
+       "position": "relative",
+       "children": [
+        {
+         "id": "650e720",
+         "type": "heading",
+         "cls": "",
+         "box": [
+          32,
+          8112,
+          323,
+          16
+         ],
+         "gap": "20px",
+         "width": "323.031px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "div",
+           "box": [
+            32,
+            8112,
+            323,
+            16
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "16px",
+           "fontWeight": "600",
+           "lineHeight": "16px",
+           "color": "rgb(204, 204, 204)",
+           "textAlign": "center",
+           "width": "323.031px",
+           "text": "Ruth's Marriage © 2025. All rights reserved."
+          }
+         ]
+        },
+        {
+         "id": "60d6dc4",
+         "type": "nav-menu",
+         "cls": "",
+         "box": [
+          46,
+          8068,
+          309,
+          24
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "309.016px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "a",
+           "box": [
+            46,
+            8068,
+            147,
+            24
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "16px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(204, 204, 204)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "146.594px",
+           "paddingTop": "2px",
+           "paddingRight": "4px",
+           "paddingBottom": "2px",
+           "paddingLeft": "4px",
+           "position": "relative",
+           "href": "https://www.ruthsmarriage.com/cancellation-policy/",
+           "text": "Cancellation Policy"
+          },
+          {
+           "tag": "a",
+           "box": [
+            193,
+            8068,
+            162,
+            24
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "16px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(204, 204, 204)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "162.422px",
+           "paddingTop": "2px",
+           "paddingRight": "4px",
+           "paddingBottom": "2px",
+           "paddingLeft": "4px",
+           "position": "relative",
+           "href": "https://www.ruthsmarriage.com/confidentiality-policy/",
+           "text": "Confidentiality Policy"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

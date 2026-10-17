@@ -1,0 +1,2800 @@
+{
+ "url": "https://www.ruthsmarriage.com/tag/instagram/",
+ "viewport": [
+  1440,
+  900
+ ],
+ "pageHeight": 6852,
+ "bodyFont": {
+  "fontFamily": "-apple-system",
+  "fontSize": "16px",
+  "fontWeight": "400",
+  "lineHeight": "24px",
+  "color": "rgb(51, 51, 51)"
+ },
+ "documents": [
+  {
+   "type": "header",
+   "id": "63",
+   "box": [
+    0,
+    0,
+    1425,
+    137
+   ],
+   "children": [
+    {
+     "id": "69a5270",
+     "type": "container",
+     "cls": "e-flex e-con-boxed e-con e-parent",
+     "box": [
+      0,
+      0,
+      1425,
+      52
+     ],
+     "display": "flex",
+     "flexDirection": "column",
+     "width": "1425px",
+     "maxWidth": "100%",
+     "paddingRight": "10px",
+     "paddingLeft": "10px",
+     "backgroundColor": "rgb(90, 15, 54)",
+     "position": "relative",
+     "children": [
+      {
+       "id": "2fd997b",
+       "type": "html",
+       "cls": "",
+       "box": [
+        143,
+        10,
+        1140,
+        32
+       ],
+       "gap": "20px",
+       "width": "1140px",
+       "maxWidth": "100%",
+       "position": "relative",
+       "html": " <marquee class=\"ruth-marquee\"><a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a> <span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a><span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a><span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a></marquee> ",
+       "text": "Join the 28 Days Lovers Again Challenge with Coach Ruth | Join the 28 Days Lovers Again Challenge with Coach Ruth | Join the 28 Days Lovers Again Challenge with Coach Ruth | Join the 28 Days Lovers Again Challenge with Coach Ruth"
+      }
+     ]
+    },
+    {
+     "id": "e9d8317",
+     "type": "container",
+     "cls": "e-con-full e-flex e-con e-parent elementor-sticky elementor-sticky--active elementor-section--handles-inside elementor-sticky--effects",
+     "box": [
+      0,
+      104,
+      1425,
+      85
+     ],
+     "display": "flex",
+     "gap": "10px",
+     "width": "1425px",
+     "maxWidth": "100%",
+     "paddingTop": "10px",
+     "paddingRight": "20px",
+     "paddingBottom": "10px",
+     "paddingLeft": "20px",
+     "backgroundColor": "rgb(255, 255, 255)",
+     "boxShadow": "rgba(86, 86, 86, 0.23) 0px 0px 31px -11px",
+     "position": "fixed",
+     "zIndex": "1000",
+     "settings": {
+      "sticky": "top",
+      "sticky_on": [
+       "desktop",
+       "tablet",
+       "mobile"
+      ],
+      "sticky_offset": 0,
+      "sticky_effects_offset": 0,
+      "sticky_anchor_link_offset": 0
+     },
+     "children": [
+      {
+       "id": "5a9c508",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        20,
+        114,
+        203,
+        65
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "justifyContent": "center",
+       "gap": "20px",
+       "width": "202.719px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "cd2eff3",
+         "type": "theme-site-logo",
+         "cls": "",
+         "box": [
+          20,
+          114,
+          203,
+          65
+         ],
+         "gap": "20px",
+         "width": "202.719px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "img",
+           "box": [
+            63,
+            114,
+            116,
+            65
+           ],
+           "fontFamily": "-apple-system",
+           "fontSize": "16px",
+           "fontWeight": "400",
+           "lineHeight": "24px",
+           "color": "rgb(204, 51, 102)",
+           "textAlign": "center",
+           "display": "inline-block",
+           "width": "116px",
+           "maxWidth": "100%",
+           "overflow": "clip",
+           "src": "uploads/2025/06/logo-2-1.png",
+           "natural": [
+            1000,
+            563
+           ],
+           "alt": "",
+           "objectFit": "fill"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "689f944",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        233,
+        114,
+        946,
+        65
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "justifyContent": "center",
+       "alignItems": "center",
+       "gap": "20px",
+       "width": "946.047px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "1e0d83a",
+         "type": "nav-menu",
+         "cls": "",
+         "box": [
+          430,
+          124,
+          551,
+          46
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "550.641px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "a",
+           "box": [
+            430,
+            124,
+            79,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "79.3594px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#",
+           "text": "About"
+          },
+          {
+           "tag": "a",
+           "box": [
+            512,
+            124,
+            176,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "176.047px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#",
+           "text": "Counseling Services"
+          },
+          {
+           "tag": "a",
+           "box": [
+            690,
+            124,
+            110,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "110.047px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#",
+           "text": "Resources"
+          },
+          {
+           "tag": "a",
+           "box": [
+            802,
+            124,
+            97,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "96.5781px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#",
+           "text": "Freebies"
+          },
+          {
+           "tag": "a",
+           "box": [
+            900,
+            124,
+            81,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "80.6094px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#",
+           "text": "Media"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "8406e16",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        1189,
+        114,
+        216,
+        65
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "justifyContent": "center",
+       "alignItems": "flex-end",
+       "gap": "20px",
+       "width": "216.234px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "55521df",
+         "type": "button",
+         "cls": "",
+         "box": [
+          1299,
+          131,
+          106,
+          32
+         ],
+         "gap": "20px",
+         "width": "106.219px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "a",
+           "box": [
+            1299,
+            131,
+            106,
+            32
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "12px",
+           "fontWeight": "500",
+           "lineHeight": "12px",
+           "color": "rgb(255, 255, 255)",
+           "textAlign": "center",
+           "display": "inline-block",
+           "width": "106.219px",
+           "paddingTop": "10px",
+           "paddingRight": "10px",
+           "paddingBottom": "10px",
+           "paddingLeft": "10px",
+           "backgroundColor": "rgb(114, 22, 70)",
+           "borderRadius": "10px",
+           "href": "/askcoach",
+           "text": "Ask Coach Ruth"
+          },
+          {
+           "tag": "span",
+           "box": [
+            1309,
+            141,
+            86,
+            12
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "12px",
+           "fontWeight": "500",
+           "lineHeight": "12px",
+           "color": "rgb(255, 255, 255)",
+           "textAlign": "center",
+           "width": "86.2188px",
+           "text": "Ask Coach Ruth"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "e9d8317",
+     "type": "container",
+     "cls": "e-con-full e-flex e-con e-parent elementor-sticky elementor-sticky__spacer",
+     "box": [
+      0,
+      52,
+      1425,
+      85
+     ],
+     "display": "flex",
+     "gap": "10px",
+     "width": "1425px",
+     "maxWidth": "100%",
+     "paddingTop": "10px",
+     "paddingRight": "20px",
+     "paddingBottom": "10px",
+     "paddingLeft": "20px",
+     "backgroundColor": "rgb(255, 255, 255)",
+     "boxShadow": "rgba(86, 86, 86, 0.23) 0px 0px 31px -11px",
+     "position": "relative",
+     "zIndex": "1000",
+     "settings": {
+      "sticky": "top",
+      "sticky_on": [
+       "desktop",
+       "tablet",
+       "mobile"
+      ],
+      "sticky_offset": 0,
+      "sticky_effects_offset": 0,
+      "sticky_anchor_link_offset": 0
+     },
+     "children": [
+      {
+       "id": "5a9c508",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        20,
+        62,
+        203,
+        65
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "justifyContent": "center",
+       "gap": "20px",
+       "width": "202.719px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "cd2eff3",
+         "type": "theme-site-logo",
+         "cls": "",
+         "box": [
+          20,
+          62,
+          203,
+          65
+         ],
+         "gap": "20px",
+         "width": "202.719px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "img",
+           "box": [
+            63,
+            62,
+            116,
+            65
+           ],
+           "fontFamily": "-apple-system",
+           "fontSize": "16px",
+           "fontWeight": "400",
+           "lineHeight": "24px",
+           "color": "rgb(204, 51, 102)",
+           "textAlign": "center",
+           "display": "inline-block",
+           "width": "116px",
+           "maxWidth": "100%",
+           "overflow": "clip",
+           "src": "uploads/2025/06/logo-2-1.png",
+           "natural": [
+            1000,
+            563
+           ],
+           "alt": "",
+           "objectFit": "fill"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "689f944",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        233,
+        62,
+        946,
+        65
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "justifyContent": "center",
+       "alignItems": "center",
+       "gap": "20px",
+       "width": "946.047px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "1e0d83a",
+         "type": "nav-menu",
+         "cls": "",
+         "box": [
+          430,
+          71,
+          551,
+          46
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "550.641px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "a",
+           "box": [
+            430,
+            71,
+            79,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "79.3594px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#"
+          },
+          {
+           "tag": "a",
+           "box": [
+            512,
+            71,
+            176,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "176.047px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#"
+          },
+          {
+           "tag": "a",
+           "box": [
+            690,
+            71,
+            110,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "110.047px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#"
+          },
+          {
+           "tag": "a",
+           "box": [
+            802,
+            71,
+            97,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "96.5781px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#"
+          },
+          {
+           "tag": "a",
+           "box": [
+            900,
+            71,
+            81,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "80.6094px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "8406e16",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        1189,
+        62,
+        216,
+        65
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "justifyContent": "center",
+       "alignItems": "flex-end",
+       "gap": "20px",
+       "width": "216.234px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "55521df",
+         "type": "button",
+         "cls": "",
+         "box": [
+          1299,
+          78,
+          106,
+          32
+         ],
+         "gap": "20px",
+         "width": "106.219px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "a",
+           "box": [
+            1299,
+            78,
+            106,
+            32
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "12px",
+           "fontWeight": "500",
+           "lineHeight": "12px",
+           "color": "rgb(255, 255, 255)",
+           "textAlign": "center",
+           "display": "inline-block",
+           "width": "106.219px",
+           "paddingTop": "10px",
+           "paddingRight": "10px",
+           "paddingBottom": "10px",
+           "paddingLeft": "10px",
+           "backgroundColor": "rgb(114, 22, 70)",
+           "borderRadius": "10px",
+           "href": "/askcoach"
+          },
+          {
+           "tag": "span",
+           "box": [
+            1309,
+            88,
+            86,
+            12
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "12px",
+           "fontWeight": "500",
+           "lineHeight": "12px",
+           "color": "rgb(255, 255, 255)",
+           "textAlign": "center",
+           "width": "86.2188px"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "footer",
+   "id": "329",
+   "box": [
+    0,
+    6366,
+    1425,
+    486
+   ],
+   "children": [
+    {
+     "id": "e79eafb",
+     "type": "container",
+     "cls": "e-flex e-con-boxed e-con e-parent",
+     "box": [
+      0,
+      6366,
+      1425,
+      486
+     ],
+     "display": "flex",
+     "flexDirection": "column",
+     "width": "1425px",
+     "maxWidth": "100%",
+     "paddingRight": "10px",
+     "paddingLeft": "10px",
+     "backgroundColor": "rgb(14, 13, 13)",
+     "position": "relative",
+     "children": [
+      {
+       "id": "1a1b138",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        143,
+        6376,
+        1140,
+        380
+       ],
+       "display": "flex",
+       "gap": "20px",
+       "width": "1140px",
+       "paddingTop": "50px",
+       "paddingBottom": "40px",
+       "position": "relative",
+       "children": [
+        {
+         "id": "6cc34bb",
+         "type": "container",
+         "cls": "e-con-full e-flex e-con e-child",
+         "box": [
+          143,
+          6426,
+          270,
+          290
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "270px",
+         "paddingTop": "10px",
+         "paddingRight": "10px",
+         "paddingBottom": "10px",
+         "paddingLeft": "10px",
+         "position": "relative",
+         "children": [
+          {
+           "id": "ad8f5ce",
+           "type": "heading",
+           "cls": "",
+           "box": [
+            153,
+            6436,
+            250,
+            20
+           ],
+           "gap": "20px",
+           "width": "250px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "h5",
+             "box": [
+              153,
+              6436,
+              250,
+              20
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "20px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(223, 223, 223)",
+             "width": "250px",
+             "text": "Contact"
+            }
+           ]
+          },
+          {
+           "id": "81d0d30",
+           "type": "text-editor",
+           "cls": "",
+           "box": [
+            153,
+            6476,
+            250,
+            59
+           ],
+           "gap": "20px",
+           "width": "250px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "p",
+             "box": [
+              153,
+              6476,
+              250,
+              45
+             ],
+             "fontFamily": "Poppins",
+             "fontSize": "15px",
+             "fontWeight": "400",
+             "lineHeight": "22.5px",
+             "color": "rgb(204, 204, 204)",
+             "width": "250px",
+             "marginBottom": "14.4px",
+             "text": "admin@ruthsmarriage.com, ruthsmarriage@gmail.com"
+            },
+            {
+             "tag": "a",
+             "box": [
+              157,
+              6476,
+              210,
+              21
+             ],
+             "fontFamily": "Poppins",
+             "fontSize": "15px",
+             "fontWeight": "400",
+             "lineHeight": "22.5px",
+             "color": "rgb(204, 204, 204)",
+             "display": "inline",
+             "href": "mailto:admin@ruthsmarriage.com",
+             "text": "admin@ruthsmarriage.com"
+            },
+            {
+             "tag": "a",
+             "box": [
+              153,
+              6499,
+              204,
+              21
+             ],
+             "fontFamily": "Poppins",
+             "fontSize": "15px",
+             "fontWeight": "400",
+             "lineHeight": "22.5px",
+             "color": "rgb(204, 204, 204)",
+             "display": "inline",
+             "href": "mailto:ruthsmarriage@gmail.com",
+             "text": "ruthsmarriage@gmail.com"
+            }
+           ]
+          },
+          {
+           "id": "7ab6fd5",
+           "type": "social-icons",
+           "cls": "e-grid-align-left",
+           "box": [
+            153,
+            6556,
+            250,
+            34
+           ],
+           "gap": "20px",
+           "width": "250px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "a",
+             "box": [
+              153,
+              6556,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(105, 114, 125)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(59, 89, 152)",
+             "borderRadius": "50%",
+             "href": "https://facebook.com/RuthsMarriage",
+             "text": "Facebook"
+            },
+            {
+             "tag": "a",
+             "box": [
+              192,
+              6556,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(105, 114, 125)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(29, 161, 242)",
+             "borderRadius": "50%",
+             "href": "https://web.archive.org/web/20250601131836/https://twitter.com/ruthsmarriage",
+             "text": "Twitter"
+            },
+            {
+             "tag": "a",
+             "box": [
+              231,
+              6556,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(51, 51, 51)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(38, 38, 38)",
+             "borderRadius": "50%",
+             "href": null,
+             "text": "Instagram"
+            },
+            {
+             "tag": "a",
+             "box": [
+              270,
+              6556,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(51, 51, 51)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(205, 32, 31)",
+             "borderRadius": "50%",
+             "href": null,
+             "text": "Youtube"
+            },
+            {
+             "tag": "a",
+             "box": [
+              309,
+              6556,
+              34,
+              34
+             ],
+             "fontFamily": "-apple-system",
+             "fontSize": "17px",
+             "fontWeight": "400",
+             "lineHeight": "17px",
+             "color": "rgb(51, 51, 51)",
+             "textAlign": "center",
+             "display": "inline-flex",
+             "justifyContent": "center",
+             "alignItems": "center",
+             "width": "34px",
+             "backgroundColor": "rgb(0, 0, 0)",
+             "borderRadius": "50%",
+             "href": null,
+             "text": "Threads"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "0df761a",
+         "type": "container",
+         "cls": "e-con-full e-flex e-con e-child",
+         "box": [
+          433,
+          6426,
+          270,
+          290
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "270px",
+         "paddingTop": "10px",
+         "paddingRight": "10px",
+         "paddingBottom": "10px",
+         "paddingLeft": "10px",
+         "position": "relative",
+         "children": [
+          {
+           "id": "93ad02b",
+           "type": "heading",
+           "cls": "",
+           "box": [
+            443,
+            6436,
+            250,
+            20
+           ],
+           "gap": "20px",
+           "width": "250px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "h5",
+             "box": [
+              443,
+              6436,
+              250,
+              20
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "20px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(223, 223, 223)",
+             "width": "250px",
+             "text": "Services"
+            }
+           ]
+          },
+          {
+           "id": "dfc86f1",
+           "type": "posts",
+           "cls": "",
+           "box": [
+            443,
+            6476,
+            250,
+            230
+           ],
+           "gap": "20px",
+           "width": "250px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "settings": {
+            "classic_columns": "1",
+            "classic_columns_tablet": "1",
+            "classic_columns_mobile": "1"
+           },
+           "items": 6,
+           "carousel": false,
+           "grid": {
+            "display": "grid",
+            "gridTemplateColumns": "250px",
+            "gap": "9px 30px",
+            "columnGap": "30px",
+            "rowGap": "9px"
+           },
+           "children": [
+            {
+             "item": true,
+             "box": [
+              443,
+              6476,
+              250,
+              34
+             ],
+             "children": [
+              {
+               "tag": "h3",
+               "box": [
+                443,
+                6476,
+                250,
+                34
+               ],
+               "fontFamily": "Poppins",
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "16.8px",
+               "color": "rgb(204, 204, 204)",
+               "width": "250px",
+               "text": "One Hour Relationship Clarity Session"
+              }
+             ]
+            },
+            {
+             "item": true,
+             "box": [
+              443,
+              6519,
+              250,
+              34
+             ],
+             "children": [
+              {
+               "tag": "h3",
+               "box": [
+                443,
+                6519,
+                250,
+                34
+               ],
+               "fontFamily": "Poppins",
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "16.8px",
+               "color": "rgb(204, 204, 204)",
+               "width": "250px",
+               "text": "One Hour Dating Couples Counseling Session"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "ed4ce69",
+         "type": "container",
+         "cls": "e-con-full e-flex e-con e-child",
+         "box": [
+          723,
+          6426,
+          270,
+          290
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "270px",
+         "paddingTop": "10px",
+         "paddingRight": "10px",
+         "paddingBottom": "10px",
+         "paddingLeft": "10px",
+         "position": "relative",
+         "children": [
+          {
+           "id": "a5f5988",
+           "type": "heading",
+           "cls": "",
+           "box": [
+            733,
+            6436,
+            250,
+            20
+           ],
+           "gap": "20px",
+           "width": "250px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "h5",
+             "box": [
+              733,
+              6436,
+              250,
+              20
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "20px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(223, 223, 223)",
+             "width": "250px",
+             "text": "Resources"
+            }
+           ]
+          },
+          {
+           "id": "c1bc417",
+           "type": "posts",
+           "cls": "",
+           "box": [
+            733,
+            6476,
+            250,
+            230
+           ],
+           "gap": "20px",
+           "width": "250px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "settings": {
+            "classic_columns": "1",
+            "classic_columns_tablet": "1",
+            "classic_columns_mobile": "1"
+           },
+           "items": 6,
+           "carousel": false,
+           "grid": {
+            "display": "grid",
+            "gridTemplateColumns": "250px",
+            "gap": "9px 30px",
+            "columnGap": "30px",
+            "rowGap": "9px"
+           },
+           "children": [
+            {
+             "item": true,
+             "box": [
+              733,
+              6476,
+              250,
+              34
+             ],
+             "children": [
+              {
+               "tag": "h3",
+               "box": [
+                733,
+                6476,
+                250,
+                34
+               ],
+               "fontFamily": "Poppins",
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "16.8px",
+               "color": "rgb(204, 204, 204)",
+               "width": "250px",
+               "text": "52 Rules of Dating and Relationships"
+              }
+             ]
+            },
+            {
+             "item": true,
+             "box": [
+              733,
+              6519,
+              250,
+              17
+             ],
+             "children": [
+              {
+               "tag": "h3",
+               "box": [
+                733,
+                6519,
+                250,
+                17
+               ],
+               "fontFamily": "Poppins",
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "16.8px",
+               "color": "rgb(204, 204, 204)",
+               "width": "250px",
+               "text": "Have Sex & Pray"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "c1178b5",
+         "type": "container",
+         "cls": "e-con-full e-flex e-con e-child",
+         "box": [
+          1013,
+          6426,
+          270,
+          290
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "270px",
+         "paddingTop": "10px",
+         "paddingRight": "10px",
+         "paddingBottom": "10px",
+         "paddingLeft": "10px",
+         "position": "relative",
+         "children": [
+          {
+           "id": "7975d50",
+           "type": "heading",
+           "cls": "",
+           "box": [
+            1023,
+            6436,
+            250,
+            20
+           ],
+           "gap": "20px",
+           "width": "250px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "h5",
+             "box": [
+              1023,
+              6436,
+              250,
+              20
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "20px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(223, 223, 223)",
+             "width": "250px",
+             "text": "Links"
+            }
+           ]
+          },
+          {
+           "id": "9d6474f",
+           "type": "nav-menu",
+           "cls": "",
+           "box": [
+            1023,
+            6476,
+            250,
+            150
+           ],
+           "display": "flex",
+           "flexDirection": "column",
+           "gap": "20px",
+           "width": "250px",
+           "maxWidth": "100%",
+           "position": "relative",
+           "parts": [
+            {
+             "tag": "a",
+             "box": [
+              1023,
+              6476,
+              250,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "250px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "About"
+            },
+            {
+             "tag": "a",
+             "box": [
+              1023,
+              6506,
+              250,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "250px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "Counseling Services"
+            },
+            {
+             "tag": "a",
+             "box": [
+              1023,
+              6536,
+              250,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "250px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "Resources"
+            },
+            {
+             "tag": "a",
+             "box": [
+              1023,
+              6566,
+              250,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "250px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "Freebies"
+            },
+            {
+             "tag": "a",
+             "box": [
+              1023,
+              6596,
+              250,
+              30
+             ],
+             "fontFamily": "Nunito",
+             "fontSize": "16px",
+             "fontWeight": "600",
+             "lineHeight": "20px",
+             "color": "rgb(204, 204, 204)",
+             "display": "flex",
+             "alignItems": "center",
+             "width": "250px",
+             "paddingTop": "5px",
+             "paddingBottom": "5px",
+             "position": "relative",
+             "href": "#",
+             "text": "Media"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "526d652",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        143,
+        6776,
+        1140,
+        66
+       ],
+       "display": "flex",
+       "justifyContent": "space-between",
+       "alignItems": "center",
+       "gap": "20px",
+       "width": "1140px",
+       "paddingTop": "10px",
+       "paddingRight": "10px",
+       "paddingBottom": "10px",
+       "paddingLeft": "10px",
+       "position": "relative",
+       "children": [
+        {
+         "id": "650e720",
+         "type": "heading",
+         "cls": "",
+         "box": [
+          153,
+          6801,
+          323,
+          16
+         ],
+         "gap": "20px",
+         "width": "323.031px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "div",
+           "box": [
+            153,
+            6801,
+            323,
+            16
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "16px",
+           "fontWeight": "600",
+           "lineHeight": "16px",
+           "color": "rgb(204, 204, 204)",
+           "width": "323.031px",
+           "text": "Ruth's Marriage © 2025. All rights reserved."
+          }
+         ]
+        },
+        {
+         "id": "60d6dc4",
+         "type": "nav-menu",
+         "cls": "",
+         "box": [
+          899,
+          6786,
+          373,
+          46
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "373.016px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "a",
+           "box": [
+            899,
+            6786,
+            179,
+            46
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "16px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(204, 204, 204)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "178.594px",
+           "paddingTop": "13px",
+           "paddingRight": "20px",
+           "paddingBottom": "13px",
+           "paddingLeft": "20px",
+           "position": "relative",
+           "href": "https://www.ruthsmarriage.com/cancellation-policy/",
+           "text": "Cancellation Policy"
+          },
+          {
+           "tag": "a",
+           "box": [
+            1078,
+            6786,
+            194,
+            46
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "16px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(204, 204, 204)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "194.422px",
+           "paddingTop": "13px",
+           "paddingRight": "20px",
+           "paddingBottom": "13px",
+           "paddingLeft": "20px",
+           "position": "relative",
+           "href": "https://www.ruthsmarriage.com/confidentiality-policy/",
+           "text": "Confidentiality Policy"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "helloMain": {
+  "box": [
+   143,
+   145,
+   1140,
+   6201
+  ],
+  "width": "1140px",
+  "maxWidth": "1140px",
+  "parts": [
+   {
+    "tag": "h1",
+    "box": [
+     143,
+     145,
+     1140,
+     48
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "40px",
+    "fontWeight": "600",
+    "lineHeight": "48px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "maxWidth": "1140px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "Tag: Instagram"
+   },
+   {
+    "tag": "article",
+    "box": [
+     143,
+     209,
+     1140,
+     584
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "text": "6 Reasons Why Couples Grow Apart and Lose Their Intimacy Couples don’t just grow apart overnight. It’s not like one day you are madly in love, and the next day you are strangers living in the same house. No, it ha…"
+   },
+   {
+    "tag": "h2",
+    "box": [
+     143,
+     209,
+     1140,
+     38
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "6 Reasons Why Couples Grow Apart and Lose Their Intimacy"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     206,
+     894,
+     43
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/6-reasons-why-couples-grow-apart-and-lose-their-intimacy/",
+    "text": "6 Reasons Why Couples Grow Apart and Lose Their Intimacy"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     748,
+     1140,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/6-reasons-why-couples-grow-apart-and-lose-their-intimacy/"
+   },
+   {
+    "tag": "img",
+    "box": [
+     143,
+     263,
+     1140,
+     500
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "width": "1140px",
+    "maxWidth": "100%",
+    "overflow": "clip",
+    "src": "uploads/2025/06/6-Reasons-Why-Couples-Grow-Apart-and-Lose-Their-Intimacy.jpg",
+    "natural": [
+     800,
+     533
+    ],
+    "alt": "",
+    "objectFit": "cover"
+   },
+   {
+    "tag": "p",
+    "box": [
+     143,
+     769,
+     1140,
+     24
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginBottom": "14.4px",
+    "text": "Couples don’t just grow apart overnight. It’s not like one day you are madly in love, and the next day you are strangers living in the same house. No, it ha…"
+   },
+   {
+    "tag": "article",
+    "box": [
+     143,
+     808,
+     1140,
+     584
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "text": "Building a Healthy Family: How to Create the Kind of Family You Want It doesn’t really matter what family you come from; what matters is the kind of family you are now creating. Are you consciously creating the type of family y…"
+   },
+   {
+    "tag": "h2",
+    "box": [
+     143,
+     808,
+     1140,
+     38
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "Building a Healthy Family: How to Create the Kind of Family You Want"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     805,
+     1027,
+     43
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/building-a-healthy-family-how-to-create-the-kind-of-family-you-want/",
+    "text": "Building a Healthy Family: How to Create the Kind of Family You Want"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     1347,
+     1140,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/building-a-healthy-family-how-to-create-the-kind-of-family-you-want/"
+   },
+   {
+    "tag": "img",
+    "box": [
+     143,
+     862,
+     1140,
+     500
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "width": "1140px",
+    "maxWidth": "100%",
+    "overflow": "clip",
+    "src": "uploads/2025/03/black-family.jpg",
+    "natural": [
+     800,
+     532
+    ],
+    "alt": "",
+    "objectFit": "cover"
+   },
+   {
+    "tag": "p",
+    "box": [
+     143,
+     1368,
+     1140,
+     24
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginBottom": "14.4px",
+    "text": "It doesn’t really matter what family you come from; what matters is the kind of family you are now creating. Are you consciously creating the type of family y…"
+   },
+   {
+    "tag": "article",
+    "box": [
+     143,
+     1406,
+     1140,
+     608
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "text": "Three Things I Learnt in Marriage and You Should Know Too Inside this Article I have worked with so many couples and one thing I realized is that most couples want to have a great marriage but almost don’t know what …"
+   },
+   {
+    "tag": "h2",
+    "box": [
+     143,
+     1406,
+     1140,
+     38
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "Three Things I Learnt in Marriage and You Should Know Too"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     1403,
+     876,
+     43
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/three-things-i-learnt-in-marriage-and-you-should-know-too/",
+    "text": "Three Things I Learnt in Marriage and You Should Know Too"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     1946,
+     1140,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/three-things-i-learnt-in-marriage-and-you-should-know-too/"
+   },
+   {
+    "tag": "img",
+    "box": [
+     143,
+     1461,
+     1140,
+     500
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "width": "1140px",
+    "maxWidth": "100%",
+    "overflow": "clip",
+    "src": "uploads/2025/06/Common-Causes-of-Conflicts-in-Marriage.webp",
+    "natural": [
+     800,
+     533
+    ],
+    "alt": "",
+    "objectFit": "cover"
+   },
+   {
+    "tag": "p",
+    "box": [
+     143,
+     1967,
+     1140,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginBottom": "14.4px",
+    "text": "Inside this Article I have worked with so many couples and one thing I realized is that most couples want to have a great marriage but almost don’t know what …"
+   },
+   {
+    "tag": "article",
+    "box": [
+     143,
+     2029,
+     1140,
+     584
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "text": "5 Signs of Unhealthy Conflicts in Your Relationship or Marriage Inside this Article What if I told you that conflicts are good for your marriage? “Wow, Coach, how can you say that?” Healthy conflicts are necessary for an…"
+   },
+   {
+    "tag": "h2",
+    "box": [
+     143,
+     2029,
+     1140,
+     38
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "5 Signs of Unhealthy Conflicts in Your Relationship or Marriage"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     2026,
+     925,
+     43
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/5-signs-of-unhealthy-conflicts-in-your-relationship-or-marriage/",
+    "text": "5 Signs of Unhealthy Conflicts in Your Relationship or Marriage"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     2569,
+     1140,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/5-signs-of-unhealthy-conflicts-in-your-relationship-or-marriage/"
+   },
+   {
+    "tag": "img",
+    "box": [
+     143,
+     2084,
+     1140,
+     500
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "width": "1140px",
+    "maxWidth": "100%",
+    "overflow": "clip",
+    "src": "uploads/2025/06/Tips-for-a-Successful-Marriage.webp",
+    "natural": [
+     800,
+     533
+    ],
+    "alt": "",
+    "objectFit": "cover"
+   },
+   {
+    "tag": "p",
+    "box": [
+     143,
+     2590,
+     1140,
+     24
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginBottom": "14.4px",
+    "text": "Inside this Article What if I told you that conflicts are good for your marriage? “Wow, Coach, how can you say that?” Healthy conflicts are necessary for an…"
+   },
+   {
+    "tag": "article",
+    "box": [
+     143,
+     2628,
+     1140,
+     608
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "text": "5 Ways to Have More Fun in Your Marriage Inside this Article Over the years, I have realized that when it comes to talking about having fun in marriages, most couples picture these expensive actions th…"
+   },
+   {
+    "tag": "h2",
+    "box": [
+     143,
+     2628,
+     1140,
+     38
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "5 Ways to Have More Fun in Your Marriage"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     2625,
+     623,
+     43
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/5-ways-to-have-more-fun-in-your-marriage/",
+    "text": "5 Ways to Have More Fun in Your Marriage"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     3167,
+     1140,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/5-ways-to-have-more-fun-in-your-marriage/"
+   },
+   {
+    "tag": "img",
+    "box": [
+     143,
+     2682,
+     1140,
+     500
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "width": "1140px",
+    "maxWidth": "100%",
+    "overflow": "clip",
+    "src": "uploads/2025/06/5-Ways-to-Have-more-Fun-in-your-Marriage-photo.webp",
+    "natural": [
+     800,
+     533
+    ],
+    "alt": "",
+    "objectFit": "cover"
+   },
+   {
+    "tag": "p",
+    "box": [
+     143,
+     3188,
+     1140,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginBottom": "14.4px",
+    "text": "Inside this Article Over the years, I have realized that when it comes to talking about having fun in marriages, most couples picture these expensive actions th…"
+   },
+   {
+    "tag": "article",
+    "box": [
+     143,
+     3251,
+     1140,
+     608
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "text": "Lessons From Our 12 Years Marriage Inside this Article For the longest, people have always asked me, “Coach, how did you do it? How did you make your marriage work?” While I have tried to ans…"
+   },
+   {
+    "tag": "h2",
+    "box": [
+     143,
+     3251,
+     1140,
+     38
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "Lessons From Our 12 Years Marriage"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     3248,
+     536,
+     43
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/lessons-from-our-12-years-marriage/",
+    "text": "Lessons From Our 12 Years Marriage"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     3790,
+     1140,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/lessons-from-our-12-years-marriage/"
+   },
+   {
+    "tag": "img",
+    "box": [
+     143,
+     3305,
+     1140,
+     500
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "width": "1140px",
+    "maxWidth": "100%",
+    "overflow": "clip",
+    "src": "uploads/2025/06/pexels-antoni-shkraba-6207751-scaled-1-1024x683.jpg",
+    "natural": [
+     800,
+     533
+    ],
+    "alt": "",
+    "objectFit": "cover"
+   },
+   {
+    "tag": "p",
+    "box": [
+     143,
+     3811,
+     1140,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginBottom": "14.4px",
+    "text": "Inside this Article For the longest, people have always asked me, “Coach, how did you do it? How did you make your marriage work?” While I have tried to ans…"
+   },
+   {
+    "tag": "article",
+    "box": [
+     143,
+     3873,
+     1140,
+     608
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "text": "How to Handle a Difficult Spouse Handling a difficult spouse can be one of the most challenging aspects of any marriage. Handling a difficult spouse can be one of the most challenging aspects o…"
+   },
+   {
+    "tag": "h2",
+    "box": [
+     143,
+     3873,
+     1140,
+     38
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "How to Handle a Difficult Spouse"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     3870,
+     487,
+     43
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/how-to-handle-a-difficult-spouse/",
+    "text": "How to Handle a Difficult Spouse"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     4413,
+     1140,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/how-to-handle-a-difficult-spouse/"
+   },
+   {
+    "tag": "img",
+    "box": [
+     143,
+     3928,
+     1140,
+     500
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "width": "1140px",
+    "maxWidth": "100%",
+    "overflow": "clip",
+    "src": "uploads/2024/10/GetPaidStock.com-627bf244d6abb.jpg",
+    "natural": [
+     800,
+     489
+    ],
+    "alt": "",
+    "objectFit": "cover"
+   },
+   {
+    "tag": "p",
+    "box": [
+     143,
+     4434,
+     1140,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginBottom": "14.4px",
+    "text": "Handling a difficult spouse can be one of the most challenging aspects of any marriage. Handling a difficult spouse can be one of the most challenging aspects o…"
+   },
+   {
+    "tag": "article",
+    "box": [
+     143,
+     4496,
+     1140,
+     584
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "text": "How to Rebuild Your Marriage from a Difficult Place (3 Proven Steps) “My marriage is finished. Nothing I do works.” She sat next to me and from the look of things, I could tell she was battling to keep the tears from flowing…"
+   },
+   {
+    "tag": "h2",
+    "box": [
+     143,
+     4496,
+     1140,
+     38
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "How to Rebuild Your Marriage from a Difficult Place (3 Proven Steps)"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     4493,
+     1013,
+     43
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/how-to-rebuild-your-marriage-from-a-difficult-place-3-proven-steps/",
+    "text": "How to Rebuild Your Marriage from a Difficult Place (3 Proven Steps)"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     5036,
+     1140,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/how-to-rebuild-your-marriage-from-a-difficult-place-3-proven-steps/"
+   },
+   {
+    "tag": "img",
+    "box": [
+     143,
+     4551,
+     1140,
+     500
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "width": "1140px",
+    "maxWidth": "100%",
+    "overflow": "clip",
+    "src": "uploads/2024/09/GetPaidStock.com-62b341ff1cb63.jpg",
+    "natural": [
+     800,
+     533
+    ],
+    "alt": "",
+    "objectFit": "cover"
+   },
+   {
+    "tag": "p",
+    "box": [
+     143,
+     5057,
+     1140,
+     24
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginBottom": "14.4px",
+    "text": "“My marriage is finished. Nothing I do works.” She sat next to me and from the look of things, I could tell she was battling to keep the tears from flowing…"
+   },
+   {
+    "tag": "article",
+    "box": [
+     143,
+     5095,
+     1140,
+     608
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "text": "Four Perspectives for Building an Intimate Marriage Have you ever thought about what makes a marriage truly intimate? Or have you wondered how to be really intimate with your partner? Intimacy goes beyond physica…"
+   },
+   {
+    "tag": "h2",
+    "box": [
+     143,
+     5095,
+     1140,
+     38
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "Four Perspectives for Building an Intimate Marriage"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     5092,
+     757,
+     43
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/four-perspectives-for-building-an-intimate-marriage/",
+    "text": "Four Perspectives for Building an Intimate Marriage"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     5634,
+     1140,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/four-perspectives-for-building-an-intimate-marriage/"
+   },
+   {
+    "tag": "img",
+    "box": [
+     143,
+     5149,
+     1140,
+     500
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "width": "1140px",
+    "maxWidth": "100%",
+    "overflow": "clip",
+    "src": "uploads/2024/07/Aerobic.jpeg",
+    "natural": [
+     800,
+     532
+    ],
+    "alt": "",
+    "objectFit": "cover"
+   },
+   {
+    "tag": "p",
+    "box": [
+     143,
+     5655,
+     1140,
+     48
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginBottom": "14.4px",
+    "text": "Have you ever thought about what makes a marriage truly intimate? Or have you wondered how to be really intimate with your partner? Intimacy goes beyond physica…"
+   },
+   {
+    "tag": "article",
+    "box": [
+     143,
+     5718,
+     1140,
+     584
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "text": "Building a Thriving Marriage: Three Things to Let Go in Your Marriage Marriage is a beautiful journey. Two people working together to create a healthy, happy relationship is a beautiful thing. But as with all things beautiful, eve…"
+   },
+   {
+    "tag": "h2",
+    "box": [
+     143,
+     5718,
+     1140,
+     38
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginTop": "8px",
+    "marginBottom": "16px",
+    "text": "Building a Thriving Marriage: Three Things to Let Go in Your Marriage"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     5715,
+     1013,
+     43
+    ],
+    "fontFamily": "Nunito",
+    "fontSize": "32px",
+    "fontWeight": "600",
+    "lineHeight": "38.4px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/building-a-thriving-marriage-three-things-to-let-go-in-your-marriage/",
+    "text": "Building a Thriving Marriage: Three Things to Let Go in Your Marriage"
+   },
+   {
+    "tag": "a",
+    "box": [
+     143,
+     6257,
+     1140,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "textDecorationLine": "underline",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/building-a-thriving-marriage-three-things-to-let-go-in-your-marriage/"
+   },
+   {
+    "tag": "img",
+    "box": [
+     143,
+     5772,
+     1140,
+     500
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "width": "1140px",
+    "maxWidth": "100%",
+    "overflow": "clip",
+    "src": "uploads/2025/06/Three-Things-to-Let-Go-in-Your-Marriage-1-1024x819.webp",
+    "natural": [
+     800,
+     639
+    ],
+    "alt": "",
+    "objectFit": "cover"
+   },
+   {
+    "tag": "p",
+    "box": [
+     143,
+     6278,
+     1140,
+     24
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "width": "1140px",
+    "marginBottom": "14.4px",
+    "text": "Marriage is a beautiful journey. Two people working together to create a healthy, happy relationship is a beautiful thing. But as with all things beautiful, eve…"
+   },
+   {
+    "tag": "nav",
+    "box": [
+     143,
+     6322,
+     1140,
+     24
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(51, 51, 51)",
+    "display": "flex",
+    "justifyContent": "space-between",
+    "width": "1140px",
+    "marginTop": "20px",
+    "marginBottom": "20px",
+    "text": "Next →"
+   },
+   {
+    "tag": "a",
+    "box": [
+     1230,
+     6325,
+     52,
+     18
+    ],
+    "fontFamily": "-apple-system",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)",
+    "display": "inline",
+    "href": "https://www.ruthsmarriage.com/tag/instagram/page/2/",
+    "text": "Next →"
+   }
+  ]
+ }
+}
