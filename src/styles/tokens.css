@@ -1,0 +1,81 @@
+/* Design tokens measured from the live Elementor kit (post-6.css) and
+   discovery/specs/raw/*. Values are copied as measured — do not round.
+   See migration-plan/page-maps/_global.md → Tokens. */
+
+:root {
+	/* Colours (kit globals, named after them) */
+	--color-primary: #BF1E72;
+	--color-accent: #ED0D82;
+	--color-plum: #5A0F36;
+	--color-plum-button: #721646;
+	--color-primary-14: #BF1E7224;
+	--color-primary-5: #BF1E720D;
+	--color-grey: #CCCCCC;
+	--color-text: #2E2E2E;
+	--color-black: #000000;
+	--color-heading-soft: #363636;
+	--color-grey-card: #63666A;
+	--color-grey-text: #474A4D;
+	--color-grey-light: #EBEBEB;
+	--color-footer-bg: #0E0D0D;
+	--color-footer-head: #DFDFDF;
+	--color-footer-text: #CCCCCC;
+	--color-dropdown-text: #33373D;
+	--color-body: #333333;
+	--color-nav-divider: #7A7A7A30;
+
+	/* Shadows */
+	--shadow-header: 0 0 31px -11px rgba(86, 86, 86, 0.23);
+
+	/* Layout */
+	--container: 1140px;
+
+	/* Breakpoints (Elementor): tablet ≤ 1024px, mobile ≤ 767px */
+	--bp-tablet: 1024px;
+	--bp-mobile: 767px;
+}
+
+/* Fonts (self-hosted via @fontsource, weights in use only) */
+@import "@fontsource/nunito/500.css";
+@import "@fontsource/nunito/600.css";
+@import "@fontsource/nunito/800.css";
+@import "@fontsource/nunito/600-italic.css";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/roboto/600.css";
+
+html {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-size: 16px;
+	line-height: 1.5;
+	color: var(--color-body);
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Utility: visually hidden but accessible */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}

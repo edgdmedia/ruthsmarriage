@@ -1,34 +1,43 @@
 ---
-import { getMenuWithCacheHint, getSiteSettingsWithCacheHint } from "emdash";
+import { getMenuWithCacheHint, getSiteSettingsWithCacheHint, getEmDashCollection } from "emdash";
 import { EmDashHead, EmDashBodyStart, EmDashBodyEnd } from "emdash/ui";
 import { createPublicPageContext } from "emdash/page";
-import { resolveStarterSiteIdentity } from "../utils/site-identity";
+import { setCacheHint } from "../lib/cache";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 interface Props {
 	title: string;
 	pageTitle?: string | null;
-	description?: null | string;
-	image?: null | string;
-	canonical?: null | string;
-	/** Pass content reference for plugin page contributions on content pages */
-	content?: { collection: string; id: string; slug?: null | string };
+	description?: string | null;
+	image?: string | null;
+	canonical?: string | null;
+	content?: { collection: string; id: string; slug?: string | null };
 }
 
 const { title, pageTitle, description, image, canonical, content } = Astro.props;
-const [settingsResult, menuResult] = await Promise.all([
-	getSiteSettingsWithCacheHint(),
-	getMenuWithCacheHint("primary"),
-]);
-if (Astro.cache?.enabled && settingsResult.cacheHint) Astro.cache.set(settingsResult.cacheHint);
-if (Astro.cache?.enabled && menuResult.cacheHint) Astro.cache.set(menuResult.cacheHint);
 
-const { siteTitle } = resolveStarterSiteIdentity(settingsResult.data);
-const titleIncludesSiteName =
-	title === siteTitle ||
-	title.endsWith(` | ${siteTitle}`) ||
-	title.endsWith(` — ${siteTitle}`);
-const fullTitle = titleIncludesSiteName ? title : `${title} — ${siteTitle}`;
-const pageDescription = description ?? null;
+const settingsResult = await getSiteSettingsWithCacheHint();
+const menuResult = await getMenuWithCacheHint("primary");
+setCacheHint(Astro.cache, settingsResult.cacheHint);
+setCacheHint(Astro.cache, menuResult.cacheHint);
+
+const marqueeResult = await getEmDashCollection("marquee_items", {
+	limit: 100,
+	orderBy: { order: "asc" },
+});
+setCacheHint(Astro.cache, marqueeResult.cacheHint);
+
+const { data: settings } = settingsResult;
+const { data: menu } = menuResult;
+const marqueeItems = marqueeResult.entries?.map((e) => ({
+	text: e.data.text,
+	link: e.data.link,
+})) || [];
+
+const siteTitle = settings?.title ?? "Ruth's Marriage";
+const fullTitle = pageTitle ?? title;
+const pageDescription = description ?? settings?.tagline ?? null;
 
 const pageCtx = createPublicPageContext({
 	Astro,
@@ -50,19 +59,19 @@ const pageCtx = createPublicPageContext({
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{fullTitle}</title>
+		{pageDescription && <meta name="description" content={pageDescription} />}
+		{canonical && <link rel="canonical" href={canonical} />}
+		{image && <meta property="og:image" content={image} />}
 		<EmDashHead page={pageCtx} />
 	</head>
 	<body>
 		<EmDashBodyStart page={pageCtx} />
 
-		<!-- Phase 2 placeholder: the real Elementor-matched header/footer arrive in Phase 4 (page-maps/_global.md). -->
-		<header style="padding:16px 24px;background:#5A0F36;color:#fff;font-family:sans-serif;">
-			<strong>{siteTitle || "Ruth's Marriage"}</strong> — rebuild in progress
-		</header>
-
+		<Header menu={menu as any} logoSrc={settings?.logo?.url} marqueeItems={marqueeItems} />
 		<main>
 			<slot />
 		</main>
+		<Footer menus={menu ? { primary: menu as any } : undefined} settings={settings as any} />
 
 		<EmDashBodyEnd page={pageCtx} />
 	</body>
