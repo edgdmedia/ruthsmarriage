@@ -2,7 +2,7 @@
    Each `.swiper[data-swiper]` element carries its JSON config; markup works
    without JS (first slidesPerView slides show side by side via CSS). */
 import Swiper from "swiper";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 
 interface CarouselConfig {
 	slidesPerView?: number;
@@ -16,7 +16,7 @@ export function initCarousels(root: Document | HTMLElement = document) {
 		if ((el as any).swiper) continue; // already initialised
 		const cfg: CarouselConfig = JSON.parse(el.dataset.swiper as string);
 		const opts: any = {
-			modules: [Navigation, Pagination, Autoplay],
+			modules: [Navigation, Pagination],
 			slidesPerView: cfg.slidesPerView ?? 3,
 			spaceBetween: 0,
 			loop: true,
