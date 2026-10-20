@@ -10,6 +10,7 @@ import {
 	getService,
 	getTerm,
 	menus,
+	pages,
 	posts,
 	postsInCategory,
 	postsWithTag,
@@ -63,12 +64,20 @@ describe("content data", () => {
 	});
 
 	it("has a local file for every referenced image", () => {
-		for (const item of [...services, ...resources, ...posts]) {
+		for (const item of [...services, ...resources, ...posts, ...pages]) {
 			expect(imageExists(item.featured_image?.src)).toBe(true);
+			expect(imageExists(item.hero_image?.src)).toBe(true);
+			expect(imageExists(item.side_image?.src)).toBe(true);
 		}
 		expect(imageExists(settings.logo?.src)).toBe(true);
 		for (const banner of banners) {
 			expect(imageExists(banner.image)).toBe(true);
+		}
+		// Image blocks inside page content (e.g. story photo columns).
+		for (const page of pages) {
+			for (const block of page.content) {
+				if (block.type === "image") expect(imageExists(block.src)).toBe(true);
+			}
 		}
 	});
 

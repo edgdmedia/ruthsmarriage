@@ -23,6 +23,95 @@ export interface PortableTextBlock {
 
 export type PortableText = PortableTextBlock[];
 
+// ---------------------------------------------------------------- rich page blocks
+//
+// Produced by scripts/reference/extract-page-content.mjs from the captured
+// WordPress pages. One block per Elementor widget, in document order.
+
+export interface PageHeading {
+	type: "heading";
+	level: 1 | 2 | 3 | 4 | 5 | 6;
+	text: string;
+	html?: string;
+}
+
+export interface PageParagraph {
+	type: "paragraph";
+	html: string;
+	dropCap?: boolean;
+}
+
+export interface PageImage {
+	type: "image";
+	src: string;
+	alt: string;
+	background?: boolean;
+}
+
+export interface PageButton {
+	type: "button";
+	label: string;
+	href: string;
+	icon?: string;
+}
+
+export interface PageDivider {
+	type: "divider";
+}
+
+export interface PageIconBox {
+	type: "iconBox";
+	icon: string;
+	title: string;
+	text: string;
+}
+
+export interface PageIcon {
+	type: "icon";
+	icon: string;
+}
+
+export interface PageVideo {
+	type: "video";
+	src: string;
+	title?: string;
+}
+
+export interface PageHtml {
+	type: "html";
+	html: string;
+}
+
+export interface PageListing {
+	type: "listing";
+	listingId: string | null;
+	postType: string | null;
+	limit: number | null;
+	columns: number | null;
+}
+
+export interface PageHero {
+	type: "hero";
+	title: string;
+	image: string;
+	variant: "photo" | "pattern";
+}
+
+export type PageBlock =
+	| PageHeading
+	| PageParagraph
+	| PageImage
+	| PageButton
+	| PageDivider
+	| PageIconBox
+	| PageIcon
+	| PageVideo
+	| PageHtml
+	| PageListing
+	| PageHero;
+
+export type PageContent = PageBlock[];
+
 export interface BaseEntry {
 	id: string;
 	slug: string;
@@ -76,7 +165,7 @@ export interface Page extends BaseEntry {
 	hero_title: string | null;
 	hero_image: MediaRef | null;
 	side_image: MediaRef | null;
-	content: PortableText;
+	content: PageContent;
 }
 
 export interface MenuItem {
