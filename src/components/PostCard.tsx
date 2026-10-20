@@ -1,16 +1,47 @@
+import type { Post } from "../data/types";
+
 /* PostCard — home "Inspired Features" carousel card (template 239).
    360 wide in a 390px slide; whole card links to the post. */
-export const PostCard = ({ post }: { post: { slug: string; title: string; featuredImage?: string; excerpt?: string; category?: { slug?: string; label?: string } | string } }) => {
-	const excerpt = post.excerpt ? post.excerpt.split(/\s+/).slice(0, 10).join(" ") + "…" : "";
-	const catLabel = typeof post.category === "string" ? post.category : post.category?.label;
-	const catSlug = typeof post.category === "string" ? post.category : post.category?.slug;
+
+/* The seeded excerpt is raw WP HTML (e.g. "<p>…&#8230;</p>"). Strip tags,
+   decode the common entities, collapse whitespace, then trim to `words`. */
+function cleanExcerpt(raw: string | null | undefined, words = 25): string {
+	if (!raw) return "";
+	const decoded = raw
+		.replace(/<[^>]+>/g, " ")
+		.replace(/&#8230;|&hellip;/gi, "…")
+		.replace(/&#8217;|&rsquo;/gi, "’")
+		.replace(/&#8216;|&lsquo;/gi, "‘")
+		.replace(/&#8220;|&ldquo;/gi, "“")
+		.replace(/&#8221;|&rdquo;/gi, "”")
+		.replace(/&#8211;|&ndash;/gi, "–")
+		.replace(/&#8212;|&mdash;/gi, "—")
+		.replace(/&nbsp;/gi, " ")
+		.replace(/&amp;/gi, "&")
+		.replace(/&#\d+;/g, "")
+		.replace(/\s+/g, " ")
+		.trim()
+		.replace(/[.…]+$/g, "")
+		.trim();
+	const parts = decoded.split(" ");
+	if (parts.length <= words) return decoded;
+	return parts.slice(0, words).join(" ") + "…";
+}
+
+export const PostCard = ({ post }: { post: Post }) => {
+	const img = post.featured_image;
+	const imgUrl = img?.src ?? "";
+	const excerpt = cleanExcerpt(post.excerpt, 25);
+	const category = post.terms?.category?.[0];
+	const catLabel = category?.label;
+	const catSlug = category?.slug;
 	return (
-		<a
+		<article
 			className="post-card"
-			href={`/${post.slug}/`}
 			style={{
 				display: "block",
-				width: "360px",
+				width: "100%",
+				maxWidth: "360px",
 				background: "#ffffff",
 				borderRadius: "10px",
 				boxShadow: "0 0 28px -10px rgba(156,156,156,0.5)",
@@ -29,15 +60,16 @@ export const PostCard = ({ post }: { post: { slug: string; title: string; featur
 					height: "100%",
 				}}
 			>
-				{post.featuredImage && (
+				{imgUrl && (
 					<img
-						src={post.featuredImage}
+						src={imgUrl}
 						alt=""
-						style={{ width: "330px", minHeight: "164px", objectFit: "cover", borderRadius: 0, display: "block" }}
+						style={{ width: "100%", minHeight: "164px", objectFit: "cover", borderRadius: 0, display: "block" }}
 					/>
 				)}
 				{catLabel && (
 					<a
+						className="post-card__category"
 						href={catSlug ? `/category/${catSlug}/` : "#"}
 						style={{
 							display: "inline-flex",
@@ -68,16 +100,18 @@ export const PostCard = ({ post }: { post: { slug: string; title: string; featur
 				<h2
 					style={{ fontFamily: "'Nunito',sans-serif", fontSize: "16px", lineHeight: "16px", fontWeight: "700", color: "#BF1E72", margin: "0", textAlign: "left" }}
 				>
-					{post.title}
+					<a className="post-card__title" href={`/${post.slug}/`}>
+						{post.title}
+					</a>
 				</h2>
 				{excerpt && (
 					<p
-						style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", lineHeight: "21px", fontWeight: "400", color: "#333333", margin: "0", display: "-webkit-box", WebkitLineClamp: "2", WebkitBoxOrient: "vertical", overflow: "hidden" }}
+						style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", lineHeight: "21px", fontWeight: "400", color: "#333333", margin: "0", display: "-webkit-box", WebkitLineClamp: "4", WebkitBoxOrient: "vertical", overflow: "hidden" }}
 					>
 						{excerpt}
 					</p>
 				)}
 			</div>
-					</a>
+		</article>
 	);
 };

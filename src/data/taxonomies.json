@@ -1,0 +1,62 @@
+[
+	{
+		"name": "category",
+		"label": "Categories",
+		"labelSingular": "Category",
+		"terms": [
+			{
+				"slug": "marriage",
+				"label": "Marriage"
+			}
+		]
+	},
+	{
+		"name": "tag",
+		"label": "Tags",
+		"labelSingular": "Tag",
+		"terms": [
+			{
+				"slug": "instagram",
+				"label": "Instagram"
+			},
+			{
+				"slug": "godly-perspective",
+				"label": "Godly Perspective"
+			}
+		]
+	},
+	{
+		"name": "service_type",
+		"label": "Service Types",
+		"labelSingular": "Service Type",
+		"terms": [
+			{
+				"slug": "married",
+				"label": "Married"
+			},
+			{
+				"slug": "singles",
+				"label": "Singles"
+			}
+		]
+	},
+	{
+		"name": "resource_type",
+		"label": "Resource Types",
+		"labelSingular": "Resource Type",
+		"terms": [
+			{
+				"slug": "resource",
+				"label": "Resource"
+			},
+			{
+				"slug": "book",
+				"label": "Book"
+			},
+			{
+				"slug": "video",
+				"label": "Video"
+			}
+		]
+	}
+]

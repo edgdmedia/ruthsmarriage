@@ -1,30 +1,14 @@
 ---
-import { EmDashHead, EmDashBodyStart, EmDashBodyEnd } from "emdash/ui";
-import { createPublicPageContext } from "emdash/page";
-
 interface Props {
 	title: string;
 	pageTitle?: string | null;
 	description?: string | null;
 	image?: string | null;
 	canonical?: string | null;
-	content?: { collection: string; id: string; slug?: string | null };
 }
 
-const { title, pageTitle, description, image, canonical, content } = Astro.props;
+const { title, pageTitle, description, image, canonical } = Astro.props;
 const fullTitle = pageTitle ?? title;
-
-const pageCtx = createPublicPageContext({
-	Astro,
-	kind: content ? "content" : "custom",
-	pageType: "website",
-	title: fullTitle,
-	pageTitle: pageTitle ?? title,
-	description,
-	canonical,
-	image,
-	content,
-});
 ---
 
 <!doctype html>
@@ -33,13 +17,13 @@ const pageCtx = createPublicPageContext({
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{fullTitle}</title>
-		<EmDashHead page={pageCtx} />
+		{description && <meta name="description" content={description} />}
+		{canonical && <link rel="canonical" href={canonical} />}
+		{image && <meta property="og:image" content={image} />}
 	</head>
 	<body>
-		<EmDashBodyStart page={pageCtx} />
 		<main>
 			<slot />
 		</main>
-		<EmDashBodyEnd page={pageCtx} />
 	</body>
 </html>

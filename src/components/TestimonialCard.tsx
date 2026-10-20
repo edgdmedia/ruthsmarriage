@@ -1,6 +1,15 @@
 /* TestimonialCard — home testimonial carousel card (template 462/468 alternate).
    Dark at even indexes, pink at odd. Speech-bubble tail via clip-path. */
-export const TestimonialCard = ({ testimonial, variant = "dark" }) => {
+import { IconQuote } from "./icons/quote";
+import type { Testimonial } from "../data/types";
+
+export const TestimonialCard = ({
+	testimonial,
+	variant = "dark",
+}: {
+	testimonial: Testimonial;
+	variant?: "dark" | "pink";
+}) => {
 	const isDark = variant === "dark";
 	const bg = isDark ? "#63666A" : "#BF1E7224";
 	const textColor = isDark ? "#EBEBEB" : "#474A4D";
@@ -9,7 +18,9 @@ export const TestimonialCard = ({ testimonial, variant = "dark" }) => {
 	return (
 		<div
 			style={{
-				width: "367px",
+				width: "100%",
+				maxWidth: "367px",
+				margin: "0 10px",
 				background: bg,
 				borderRadius: "20px 20px 2px 20px",
 				clipPath: "polygon(0 0, 100% 0%, 99% 72%, 100% 100%, 88% 95%, 0 92%)",
@@ -25,14 +36,11 @@ export const TestimonialCard = ({ testimonial, variant = "dark" }) => {
 				boxSizing: "border-box",
 			}}
 		>
-			<img
-				src="/assets/icons/users.svg"
-				alt=""
-				style={{ width: "23px", height: "23px", marginTop: "20px", marginBottom: "10px", flexShrink: 0 }}
+			<IconQuote
+				style={{ width: "23px", height: "23px", marginTop: "20px", marginBottom: iconGap, flexShrink: 0, color: iconColor }}
 			/>
 			<p style={{ margin: 0, lineHeight: "24px" }}>{testimonial.quote}</p>
 			<div style={{ flexGrow: 1, paddingBottom: "40px" }} />
 		</div>
 	);
 };
-

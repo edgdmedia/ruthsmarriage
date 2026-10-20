@@ -1,0 +1,191 @@
+[
+	{
+		"name": "primary",
+		"label": "Primary Navigation",
+		"items": [
+			{
+				"type": "custom",
+				"label": "About",
+				"url": "#",
+				"children": [
+					{
+						"type": "custom",
+						"label": "About Us",
+						"url": "/about/"
+					},
+					{
+						"type": "custom",
+						"label": "Our Story",
+						"url": "/our-story/"
+					},
+					{
+						"type": "custom",
+						"label": "Our Founder",
+						"url": "/founder/"
+					}
+				]
+			},
+			{
+				"type": "custom",
+				"label": "Counseling Services",
+				"url": "#",
+				"children": [
+					{
+						"type": "custom",
+						"label": "Singles",
+						"url": "/singles/"
+					},
+					{
+						"type": "custom",
+						"label": "Married",
+						"url": "/married/"
+					}
+				]
+			},
+			{
+				"type": "custom",
+				"label": "Resources",
+				"url": "#",
+				"children": [
+					{
+						"type": "custom",
+						"label": "Courses, Guides, and Intimacy Builders",
+						"url": "/resources/"
+					},
+					{
+						"type": "custom",
+						"label": "Books",
+						"url": "/books/"
+					},
+					{
+						"type": "custom",
+						"label": "Videos",
+						"url": "/videos/"
+					}
+				]
+			},
+			{
+				"type": "custom",
+				"label": "Freebies",
+				"url": "#",
+				"children": [
+					{
+						"type": "custom",
+						"label": "Blog Articles",
+						"url": "/inspired-features/"
+					}
+				]
+			},
+			{
+				"type": "custom",
+				"label": "Media",
+				"url": "#",
+				"children": [
+					{
+						"type": "custom",
+						"label": "Sponsored",
+						"url": "/sponsored/"
+					},
+					{
+						"type": "custom",
+						"label": "Announcements",
+						"url": "/announcements/"
+					},
+					{
+						"type": "custom",
+						"label": "Event Gallery",
+						"url": "/event/"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "footer-services",
+		"label": "Footer: Services",
+		"items": [
+			{
+				"type": "custom",
+				"label": "One Hour Relationship Clarity Session",
+				"url": "/service/one-hour-relationship-clarity-session/"
+			},
+			{
+				"type": "custom",
+				"label": "One Hour Dating Couples Counseling Session",
+				"url": "/service/one-hour-dating-couples-counseling-session/"
+			},
+			{
+				"type": "custom",
+				"label": "Six (6) Weeks Individual Therapy Cycle",
+				"url": "/service/six-6-weeks-individual-therapy-cycle/"
+			},
+			{
+				"type": "custom",
+				"label": "Private Premarital Counseling Classes",
+				"url": "/service/private-premarital-counseling-classes/"
+			},
+			{
+				"type": "custom",
+				"label": "The Dating Couple Coaching Cycle",
+				"url": "/service/the-dating-couple-coaching-cycle/"
+			},
+			{
+				"type": "custom",
+				"label": "One Hour Individual Counseling Session",
+				"url": "/service/one-hour-individual-counseling-session/"
+			}
+		]
+	},
+	{
+		"name": "footer-resources",
+		"label": "Footer: Resources",
+		"items": [
+			{
+				"type": "custom",
+				"label": "52 Rules of Dating and Relationships",
+				"url": "/resource/52-rules-of-dating-and-relationships/"
+			},
+			{
+				"type": "custom",
+				"label": "Have Sex & Pray",
+				"url": "/resource/have-sex-pray/"
+			},
+			{
+				"type": "custom",
+				"label": "50 Intimate Conversations to Have with Your Partner",
+				"url": "/resource/50-intimate-conversations-to-have-with-your-partner/"
+			},
+			{
+				"type": "custom",
+				"label": "The 28 Days Lovers Again Challenge",
+				"url": "/resource/28-days-lovers-again-challenge/"
+			},
+			{
+				"type": "custom",
+				"label": "The 60 Fun Games and Activities for Couples",
+				"url": "/resource/60-fun-games-and-activities-for-couples/"
+			},
+			{
+				"type": "custom",
+				"label": "How to Deal with a Husband who Flirts and Cheats with other Women",
+				"url": "/resource/how-to-deal-with-a-husband-who-flirts-and-cheats-with-other-women/"
+			}
+		]
+	},
+	{
+		"name": "footer-legal",
+		"label": "Footer: Legal",
+		"items": [
+			{
+				"type": "custom",
+				"label": "Cancellation Policy",
+				"url": "/cancellation-policy/"
+			},
+			{
+				"type": "custom",
+				"label": "Confidentiality Policy",
+				"url": "/confidentiality-policy/"
+			}
+		]
+	}
+]

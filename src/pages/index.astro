@@ -1,137 +1,129 @@
 ---
 import Base from "../layouts/Base.astro";
-import { HeroSlider } from "../components/HeroSlider";
+import HeroSlider from "../components/HeroSlider.astro";
 import { SectionHeading } from "../components/SectionHeading";
 import { WaveSection } from "../components/WaveSection";
-import { Carousel } from "../components/Carousel";
+import Carousel from "../components/Carousel.astro";
 import { ServiceCard } from "../components/ServiceCard";
 import { TestimonialCard } from "../components/TestimonialCard";
 import { ResourceCard } from "../components/ResourceCard";
 import { PostCard } from "../components/PostCard";
 import { Button } from "../components/Button";
-import { getEmDashCollection, getSiteSettings } from "emdash";
-import { setCacheHint } from "../lib/cache";
+import { banners, posts, resources, services, settings, testimonials } from "../data";
 
-const settingsResult = await getSiteSettings();
-setCacheHint(Astro.cache, settingsResult.cacheHint);
-const settings = settingsResult.data;
-
-const services = await getEmDashCollection("services", {
-	limit: 100,
-	orderBy: { order: "asc" },
-});
-setCacheHint(Astro.cache, services.cacheHint);
-
-const testimonials = await getEmDashCollection("testimonials", {
-	limit: 100,
-	orderBy: { order: "asc" },
-});
-setCacheHint(Astro.cache, testimonials.cacheHint);
-
-const resources = await getEmDashCollection("resources", {
-	limit: 100,
-	orderBy: { order: "desc" },
-});
-setCacheHint(Astro.cache, resources.cacheHint);
-
-const posts = await getEmDashCollection("posts", {
-	limit: 6,
-	orderBy: { published_at: "desc" },
-});
-setCacheHint(Astro.cache, posts.cacheHint);
-
-const heroSlides = [
-	{
-		layout: "portrait",
-		title: "Ruth’s Marriage",
-		subtitle: "At Ruth’s Marriage, we believe you too can enjoy your marriage!",
-		buttonLabel: "About Us",
-		buttonUrl: "/about/",
-		image: settings?.logo?.url || "/assets/logo.png",
-	},
-	{
-		layout: "overlay",
-		title: "Support and Counsel",
-		subtitle: "We are here to provide you with the support and counsel that you need to transform your marriage positively.",
-		buttonLabel: "Services",
-		buttonUrl: "/services/",
-		image: "/assets/logo.png",
-	},
-	{
-		layout: "overlay",
-		title: "Resources and Tools",
-		subtitle: "We believe most marriage problems can be solved with the right resources and tools",
-		buttonLabel: "Resources",
-		buttonUrl: "/resources/",
-		image: "/assets/logo.png",
-	},
-];
+const heroSlides = banners;
 ---
-<Base title={settings?.title ?? "Ruth's Marriage"}>
-	<HeroSlider slides={heroSlides} />
 
-	<section style={{ padding: "0 50px", maxWidth: "1140px", margin: "0 auto", textAlign: "center" }}>
-		<h2
-			style={{
-				fontFamily: "Poppins, sans-serif",
-				fontSize: "24px",
-				lineHeight: "24px",
-				fontWeight: "500",
-				color: "#363636",
-				margin: "50px 0 30px 0",
-			}}
-		>
-			Ruth’s Marriage is a marriage counseling and relationship coaching company focused on helping couples enjoy their marriage God’s way.
-		</h2>
-		<Button variant="pink" href="/about/">
-			About Us
-		</Button>
-	</section>
+<Base title={settings.title}>
+    <HeroSlider slides={heroSlides} />
 
-	<WaveSection>
-		<SectionHeading
-			title="Counseling Services"
-			subtitle="We provide counseling services for married couples and singles across different parts of the globe. Our services range from individual sessions to couples sessions and are held virtually."
-		/>
-		<Carousel variant="content" autoplayMs={5000}>
-			{services.entries.map((s) => (
-				<ServiceCard key={s.data.slug} service={s.data} />
-			))}
-		</Carousel>
-		<Button variant="pink" href="/services/" style={{ display: "block", width: "fit-content", margin: "20px auto 0 auto" }}>
-			All Services
-		</Button>
-	</WaveSection>
+    <section
+        style={{
+            padding: "0 50px 50px",
+            maxWidth: "1140px",
+            margin: "0 auto",
+            textAlign: "center",
+        }}
+    >
+        <h2
+            style={{
+                fontFamily: "Poppins, sans-serif",
+                fontSize: "24px",
+                lineHeight: "24px",
+                fontWeight: "500",
+                color: "#363636",
+                margin: "50px 0 30px 0",
+            }}
+        >
+            Ruth’s Marriage is a marriage counseling and relationship coaching
+            company focused on helping couples enjoy their marriage God’s way.
+        </h2>
+        <Button variant="pink" href="/about/">
+            About Us
+        </Button>
+    </section>
 
-	<section style={{ padding: "0 50px", maxWidth: "1140px", margin: "0 auto" }}>
-		<SectionHeading
-			title="We believe you too can experience a positive transformation in your marriage. Hear what some of our clients are saying!!"
-		/>
-		<Carousel variant="content" autoplayMs={5000}>
-			{testimonials.entries.map((t, i) => (
-				<TestimonialCard key={i} testimonial={t.data} variant={i % 2 === 0 ? "dark" : "pink"} />
-			))}
-		</Carousel>
-	</section>
+    <WaveSection>
+        <SectionHeading
+            title="Counseling Services"
+            subtitle="We provide counseling services for married couples and singles across different parts of the globe. Our services range from individual sessions to couples sessions and are held virtually."
+        />
+        <Carousel variant="content" autoplayMs={5000}>
+            {services.map((s) => (
+                <div class="swiper-slide">
+                    <ServiceCard service={s} />
+                </div>
+            ))}
+        </Carousel>
+        <Button
+            variant="pink"
+            href="/services/"
+            style={{
+                display: "block",
+                width: "fit-content",
+                margin: "20px auto 0 auto",
+            }}
+        >
+            All Services
+        </Button>
+    </WaveSection>
 
-	<WaveSection>
-		<SectionHeading title="Resources" />
-		<Carousel variant="content" autoplayMs={5000}>
-			{resources.entries.map((r) => (
-				<ResourceCard key={r.data.slug} resource={r.data} />
-			))}
-		</Carousel>
-		<Button variant="pink" href="/resources/" style={{ display: "block", width: "fit-content", margin: "20px auto 0 auto" }}>
-			All Resources
-		</Button>
-	</WaveSection>
+    <section
+        style={{
+            padding: "70px 50px 50px",
+            maxWidth: "1140px",
+            margin: "0 auto",
+        }}
+    >
+        <SectionHeading
+            title="We believe you too can experience a positive transformation in your marriage. Hear what some of our clients are saying!!"
+            fontWeight="500"
+            showDivider={false}
+        />
+        <Carousel variant="content" autoplayMs={5000}>
+            {testimonials.map((t, i) => (
+                <div class="swiper-slide">
+                    <TestimonialCard
+                        testimonial={t}
+                        variant={i % 2 === 0 ? "dark" : "pink"}
+                    />
+                </div>
+            ))}
+        </Carousel>
+    </section>
 
-	<section style={{ padding: "0 50px", maxWidth: "1140px", margin: "0 auto" }}>
-		<SectionHeading title="Inspired Features" />
-		<Carousel variant="content" autoplayMs={5000}>
-			{posts.entries.map((p) => (
-				<PostCard key={p.data.slug} post={p.data} />
-			))}
-		</Carousel>
-	</section>
+    <WaveSection>
+        <SectionHeading title="Resources" />
+        <Carousel variant="content" autoplayMs={5000}>
+            {resources.map((r) => (
+                <div class="swiper-slide">
+                    <ResourceCard resource={r} />
+                </div>
+            ))}
+        </Carousel>
+        <Button
+            variant="pink"
+            href="/resources/"
+            style={{
+                display: "block",
+                width: "fit-content",
+                margin: "20px auto 0 auto",
+            }}
+        >
+            All Resources
+        </Button>
+    </WaveSection>
+
+    <section
+        style={{ padding: "50px 50px", maxWidth: "1140px", margin: "0 auto" }}
+    >
+        <SectionHeading title="Inspired Features" />
+        <Carousel variant="content" autoplayMs={5000}>
+            {posts.map((p) => (
+                <div class="swiper-slide">
+                    <PostCard post={p} />
+                </div>
+            ))}
+        </Carousel>
+    </section>
 </Base>

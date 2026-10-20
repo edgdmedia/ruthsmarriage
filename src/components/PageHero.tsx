@@ -1,6 +1,18 @@
 /* PageHero — page header variants (JetEngine components 377 "photo" / 394 "pattern").
    Data: page fields hero_title (default page title) and hero_image. */
-export const PageHero = ({ variant = "photo", title, image, className = "" } = {}) => {
+export interface PageHeroProps {
+	variant?: "photo" | "pattern" | "pattern-flat";
+	title?: string;
+	image?: string;
+	className?: string;
+}
+
+export const PageHero = ({
+	variant = "photo",
+	title,
+	image,
+	className = "",
+}: PageHeroProps = {}) => {
 	const isPattern = variant === "pattern" || variant === "pattern-flat";
 	const flat = variant === "pattern-flat";
 	return (
@@ -9,7 +21,7 @@ export const PageHero = ({ variant = "photo", title, image, className = "" } = {
 			style={{
 				width: "100%",
 				position: "relative",
-				minHeight: flat ? "350px" : isPattern ? "350px" : "350px",
+				minHeight: "350px",
 				padding: isPattern ? "0 10px" : "0 50px",
 				backgroundImage: image ? `url(${image})` : undefined,
 				backgroundSize: isPattern ? "auto" : "cover",
@@ -19,7 +31,7 @@ export const PageHero = ({ variant = "photo", title, image, className = "" } = {
 				justifyContent: isPattern ? "center" : "flex-start",
 			}}
 		>
-			{isPattern && (
+			{isPattern ? (
 				<div
 					style={{
 						position: "absolute",
@@ -28,13 +40,13 @@ export const PageHero = ({ variant = "photo", title, image, className = "" } = {
 						opacity: flat ? 1 : 0.89,
 					}}
 				/>
-			)}
-			{!isPattern && (
+			) : (
 				<div
 					style={{
 						position: "absolute",
 						inset: 0,
-						background: "linear-gradient(180deg, rgba(191,30,114,0.25) 0%, #000 100%)",
+						background:
+							"linear-gradient(180deg, rgba(191,30,114,0.25) 0%, #000 100%)",
 					}}
 				/>
 			)}
@@ -48,11 +60,11 @@ export const PageHero = ({ variant = "photo", title, image, className = "" } = {
 					paddingBottom: flat ? 0 : isPattern ? 0 : "50px",
 				}}
 			>
-				{h1 && (
+				{title && (
 					<h1
 						style={{
 							fontFamily: "Nunito, sans-serif",
-							fontSize: flat ? "55px" : isPattern ? "55px" : "55px",
+							fontSize: "55px",
 							lineHeight: "1",
 							fontWeight: flat ? 600 : 700,
 							margin: 0,
@@ -70,7 +82,7 @@ export const PageHero = ({ variant = "photo", title, image, className = "" } = {
 					alt=""
 					style={{
 						position: "absolute",
-						bottom: flat ? "-1px" : "-1px",
+						bottom: "-1px",
 						left: "50%",
 						transform: "translateX(-50%) rotate(180deg)",
 						width: flat ? "calc(100% + 1.3px)" : "calc(117% + 1.3px)",
@@ -80,5 +92,6 @@ export const PageHero = ({ variant = "photo", title, image, className = "" } = {
 					}}
 				/>
 			)}
-					</div>
+		</div>
 	);
+};

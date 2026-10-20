@@ -10,9 +10,19 @@
     "title": "Ruth's Marriage",
     "tagline": "",
     "url": "https://www.ruthsmarriage.com",
+    "logo": {
+      "$media": {
+        "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/logo-2-1.png",
+        "alt": "Ruth's Marriage",
+        "filename": "logo-2-1.png"
+      }
+    },
     "social": {
       "facebook": "https://facebook.com/RuthsMarriage",
-      "twitter": "https://twitter.com/ruthsmarriage"
+      "twitter": "https://twitter.com/ruthsmarriage",
+      "instagram": "https://instagram.com/askcoachruth",
+      "youtube": "https://youtube.com/@ruthsmarriage",
+      "threads": "https://threads.com/RuthsMarriage"
     }
   },
   "collections": [
@@ -590,7 +600,13 @@
         "order": 1,
         "data": {
           "title": "Private Premarital Counseling Classes",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Private-premarital-1024x1024-1.jpg",
+              "alt": "",
+              "filename": "Private-premarital-1024x1024-1.jpg"
+            }
+          },
           "price_label": "₦590,000/$590",
           "audience_label": null,
           "format": "Zoom Video Session",
@@ -622,7 +638,13 @@
         "order": 2,
         "data": {
           "title": "Six (6) Weeks Individual Therapy Cycle",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Two-female-friends-talking-and-holding-hands-1024x819-1.jpg",
+              "alt": "",
+              "filename": "Two-female-friends-talking-and-holding-hands-1024x819-1.jpg"
+            }
+          },
           "price_label": "₦510,000/$510",
           "audience_label": "(For Single or Married Individual)",
           "format": "Zoom Video Session",
@@ -654,7 +676,13 @@
         "order": 3,
         "data": {
           "title": "Six (6) Weeks Marriage Therapy Cycle",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Relationship-Clarity-1024x731-1.jpg",
+              "alt": "",
+              "filename": "Relationship-Clarity-1024x731-1.jpg"
+            }
+          },
           "price_label": "₦750,000/$750",
           "audience_label": "(For Married Couples Only)",
           "format": "Zoom Video Session",
@@ -686,7 +714,13 @@
         "order": 4,
         "data": {
           "title": "Two Sessions Couples Counseling",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Two-female-friends-talking-and-holding-hands-1024x819-1.jpg",
+              "alt": "",
+              "filename": "Two-female-friends-talking-and-holding-hands-1024x819-1.jpg"
+            }
+          },
           "price_label": "₦300,000/$300",
           "audience_label": "(For Married or Engaged Couples)",
           "format": "Zoom Video Session",
@@ -718,7 +752,13 @@
         "order": 5,
         "data": {
           "title": "One Hour Couples Counseling Session",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/One-hour-couples-1024x1024-1.jpg",
+              "alt": "",
+              "filename": "One-hour-couples-1024x1024-1.jpg"
+            }
+          },
           "price_label": "₦160,000/$160",
           "audience_label": "(For Married or Engaged Couples)",
           "format": "Zoom Video Session",
@@ -750,7 +790,13 @@
         "order": 6,
         "data": {
           "title": "One Hour Individual Counseling Session",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/8750075-1024x683-1.jpg",
+              "alt": "",
+              "filename": "8750075-1024x683-1.jpg"
+            }
+          },
           "price_label": "₦100,000/$100",
           "audience_label": "(For Married Individuals)",
           "format": null,
@@ -782,7 +828,13 @@
         "order": 7,
         "data": {
           "title": "The Dating Couple Coaching Cycle",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Book-Dating-Couple-1024x1024-1.jpg",
+              "alt": "",
+              "filename": "Book-Dating-Couple-1024x1024-1.jpg"
+            }
+          },
           "price_label": "₦470,000/$470",
           "audience_label": null,
           "format": "Zoom Video Session",
@@ -814,7 +866,13 @@
         "order": 8,
         "data": {
           "title": "Private Premarital Counseling Classes",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Private-premarital-1024x1024-1.jpg",
+              "alt": "",
+              "filename": "Private-premarital-1024x1024-1.jpg"
+            }
+          },
           "price_label": "₦590,000/$590",
           "audience_label": null,
           "format": "Zoom Video Session",
@@ -846,7 +904,13 @@
         "order": 9,
         "data": {
           "title": "Six (6) Weeks Individual Therapy Cycle",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Two-female-friends-talking-and-holding-hands-1024x819-1.jpg",
+              "alt": "",
+              "filename": "Two-female-friends-talking-and-holding-hands-1024x819-1.jpg"
+            }
+          },
           "price_label": "₦510,000/$510",
           "audience_label": "(For Single or Married Individual)",
           "format": "Zoom Video Session",
@@ -878,7 +942,13 @@
         "order": 10,
         "data": {
           "title": "One Hour Dating Couples Counseling Session",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Book-Dating-Couple-1024x1024-1.jpg",
+              "alt": "",
+              "filename": "Book-Dating-Couple-1024x1024-1.jpg"
+            }
+          },
           "price_label": "₦150,000/$150",
           "audience_label": null,
           "format": "Zoom Video Session",
@@ -910,7 +980,13 @@
         "order": 11,
         "data": {
           "title": "One Hour Relationship Clarity Session",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Relationship-Clarity-1024x731-1.jpg",
+              "alt": "",
+              "filename": "Relationship-Clarity-1024x731-1.jpg"
+            }
+          },
           "price_label": "₦90,000/$90",
           "audience_label": "(For Singles Only)",
           "format": null,
@@ -944,7 +1020,13 @@
         "order": 1,
         "data": {
           "title": "Baddie in Bed",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-21-at-18.20.27.jpeg",
+              "alt": "",
+              "filename": "WhatsApp-Image-2026-03-21-at-18.20.27.jpeg"
+            }
+          },
           "badge_label": "Learn More",
           "ctas": [
             {
@@ -980,7 +1062,13 @@
         "order": 2,
         "data": {
           "title": "The Marriage Check-up Workbook.",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/The-Reconnected-Couples-Workbook.png",
+              "alt": "",
+              "filename": "The-Reconnected-Couples-Workbook.png"
+            }
+          },
           "badge_label": "Learn More",
           "ctas": [
             {
@@ -1016,7 +1104,13 @@
         "order": 3,
         "data": {
           "title": "The Love Playbook",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Copy-of-The-Love-Playbook.png",
+              "alt": "",
+              "filename": "Copy-of-The-Love-Playbook.png"
+            }
+          },
           "badge_label": "Learn More",
           "ctas": [
             {
@@ -1052,7 +1146,13 @@
         "order": 4,
         "data": {
           "title": "The Ultimate Couples Hard Conversations Guide",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/IMG_1053.png",
+              "alt": "",
+              "filename": "IMG_1053.png"
+            }
+          },
           "badge_label": "Learn More",
           "ctas": [
             {
@@ -1150,7 +1250,13 @@
         "order": 7,
         "data": {
           "title": "The 60 Fun Games and Activities for Couples",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/IMG_1054.png",
+              "alt": "",
+              "filename": "IMG_1054.png"
+            }
+          },
           "badge_label": "Download Here",
           "ctas": [
             {
@@ -1186,7 +1292,13 @@
         "order": 8,
         "data": {
           "title": "The 28 Days Lovers Again Challenge",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-12-17-at-5.06.03-PM.jpeg",
+              "alt": "",
+              "filename": "WhatsApp-Image-2025-12-17-at-5.06.03-PM.jpeg"
+            }
+          },
           "badge_label": "Join the Challenge",
           "ctas": [
             {
@@ -1222,7 +1334,13 @@
         "order": 9,
         "data": {
           "title": "50 Intimate Conversations to Have with Your Partner",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/50-intimate-conversations-selar.co-62e8fd101b57e-1024x1024-1.jpeg",
+              "alt": "",
+              "filename": "50-intimate-conversations-selar.co-62e8fd101b57e-1024x1024-1.jpeg"
+            }
+          },
           "badge_label": null,
           "ctas": [
             {
@@ -1257,8 +1375,14 @@
         "status": "published",
         "order": 10,
         "data": {
-          "title": "Have Sex &#038; Pray",
-          "featured_image": null,
+          "title": "Have Sex & Pray",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/IMG_5071.png",
+              "alt": "",
+              "filename": "IMG_5071.png"
+            }
+          },
           "badge_label": null,
           "ctas": [
             {
@@ -1294,7 +1418,13 @@
         "order": 11,
         "data": {
           "title": "52 Rules of Dating and Relationships",
-          "featured_image": null,
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/52-Rules-of-Dating-and-Relationships-1.png",
+              "alt": "",
+              "filename": "52-Rules-of-Dating-and-Relationships-1.png"
+            }
+          },
           "badge_label": null,
           "ctas": [
             {

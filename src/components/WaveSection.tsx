@@ -1,41 +1,25 @@
-/* WaveSection — pale-pink section with wave-brush shape dividers top + bottom (_global.md). */
-import { WaveDividerBrush } from "./icons/wave-brush";
+import type { CSSProperties, ReactNode } from "react";
 
-export const WaveSection = ({ children, className = "", style } = {}) => (
+/* WaveSection — pale-pink section with plain borders (waves removed for now). */
+export interface WaveSectionProps {
+	children?: ReactNode;
+	className?: string;
+	style?: CSSProperties;
+}
+
+export const WaveSection = ({ children, className = "", style }: WaveSectionProps = {}) => (
 	<section
 		className={`wave-section ${className}`}
 		style={{
 			backgroundColor: "#BF1E720D",
 			position: "relative",
-			padding: "0 50px",
+			padding: "0 70px 70px",
+			borderTop: "1px solid #EBEBEB",
+			borderBottom: "1px solid #EBEBEB",
 			...style,
 		}}
 	>
-		<WaveDividerBrush
-			className="wave-divider wave-divider-top"
-			style={{
-				position: "absolute",
-				top: "-1px",
-				left: "50%",
-				transform: "translateX(-50%)",
-				width: "calc(133% + 1.3px)",
-				height: "52px",
-				zIndex: 1,
-			}}
-		/>
-		<WaveDividerBrush
-			className="wave-divider wave-divider-bottom"
-			style={{
-				position: "absolute",
-				bottom: "-1px",
-				left: "50%",
-				transform: "translateX(-50%) rotate(180deg)",
-				width: "calc(116% + 1.3px)",
-				height: "40px",
-				zIndex: 1,
-			}}
-		/>
-		<div className="wave-section-inner" style={{ position: "relative", zIndex: 2, paddingTop: "100px" }}>
+		<div className="wave-section-inner" style={{ position: "relative", zIndex: 2, paddingTop: "100px", maxWidth: "1140px", margin: "0 auto" }}>
 			{children}
 		</div>
 	</section>

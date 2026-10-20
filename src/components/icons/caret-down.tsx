@@ -1,4 +1,5 @@
-export const IconCaretDown = ({ className = "", style, "aria-hidden": ariaHidden = true } = {}) => (
+import type { IconProps } from "./types";
+export const IconCaretDown = ({ className = "", style, "aria-hidden": ariaHidden = true }: IconProps = {}) => (
 	<svg
 		className={className}
 		style={style}

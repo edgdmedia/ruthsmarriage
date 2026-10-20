@@ -10,6 +10,18 @@ const c = (p) => JSON.parse(readFileSync(join(root, p), "utf8"));
 const m = (v) => readFileSync(join(root, v), "utf8");
 
 const MEDIA = (url, alt = "") => ({ $media: { url, alt, filename: url.split("/").pop() } });
+// Decode the numeric/named HTML entities WordPress leaves in titles (e.g. "&#038;", "&#8217;").
+const decodeEntities = (s) =>
+  typeof s !== "string" ? s : s
+    .replace(/&#0*38;/gi, "&")
+    .replace(/&#0*8217;/g, "’")
+    .replace(/&#0*8216;/g, "‘")
+    .replace(/&#0*8220;/g, "“")
+    .replace(/&#0*8221;/g, "”")
+    .replace(/&#0*8211;/g, "–")
+    .replace(/&#0*8212;/g, "—")
+    .replace(/&#0*8230;/g, "…")
+    .replace(/&amp;/g, "&");
 const PT = (text, style = "normal") => ({
   _type: "block",
   style,
@@ -31,6 +43,21 @@ for (const f of ["about","our-story","founder","singles","married","services","r
 }
 
 // ---------- helpers ----------
+// Featured images: discovery/content/*.json captured og:image (always the site
+// logo) as featuredImage, which is useless. The real per-entry image is the
+// first wp-content image in the captured single-page body (discovery/raw/html/).
+const bodyImage = (file) => {
+  let h;
+  try { h = m(`discovery/raw/html/${file}`); } catch { return null; }
+  const body = h.split("</head>")[1] || h;
+  const urls = body.match(/https?:\/\/www\.ruthsmarriage\.com\/wp-content\/uploads\/[^"'\s)]+/g) || [];
+  const hit = urls.find((u) => !/logo|pink-overlapping|woocommerce-placeholder/i.test(u));
+  return hit || null;
+};
+const FEAT = (file) => {
+  const u = bodyImage(file);
+  return u ? MEDIA(u) : null;
+};
 const termMap = {
   services: { married: "married", singles: "singles" },
   resources: { resource: "resource", book: "book", video: "video" },
@@ -68,7 +95,14 @@ const seed = {
     title: "Ruth's Marriage",
     tagline: "",
     url: "https://www.ruthsmarriage.com",
-    social: settingsSocial,
+    logo: MEDIA("https://www.ruthsmarriage.com/wp-content/uploads/2025/06/logo-2-1.png", "Ruth's Marriage"),
+    social: {
+      facebook: "https://facebook.com/RuthsMarriage",
+      twitter: "https://twitter.com/ruthsmarriage",
+      instagram: "https://instagram.com/askcoachruth",
+      youtube: "https://youtube.com/@ruthsmarriage", // TODO(G3)
+      threads: "https://threads.com/RuthsMarriage",
+    },
   },
   collections: [
     {
@@ -207,8 +241,8 @@ const seed = {
     services: services.map((s, i) => ({
       id: `service-${i + 1}`, slug: s.slug, status: "published", order: i + 1,
       data: {
-        title: s.title,
-        featured_image: s.featured_image ? MEDIA(s.featured_image) : null,
+        title: decodeEntities(s.title),
+        featured_image: FEAT(`service__${s.slug}.html`),
         price_label: s.price || null,
         audience_label: s.audienceLabel || null,
         format: s.format || null,
@@ -221,8 +255,8 @@ const seed = {
     resources: resources.map((r, i) => ({
       id: `resource-${i + 1}`, slug: r.slug, status: "published", order: i + 1,
       data: {
-        title: r.title,
-        featured_image: r.featured_image ? MEDIA(r.featured_image) : null,
+        title: decodeEntities(r.title),
+        featured_image: FEAT(`resource__${r.slug}.html`),
         badge_label: r.badgeLabel || null,
         ctas: r.ctaUrl ? [{ label: r.ctaLabel || "Learn More", url: r.ctaUrl }] : [],
         video_url: r.videoUrl || null,
@@ -241,7 +275,7 @@ const seed = {
       return {
         id: `page-${i + 1}`, slug: name, status: "published",
         data: {
-          title: p.title.replace(/\s*-\s*Ruths Marriage$/, "").replace(/\s*-\s*Ruth's Marriage$/, ""),
+          title: decodeEntities(p.title).replace(/\s*-\s*Ruths Marriage$/, "").replace(/\s*-\s*Ruth's Marriage$/, ""),
           hero_title: null,
           hero_image: heroImage ? MEDIA(heroImage) : null,
           side_image: null,
@@ -255,7 +289,7 @@ const seed = {
       .map((p, i) => ({
         id: `post-${i + 1}`, slug: p.slug, status: "published",
         data: {
-          title: p.title,
+          title: decodeEntities(p.title),
           excerpt: p.excerpt || null,
           featured_image: p.featuredImage ? MEDIA(p.featuredImage) : null,
           content: p.content ? [PT(p.content.replace(/<[^>]+>/g, " ").slice(0, 600))] : [PT(p.excerpt || "")],

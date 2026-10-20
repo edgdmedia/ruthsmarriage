@@ -1,70 +1,45 @@
 ---
-import { getEmDashCollection, getTermsForEntries } from "emdash";
-import { Image } from "emdash/ui";
 import Base from "../../layouts/Base.astro";
+import { posts } from "../../data";
 
-const cursor = Astro.url.searchParams.get("cursor") || undefined;
-const {
-	entries: posts,
-	cacheHint,
-	nextCursor,
-} = await getEmDashCollection("posts", {
-	orderBy: { published_at: "desc" },
-	limit: 20,
-	cursor,
-});
-if (Astro.cache?.enabled && cacheHint) Astro.cache.set(cacheHint);
-
-// Single batched query for tags across every post, instead of calling
-// getEntryTerms() per post (which would be N round-trips).
-const tagsByEntry = await getTermsForEntries(
-	"posts",
-	posts.map((p) => p.data.id),
-	"tag",
+const list = [...posts].sort((a, b) =>
+	(b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""),
 );
-const postsWithTags = posts.map((post) => ({
-	post,
-	tags: tagsByEntry.get(post.data.id) ?? [],
-}));
 ---
 
 <Base title="All Posts">
 	<h1>Posts</h1>
 
 	{
-		postsWithTags.length === 0 ? (
+		list.length === 0 ? (
 			<p>No posts yet.</p>
 		) : (
 			<ul>
-				{postsWithTags.map(({ post, tags }) => (
+				{list.map((post) => (
 					<li>
-						<a href={`/posts/${post.id}`}>
-							{post.data.featured_image && (
-								<div {...post.edit.featured_image}><Image image={post.data.featured_image} /></div>
+						<a href={`/posts/${post.slug}/`}>
+							{post.featured_image && (
+								<img
+									src={post.featured_image.src}
+									alt={post.featured_image.alt}
+									width="300"
+									height="200"
+									loading="lazy"
+								/>
 							)}
-							<h2 {...post.edit.title}>{post.data.title}</h2>
+							<h2>{post.title}</h2>
 						</a>
-						{post.data.excerpt && <p {...post.edit.excerpt}>{post.data.excerpt}</p>}
-						{tags.length > 0 && (
+						{post.excerpt && <p>{post.excerpt}</p>}
+						{post.terms?.tag?.length ? (
 							<div>
-								{tags.map((t) => (
-									<a href={`/tag/${t.slug}`}>{t.label}</a>
+								{post.terms.tag.map((t) => (
+									<a href={`/tag/${t.slug}/`}>{t.label}</a>
 								))}
 							</div>
-						)}
+						) : null}
 					</li>
 				))}
 			</ul>
 		)
 	}
-	<nav aria-label="Pagination">
-		{cursor && <a href="/posts">First page</a>}
-		{
-			nextCursor && (
-				<a href={`/posts?cursor=${encodeURIComponent(nextCursor)}`}>
-					Next page
-				</a>
-			)
-		}
-	</nav>
 </Base>

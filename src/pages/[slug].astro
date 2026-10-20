@@ -1,26 +1,21 @@
 ---
-import { getEmDashEntry, getSeoMeta, decodeSlug, getSiteSettings } from "emdash";
-import { PortableText } from "emdash/ui";
 import Base from "../layouts/Base.astro";
-import { resolveStarterSiteIdentity } from "../utils/site-identity";
+import PortableText from "../components/PortableText.astro";
+import { getPage, settings } from "../data";
+import { getSeoMeta } from "../lib/seo";
 
-const slug = decodeSlug(Astro.params.slug);
-
-if (!slug) {
-	return Astro.rewrite("/404");
-}
-
-const { entry: page, cacheHint } = await getEmDashEntry("pages", slug);
+const slug = Astro.params.slug ?? "";
+const page = getPage(slug);
 
 if (!page) {
 	return Astro.rewrite("/404");
 }
 
-if (Astro.cache?.enabled && cacheHint) Astro.cache.set(cacheHint);
-const { siteTitle } = resolveStarterSiteIdentity(await getSiteSettings());
-
-const seo = getSeoMeta(page, {
-	siteTitle,
+const seo = getSeoMeta({
+	title: page.title,
+	description: settings.tagline || null,
+	image: page.hero_image?.src ?? null,
+	siteTitle: settings.title,
 	siteUrl: Astro.url.origin,
 	path: Astro.url.pathname.replace(/\/$/, ""),
 });
@@ -31,11 +26,11 @@ const seo = getSeoMeta(page, {
 	pageTitle={seo.ogTitle}
 	description={seo.description}
 	canonical={seo.canonical}
-	content={{ collection: "pages", id: page.data.id, slug }}
+	image={seo.ogImage}
 >
 	<article>
-		<h1 {...page.edit.title}>{page.data.title}</h1>
+		<h1>{page.title}</h1>
 
-		<PortableText value={page.data.content} />
+		<PortableText value={page.content} />
 	</article>
 </Base>

@@ -1,0 +1,27 @@
+[
+	{
+		"layout": "portrait",
+		"title": "Ruth’s Marriage",
+		"subtitle": "At Ruth’s Marriage, we believe you too can enjoy your marriage!",
+		"buttonLabel": "About Us",
+		"buttonUrl": "/about/",
+		"image": "/assets/hero/runway.jpg",
+		"mobileImage": "/assets/hero/dsc08266-mobile.jpg"
+	},
+	{
+		"layout": "overlay",
+		"title": "Support and Counsel",
+		"subtitle": "We are here to provide you with the support and counsel that you need to transform your marriage positively",
+		"buttonLabel": "Services",
+		"buttonUrl": "/services/",
+		"image": "/assets/hero/shkraba.jpg"
+	},
+	{
+		"layout": "overlay",
+		"title": "Resources and Tools",
+		"subtitle": "We believe most marriage problems can be solved with the right resources and tools",
+		"buttonLabel": "Resources",
+		"buttonUrl": "/resources/",
+		"image": "/assets/hero/couple-holding-hands.jpeg"
+	}
+]

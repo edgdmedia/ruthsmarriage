@@ -1,4 +1,5 @@
-export const WaveDividerBrush = ({ className = "" } = {}) => (
+import type { IconProps } from "./types";
+export const WaveDividerBrush = ({ className = "" }: IconProps = {}) => (
 	<svg
 		className={className}
 		aria-hidden="true"

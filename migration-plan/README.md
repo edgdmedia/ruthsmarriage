@@ -17,15 +17,13 @@ This is **not a redesign**. Each public page must look and behave the same as th
 
 ```
 Browser ─▶ Cloudflare (ruthsmarriage.com zone, already proxied)
-            └─▶ Worker "ruthsmarriage"  (Astro SSR + EmDash, @astrojs/cloudflare)
-                  ├─ D1  "ruthsmarriage-db"     ← content, users, redirects, search
-                  ├─ R2  "ruthsmarriage-media"  ← images
-                  ├─ Cron trigger (* * * * *)   ← scheduled publishing
-                  └─ /_emdash/admin             ← Ruth's team edits here (replaces wp-admin)
+            └─▶ Worker "ruthsmarriage"  (Astro SSR, @astrojs/cloudflare)
+                  ├─ static assets  ← public/assets/ (images, fonts, css)
+                  └─ JSON content  ← src/data/*.json, bundled at build time
 ```
 
-- **Framework:** Astro (server output) + EmDash, scaffolded from the official `cloudflare:starter` template. Verified on 2026-10-16: `create-emdash@1.3.0`, `emdash@1.3.0`, `@emdash-cms/cloudflare@1.3.0`, `astro@7.x`.
-- **Content:** The seed ships the full schema, real copy for every static page, and **sample content**: all services, resources, banners and testimonials (small sets that drive the layout), plus 3 blog posts. The full post import is optional (Phase 10).
+- **Framework:** Astro (server output) + React islands, `@astrojs/cloudflare`. **No CMS** — see decision D16 (decided by human 2026-10-20).
+- **Content:** JSON files under `src/data/`, generated from `seed/seed.json` (the WordPress capture) by `pnpm data:build`. Full copy for every static page, all services, resources, testimonials and 3 blog posts. The full post import is optional (Phase 10).
 
 ## Decisions already made (defaults; override before starting if you disagree)
 
@@ -46,7 +44,8 @@ Browser ─▶ Cloudflare (ruthsmarriage.com zone, already proxied)
 | D14 | Socials | Twitter `https://twitter.com/ruthsmarriage`, Facebook `https://facebook.com/RuthsMarriage`, Threads `https://threads.com/RuthsMarriage`; Instagram `https://instagram.com/askcoachruth` (Ask Coach page). YouTube: `TODO(G3)` | Decided 2026-10-16 |
 | D15 | Hero banners | **No `banner` content type.** The 3 hero slides ship as static content in the homepage hero component (copy/images from `discovery/content/banners.json`, which feeds Phase 3/4 code, not the CMS). Decided by human 2026-10-17, overrides the audit's `banner` CPT and README's "banners" sample content | Ruth doesn't edit hero slides; they're page furniture |
 | D11 | Editor entry | `/admin/` landing page links to `/_emdash/admin`. `/wp-admin*` and `/wp-login.php` → 302 `/admin/`. `/wp-json/*` and `/xmlrpc.php` → 410 | Ruth's team keeps their habits |
-| D12 | Repo | `~/Projects/ruthsmarriage` (this folder), pnpm | |
+| D12 | Repo | `~/Projects/ruthsmarriage` (this folder), pnpm |
+| D16 | **No CMS** | **EmDash is dropped** (decided by human 2026-10-20). The site is plain Astro: content lives in JSON files under `src/data/`, images as local files under `public/assets/`. `seed/seed.json` stays the captured source of truth and `pnpm data:build` regenerates `src/data/`. This overrides D3/D4/D10/D10b/D11, which all assumed a CMS/admin UI | The site is a faithful visual port; a CMS adds D1/R2, an admin UI and a content pipeline without changing a single pixel. Editors can still be given a CMS later — the data layer is a plain import surface | |
 
 ## Human gates 🧑 (opencode must STOP and ask at these)
 

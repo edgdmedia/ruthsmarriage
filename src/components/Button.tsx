@@ -1,5 +1,26 @@
+import type { CSSProperties, ReactNode } from "react";
+
 /* Button variants — measured from live Elementor buttons (_global.md → Buttons).
    No visible hover change (0.3s transition kept) unless a page map says otherwise. */
+
+export type ButtonVariant =
+	| "pink"
+	| "white-hero"
+	| "white-hero-lg"
+	| "badge"
+	| "plum-sm";
+
+export interface ButtonProps {
+	href?: string;
+	children?: ReactNode;
+	variant?: ButtonVariant;
+	className?: string;
+	iconBefore?: ReactNode;
+	iconAfter?: ReactNode;
+	style?: CSSProperties;
+	[key: string]: unknown;
+}
+
 export const Button = ({
 	href,
 	children,
@@ -8,8 +29,8 @@ export const Button = ({
 	iconBefore,
 	iconAfter,
 	...rest
-} = {}) => {
-	const variants = {
+}: ButtonProps = {}) => {
+	const variants: Record<ButtonVariant, { class: string; style: CSSProperties }> = {
 		pink: {
 			"class": "btn btn--pink",
 			style: {
@@ -90,12 +111,13 @@ export const Button = ({
 	};
 	const v = variants[variant] || variants.pink;
 	const Tag = href ? "a" : "button";
+	const { style: customStyle, ...restNoStyle } = rest;
 	return (
 		<Tag
 			className={`button ${v["class"]} ${className}`}
-			style={v.style}
+			style={{ ...v.style, ...customStyle }}
 			{...(href ? { href } : { type: "button" })}
-			{...rest}
+			{...restNoStyle}
 		>
 			{iconBefore && <span style={{ marginRight: "5px" }}>{iconBefore}</span>}
 			{children}

@@ -1,18 +1,21 @@
 /* ResourceCard — home "Resources" carousel card (template 225).
    367×270; whole card links to /resource/{slug}/. */
 import { Button } from "./Button";
+import type { Resource } from "../data/types";
 
-export const ResourceCard = ({ resource }: { resource: { slug: string; title: string; featuredImage?: string; badgeLabel?: string } }) => {
-	const hasBadge = !!resource.badgeLabel;
+export const ResourceCard = ({ resource }: { resource: Resource }) => {
+	const img = resource.featured_image;
+	const imgUrl = img?.src ?? "";
+	const hasBadge = !!resource.badge_label;
 	return (
-		<a
+		<article
 			className="resource-card"
-			href={`/resource/${resource.slug}/`}
 			style={{
 				display: "block",
-				width: "367px",
+				width: "100%",
+				maxWidth: "367px",
 				height: "270px",
-				backgroundImage: `url(${resource.featuredImage || ""})`,
+				backgroundImage: imgUrl ? `url(${imgUrl})` : "none",
 				backgroundSize: "cover",
 				backgroundPosition: "center",
 				borderRadius: "25px",
@@ -39,7 +42,7 @@ export const ResourceCard = ({ resource }: { resource: { slug: string; title: st
 						variant="badge"
 						href={`/resource/${resource.slug}/`}
 					>
-						{resource.badgeLabel}
+						{resource.badge_label}
 					</Button>
 				) : (
 					<div style={{ width: "33px", height: "auto", borderRadius: "20px", background: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center", padding: "8px 10px 5px" }}>
@@ -50,9 +53,11 @@ export const ResourceCard = ({ resource }: { resource: { slug: string; title: st
 				<h2
 					style={{ fontFamily: "'Nunito',sans-serif", fontSize: "22px", lineHeight: "22px", fontWeight: "700", color: "#ffffff", margin: "0", textAlign: "center" }}
 				>
-					{resource.title}
+					<a className="resource-card__title" href={`/resource/${resource.slug}/`}>
+						{resource.title}
+					</a>
 				</h2>
 			</div>
-					</a>
+		</article>
 	);
 };

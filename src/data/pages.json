@@ -1,0 +1,1158 @@
+[
+	{
+		"id": "page-1",
+		"slug": "about",
+		"status": "published",
+		"title": "About Us",
+		"hero_title": null,
+		"hero_image": null,
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "About Us"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "About Us"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Our Values"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h3",
+				"children": [
+					{
+						"_type": "span",
+						"text": ""
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h3",
+				"children": [
+					{
+						"_type": "span",
+						"text": ""
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h3",
+				"children": [
+					{
+						"_type": "span",
+						"text": ""
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h3",
+				"children": [
+					{
+						"_type": "span",
+						"text": ""
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-2",
+		"slug": "our-story",
+		"status": "published",
+		"title": "Our Story",
+		"hero_title": null,
+		"hero_image": null,
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Our Story"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Our Story"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-3",
+		"slug": "founder",
+		"status": "published",
+		"title": "Our Founder",
+		"hero_title": null,
+		"hero_image": null,
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Our Founder"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Our Founder"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-4",
+		"slug": "singles",
+		"status": "published",
+		"title": "Singles",
+		"hero_title": null,
+		"hero_image": {
+			"src": "/assets/media/2025/06/Relationship-Clarity-1024x731-1.jpg",
+			"alt": ""
+		},
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Singles"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "One Hour Relationship Clarity Session"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "One Hour Relationship Clarity Session"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "One Hour Dating Couples Counseling Session"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Private Premarital Counseling Classes"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "The Dating Couple Coaching Cycle"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Six (6) Weeks Individual Therapy Cycle"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-5",
+		"slug": "married",
+		"status": "published",
+		"title": "Married",
+		"hero_title": null,
+		"hero_image": {
+			"src": "/assets/media/2025/06/8750075-1024x683-1.jpg",
+			"alt": ""
+		},
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Married"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "One Hour Individual Counseling Session"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "One Hour Individual Counseling Session"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "One Hour Couples Counseling Session"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Two Sessions Couples Counseling"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Six (6) Weeks Individual Therapy Cycle"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Six (6) Weeks Marriage Therapy Cycle"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Private Premarital Counseling Classes"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-6",
+		"slug": "services",
+		"status": "published",
+		"title": "Services",
+		"hero_title": null,
+		"hero_image": {
+			"src": "/assets/media/2025/06/Relationship-Clarity-1024x731-1.jpg",
+			"alt": ""
+		},
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Services"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Services"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "One Hour Relationship Clarity Session"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "One Hour Relationship Clarity Session"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "One Hour Dating Couples Counseling Session"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Six (6) Weeks Individual Therapy Cycle"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Private Premarital Counseling Classes"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "The Dating Couple Coaching Cycle"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "One Hour Individual Counseling Session"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-7",
+		"slug": "resources",
+		"status": "published",
+		"title": "Courses, Guides & Intimacy Builders",
+		"hero_title": null,
+		"hero_image": {
+			"src": "/assets/media/2025/06/WhatsApp-Image-2025-12-17-at-5.06.03-PM.jpeg",
+			"alt": ""
+		},
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Courses, Guides & Intimacy Builders"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "The 28 Days Lovers Again Challenge"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "The 28 Days Lovers Again Challenge"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "The Ultimate Couples Hard Conversations Guide"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "The Love Playbook"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Baddie in Bed"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "The Marriage Check-up Workbook."
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "The 60 Fun Games and Activities for Couples"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-8",
+		"slug": "books",
+		"status": "published",
+		"title": "Books",
+		"hero_title": null,
+		"hero_image": {
+			"src": "/assets/media/2025/06/IMG_5071.png",
+			"alt": ""
+		},
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Books"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Books"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Have Sex & Pray"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Have Sex & Pray"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "50 Intimate Conversations to Have with Your Partner"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "52 Rules of Dating and Relationships"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-9",
+		"slug": "videos",
+		"status": "published",
+		"title": "Videos",
+		"hero_title": null,
+		"hero_image": null,
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Videos"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-10",
+		"slug": "freebies",
+		"status": "published",
+		"title": "Freebies",
+		"hero_title": null,
+		"hero_image": null,
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": ""
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-11",
+		"slug": "inspired-features",
+		"status": "published",
+		"title": "Blog Articles",
+		"hero_title": null,
+		"hero_image": {
+			"src": "/assets/media/2025/06/6-Reasons-Why-Couples-Grow-Apart-and-Lose-Their-Intimacy.jpg",
+			"alt": ""
+		},
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Blog Articles"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Blog Articles"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "6 Reasons Why Couples Grow Apart and Lose Their Intimacy"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "6 Reasons Why Couples Grow Apart and Lose Their Intimacy"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Building a Healthy Family: How to Create the Kind of Family You Want"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Three Things I Learnt in Marriage and You Should Know Too"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "5 Signs of Unhealthy Conflicts in Your Relationship or Marriage"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "5 Ways to Have More Fun in Your Marriage"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Lessons From Our 12 Years Marriage"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "How to Handle a Difficult Spouse"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "How to Rebuild Your Marriage from a Difficult Place (3 Proven Steps)"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Four Perspectives for Building  an Intimate Marriage"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Expectations: Realistic and Unrealistic Expectations in Relationships"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Building a Thriving Marriage: Three Things to Let Go in Your Marriage"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Marriage Advice: 4 Tips for a Successful Marriage"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "3 Habits That Will Increase Your Intimacy in Marriage"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Effective Communication and Conflict Guide for Relationships and Marriage: Common Causes of Conflicts in Marriage"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Sexy Santa: 4 Ways to Initiate More Sex & Intimacy with your Husband this Holidays"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Building Trust in Your Marriage"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Search"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Popular Posts"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "6 Reasons Why Couples Grow Apart and Lose Their Intimacy"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-12",
+		"slug": "sponsored",
+		"status": "published",
+		"title": "Sponsored",
+		"hero_title": null,
+		"hero_image": null,
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Sponsored"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Sponsored"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-13",
+		"slug": "announcements",
+		"status": "published",
+		"title": "Announcements",
+		"hero_title": null,
+		"hero_image": null,
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Announcements"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-14",
+		"slug": "event",
+		"status": "published",
+		"title": "Event Gallery",
+		"hero_title": null,
+		"hero_image": null,
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Event Gallery"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Event Gallery"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-15",
+		"slug": "askcoach",
+		"status": "published",
+		"title": "Ask Coach",
+		"hero_title": null,
+		"hero_image": null,
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Need Advice?"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Send your questions below to get helpful answers from Coach Ruth in one of the YouTube episodes on Ask Coach Ruth! Your questions may also be shared with our Instagram channel community.\nDon't worry, it's strictly anonymous!"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-16",
+		"slug": "contact",
+		"status": "published",
+		"title": "Contact",
+		"hero_title": null,
+		"hero_image": null,
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Contact"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Contact"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Email"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Social Media"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-17",
+		"slug": "cancellation-policy",
+		"status": "published",
+		"title": "Cancellation Policy",
+		"hero_title": null,
+		"hero_image": null,
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Cancellation Policy"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Cancellation Policy"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "$50 fee (converted to your currency rate at the point of payment)"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-18",
+		"slug": "confidentiality-policy",
+		"status": "published",
+		"title": "Confidentiality Policy",
+		"hero_title": null,
+		"hero_image": null,
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Confidentiality Policy"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "h2",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Confidentiality Policy"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "2. Confidentiality Assurance"
+					}
+				]
+			}
+		],
+		"terms": {}
+	},
+	{
+		"id": "page-19",
+		"slug": "privacy-policy",
+		"status": "published",
+		"title": "Privacy Policy",
+		"hero_title": null,
+		"hero_image": null,
+		"side_image": null,
+		"content": [
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": ""
+					}
+				]
+			}
+		],
+		"terms": {}
+	}
+]

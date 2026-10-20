@@ -1,0 +1,35 @@
+---
+// Minimal Portable Text renderer for the block/span shape used by the seeded
+// content (see src/data/types.ts). Marks are not used by the current content.
+import type { PortableText } from "../data/types";
+
+interface Props {
+	value?: PortableText | null;
+}
+
+const { value } = Astro.props;
+const blocks = value ?? [];
+
+const textOf = (block: (typeof blocks)[number]) =>
+	(block.children ?? []).map((child) => child.text).join("");
+---
+
+{
+	blocks.map((block) => {
+		const text = textOf(block);
+		switch (block.style) {
+			case "h1":
+				return <h1 set:html={text} />;
+			case "h2":
+				return <h2 set:html={text} />;
+			case "h3":
+				return <h3 set:html={text} />;
+			case "h4":
+				return <h4 set:html={text} />;
+			case "blockquote":
+				return <blockquote set:html={text} />;
+			default:
+				return <p set:html={text} />;
+		}
+	})
+}

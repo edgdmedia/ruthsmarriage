@@ -1,8 +1,5 @@
 ---
-import { getMenuWithCacheHint, getSiteSettingsWithCacheHint, getEmDashCollection } from "emdash";
-import { EmDashHead, EmDashBodyStart, EmDashBodyEnd } from "emdash/ui";
-import { createPublicPageContext } from "emdash/page";
-import { setCacheHint } from "../lib/cache";
+import { getMenu, marqueeItems, settings } from "../data";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import "../styles/tokens.css";
@@ -15,45 +12,13 @@ interface Props {
 	description?: string | null;
 	image?: string | null;
 	canonical?: string | null;
-	content?: { collection: string; id: string; slug?: string | null };
 }
 
-const { title, pageTitle, description, image, canonical, content } = Astro.props;
+const { title, pageTitle, description, image, canonical } = Astro.props;
 
-const settingsResult = await getSiteSettingsWithCacheHint();
-const menuResult = await getMenuWithCacheHint("primary");
-setCacheHint(Astro.cache, settingsResult.cacheHint);
-setCacheHint(Astro.cache, menuResult.cacheHint);
-
-const marqueeResult = await getEmDashCollection("marquee_items", {
-	limit: 100,
-	orderBy: { order: "asc" },
-});
-setCacheHint(Astro.cache, marqueeResult.cacheHint);
-
-const { data: settings } = settingsResult;
-const { data: menu } = menuResult;
-const marqueeItems = marqueeResult.entries?.map((e) => ({
-	text: e.data.text,
-	link: e.data.link,
-})) || [];
-
-const siteTitle = settings?.title ?? "Ruth's Marriage";
 const fullTitle = pageTitle ?? title;
-const pageDescription = description ?? settings?.tagline ?? null;
-
-const pageCtx = createPublicPageContext({
-	Astro,
-	kind: content ? "content" : "custom",
-	pageType: "website",
-	title: fullTitle,
-	pageTitle: pageTitle ?? title,
-	description: pageDescription,
-	canonical,
-	image,
-	content,
-	siteName: siteTitle,
-});
+const pageDescription = description ?? settings.tagline ?? null;
+const siteTitle = settings.title;
 ---
 
 <!doctype html>
@@ -64,18 +29,32 @@ const pageCtx = createPublicPageContext({
 		<title>{fullTitle}</title>
 		{pageDescription && <meta name="description" content={pageDescription} />}
 		{canonical && <link rel="canonical" href={canonical} />}
+		<meta property="og:site_name" content={siteTitle} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={fullTitle} />
+		{pageDescription && <meta property="og:description" content={pageDescription} />}
 		{image && <meta property="og:image" content={image} />}
-		<EmDashHead page={pageCtx} />
+		<meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
+		<meta name="twitter:title" content={fullTitle} />
+		{pageDescription && <meta name="twitter:description" content={pageDescription} />}
+		{image && <meta name="twitter:image" content={image} />}
 	</head>
 	<body>
-		<EmDashBodyStart page={pageCtx} />
-
-		<Header menu={menu as any} logoSrc={settings?.logo?.url} marqueeItems={marqueeItems} />
+		<Header
+			menu={getMenu("primary") ?? null}
+			marqueeItems={marqueeItems}
+			logoSrc={settings.logo?.src}
+		/>
 		<main>
 			<slot />
 		</main>
-		<Footer menus={menu ? { primary: menu as any } : undefined} settings={settings as any} />
-
-		<EmDashBodyEnd page={pageCtx} />
+		<Footer
+			menus={{
+				primary: getMenu("primary") ?? undefined,
+				footerServices: getMenu("footer-services") ?? undefined,
+				footerResources: getMenu("footer-resources") ?? undefined,
+			}}
+			settings={settings}
+		/>
 	</body>
 </html>

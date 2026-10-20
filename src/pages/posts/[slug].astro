@@ -1,39 +1,27 @@
 ---
-import {
-	getEmDashEntry,
-	getSeoMeta,
-	decodeSlug,
-	getSiteSettings,
-} from "emdash";
-import { Image, PortableText, WidgetArea } from "emdash/ui";
 import Base from "../../layouts/Base.astro";
-import { resolveStarterSiteIdentity } from "../../utils/site-identity";
+import PortableText from "../../components/PortableText.astro";
+import { getPost, settings } from "../../data";
+import { getSeoMeta } from "../../lib/seo";
 
-const slug = decodeSlug(Astro.params.slug);
-
-if (!slug) {
-	return Astro.rewrite("/404");
-}
-
-const { entry: post, cacheHint } = await getEmDashEntry("posts", slug);
+const slug = Astro.params.slug ?? "";
+const post = getPost(slug);
 
 if (!post) {
 	return Astro.rewrite("/404");
 }
 
-if (Astro.cache?.enabled && cacheHint) Astro.cache.set(cacheHint);
-const { siteTitle } = resolveStarterSiteIdentity(await getSiteSettings());
-
-// SEO meta from content fields
-const seo = getSeoMeta(post, {
-	siteTitle,
+const seo = getSeoMeta({
+	title: post.title,
+	description: post.excerpt,
+	image: post.featured_image?.src ?? null,
+	siteTitle: settings.title,
 	siteUrl: Astro.url.origin,
 	path: Astro.url.pathname.replace(/\/$/, ""),
 });
 
-// Taxonomy terms are already hydrated onto the entry by getEmDashEntry.
-const tags = post.data.terms?.tag ?? [];
-const categories = post.data.terms?.category ?? [];
+const tags = post.terms?.tag ?? [];
+const categories = post.terms?.category ?? [];
 ---
 
 <Base
@@ -42,23 +30,25 @@ const categories = post.data.terms?.category ?? [];
 	description={seo.description}
 	canonical={seo.canonical}
 	image={seo.ogImage}
-	content={{ collection: "posts", id: post.data.id, slug }}
 >
 	<article>
 		{
-			post.data.featured_image && (
-				<div {...post.edit.featured_image}>
-					<Image image={post.data.featured_image} />
-				</div>
+			post.featured_image && (
+				<img
+					src={post.featured_image.src}
+					alt={post.featured_image.alt}
+					width="1200"
+					height="630"
+				/>
 			)
 		}
 
-		<h1 {...post.edit.title}>{post.data.title}</h1>
+		<h1>{post.title}</h1>
 
 		{
-			post.data.publishedAt && (
-				<time datetime={post.data.publishedAt.toISOString()}>
-					{post.data.publishedAt.toLocaleDateString("en-US", {
+			post.publishedAt && (
+				<time datetime={post.publishedAt}>
+					{new Date(post.publishedAt).toLocaleDateString("en-US", {
 						year: "numeric",
 						month: "long",
 						day: "numeric",
@@ -71,26 +61,22 @@ const categories = post.data.terms?.category ?? [];
 			categories.length > 0 && (
 				<div>
 					{categories.map((c) => (
-						<a href={`/category/${c.slug}`}>{c.label}</a>
+						<a href={`/category/${c.slug}/`}>{c.label}</a>
 					))}
 				</div>
 			)
 		}
 
-		<PortableText value={post.data.content} />
+		<PortableText value={post.content} />
 
 		{
 			tags.length > 0 && (
 				<div>
 					{tags.map((t) => (
-						<a href={`/tag/${t.slug}`}>{t.label}</a>
+						<a href={`/tag/${t.slug}/`}>{t.label}</a>
 					))}
 				</div>
 			)
 		}
 	</article>
-
-	<aside>
-		<WidgetArea name="sidebar" />
-	</aside>
 </Base>
