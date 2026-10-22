@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 
-/* WaveSection — pale-pink section with plain borders (waves removed for now). */
+/* WaveSection — pale-pink section with wave-brush shape dividers
+   (_global.md → WaveSection): top wave 52px, bottom wave 40px, both white. */
 export interface WaveSectionProps {
 	children?: ReactNode;
 	className?: string;
@@ -13,14 +14,22 @@ export const WaveSection = ({ children, className = "", style }: WaveSectionProp
 		style={{
 			backgroundColor: "#BF1E720D",
 			position: "relative",
-			padding: "0 70px 70px",
-			borderTop: "1px solid #EBEBEB",
-			borderBottom: "1px solid #EBEBEB",
+			padding: "0 50px",
 			...style,
 		}}
 	>
-		<div className="wave-section-inner" style={{ position: "relative", zIndex: 2, paddingTop: "100px", maxWidth: "1140px", margin: "0 auto" }}>
-			{children}
-		</div>
+		<img
+			className="wave-section__wave wave-section__wave--top"
+			src="/assets/wave-brush.svg"
+			alt=""
+			aria-hidden="true"
+		/>
+		<img
+			className="wave-section__wave wave-section__wave--bottom"
+			src="/assets/wave-brush.svg"
+			alt=""
+			aria-hidden="true"
+		/>
+		<div className="wave-section-inner">{children}</div>
 	</section>
 );

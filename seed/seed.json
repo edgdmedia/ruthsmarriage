@@ -1,2449 +1,2076 @@
 {
-	"$schema": "https://emdashcms.com/seed.schema.json",
-	"version": "1",
-	"meta": {
-		"name": "Ruth's Marriage",
-		"description": "Marriage counselling and coaching — ported from WordPress",
-		"author": "Ruth's Marriage"
-	},
-	"settings": {
-		"title": "Ruth's Marriage",
-		"tagline": "",
-		"url": "https://www.ruthsmarriage.com",
-		"logo": {
-			"$media": {
-				"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/logo-2-1.png",
-				"alt": "Ruth's Marriage",
-				"filename": "logo-2-1.png"
-			}
-		},
-		"social": {
-			"facebook": "https://facebook.com/RuthsMarriage",
-			"twitter": "https://twitter.com/ruthsmarriage",
-			"instagram": "https://instagram.com/askcoachruth",
-			"youtube": "https://youtube.com/@ruthsmarriage",
-			"threads": "https://threads.com/RuthsMarriage"
-		}
-	},
-	"collections": [
-		{
-			"slug": "posts",
-			"label": "Posts",
-			"labelSingular": "Post",
-			"urlPattern": "/{slug}",
-			"supports": [
-				"drafts",
-				"revisions",
-				"preview",
-				"scheduling",
-				"search",
-				"seo"
-			],
-			"commentsEnabled": false,
-			"fields": [
-				{
-					"slug": "title",
-					"label": "Title",
-					"type": "string",
-					"required": true,
-					"searchable": true
-				},
-				{
-					"slug": "featured_image",
-					"label": "Featured Image",
-					"type": "image"
-				},
-				{
-					"slug": "excerpt",
-					"label": "Excerpt",
-					"type": "text"
-				},
-				{
-					"slug": "content",
-					"label": "Content",
-					"type": "portableText",
-					"searchable": true
-				}
-			]
-		},
-		{
-			"slug": "pages",
-			"label": "Pages",
-			"labelSingular": "Page",
-			"urlPattern": "/{slug}",
-			"supports": [
-				"drafts",
-				"revisions",
-				"preview",
-				"search",
-				"seo"
-			],
-			"commentsEnabled": false,
-			"fields": [
-				{
-					"slug": "title",
-					"label": "Title",
-					"type": "string",
-					"required": true,
-					"searchable": true
-				},
-				{
-					"slug": "hero_title",
-					"label": "Hero Title",
-					"type": "string"
-				},
-				{
-					"slug": "hero_image",
-					"label": "Hero Image",
-					"type": "image"
-				},
-				{
-					"slug": "side_image",
-					"label": "Side Image",
-					"type": "image"
-				},
-				{
-					"slug": "content",
-					"label": "Content",
-					"type": "portableText",
-					"searchable": true
-				}
-			]
-		},
-		{
-			"slug": "services",
-			"label": "Services",
-			"labelSingular": "Service",
-			"urlPattern": "/service/{slug}",
-			"supports": [
-				"drafts",
-				"revisions",
-				"preview",
-				"search",
-				"seo"
-			],
-			"commentsEnabled": false,
-			"fields": [
-				{
-					"slug": "title",
-					"label": "Title",
-					"type": "string",
-					"required": true,
-					"searchable": true
-				},
-				{
-					"slug": "featured_image",
-					"label": "Featured Image",
-					"type": "image"
-				},
-				{
-					"slug": "price_label",
-					"label": "Price",
-					"type": "string"
-				},
-				{
-					"slug": "audience_label",
-					"label": "Audience",
-					"type": "string"
-				},
-				{
-					"slug": "format",
-					"label": "Format",
-					"type": "string"
-				},
-				{
-					"slug": "notice",
-					"label": "Booking Notice",
-					"type": "text"
-				},
-				{
-					"slug": "booking_url",
-					"label": "Booking URL",
-					"type": "url"
-				},
-				{
-					"slug": "order",
-					"label": "Order",
-					"type": "number"
-				},
-				{
-					"slug": "content",
-					"label": "Content",
-					"type": "portableText",
-					"searchable": true
-				}
-			]
-		},
-		{
-			"slug": "resources",
-			"label": "Resources",
-			"labelSingular": "Resource",
-			"urlPattern": "/resource/{slug}",
-			"supports": [
-				"drafts",
-				"revisions",
-				"preview",
-				"search",
-				"seo"
-			],
-			"commentsEnabled": false,
-			"fields": [
-				{
-					"slug": "title",
-					"label": "Title",
-					"type": "string",
-					"required": true,
-					"searchable": true
-				},
-				{
-					"slug": "featured_image",
-					"label": "Featured Image",
-					"type": "image"
-				},
-				{
-					"slug": "badge_label",
-					"label": "Badge",
-					"type": "string"
-				},
-				{
-					"slug": "ctas",
-					"label": "CTAs",
-					"type": "repeater",
-					"validation": {
-						"subFields": [
-							{
-								"slug": "label",
-								"label": "Label",
-								"type": "string"
-							},
-							{
-								"slug": "url",
-								"label": "URL",
-								"type": "url"
-							}
-						]
-					}
-				},
-				{
-					"slug": "video_url",
-					"label": "Video URL",
-					"type": "url"
-				},
-				{
-					"slug": "excerpt",
-					"label": "Excerpt",
-					"type": "text"
-				},
-				{
-					"slug": "order",
-					"label": "Order",
-					"type": "number"
-				},
-				{
-					"slug": "content",
-					"label": "Content",
-					"type": "portableText",
-					"searchable": true
-				}
-			]
-		},
-		{
-			"slug": "testimonials",
-			"label": "Testimonials",
-			"labelSingular": "Testimonial",
-			"urlPattern": "/{slug}",
-			"supports": [
-				"drafts"
-			],
-			"commentsEnabled": false,
-			"fields": [
-				{
-					"slug": "title",
-					"label": "Title",
-					"type": "string"
-				},
-				{
-					"slug": "quote",
-					"label": "Quote",
-					"type": "text",
-					"required": true
-				},
-				{
-					"slug": "author",
-					"label": "Author",
-					"type": "string"
-				},
-				{
-					"slug": "order",
-					"label": "Order",
-					"type": "number"
-				}
-			]
-		},
-		{
-			"slug": "marquee_items",
-			"label": "Marquee Items",
-			"labelSingular": "Marquee Item",
-			"urlPattern": "/{slug}",
-			"supports": [
-				"drafts"
-			],
-			"commentsEnabled": false,
-			"fields": [
-				{
-					"slug": "text",
-					"label": "Text",
-					"type": "string",
-					"required": true
-				},
-				{
-					"slug": "link",
-					"label": "Link",
-					"type": "url",
-					"required": true
-				},
-				{
-					"slug": "order",
-					"label": "Order",
-					"type": "number"
-				}
-			]
-		}
-	],
-	"taxonomies": [
-		{
-			"name": "category",
-			"label": "Categories",
-			"labelSingular": "Category",
-			"hierarchical": true,
-			"collections": [
-				"posts"
-			],
-			"terms": [
-				{
-					"slug": "marriage",
-					"label": "Marriage"
-				}
-			]
-		},
-		{
-			"name": "tag",
-			"label": "Tags",
-			"labelSingular": "Tag",
-			"hierarchical": false,
-			"collections": [
-				"posts"
-			],
-			"terms": [
-				{
-					"slug": "instagram",
-					"label": "Instagram"
-				},
-				{
-					"slug": "godly-perspective",
-					"label": "Godly Perspective"
-				}
-			]
-		},
-		{
-			"name": "service_type",
-			"label": "Service Types",
-			"labelSingular": "Service Type",
-			"hierarchical": false,
-			"collections": [
-				"services"
-			],
-			"terms": [
-				{
-					"slug": "married",
-					"label": "Married"
-				},
-				{
-					"slug": "singles",
-					"label": "Singles"
-				}
-			]
-		},
-		{
-			"name": "resource_type",
-			"label": "Resource Types",
-			"labelSingular": "Resource Type",
-			"hierarchical": false,
-			"collections": [
-				"resources"
-			],
-			"terms": [
-				{
-					"slug": "resource",
-					"label": "Resource"
-				},
-				{
-					"slug": "book",
-					"label": "Book"
-				},
-				{
-					"slug": "video",
-					"label": "Video"
-				}
-			]
-		}
-	],
-	"menus": [
-		{
-			"name": "primary",
-			"label": "Primary Navigation",
-			"items": [
-				{
-					"type": "custom",
-					"label": "About",
-					"url": "#",
-					"children": [
-						{
-							"type": "custom",
-							"label": "About Us",
-							"url": "/about/"
-						},
-						{
-							"type": "custom",
-							"label": "Our Story",
-							"url": "/our-story/"
-						},
-						{
-							"type": "custom",
-							"label": "Our Founder",
-							"url": "/founder/"
-						}
-					]
-				},
-				{
-					"type": "custom",
-					"label": "Counseling Services",
-					"url": "#",
-					"children": [
-						{
-							"type": "custom",
-							"label": "Singles",
-							"url": "/singles/"
-						},
-						{
-							"type": "custom",
-							"label": "Married",
-							"url": "/married/"
-						}
-					]
-				},
-				{
-					"type": "custom",
-					"label": "Resources",
-					"url": "#",
-					"children": [
-						{
-							"type": "custom",
-							"label": "Courses, Guides, and Intimacy Builders",
-							"url": "/resources/"
-						},
-						{
-							"type": "custom",
-							"label": "Books",
-							"url": "/books/"
-						},
-						{
-							"type": "custom",
-							"label": "Videos",
-							"url": "/videos/"
-						}
-					]
-				},
-				{
-					"type": "custom",
-					"label": "Freebies",
-					"url": "#",
-					"children": [
-						{
-							"type": "custom",
-							"label": "Blog Articles",
-							"url": "/inspired-features/"
-						}
-					]
-				},
-				{
-					"type": "custom",
-					"label": "Media",
-					"url": "#",
-					"children": [
-						{
-							"type": "custom",
-							"label": "Sponsored",
-							"url": "/sponsored/"
-						},
-						{
-							"type": "custom",
-							"label": "Announcements",
-							"url": "/announcements/"
-						},
-						{
-							"type": "custom",
-							"label": "Event Gallery",
-							"url": "/event/"
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "footer-services",
-			"label": "Footer: Services",
-			"items": [
-				{
-					"type": "custom",
-					"label": "One Hour Relationship Clarity Session",
-					"url": "/service/one-hour-relationship-clarity-session/"
-				},
-				{
-					"type": "custom",
-					"label": "One Hour Dating Couples Counseling Session",
-					"url": "/service/one-hour-dating-couples-counseling-session/"
-				},
-				{
-					"type": "custom",
-					"label": "Six (6) Weeks Individual Therapy Cycle",
-					"url": "/service/six-6-weeks-individual-therapy-cycle/"
-				},
-				{
-					"type": "custom",
-					"label": "Private Premarital Counseling Classes",
-					"url": "/service/private-premarital-counseling-classes/"
-				},
-				{
-					"type": "custom",
-					"label": "The Dating Couple Coaching Cycle",
-					"url": "/service/the-dating-couple-coaching-cycle/"
-				},
-				{
-					"type": "custom",
-					"label": "One Hour Individual Counseling Session",
-					"url": "/service/one-hour-individual-counseling-session/"
-				}
-			]
-		},
-		{
-			"name": "footer-resources",
-			"label": "Footer: Resources",
-			"items": [
-				{
-					"type": "custom",
-					"label": "52 Rules of Dating and Relationships",
-					"url": "/resource/52-rules-of-dating-and-relationships/"
-				},
-				{
-					"type": "custom",
-					"label": "Have Sex & Pray",
-					"url": "/resource/have-sex-pray/"
-				},
-				{
-					"type": "custom",
-					"label": "50 Intimate Conversations to Have with Your Partner",
-					"url": "/resource/50-intimate-conversations-to-have-with-your-partner/"
-				},
-				{
-					"type": "custom",
-					"label": "The 28 Days Lovers Again Challenge",
-					"url": "/resource/28-days-lovers-again-challenge/"
-				},
-				{
-					"type": "custom",
-					"label": "The 60 Fun Games and Activities for Couples",
-					"url": "/resource/60-fun-games-and-activities-for-couples/"
-				},
-				{
-					"type": "custom",
-					"label": "How to Deal with a Husband who Flirts and Cheats with other Women",
-					"url": "/resource/how-to-deal-with-a-husband-who-flirts-and-cheats-with-other-women/"
-				}
-			]
-		},
-		{
-			"name": "footer-legal",
-			"label": "Footer: Legal",
-			"items": [
-				{
-					"type": "custom",
-					"label": "Cancellation Policy",
-					"url": "/cancellation-policy/"
-				},
-				{
-					"type": "custom",
-					"label": "Confidentiality Policy",
-					"url": "/confidentiality-policy/"
-				}
-			]
-		}
-	],
-	"content": {
-		"marquee_items": [
-			{
-				"id": "marquee-1",
-				"slug": "28-days-lovers-again-challenge",
-				"status": "published",
-				"order": 1,
-				"data": {
-					"text": "Join the 28 Days Lovers Again Challenge with Coach Ruth",
-					"link": "/resource/28-days-lovers-again-challenge/"
-				}
-			}
-		],
-		"services": [
-			{
-				"id": "service-1",
-				"slug": "private-premarital-counseling-classes-2",
-				"status": "published",
-				"order": 1,
-				"data": {
-					"title": "Private Premarital Counseling Classes",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Private-premarital-1024x1024-1.jpg",
-							"alt": "",
-							"filename": "Private-premarital-1024x1024-1.jpg"
-						}
-					},
-					"price_label": "₦590,000/$590",
-					"audience_label": null,
-					"format": "Zoom Video Session",
-					"notice": null,
-					"booking_url": "https://selar.com/d4av",
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "Private Premarital Counseling Classes ₦590,000/$590 Zoom Video Sessions Ruth’s Marriage Private Premarital Counseling Classes is for seriously dating/courting, engaged, and newlywed couples. The classes are private – between Coach Ruth and the Couple only. The classes hold for six weeks – once a week and covers all foundational topics for marriage. These classes are very comprehensive and intricately designed to prepare both partners extensively for marriage, help them build a strong foundation; whilst also providing early intervention counseling on personal challenges they may be experiencing The private classes are a great opportunity for you to ask questions, confront issues and disagreements that could potentially harm the marriage. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"service_type": [
-						"married"
-					]
-				}
-			},
-			{
-				"id": "service-2",
-				"slug": "six-6-weeks-individual-therapy-cycle-2",
-				"status": "published",
-				"order": 2,
-				"data": {
-					"title": "Six (6) Weeks Individual Therapy Cycle",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Two-female-friends-talking-and-holding-hands-1024x819-1.jpg",
-							"alt": "",
-							"filename": "Two-female-friends-talking-and-holding-hands-1024x819-1.jpg"
-						}
-					},
-					"price_label": "₦510,000/$510",
-					"audience_label": "(For Single or Married Individual)",
-					"format": "Zoom Video Session",
-					"notice": null,
-					"booking_url": "https://selar.com/9jmn",
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "Six (6) Weeks Individual Therapy Cycle ₦510,000/$510 (For Single or Married Individual) Zoom Video Sessions In this therapy cycle, my focus will be to help you become a better version of yourself, identify the changes & steps to take to have a healthier you and a healthier relationship or marriage You will have a safe space to explore your thoughts, feelings, and concerns without fear or judgement; while I hold your hands spiritually, mentally, and emotionally to ensure you achieve the goals we set during these sessions and leave no stone unturned. I will provide you with tools, practical wisdom, and research-based strategies that will propel you to the next level in your relationship and your personal life. Let’s begin the transformation you desire! After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"service_type": [
-						"married"
-					]
-				}
-			},
-			{
-				"id": "service-3",
-				"slug": "six-6-weeks-marriage-therapy-cycle",
-				"status": "published",
-				"order": 3,
-				"data": {
-					"title": "Six (6) Weeks Marriage Therapy Cycle",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Relationship-Clarity-1024x731-1.jpg",
-							"alt": "",
-							"filename": "Relationship-Clarity-1024x731-1.jpg"
-						}
-					},
-					"price_label": "₦750,000/$750",
-					"audience_label": "(For Married Couples Only)",
-					"format": "Zoom Video Session",
-					"notice": null,
-					"booking_url": "https://selar.com/fh75",
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "Six (6) Weeks Marriage Therapy Cycle ₦750,000/$750 (For Married Couples Only) Zoom Video Sessions Marriages sometimes require a long process of counseling and therapy to effect a change. These therapy sessions will help you identify the pitfalls in your marriage and provide you with tools, counsel, and research-based solutions that will help you achieve the kind of marriage you desire In these sessions, it is important that you are both willing to put in the work with me. We will set the goals of your therapy and I will work with you to achieve the goals we set. Before you give up on that marriage, let’s have therapy! Let me help you! After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"service_type": [
-						"married"
-					]
-				}
-			},
-			{
-				"id": "service-4",
-				"slug": "two-sessions-couples-counseling",
-				"status": "published",
-				"order": 4,
-				"data": {
-					"title": "Two Sessions Couples Counseling",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Two-female-friends-talking-and-holding-hands-1024x819-1.jpg",
-							"alt": "",
-							"filename": "Two-female-friends-talking-and-holding-hands-1024x819-1.jpg"
-						}
-					},
-					"price_label": "₦300,000/$300",
-					"audience_label": "(For Married or Engaged Couples)",
-					"format": "Zoom Video Session",
-					"notice": null,
-					"booking_url": "https://selar.com/3i84",
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "Two Sessions Couples Counseling ₦300,000/$300 (For Married or Engaged Couples) Zoom Video Sessions This is a two-time zoom video session with a married or engaged couple. In these sessions, it is compulsory for both partners to turn their videos on and be present. After the first session, the second session holds the following week. Each session lasts for one hour. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"service_type": [
-						"married"
-					]
-				}
-			},
-			{
-				"id": "service-5",
-				"slug": "one-hour-couples-counseling-session",
-				"status": "published",
-				"order": 5,
-				"data": {
-					"title": "One Hour Couples Counseling Session",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/One-hour-couples-1024x1024-1.jpg",
-							"alt": "",
-							"filename": "One-hour-couples-1024x1024-1.jpg"
-						}
-					},
-					"price_label": "₦160,000/$160",
-					"audience_label": "(For Married or Engaged Couples)",
-					"format": "Zoom Video Session",
-					"notice": null,
-					"booking_url": "https://selar.com/gykh",
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "One Hour Couples Counseling Session ₦160,000/$160 (For Married or Engaged Couples) Zoom Video Session This is a one hour virtual counseling session for a married or engaged couple. In this zoom session, it is compulsory for both partners to turn their videos on and be present After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"service_type": [
-						"married"
-					]
-				}
-			},
-			{
-				"id": "service-6",
-				"slug": "one-hour-individual-counseling-session",
-				"status": "published",
-				"order": 6,
-				"data": {
-					"title": "One Hour Individual Counseling Session",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/8750075-1024x683-1.jpg",
-							"alt": "",
-							"filename": "8750075-1024x683-1.jpg"
-						}
-					},
-					"price_label": "₦100,000/$100",
-					"audience_label": "(For Married Individuals)",
-					"format": null,
-					"notice": null,
-					"booking_url": "https://selar.com/7gxr",
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "One Hour Individual Counseling Session ₦100,000/$100 (For Married Individuals) WhatsApp Phone Call Session This is a one hour virtual counseling session for a married individual. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"service_type": [
-						"married"
-					]
-				}
-			},
-			{
-				"id": "service-7",
-				"slug": "the-dating-couple-coaching-cycle",
-				"status": "published",
-				"order": 7,
-				"data": {
-					"title": "The Dating Couple Coaching Cycle",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Book-Dating-Couple-1024x1024-1.jpg",
-							"alt": "",
-							"filename": "Book-Dating-Couple-1024x1024-1.jpg"
-						}
-					},
-					"price_label": "₦470,000/$470",
-					"audience_label": null,
-					"format": "Zoom Video Session",
-					"notice": null,
-					"booking_url": "https://selar.com/kmoy",
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "The Dating Couple Coaching Cycle ₦470,000/$470 Zoom Video Sessions This is a four weeks (four sessions) coaching cycle for a dating couple. A session holds once weekly. A relationship does not only progress because you like each other, it progresses based on how much knowledge you both have to build the relationship. Even couples with the deepest affection for one another may run into issues. These coaching sessions will help you to individually become self-aware, learn effective communication and conflict resolution techniques, set appropriate boundaries in your relationships, and guide you to purposeful dating. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"service_type": [
-						"singles"
-					]
-				}
-			},
-			{
-				"id": "service-8",
-				"slug": "private-premarital-counseling-classes",
-				"status": "published",
-				"order": 8,
-				"data": {
-					"title": "Private Premarital Counseling Classes",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Private-premarital-1024x1024-1.jpg",
-							"alt": "",
-							"filename": "Private-premarital-1024x1024-1.jpg"
-						}
-					},
-					"price_label": "₦590,000/$590",
-					"audience_label": null,
-					"format": "Zoom Video Session",
-					"notice": null,
-					"booking_url": "https://selar.com/d4av",
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "Private Premarital Counseling Classes ₦590,000/$590 Zoom Video Sessions Ruth’s Marriage Private Premarital Counseling Classes is for seriously dating/courting, engaged, and newlywed couples. The classes are private – between Coach Ruth and the Couple only. The classes hold for six weeks – once a week and covers all foundational topics for marriage. These classes are very comprehensive and intricately designed to prepare both partners extensively for marriage, help them build a strong foundation; whilst also providing early intervention counseling on personal challenges they may be experiencing The private classes are a great opportunity for you to ask questions, confront issues and disagreements that could potentially harm the marriage. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"service_type": [
-						"singles"
-					]
-				}
-			},
-			{
-				"id": "service-9",
-				"slug": "six-6-weeks-individual-therapy-cycle",
-				"status": "published",
-				"order": 9,
-				"data": {
-					"title": "Six (6) Weeks Individual Therapy Cycle",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Two-female-friends-talking-and-holding-hands-1024x819-1.jpg",
-							"alt": "",
-							"filename": "Two-female-friends-talking-and-holding-hands-1024x819-1.jpg"
-						}
-					},
-					"price_label": "₦510,000/$510",
-					"audience_label": "(For Single or Married Individual)",
-					"format": "Zoom Video Session",
-					"notice": null,
-					"booking_url": "https://selar.com/9jmn",
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "Six (6) Weeks Individual Therapy Cycle ₦510,000/$510 (For Single or Married Individual) Zoom Video Sessions In this therapy cycle, my focus will be to help you become a better version of yourself, identify the changes & steps to take to have a healthier you and a healthier relationship or marriage You will have a safe space to explore your thoughts, feelings, and concerns without fear or judgement; while I hold your hands spiritually, mentally, and emotionally to ensure you achieve the goals we set during these sessions and leave no stone unturned. I will provide you with tools, practical wisdom, and research-based strategies that will propel you to the next level in your relationship and your personal life. Let’s begin the transformation you desire! After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"service_type": [
-						"singles"
-					]
-				}
-			},
-			{
-				"id": "service-10",
-				"slug": "one-hour-dating-couples-counseling-session",
-				"status": "published",
-				"order": 10,
-				"data": {
-					"title": "One Hour Dating Couples Counseling Session",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Book-Dating-Couple-1024x1024-1.jpg",
-							"alt": "",
-							"filename": "Book-Dating-Couple-1024x1024-1.jpg"
-						}
-					},
-					"price_label": "₦150,000/$150",
-					"audience_label": null,
-					"format": "Zoom Video Session",
-					"notice": null,
-					"booking_url": "https://selar.com/610085",
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "One Hour Dating Couples Counseling Session ₦150,000/$150 Zoom Video Session This is a one-hour counseling/coaching session for a dating couple. In this session, you will be able to identify your unhealthy patterns, improve your communication & conflict resolution skills and gain insight into making an informed decision about your relationship In this session, it is compulsory for both partners to turn their videos on and be present. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"service_type": [
-						"singles"
-					]
-				}
-			},
-			{
-				"id": "service-11",
-				"slug": "one-hour-relationship-clarity-session",
-				"status": "published",
-				"order": 11,
-				"data": {
-					"title": "One Hour Relationship Clarity Session",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Relationship-Clarity-1024x731-1.jpg",
-							"alt": "",
-							"filename": "Relationship-Clarity-1024x731-1.jpg"
-						}
-					},
-					"price_label": "₦90,000/$90",
-					"audience_label": "(For Singles Only)",
-					"format": null,
-					"notice": null,
-					"booking_url": "https://selar.com/s46z",
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "One Hour Relationship Clarity Session ₦90,000/$90 (For Singles Only) WhatsApp Phone Call Session The choice of a life partner is one of the most important decisions you will ever make. Many people do not have clarity regarding this and are confused about how to make that decision. In this clarity call, I will provide you counsel on how to navigate the process of choosing a life partner and also analyze your current relationship (if you are in one) whilst providing guidance on your decision. I will help you analyze your standards to be sure they are not unrealistic, unnecessary, and sub-standard. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"service_type": [
-						"singles"
-					]
-				}
-			}
-		],
-		"resources": [
-			{
-				"id": "resource-1",
-				"slug": "baddie-in-bed-a-sex-guide-for-wives",
-				"status": "published",
-				"order": 1,
-				"data": {
-					"title": "Baddie in Bed",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-21-at-18.20.27.jpeg",
-							"alt": "",
-							"filename": "WhatsApp-Image-2026-03-21-at-18.20.27.jpeg"
-						}
-					},
-					"badge_label": "Learn More",
-					"ctas": [
-						{
-							"label": "Learn More",
-							"url": "https://links.ruthsmarriage.com/baddie-in-bed-a-sex-guide-for-wives"
-						}
-					],
-					"video_url": null,
-					"excerpt": null,
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "\n\t\t\t\t\t Become the woman who knows her body and is not ashamed to explore sex with her husband, shows up fully present instead of just going through the motions and actually enjoys sex \n The Baddie in Bed is a practical and deeply explorative guide for women who desire to enjoy more sexual intimacy in marriage \n\t\t\t\t"
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"resource_type": [
-						"resource"
-					]
-				}
-			},
-			{
-				"id": "resource-2",
-				"slug": "the-marriage-checkup-workbook",
-				"status": "published",
-				"order": 2,
-				"data": {
-					"title": "The Marriage Check-up Workbook.",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/The-Reconnected-Couples-Workbook.png",
-							"alt": "",
-							"filename": "The-Reconnected-Couples-Workbook.png"
-						}
-					},
-					"badge_label": "Learn More",
-					"ctas": [
-						{
-							"label": "Learn More",
-							"url": "https://links.ruthsmarriage.com/the-reconnected-couples-workbook"
-						}
-					],
-					"video_url": null,
-					"excerpt": null,
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "\n\t\t\t\t\t Not just a Workbook – This is your Game-changing Relationship Maintenance System.” \n With Weekly, Quarterly, and Yearly Checkups, Clear Guides and Real-Life Examples of how this conversations should go, It’s the Tool Every Marriage Needs to Stay Connected and Growing – All Year Long ! It Transformed our Marriage, It Can Transform Yours Too. \n\t\t\t\t"
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"resource_type": [
-						"resource"
-					]
-				}
-			},
-			{
-				"id": "resource-3",
-				"slug": "the-love-playbook",
-				"status": "published",
-				"order": 3,
-				"data": {
-					"title": "The Love Playbook",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Copy-of-The-Love-Playbook.png",
-							"alt": "",
-							"filename": "Copy-of-The-Love-Playbook.png"
-						}
-					},
-					"badge_label": "Learn More",
-					"ctas": [
-						{
-							"label": "Learn More",
-							"url": "https://links.ruthsmarriage.com/love-playbook"
-						}
-					],
-					"video_url": null,
-					"excerpt": null,
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "\n\t\t\t\t\t Want more passion, pleasurable sex, intimacy &amp; fun? Then The Love Playbook is for you \n Talk, Tease &amp; Touch: ‘Get Ready to Laugh, Flirt, and Get Emotionally &amp; Sexually Closer Tonight…And Every day!. \n\t\t\t\t"
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"resource_type": [
-						"resource"
-					]
-				}
-			},
-			{
-				"id": "resource-4",
-				"slug": "the-ultimate-couples-hard-conversations-guide",
-				"status": "published",
-				"order": 4,
-				"data": {
-					"title": "The Ultimate Couples Hard Conversations Guide",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/IMG_1053.png",
-							"alt": "",
-							"filename": "IMG_1053.png"
-						}
-					},
-					"badge_label": "Learn More",
-					"ctas": [
-						{
-							"label": "Learn More",
-							"url": "https://links.ruthsmarriage.com/couples-hard-conversations-guide"
-						}
-					],
-					"video_url": null,
-					"excerpt": null,
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "\n\t\t\t\t\t Before Another Issue or Argument Pushes You Apart – This guide is a proven resource to help you talk about ANYTHING no matter how difficult…without fighting, shutting down or walking away \n The Ultimate Couples Hard Conversations Guide” is a step by step blueprint for navigating difficult topics with compassion, clarity and understanding. \n\t\t\t\t"
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"resource_type": [
-						"resource"
-					]
-				}
-			},
-			{
-				"id": "resource-5",
-				"slug": "how-do-we-discuss-our-sexual-fantasies-in-marriage",
-				"status": "published",
-				"order": 5,
-				"data": {
-					"title": "How do we discuss our sexual fantasies in Marriage?",
-					"featured_image": null,
-					"badge_label": null,
-					"ctas": [],
-					"video_url": "https://youtu.be/JdWGtwYFrQU",
-					"excerpt": null,
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "How do we discuss our sexual fantasies in Marriage?."
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"resource_type": [
-						"video"
-					]
-				}
-			},
-			{
-				"id": "resource-6",
-				"slug": "how-to-deal-with-a-husband-who-flirts-and-cheats-with-other-women",
-				"status": "published",
-				"order": 6,
-				"data": {
-					"title": "How to Deal with a Husband who Flirts and Cheats with other Women",
-					"featured_image": null,
-					"badge_label": null,
-					"ctas": [],
-					"video_url": "https://youtu.be/dBiH3LCTqP4",
-					"excerpt": null,
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "How to Deal with a Husband who Flirts and Cheats with other Women."
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"resource_type": [
-						"video"
-					]
-				}
-			},
-			{
-				"id": "resource-7",
-				"slug": "60-fun-games-and-activities-for-couples",
-				"status": "published",
-				"order": 7,
-				"data": {
-					"title": "The 60 Fun Games and Activities for Couples",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/IMG_1054.png",
-							"alt": "",
-							"filename": "IMG_1054.png"
-						}
-					},
-					"badge_label": "Download Here",
-					"ctas": [
-						{
-							"label": "Download Here",
-							"url": "https://selar.com/dg8w"
-						}
-					],
-					"video_url": null,
-					"excerpt": null,
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "\n\t\t\t\t\t Do you always feel like your marriage is boring? Are you always lost on what to do for fun as a couple? Do you need fun, interesting games and activities that you can easily enjoy? Then, this is for you! \n\t\t\t\t"
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"resource_type": [
-						"resource"
-					]
-				}
-			},
-			{
-				"id": "resource-8",
-				"slug": "28-days-lovers-again-challenge",
-				"status": "published",
-				"order": 8,
-				"data": {
-					"title": "The 28 Days Lovers Again Challenge",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-12-17-at-5.06.03-PM.jpeg",
-							"alt": "",
-							"filename": "WhatsApp-Image-2025-12-17-at-5.06.03-PM.jpeg"
-						}
-					},
-					"badge_label": "Join the Challenge",
-					"ctas": [
-						{
-							"label": "Join the Challenge",
-							"url": "https://links.ruthsmarriage.com/28-days-lovers-again-challenge-"
-						}
-					],
-					"video_url": null,
-					"excerpt": null,
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "\n\t\t\t\t\t The 28 Days Lovers Again Challenge is a daily, doable and deeply intentional experience. \n Each daily practice is designed to help you rebuild intimacy, gently shift old communication patterns, strengthen emotional closeness, and rebuild the sense of “us” that may have faded under the weight of daily life. \n It’s practical enough to start today, yet powerful &amp; deep enough to create mean"
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"resource_type": [
-						"resource"
-					]
-				}
-			},
-			{
-				"id": "resource-9",
-				"slug": "50-intimate-conversations-to-have-with-your-partner",
-				"status": "published",
-				"order": 9,
-				"data": {
-					"title": "50 Intimate Conversations to Have with Your Partner",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/50-intimate-conversations-selar.co-62e8fd101b57e-1024x1024-1.jpeg",
-							"alt": "",
-							"filename": "50-intimate-conversations-selar.co-62e8fd101b57e-1024x1024-1.jpeg"
-						}
-					},
-					"badge_label": null,
-					"ctas": [
-						{
-							"label": "Selar (ebook)",
-							"url": "https://selar.co/hhom"
-						}
-					],
-					"video_url": null,
-					"excerpt": null,
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "\n\t\t\t\t\t When I got the inspiration to write this book, it was going to be for singles alone, but I soon realized that this book is for anyone in a romantic relationship who desires real connection with their partner – whether single or married. \nThis is a get-to-know-each-other guide for singles and married to move you from “small talk” to “real connecting talk” in your relationship. If getting to "
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"resource_type": [
-						"book"
-					]
-				}
-			},
-			{
-				"id": "resource-10",
-				"slug": "have-sex-pray",
-				"status": "published",
-				"order": 10,
-				"data": {
-					"title": "Have Sex & Pray",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/IMG_5071.png",
-							"alt": "",
-							"filename": "IMG_5071.png"
-						}
-					},
-					"badge_label": null,
-					"ctas": [
-						{
-							"label": "Hardcopy (Nigeria)",
-							"url": "https://selar.co/410o83"
-						}
-					],
-					"video_url": null,
-					"excerpt": null,
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "\n\t\t\t\t\t This is not a book that tells you to have sex in your marriage – I know you already know that! It’s the kind of book that gives you LIGHT. \n In this book, I shared practical and biblical knowledge that will help every married couple enjoy an exciting sex life. I demystified mindsets and religious doctrines that have held couples in bondage and confusion regarding God’s view of sex in marria"
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"resource_type": [
-						"book"
-					]
-				}
-			},
-			{
-				"id": "resource-11",
-				"slug": "52-rules-of-dating-and-relationships",
-				"status": "published",
-				"order": 11,
-				"data": {
-					"title": "52 Rules of Dating and Relationships",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/52-Rules-of-Dating-and-Relationships-1.png",
-							"alt": "",
-							"filename": "52-Rules-of-Dating-and-Relationships-1.png"
-						}
-					},
-					"badge_label": null,
-					"ctas": [
-						{
-							"label": "Selar (ebook)",
-							"url": "https://selar.co/4486h3"
-						}
-					],
-					"video_url": null,
-					"excerpt": null,
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "\n\t\t\t\t\t This isn’t just another relationship book. It’s your roadmap to choosing well and loving wisely. Packed with timeless wisdom and practical principles, this book will shift how you date, how you connect, and how you prepare for the love that lasts. If you’re tired of guessing, settling, or just winging it – this book is your breakthrough. \n\t\t\t\t"
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"resource_type": [
-						"book"
-					]
-				}
-			}
-		],
-		"testimonials": [
-			{
-				"id": "testimonial-1",
-				"slug": "testimonial-1",
-				"status": "published",
-				"order": 1,
-				"data": {
-					"title": null,
-					"quote": "I found talking to coach Ruth therapeutic. I also love how she reminded me of my identity in Christ.",
-					"author": null
-				}
-			},
-			{
-				"id": "testimonial-2",
-				"slug": "testimonial-2",
-				"status": "published",
-				"order": 2,
-				"data": {
-					"title": null,
-					"quote": "It gave me a more practical view of what marriage is all about from a godly perspective. It reaffirmed my decision of settling for the right partner. It also prepared me for the journey. The classes were very impactful. It was a learning process for me. Coach Ruth had answers to everything through the help of God and our relationship is definitely better because of this session we had and we know our marriage will be great.",
-					"author": null
-				}
-			},
-			{
-				"id": "testimonial-3",
-				"slug": "testimonial-3",
-				"status": "published",
-				"order": 3,
-				"data": {
-					"title": null,
-					"quote": "The sessions were very enlightening. She was very professional and non-judgemental. Talking to her felt safe and familiar. I learned so much about myself and how to communicate my feelings. I have been using the tools I learnt from my session with coach Ruth and I must confess it really works. My wife and I were on the verge of a separation but now we are working together towards building a stronger marriage.",
-					"author": null
-				}
-			},
-			{
-				"id": "testimonial-4",
-				"slug": "testimonial-4",
-				"status": "published",
-				"order": 4,
-				"data": {
-					"title": null,
-					"quote": "My sessions with Coach Ruth were life changing. She taught me valuable tools and methods to deal with not only situations from the past or ones that I’m currently facing but also those in the future that may arise. She made me realise so many things that I didn’t know before and it has impacted and improved my life in various aspects including personal growth and relationships. She’s also helped me significantly manage my anxiety and take back control of my own life. Therapy with Coach Ruth is one of the best decisions I’ve ever made. I highly recommend her to everyone.",
-					"author": null
-				}
-			},
-			{
-				"id": "testimonial-5",
-				"slug": "testimonial-5",
-				"status": "published",
-				"order": 5,
-				"data": {
-					"title": null,
-					"quote": "Now I am able to recognize the different emotions I am feeling and I have different strategies for managing my emotions. Before, when I was feeling different emotions, I’d let them overtake me, especially during conflict. I’d end up saying things I couldn’t take back and acting out in ways I wasn’t proud of. Ruth also gave me different tools for communicating better in my marriage. While I went through my sessions for me, my husband was able to see a positive change in me after just a few sessions with Ruth. I took a lot of notes during my sessions and I feel confident moving forward knowing t",
-					"author": null
-				}
-			},
-			{
-				"id": "testimonial-6",
-				"slug": "testimonial-6",
-				"status": "published",
-				"order": 6,
-				"data": {
-					"title": null,
-					"quote": "My experience with Ruth was amazing. She is honest, sincere, very knowledgable, and a great listener. I really enjoyed my sessions. Ruth helped me in just one session than my previous traditional therapist had in four sessions. She explains things in a way that is easy to digest and she provided worksheets and resources to help me along the way. I would highly recommend Ruth to anyone looking for individual therapy sessions that can help them recognize + manage their emotions, communicate effectively, and be a better spouse.",
-					"author": null
-				}
-			}
-		],
-		"pages": [
-			{
-				"id": "page-1",
-				"slug": "about",
-				"status": "published",
-				"data": {
-					"title": "About Us",
-					"hero_title": "About Us",
-					"hero_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/0f916965-7f23-496.jpg",
-							"alt": ""
-						}
-					},
-					"side_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/about-ruths-marriage.webp",
-							"alt": ""
-						}
-					},
-					"content": [
-						{
-							"type": "paragraph",
-							"html": "Ruth’s Marriage is a marriage counseling and coaching company focused on helping couples enjoy their marriage God’s way.",
-							"dropCap": true
-						},
-						{
-							"type": "paragraph",
-							"html": "We believe that God’s purpose for marriage is good and also to make us better people, therefore most marriages can thrive with the right knowledge and support."
-						},
-						{
-							"type": "paragraph",
-							"html": "We also understand that the success of a marriage is equally dependent on who we marry, so we do not only focus on the married; we coach and guide singles on how to date purposefully and make wise marital decisions."
-						},
-						{
-							"type": "paragraph",
-							"html": "Our mission is to spread the gospel of a happy and thriving marriage, which eventually helps everyone to have a better society as the family is the smallest unit in a society."
-						},
-						{
-							"type": "paragraph",
-							"html": "At Ruth’s Marriage, we provide various specialized marriage therapy, couples counseling, premarital counseling, and relationship clarity services to individuals, singles, and couples. We also have tailor-made resources that help couples and individuals “do the work” without having to sit in front of a counselor."
-						},
-						{
-							"type": "paragraph",
-							"html": "Ruth’s Marriage is located in Lagos, Nigeria, and operates virtually, serving couples and singles from all over the world."
-						},
-						{
-							"type": "heading",
-							"level": 2,
-							"text": "Our Values",
-							"html": "Our Values"
-						},
-						{
-							"type": "divider"
-						},
-						{
-							"type": "iconBox",
-							"icon": "far-heart",
-							"title": "Love",
-							"text": "We love and relate with empathy towards all people."
-						},
-						{
-							"type": "iconBox",
-							"icon": "far-smile",
-							"title": "Client Satisfaction",
-							"text": "Our services are client-focused and tailored to meet individual needs and our employees are trained to meet and exceed our client expectations."
-						},
-						{
-							"type": "iconBox",
-							"icon": "fas-check",
-							"title": "Professionalism",
-							"text": "Our employees carry themselves professionally, convey a good attitude, and communicate with our clients and their coworkers in a professional manner."
-						},
-						{
-							"type": "iconBox",
-							"icon": "fas-users",
-							"title": "People-centric",
-							"text": "We take client feedback into consideration when implementing changes or making decisions. Whether as a client or employee, we strive to ensure a secure and safe process from onboarding to offboarding."
-						}
-					],
-					"hero_variant": "photo",
-					"values": [
-						{
-							"icon": "far-heart",
-							"title": "Love",
-							"text": "We love and relate with empathy towards all people."
-						},
-						{
-							"icon": "far-smile",
-							"title": "Client Satisfaction",
-							"text": "Our services are client-focused and tailored to meet individual needs and our employees are trained to meet and exceed our client expectations."
-						},
-						{
-							"icon": "fas-check",
-							"title": "Professionalism",
-							"text": "Our employees carry themselves professionally, convey a good attitude, and communicate with our clients and their coworkers in a professional manner."
-						},
-						{
-							"icon": "fas-users",
-							"title": "People-centric",
-							"text": "We take client feedback into consideration when implementing changes or making decisions. Whether as a client or employee, we strive to ensure a secure and safe process from onboarding to offboarding."
-						}
-					]
-				}
-			},
-			{
-				"id": "page-2",
-				"slug": "our-story",
-				"status": "published",
-				"data": {
-					"title": "Our Story",
-					"hero_title": "Our Story",
-					"hero_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/GetPaidStock.com-6567a16e8212f.jpg",
-							"alt": ""
-						}
-					},
-					"side_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/DSC08323-scaled-1.jpg",
-							"alt": ""
-						}
-					},
-					"content": [
-						{
-							"type": "paragraph",
-							"html": "As a teenager, I have always been interested and curious about marriages. I was the child who would sit and watch a marriage teaching on the TV, read a relationship magazine and any article on marriage.",
-							"dropCap": true
-						},
-						{
-							"type": "paragraph",
-							"html": "I loved seeing happy couples and I felt passionate about relationships. As I became a young adult, I noticed I would get inspiration on building healthy relationships and give advice to friends and strangers, even though I wasn’t married at that time. I knew this was a natural passion God has given me. However, I was not sure or clear on how to express this gift as there was no profession called “Marriage Counseling” then; only pastors used to talk about marriage."
-						},
-						{
-							"type": "paragraph",
-							"html": "The birth of Ruth’s Marriage officially started on social media a few years ago after I had worked in corporate employment for over 10 years."
-						},
-						{
-							"type": "paragraph",
-							"html": "Our mission at Ruth’s Marriage is to help couples enjoy their marriage by providing them with the right professional and godly counsel and simple actionable tools that yield positive results."
-						},
-						{
-							"type": "paragraph",
-							"html": "We believe that you can enjoy your marriage and that is why we are here to support you!"
-						}
-					],
-					"hero_variant": "photo"
-				}
-			},
-			{
-				"id": "page-3",
-				"slug": "founder",
-				"status": "published",
-				"data": {
-					"title": "Our Founder",
-					"hero_title": "Our Founder",
-					"hero_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Runway-2023-10-23T08_30_02.310Z-Expand-Image-scaled-1.jpg",
-							"alt": ""
-						}
-					},
-					"side_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/DSC08323-scaled-1.jpg",
-							"alt": ""
-						}
-					},
-					"content": [
-						{
-							"type": "paragraph",
-							"html": "Ruth Esumeh is the founder of Ruth’s Marriage Counseling Services, a marriage counseling and coaching company that focuses on helping couples enjoy their marriage God’s way. Her practical, professional, and godly approach to her teachings has made her a sought-after marriage counselor in the industry.",
-							"dropCap": true
-						},
-						{
-							"type": "paragraph",
-							"html": "Ruth Esumeh has worked with couples and singles from diverse parts of the world through counseling, coaching, and mentoring, and has seen God use her to transform their lives, homes, and marriages.<br>She is a seasoned public speaker on marriage and family life and has authored two top-selling books, Have Sex &amp; Pray and 50 Intimate Conversations to Have with Your Partner."
-						},
-						{
-							"type": "paragraph",
-							"html": "Prior to establishing Ruth’s Marriage, Ruth Esumeh spent over 10 years in the corporate world working with top multinationals and climbed the corporate ladder successfully. Her passion and zeal for marriage fueled her decision to establish Ruth’s Marriage."
-						},
-						{
-							"type": "paragraph",
-							"html": "Ruth Esumeh is a Certified Marriage and Family Life Counselor and a Bible-believing Christian who strongly believes that beyond her certification, God is the principal source of her wisdom."
-						},
-						{
-							"type": "paragraph",
-							"html": "Ruth has been happily married for eleven years to the love of her life, whom she really adores. Their love, friendship, and marriage have been an inspiration to many singles and married who desire to have a beautiful marriage. They are blessed with two lovely children and reside in Lagos, Nigeria."
-						},
-						{
-							"type": "paragraph",
-							"html": "<strong>To book Ruth Esumeh to speak at your next event, fill the booking form</strong><b> <a href=\"https://form.typeform.com/to/T6W82ycq\" target=\"_blank\" rel=\"noopener\">here</a>.</b>"
-						}
-					],
-					"hero_variant": "photo"
-				}
-			},
-			{
-				"id": "page-4",
-				"slug": "singles",
-				"status": "published",
-				"data": {
-					"title": "Singles",
-					"hero_title": null,
-					"hero_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Relationship-Clarity-1024x731-1.jpg",
-							"alt": "",
-							"filename": "Relationship-Clarity-1024x731-1.jpg"
-						}
-					},
-					"side_image": null,
-					"content": [
-						{
-							"type": "heading",
-							"level": 2,
-							"text": "Singles",
-							"html": "Singles"
-						},
-						{
-							"type": "listing",
-							"listingId": 153,
-							"postType": "posts",
-							"limit": 6,
-							"columns": 1
-						}
-					]
-				}
-			},
-			{
-				"id": "page-5",
-				"slug": "married",
-				"status": "published",
-				"data": {
-					"title": "Married",
-					"hero_title": null,
-					"hero_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/8750075-1024x683-1.jpg",
-							"alt": "",
-							"filename": "8750075-1024x683-1.jpg"
-						}
-					},
-					"side_image": null,
-					"content": [
-						{
-							"type": "heading",
-							"level": 2,
-							"text": "Married",
-							"html": "Married"
-						},
-						{
-							"type": "listing",
-							"listingId": 153,
-							"postType": "posts",
-							"limit": 6,
-							"columns": 1
-						}
-					]
-				}
-			},
-			{
-				"id": "page-6",
-				"slug": "services",
-				"status": "published",
-				"data": {
-					"title": "Services",
-					"hero_title": "Services",
-					"hero_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Relationship-Clarity-1024x731-1.jpg",
-							"alt": "",
-							"filename": "Relationship-Clarity-1024x731-1.jpg"
-						}
-					},
-					"side_image": null,
-					"content": [
-						{
-							"type": "listing",
-							"listingId": 153,
-							"postType": "posts",
-							"limit": 6,
-							"columns": 1
-						}
-					],
-					"hero_variant": "pattern"
-				}
-			},
-			{
-				"id": "page-7",
-				"slug": "resources",
-				"status": "published",
-				"data": {
-					"title": "Courses, Guides & Intimacy Builders",
-					"hero_title": null,
-					"hero_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-12-17-at-5.06.03-PM.jpeg",
-							"alt": "",
-							"filename": "WhatsApp-Image-2025-12-17-at-5.06.03-PM.jpeg"
-						}
-					},
-					"side_image": null,
-					"content": [
-						{
-							"type": "heading",
-							"level": 2,
-							"text": "Courses, Guides & Intimacy Builders",
-							"html": "Courses, Guides &#038; Intimacy Builders"
-						},
-						{
-							"type": "listing",
-							"listingId": 301,
-							"postType": "posts",
-							"limit": 20,
-							"columns": 1
-						}
-					]
-				}
-			},
-			{
-				"id": "page-8",
-				"slug": "books",
-				"status": "published",
-				"data": {
-					"title": "Books",
-					"hero_title": "Books",
-					"hero_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/IMG_5071.png",
-							"alt": "",
-							"filename": "IMG_5071.png"
-						}
-					},
-					"side_image": null,
-					"content": [
-						{
-							"type": "listing",
-							"listingId": 724,
-							"postType": "posts",
-							"limit": 6,
-							"columns": 1
-						}
-					],
-					"hero_variant": "pattern"
-				}
-			},
-			{
-				"id": "page-9",
-				"slug": "videos",
-				"status": "published",
-				"data": {
-					"title": "Videos",
-					"hero_title": null,
-					"hero_image": null,
-					"side_image": null,
-					"content": [
-						{
-							"type": "heading",
-							"level": 2,
-							"text": "Videos",
-							"html": "Videos"
-						},
-						{
-							"type": "listing",
-							"listingId": 187,
-							"postType": "posts",
-							"limit": 6,
-							"columns": 1
-						}
-					]
-				}
-			},
-			{
-				"id": "page-10",
-				"slug": "freebies",
-				"status": "published",
-				"data": {
-					"title": "Freebies",
-					"hero_title": null,
-					"hero_image": null,
-					"side_image": null,
-					"content": []
-				}
-			},
-			{
-				"id": "page-11",
-				"slug": "inspired-features",
-				"status": "published",
-				"data": {
-					"title": "Blog Articles",
-					"hero_title": "Blog Articles",
-					"hero_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/GetPaidStock.com-64e4f5133c96c.jpg",
-							"alt": ""
-						}
-					},
-					"side_image": null,
-					"content": [
-						{
-							"type": "listing",
-							"listingId": 239,
-							"postType": "posts",
-							"limit": 30,
-							"columns": 2
-						},
-						{
-							"type": "heading",
-							"level": 5,
-							"text": "Search",
-							"html": "Search"
-						},
-						{
-							"type": "divider"
-						},
-						{
-							"type": "heading",
-							"level": 5,
-							"text": "Popular Posts",
-							"html": "Popular Posts"
-						},
-						{
-							"type": "divider"
-						},
-						{
-							"type": "listing",
-							"listingId": "posts",
-							"postType": "posts",
-							"limit": null,
-							"columns": null
-						}
-					],
-					"hero_variant": "photo"
-				}
-			},
-			{
-				"id": "page-12",
-				"slug": "sponsored",
-				"status": "published",
-				"data": {
-					"title": "Sponsored",
-					"hero_title": "Sponsored",
-					"hero_image": null,
-					"side_image": null,
-					"content": [],
-					"hero_variant": "pattern"
-				}
-			},
-			{
-				"id": "page-13",
-				"slug": "announcements",
-				"status": "published",
-				"data": {
-					"title": "Announcements",
-					"hero_title": null,
-					"hero_image": null,
-					"side_image": null,
-					"content": [
-						{
-							"type": "heading",
-							"level": 2,
-							"text": "Announcements",
-							"html": "Announcements"
-						}
-					]
-				}
-			},
-			{
-				"id": "page-14",
-				"slug": "event",
-				"status": "published",
-				"data": {
-					"title": "Event Gallery",
-					"hero_title": "Event Gallery",
-					"hero_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/photo-output-2.jpeg",
-							"alt": ""
-						}
-					},
-					"side_image": null,
-					"content": [],
-					"hero_variant": "photo"
-				}
-			},
-			{
-				"id": "page-15",
-				"slug": "askcoach",
-				"status": "published",
-				"data": {
-					"title": "Ask Coach",
-					"hero_title": null,
-					"hero_image": null,
-					"side_image": null,
-					"content": [
-						{
-							"type": "heading",
-							"level": 2,
-							"text": "Need Advice?",
-							"html": "Need Advice?"
-						},
-						{
-							"type": "divider"
-						},
-						{
-							"type": "heading",
-							"level": 5,
-							"text": "Send your questions below to get helpful answers from Coach Ruth in one of the YouTube episodes on Ask Coach Ruth! Your questions may also be shared with our Instagram channel community. Don't worry, it's strictly anonymous!",
-							"html": "Send your questions below to get helpful answers from Coach Ruth in one of the YouTube episodes on Ask Coach Ruth! Your questions may also be shared with our Instagram channel community.<br> Don't worry, it's strictly anonymous!"
-						}
-					]
-				}
-			},
-			{
-				"id": "page-16",
-				"slug": "contact",
-				"status": "published",
-				"data": {
-					"title": "Contact",
-					"hero_title": "Contact",
-					"hero_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/GetPaidStock.com-64f716fb8016a.jpg",
-							"alt": ""
-						}
-					},
-					"side_image": null,
-					"content": [
-						{
-							"type": "icon",
-							"icon": "far-envelope"
-						},
-						{
-							"type": "heading",
-							"level": 2,
-							"text": "Email",
-							"html": "Email"
-						},
-						{
-							"type": "html",
-							"html": "<a href=\"mailto:admin@ruthsmarriage.com\">admin@ruthsmarriage.com</a>"
-						},
-						{
-							"type": "html",
-							"html": "<a href=\"mailto:ruthsmarriage@gmail.com\">ruthsmarriage@gmail.com</a>"
-						},
-						{
-							"type": "heading",
-							"level": 2,
-							"text": "Social Media",
-							"html": "Social Media"
-						}
-					],
-					"hero_variant": "photo"
-				}
-			},
-			{
-				"id": "page-17",
-				"slug": "cancellation-policy",
-				"status": "published",
-				"data": {
-					"title": "Cancellation Policy",
-					"hero_title": "Cancellation Policy",
-					"hero_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/GetPaidStock.com-654a59f8c0055.jpg",
-							"alt": ""
-						}
-					},
-					"side_image": null,
-					"content": [
-						{
-							"type": "heading",
-							"level": 5,
-							"text": "$50 fee (converted to your currency rate at the point of payment)",
-							"html": "$50 fee (converted to your currency rate at the point of payment)"
-						},
-						{
-							"type": "heading",
-							"level": 4,
-							"text": "CANCELLATIONS AND MISSED APPOINTMENTS",
-							"html": "CANCELLATIONS AND MISSED APPOINTMENTS"
-						},
-						{
-							"type": "paragraph",
-							"html": "The client is expected to arrive on time for each booked session. A cancelled or postponed appointment slows down our work and might have a negative influence on other clients. Because your appointments include the reserve of time expressly for you, and out of mutual respect for each other and our other clients, postponing or cancelling an appointment requires a minimum of 24 hours’ notice in advance."
-						},
-						{
-							"type": "heading",
-							"level": 4,
-							"text": "WHEN THE NO-SHOW/LATE CANCEL FEE IS WAIVED",
-							"html": "WHEN THE NO-SHOW/LATE CANCEL FEE IS WAIVED"
-						},
-						{
-							"type": "paragraph",
-							"html": "This means if your appointment is supposed to be 9am on Wednesday and you wish to cancel, we expect to have received your email by 9am on Tuesday, then we can waive the cancellation fee. If we receive your cancellation later than that, then you will be charged the cancellation fee to have another appointment. Note that if your appointment is on a Monday, the cancellation needs to be provided no later than the prior Friday, by your appointment time, to be considered proper 24-hour notice."
-						},
-						{
-							"type": "paragraph",
-							"html": "If you can, we would appreciate more than 24-hour notice so that we can make that time available to other clients."
-						},
-						{
-							"type": "paragraph",
-							"html": "As a result, if you find out before the mandatory 24-hour notice that you will be unable to attend our session, please send an email so that we can fill your slot and place another client in your space who may require it. Counseling appointments are designated exclusively for our clients and are booked in advance. We are unable to cover this time slot by providing it to another client when a session is canceled without adequate notice. The email to send a cancellation notification to is <a href=\"mailto:ruthsmarriage@gmail.com\">ruthsmarriage@gmail.com</a>"
-						},
-						{
-							"type": "heading",
-							"level": 4,
-							"text": "WHEN THE NO-SHOW/LATE CANCEL FEE IS WAIVED",
-							"html": "WHEN THE NO-SHOW/LATE CANCEL FEE IS WAIVED"
-						},
-						{
-							"type": "paragraph",
-							"html": "This cancellation policy is only waived in the event of a serious sickness or emergency. Car accidents, family deaths, and severe illness are all examples of emergencies. In this case, if you are not physically able to cancel your appointment, you can get someone to write us an email on your behalf. Our cancellation policy applies even if the missed appointment was unintended. Work-related issues are not emergencies."
-						},
-						{
-							"type": "paragraph",
-							"html": "<strong>Late Cancellation Fees Process:</strong> Any session missed due to a cancellation less than 24 hours in advance will be assessed at $50/standard fee. You will be charged even if the cancellation was due to work or if you rescheduled the appointment without adequate notice. We will send you a payment link immediately to pay the cancellation fee before you can have another appointment or continue your sessions."
-						},
-						{
-							"type": "heading",
-							"level": 4,
-							"text": "WAIT TIME GRACE PERIOD",
-							"html": "WAIT TIME GRACE PERIOD"
-						},
-						{
-							"type": "paragraph",
-							"html": "Your wait time is kept to a minimum. Due to the length of time provided for each appointment, it is critical that you arrive on time for your appointments. If you are more than 10 minutes late to your appointment, we will have no choice but to reschedule your appointment and you will be responsible for the $50 fee of a no show. To avoid paying no show fees, we require at least twenty-four (24) hours’ notice for all cancellations (as described above). Both counselor and client have a grace period of 10 minutes."
-						},
-						{
-							"type": "heading",
-							"level": 4,
-							"text": "RECURRING SESSIONS: CANCELLATION FEE PAYMENT ENFORCEMENT",
-							"html": "RECURRING SESSIONS: CANCELLATION FEE PAYMENT ENFORCEMENT"
-						},
-						{
-							"type": "paragraph",
-							"html": "For recurring therapy/counselling sessions, when you miss a session without adequate notice, you will pay the cancellation fee of $50 for that session, before another session. The same standard above applies for each session."
-						},
-						{
-							"type": "paragraph",
-							"html": "Ruth’s Marriage Counselling Services sends automated email reminders of forthcoming appointments as a courtesy. Whether or not you receive the text or email reminder, it is your sole duty to keep track of and attend any planned appointments/sessions on time. If your phone number or email address changes, please notify us via email."
-						},
-						{
-							"type": "paragraph",
-							"html": "We appreciate your understanding and our policy is hinged on the fact that a late cancel or no-show hurts at least three people: you, the counsellor, and another client who could have potentially utilized your time slot"
-						},
-						{
-							"type": "heading",
-							"level": 5,
-							"text": "THANK YOU",
-							"html": "THANK YOU"
-						},
-						{
-							"type": "paragraph",
-							"html": "We value you and are committed to your journey, however, we can only accomplish this with your understanding of the obligations set forth in this policy. Time is of the essence in our practice and we encourage good use of time to accommodate more clients who need help. Thank you"
-						},
-						{
-							"type": "paragraph",
-							"html": "Making a booking means you have accepted the terms guiding our Cancellation Policy."
-						}
-					],
-					"hero_variant": "photo"
-				}
-			},
-			{
-				"id": "page-18",
-				"slug": "confidentiality-policy",
-				"status": "published",
-				"data": {
-					"title": "Confidentiality Policy",
-					"hero_title": "Confidentiality Policy",
-					"hero_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/istockphoto-109186945-612x612-1.jpg",
-							"alt": ""
-						}
-					},
-					"side_image": null,
-					"content": [
-						{
-							"type": "paragraph",
-							"html": "<strong>Please scroll down to read our confidentiality and cancellation policy and check the “I agree” button to proceed.</strong>"
-						},
-						{
-							"type": "paragraph",
-							"html": "<strong>1.</strong> INTRODUCTION"
-						},
-						{
-							"type": "paragraph",
-							"html": "At Ruth’s Marriage, we are committed to providing a safe and confidential environment for our clients. This confidentiality policy outlines how we handle your personal information and the limits to confidentiality that may apply during the course of marriage counseling sessions."
-						},
-						{
-							"type": "heading",
-							"level": 4,
-							"text": "2. Confidentiality Assurance",
-							"html": "<b>2. Confidentiality Assurance </b>"
-						},
-						{
-							"type": "paragraph",
-							"html": "<b>2.1 Client-Counselor Privilege:</b> All information shared during marriage counseling sessions is confidential. This means that your counselor will not disclose any information without your explicit written consent, except as required by law or ethical standards (see section 3)."
-						},
-						{
-							"type": "paragraph",
-							"html": "<b>2.3 Protection of Records:</b> Client records, including session notes, assessments, and any other documentation, will be securely stored and only accessible to authorized personnel as outlined in section 4."
-						},
-						{
-							"type": "heading",
-							"level": 4,
-							"text": "3. Limits to Confidentiality",
-							"html": "<b>3. Limits to Confidentiality </b>"
-						},
-						{
-							"type": "paragraph",
-							"html": "<b>3.1 Domestic Abuse or Physical Abuse:</b> If there is a reasonable report of physical abuse, we are legally obligated to inform the victim to report this to the appropriate authorities."
-						},
-						{
-							"type": "paragraph",
-							"html": "<b>3.2 Threats of Harm:</b> If you pose a serious threat of harm to yourself or others, we may need to take steps to ensure safety, which may include disclosing relevant information to appropriate parties, such as law enforcement or medical professionals."
-						},
-						{
-							"type": "paragraph",
-							"html": "<b>3.3 Court Orders:</b> If a court orders the release of your counseling records, we may be required to comply with such an order."
-						},
-						{
-							"type": "paragraph",
-							"html": "<b>3.4 Supervision and Consultation: </b>Your counselor may consult with other mental health professionals for supervision and training purposes. In such cases, your identity will be kept confidential."
-						},
-						{
-							"type": "heading",
-							"level": 4,
-							"text": "4. Access to Client Information",
-							"html": "<b>4. Access to Client Information</b>"
-						},
-						{
-							"type": "paragraph",
-							"html": "<b>4.1 Authorized Personnel:</b> Only authorized personnel, including your counselor, and administrative staff, of Ruth’s Marriage will have access to your information."
-						},
-						{
-							"type": "paragraph",
-							"html": "<b>4.2 Security Measures:</b> We take all reasonable measures to protect your personal information, both in paper and electronic formats, from unauthorized access, disclosure, or alteration."
-						},
-						{
-							"type": "heading",
-							"level": 4,
-							"text": "5. Client Consent",
-							"html": "<b>5. Client Consent </b>"
-						},
-						{
-							"type": "paragraph",
-							"html": "Before any disclosure beyond the limits outlined in this policy is made, we will seek your explicit written consent, explaining the purpose and recipients of the information to be disclosed."
-						},
-						{
-							"type": "heading",
-							"level": 4,
-							"text": "6. Record Retention",
-							"html": "<b>6. Record Retention </b>"
-						},
-						{
-							"type": "paragraph",
-							"html": "Client records will be retained for a period determined by applicable laws and ethical standards. After the retention period expires, records will be securely destroyed."
-						},
-						{
-							"type": "heading",
-							"level": 4,
-							"text": "7. Questions and Concerns",
-							"html": "<b>7. Questions and Concerns </b>"
-						},
-						{
-							"type": "paragraph",
-							"html": "If you have any questions or concerns about our confidentiality policy, please feel free to discuss them with your counselor or write us at <a href=\"/cdn-cgi/l/email-protection\" class=\"__cf_email__\" data-cfemail=\"b2c0c7c6dac1dfd3c0c0dbd3d5d7f2d5dfd3dbde9cd1dddf\">[email&#160;protected]</a>"
-						},
-						{
-							"type": "heading",
-							"level": 4,
-							"text": "8. Policy Updates",
-							"html": "<b>8. Policy Updates </b>"
-						},
-						{
-							"type": "paragraph",
-							"html": "We may update this confidentiality policy from time to time to reflect changes in laws, regulations, or our counseling practices. You will be notified of any significant changes."
-						}
-					],
-					"hero_variant": "photo"
-				}
-			},
-			{
-				"id": "page-19",
-				"slug": "privacy-policy",
-				"status": "published",
-				"data": {
-					"title": "Privacy Policy",
-					"hero_title": null,
-					"hero_image": null,
-					"side_image": null,
-					"content": [
-						{
-							"type": "heading",
-							"level": 1,
-							"text": "Privacy Policy",
-							"html": "Privacy Policy"
-						},
-						{
-							"type": "html",
-							"html": "<div class=\"page-content\">\r\n<h2 class=\"wp-block-heading\">Who we are</h2>\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>Our website address is: https://ruthsmarriage.com/.</p>\r\n<h2 class=\"wp-block-heading\">Comments</h2>\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection.</p>\r\n<p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p>\r\n<h2 class=\"wp-block-heading\">Media</h2>\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p>\r\n<h2 class=\"wp-block-heading\">Cookies</h2>\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p>\r\n<p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p>\r\n<p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &#8220;Remember Me&#8221;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p>\r\n<p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p>\r\n<h2 class=\"wp-block-heading\">Embedded content from other websites</h2>\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p>\r\n<p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p>\r\n<h2 class=\"wp-block-heading\">Who we share your data with</h2>\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you request a password reset, your IP address will be included in the reset email.</p>\r\n<h2 class=\"wp-block-heading\">How long we retain your data</h2>\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p>\r\n<p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p>\r\n<h2 class=\"wp-block-heading\">What rights you have over your data</h2>\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p>\r\n<h2 class=\"wp-block-heading\">Where your data is sent</h2>\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>Visitor comments may be checked through an automated spam detection service.</p>\r\n</div>"
-						}
-					]
-				}
-			}
-		],
-		"posts": [
-			{
-				"id": "post-1",
-				"slug": "6-reasons-why-couples-grow-apart-and-lose-their-intimacy",
-				"status": "published",
-				"data": {
-					"title": "6 Reasons Why Couples Grow Apart and Lose Their Intimacy",
-					"excerpt": "<p>Couples don’t just grow apart overnight. It’s not like one day you are madly in love, and the next day you are strangers living in the same house. No, it ha&#8230;</p>\n",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/6-Reasons-Why-Couples-Grow-Apart-and-Lose-Their-Intimacy.jpg",
-							"alt": "",
-							"filename": "6-Reasons-Why-Couples-Grow-Apart-and-Lose-Their-Intimacy.jpg"
-						}
-					},
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": " Couples don’t just grow apart overnight. It’s not like one day you are madly in love, and the next day you are strangers living in the same house. No, it happens slowly, almost unnoticeably, like the gradual fading of a photograph left in the sun. Over time, there will be subtle changes in how you relate with each other, and before you know it, the intimacy you both share and enjoyed has become a distant memory. In this article, we will explore six reasons why couples grow apart and lose their intimacy. Understanding these patterns of occurrence is the first step towards reversing them. So le"
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"category": [
-						"marriage"
-					],
-					"tag": [
-						"instagram"
-					]
-				}
-			},
-			{
-				"id": "post-2",
-				"slug": "building-a-healthy-family-how-to-create-the-kind-of-family-you-want",
-				"status": "published",
-				"data": {
-					"title": "Building a Healthy Family: How to Create the Kind of Family You Want",
-					"excerpt": "<p>It doesn’t really matter what family you come from; what matters is the kind of family you are now creating. Are you consciously creating the type of family y&#8230;</p>\n",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/03/black-family.jpg",
-							"alt": "",
-							"filename": "black-family.jpg"
-						}
-					},
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": "  It doesn’t really matter what family you come from; what matters is the kind of family you are now creating. Are you consciously creating the type of family you want? Or are you allowing old patterns, and unresolved trauma, and unconscious habits to dictate the dynamics of the family you are building? The truth is, the family you create is a reflection of the choices you make every single day. It starts with the two of you—the husband and the wife—and the intentional decisions you make to shape your family’s future.  \n  Creating the kind of family you want is a continuous process that requir"
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"category": [
-						"marriage"
-					],
-					"tag": [
-						"instagram"
-					]
-				}
-			},
-			{
-				"id": "post-3",
-				"slug": "three-things-i-learnt-in-marriage-and-you-should-know-too",
-				"status": "published",
-				"data": {
-					"title": "Three Things I Learnt in Marriage and You Should Know Too",
-					"excerpt": "<p>Inside this Article I have worked with so many couples and one thing I realized is that most couples want to have a great marriage but almost don’t know what &#8230;</p>\n",
-					"featured_image": {
-						"$media": {
-							"url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Common-Causes-of-Conflicts-in-Marriage.webp",
-							"alt": "",
-							"filename": "Common-Causes-of-Conflicts-in-Marriage.webp"
-						}
-					},
-					"content": [
-						{
-							"_type": "block",
-							"style": "normal",
-							"children": [
-								{
-									"_type": "span",
-									"text": " \n Inside this Article \n \n I have worked with so many couples and one thing I realized is that most couples want to have a great marriage but almost don’t know what it takes to have one. \n Personally, I believe marriage is meant to be enjoyed and not endured. My marriage is a testament to that statement. \n However, we did not build our Rome in a day. It took years of making wrongs right and learning to get to where we are now. \n From my experiences, here are three things you can learn from our marriage. \n  1. Love in Marriage Takes Learning and Changing  \n God designed marriage to make us bett"
-								}
-							]
-						}
-					]
-				},
-				"taxonomies": {
-					"category": [
-						"marriage"
-					],
-					"tag": [
-						"instagram"
-					]
-				}
-			}
-		]
-	}
+  "$schema": "https://emdashcms.com/seed.schema.json",
+  "version": "1",
+  "meta": {
+    "name": "Ruth's Marriage",
+    "description": "Marriage counselling and coaching — ported from WordPress",
+    "author": "Ruth's Marriage"
+  },
+  "settings": {
+    "title": "Ruth's Marriage",
+    "tagline": "",
+    "url": "https://www.ruthsmarriage.com",
+    "logo": {
+      "$media": {
+        "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/logo-2-1.png",
+        "alt": "Ruth's Marriage",
+        "filename": "logo-2-1.png"
+      }
+    },
+    "social": {
+      "facebook": "https://facebook.com/RuthsMarriage",
+      "twitter": "https://twitter.com/ruthsmarriage",
+      "instagram": "https://instagram.com/askcoachruth",
+      "youtube": "https://youtube.com/@ruthsmarriage",
+      "threads": "https://threads.com/RuthsMarriage"
+    }
+  },
+  "collections": [
+    {
+      "slug": "posts",
+      "label": "Posts",
+      "labelSingular": "Post",
+      "urlPattern": "/{slug}",
+      "supports": [
+        "drafts",
+        "revisions",
+        "preview",
+        "scheduling",
+        "search",
+        "seo"
+      ],
+      "commentsEnabled": false,
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true,
+          "searchable": true
+        },
+        {
+          "slug": "featured_image",
+          "label": "Featured Image",
+          "type": "image"
+        },
+        {
+          "slug": "excerpt",
+          "label": "Excerpt",
+          "type": "text"
+        },
+        {
+          "slug": "content",
+          "label": "Content",
+          "type": "portableText",
+          "searchable": true
+        }
+      ]
+    },
+    {
+      "slug": "services",
+      "label": "Services",
+      "labelSingular": "Service",
+      "urlPattern": "/service/{slug}",
+      "supports": [
+        "drafts",
+        "revisions",
+        "preview",
+        "search",
+        "seo"
+      ],
+      "commentsEnabled": false,
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true,
+          "searchable": true
+        },
+        {
+          "slug": "featured_image",
+          "label": "Featured Image",
+          "type": "image"
+        },
+        {
+          "slug": "price_label",
+          "label": "Price",
+          "type": "string"
+        },
+        {
+          "slug": "audience_label",
+          "label": "Audience",
+          "type": "string"
+        },
+        {
+          "slug": "format",
+          "label": "Format",
+          "type": "string"
+        },
+        {
+          "slug": "notice",
+          "label": "Booking Notice",
+          "type": "text"
+        },
+        {
+          "slug": "booking_url",
+          "label": "Booking URL",
+          "type": "url"
+        },
+        {
+          "slug": "order",
+          "label": "Order",
+          "type": "number"
+        },
+        {
+          "slug": "content",
+          "label": "Content",
+          "type": "portableText",
+          "searchable": true
+        }
+      ]
+    },
+    {
+      "slug": "resources",
+      "label": "Resources",
+      "labelSingular": "Resource",
+      "urlPattern": "/resource/{slug}",
+      "supports": [
+        "drafts",
+        "revisions",
+        "preview",
+        "search",
+        "seo"
+      ],
+      "commentsEnabled": false,
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true,
+          "searchable": true
+        },
+        {
+          "slug": "featured_image",
+          "label": "Featured Image",
+          "type": "image"
+        },
+        {
+          "slug": "badge_label",
+          "label": "Badge",
+          "type": "string"
+        },
+        {
+          "slug": "ctas",
+          "label": "CTAs",
+          "type": "repeater",
+          "validation": {
+            "subFields": [
+              {
+                "slug": "label",
+                "label": "Label",
+                "type": "string"
+              },
+              {
+                "slug": "url",
+                "label": "URL",
+                "type": "url"
+              }
+            ]
+          }
+        },
+        {
+          "slug": "video_url",
+          "label": "Video URL",
+          "type": "url"
+        },
+        {
+          "slug": "excerpt",
+          "label": "Excerpt",
+          "type": "text"
+        },
+        {
+          "slug": "order",
+          "label": "Order",
+          "type": "number"
+        },
+        {
+          "slug": "content",
+          "label": "Content",
+          "type": "portableText",
+          "searchable": true
+        }
+      ]
+    },
+    {
+      "slug": "testimonials",
+      "label": "Testimonials",
+      "labelSingular": "Testimonial",
+      "urlPattern": "/{slug}",
+      "supports": [
+        "drafts"
+      ],
+      "commentsEnabled": false,
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string"
+        },
+        {
+          "slug": "quote",
+          "label": "Quote",
+          "type": "text",
+          "required": true
+        },
+        {
+          "slug": "author",
+          "label": "Author",
+          "type": "string"
+        },
+        {
+          "slug": "order",
+          "label": "Order",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "slug": "marquee_items",
+      "label": "Marquee Items",
+      "labelSingular": "Marquee Item",
+      "urlPattern": "/{slug}",
+      "supports": [
+        "drafts"
+      ],
+      "commentsEnabled": false,
+      "fields": [
+        {
+          "slug": "text",
+          "label": "Text",
+          "type": "string",
+          "required": true
+        },
+        {
+          "slug": "link",
+          "label": "Link",
+          "type": "url",
+          "required": true
+        },
+        {
+          "slug": "order",
+          "label": "Order",
+          "type": "number"
+        }
+      ]
+    }
+  ],
+  "taxonomies": [
+    {
+      "name": "category",
+      "label": "Categories",
+      "labelSingular": "Category",
+      "hierarchical": true,
+      "collections": [
+        "posts"
+      ],
+      "terms": [
+        {
+          "slug": "marriage",
+          "label": "Marriage"
+        }
+      ]
+    },
+    {
+      "name": "tag",
+      "label": "Tags",
+      "labelSingular": "Tag",
+      "hierarchical": false,
+      "collections": [
+        "posts"
+      ],
+      "terms": [
+        {
+          "slug": "instagram",
+          "label": "Instagram"
+        },
+        {
+          "slug": "godly-perspective",
+          "label": "Godly Perspective"
+        }
+      ]
+    },
+    {
+      "name": "service_type",
+      "label": "Service Types",
+      "labelSingular": "Service Type",
+      "hierarchical": false,
+      "collections": [
+        "services"
+      ],
+      "terms": [
+        {
+          "slug": "married",
+          "label": "Married"
+        },
+        {
+          "slug": "singles",
+          "label": "Singles"
+        }
+      ]
+    },
+    {
+      "name": "resource_type",
+      "label": "Resource Types",
+      "labelSingular": "Resource Type",
+      "hierarchical": false,
+      "collections": [
+        "resources"
+      ],
+      "terms": [
+        {
+          "slug": "resource",
+          "label": "Resource"
+        },
+        {
+          "slug": "book",
+          "label": "Book"
+        },
+        {
+          "slug": "video",
+          "label": "Video"
+        }
+      ]
+    }
+  ],
+  "menus": [
+    {
+      "name": "primary",
+      "label": "Primary Navigation",
+      "items": [
+        {
+          "type": "custom",
+          "label": "About",
+          "url": "#",
+          "children": [
+            {
+              "type": "custom",
+              "label": "About Us",
+              "url": "/about/"
+            },
+            {
+              "type": "custom",
+              "label": "Our Story",
+              "url": "/our-story/"
+            },
+            {
+              "type": "custom",
+              "label": "Our Founder",
+              "url": "/founder/"
+            }
+          ]
+        },
+        {
+          "type": "custom",
+          "label": "Counseling Services",
+          "url": "#",
+          "children": [
+            {
+              "type": "custom",
+              "label": "Singles",
+              "url": "/singles/"
+            },
+            {
+              "type": "custom",
+              "label": "Married",
+              "url": "/married/"
+            }
+          ]
+        },
+        {
+          "type": "custom",
+          "label": "Resources",
+          "url": "#",
+          "children": [
+            {
+              "type": "custom",
+              "label": "Courses, Guides, and Intimacy Builders",
+              "url": "/resources/"
+            },
+            {
+              "type": "custom",
+              "label": "Books",
+              "url": "/books/"
+            },
+            {
+              "type": "custom",
+              "label": "Videos",
+              "url": "/videos/"
+            }
+          ]
+        },
+        {
+          "type": "custom",
+          "label": "Freebies",
+          "url": "#",
+          "children": [
+            {
+              "type": "custom",
+              "label": "Blog Articles",
+              "url": "/inspired-features/"
+            }
+          ]
+        },
+        {
+          "type": "custom",
+          "label": "Media",
+          "url": "#",
+          "children": [
+            {
+              "type": "custom",
+              "label": "Sponsored",
+              "url": "/sponsored/"
+            },
+            {
+              "type": "custom",
+              "label": "Announcements",
+              "url": "/announcements/"
+            },
+            {
+              "type": "custom",
+              "label": "Event Gallery",
+              "url": "/event/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "footer-services",
+      "label": "Footer: Services",
+      "items": [
+        {
+          "type": "custom",
+          "label": "One Hour Relationship Clarity Session",
+          "url": "/service/one-hour-relationship-clarity-session/"
+        },
+        {
+          "type": "custom",
+          "label": "One Hour Dating Couples Counseling Session",
+          "url": "/service/one-hour-dating-couples-counseling-session/"
+        },
+        {
+          "type": "custom",
+          "label": "Six (6) Weeks Individual Therapy Cycle",
+          "url": "/service/six-6-weeks-individual-therapy-cycle/"
+        },
+        {
+          "type": "custom",
+          "label": "Private Premarital Counseling Classes",
+          "url": "/service/private-premarital-counseling-classes/"
+        },
+        {
+          "type": "custom",
+          "label": "The Dating Couple Coaching Cycle",
+          "url": "/service/the-dating-couple-coaching-cycle/"
+        },
+        {
+          "type": "custom",
+          "label": "One Hour Individual Counseling Session",
+          "url": "/service/one-hour-individual-counseling-session/"
+        }
+      ]
+    },
+    {
+      "name": "footer-resources",
+      "label": "Footer: Resources",
+      "items": [
+        {
+          "type": "custom",
+          "label": "52 Rules of Dating and Relationships",
+          "url": "/resource/52-rules-of-dating-and-relationships/"
+        },
+        {
+          "type": "custom",
+          "label": "Have Sex & Pray",
+          "url": "/resource/have-sex-pray/"
+        },
+        {
+          "type": "custom",
+          "label": "50 Intimate Conversations to Have with Your Partner",
+          "url": "/resource/50-intimate-conversations-to-have-with-your-partner/"
+        },
+        {
+          "type": "custom",
+          "label": "The 28 Days Lovers Again Challenge",
+          "url": "/resource/28-days-lovers-again-challenge/"
+        },
+        {
+          "type": "custom",
+          "label": "The 60 Fun Games and Activities for Couples",
+          "url": "/resource/60-fun-games-and-activities-for-couples/"
+        },
+        {
+          "type": "custom",
+          "label": "How to Deal with a Husband who Flirts and Cheats with other Women",
+          "url": "/resource/how-to-deal-with-a-husband-who-flirts-and-cheats-with-other-women/"
+        }
+      ]
+    },
+    {
+      "name": "footer-legal",
+      "label": "Footer: Legal",
+      "items": [
+        {
+          "type": "custom",
+          "label": "Cancellation Policy",
+          "url": "/cancellation-policy/"
+        },
+        {
+          "type": "custom",
+          "label": "Confidentiality Policy",
+          "url": "/confidentiality-policy/"
+        }
+      ]
+    }
+  ],
+  "content": {
+    "marquee_items": [
+      {
+        "id": "marquee-1",
+        "slug": "28-days-lovers-again-challenge",
+        "status": "published",
+        "order": 1,
+        "data": {
+          "text": "Join the 28 Days Lovers Again Challenge with Coach Ruth",
+          "link": "/resource/28-days-lovers-again-challenge/"
+        }
+      }
+    ],
+    "services": [
+      {
+        "id": "service-1",
+        "slug": "private-premarital-counseling-classes-2",
+        "status": "published",
+        "order": 1,
+        "data": {
+          "title": "Private Premarital Counseling Classes",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Private-premarital-1024x1024-1.jpg",
+              "alt": "",
+              "filename": "Private-premarital-1024x1024-1.jpg"
+            }
+          },
+          "price_label": "₦590,000/$590",
+          "audience_label": null,
+          "format": "Zoom Video Session",
+          "notice": null,
+          "booking_url": "https://selar.com/d4av",
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Private Premarital Counseling Classes ₦590,000/$590 Zoom Video Sessions Ruth’s Marriage Private Premarital Counseling Classes is for seriously dating/courting, engaged, and newlywed couples. The classes are private – between Coach Ruth and the Couple only. The classes hold for six weeks – once a week and covers all foundational topics for marriage. These classes are very comprehensive and intricately designed to prepare both partners extensively for marriage, help them build a strong foundation; whilst also providing early intervention counseling on personal challenges they may be experiencing The private classes are a great opportunity for you to ask questions, confront issues and disagreements that could potentially harm the marriage. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "service_type": [
+            "married"
+          ]
+        }
+      },
+      {
+        "id": "service-2",
+        "slug": "six-6-weeks-individual-therapy-cycle-2",
+        "status": "published",
+        "order": 2,
+        "data": {
+          "title": "Six (6) Weeks Individual Therapy Cycle",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Two-female-friends-talking-and-holding-hands-1024x819-1.jpg",
+              "alt": "",
+              "filename": "Two-female-friends-talking-and-holding-hands-1024x819-1.jpg"
+            }
+          },
+          "price_label": "₦510,000/$510",
+          "audience_label": "(For Single or Married Individual)",
+          "format": "Zoom Video Session",
+          "notice": null,
+          "booking_url": "https://selar.com/9jmn",
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Six (6) Weeks Individual Therapy Cycle ₦510,000/$510 (For Single or Married Individual) Zoom Video Sessions In this therapy cycle, my focus will be to help you become a better version of yourself, identify the changes & steps to take to have a healthier you and a healthier relationship or marriage You will have a safe space to explore your thoughts, feelings, and concerns without fear or judgement; while I hold your hands spiritually, mentally, and emotionally to ensure you achieve the goals we set during these sessions and leave no stone unturned. I will provide you with tools, practical wisdom, and research-based strategies that will propel you to the next level in your relationship and your personal life. Let’s begin the transformation you desire! After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "service_type": [
+            "married"
+          ]
+        }
+      },
+      {
+        "id": "service-3",
+        "slug": "six-6-weeks-marriage-therapy-cycle",
+        "status": "published",
+        "order": 3,
+        "data": {
+          "title": "Six (6) Weeks Marriage Therapy Cycle",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Relationship-Clarity-1024x731-1.jpg",
+              "alt": "",
+              "filename": "Relationship-Clarity-1024x731-1.jpg"
+            }
+          },
+          "price_label": "₦750,000/$750",
+          "audience_label": "(For Married Couples Only)",
+          "format": "Zoom Video Session",
+          "notice": null,
+          "booking_url": "https://selar.com/fh75",
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Six (6) Weeks Marriage Therapy Cycle ₦750,000/$750 (For Married Couples Only) Zoom Video Sessions Marriages sometimes require a long process of counseling and therapy to effect a change. These therapy sessions will help you identify the pitfalls in your marriage and provide you with tools, counsel, and research-based solutions that will help you achieve the kind of marriage you desire In these sessions, it is important that you are both willing to put in the work with me. We will set the goals of your therapy and I will work with you to achieve the goals we set. Before you give up on that marriage, let’s have therapy! Let me help you! After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "service_type": [
+            "married"
+          ]
+        }
+      },
+      {
+        "id": "service-4",
+        "slug": "two-sessions-couples-counseling",
+        "status": "published",
+        "order": 4,
+        "data": {
+          "title": "Two Sessions Couples Counseling",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Two-female-friends-talking-and-holding-hands-1024x819-1.jpg",
+              "alt": "",
+              "filename": "Two-female-friends-talking-and-holding-hands-1024x819-1.jpg"
+            }
+          },
+          "price_label": "₦300,000/$300",
+          "audience_label": "(For Married or Engaged Couples)",
+          "format": "Zoom Video Session",
+          "notice": null,
+          "booking_url": "https://selar.com/3i84",
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Two Sessions Couples Counseling ₦300,000/$300 (For Married or Engaged Couples) Zoom Video Sessions This is a two-time zoom video session with a married or engaged couple. In these sessions, it is compulsory for both partners to turn their videos on and be present. After the first session, the second session holds the following week. Each session lasts for one hour. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "service_type": [
+            "married"
+          ]
+        }
+      },
+      {
+        "id": "service-5",
+        "slug": "one-hour-couples-counseling-session",
+        "status": "published",
+        "order": 5,
+        "data": {
+          "title": "One Hour Couples Counseling Session",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/One-hour-couples-1024x1024-1.jpg",
+              "alt": "",
+              "filename": "One-hour-couples-1024x1024-1.jpg"
+            }
+          },
+          "price_label": "₦160,000/$160",
+          "audience_label": "(For Married or Engaged Couples)",
+          "format": "Zoom Video Session",
+          "notice": null,
+          "booking_url": "https://selar.com/gykh",
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "One Hour Couples Counseling Session ₦160,000/$160 (For Married or Engaged Couples) Zoom Video Session This is a one hour virtual counseling session for a married or engaged couple. In this zoom session, it is compulsory for both partners to turn their videos on and be present After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "service_type": [
+            "married"
+          ]
+        }
+      },
+      {
+        "id": "service-6",
+        "slug": "one-hour-individual-counseling-session",
+        "status": "published",
+        "order": 6,
+        "data": {
+          "title": "One Hour Individual Counseling Session",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/8750075-1024x683-1.jpg",
+              "alt": "",
+              "filename": "8750075-1024x683-1.jpg"
+            }
+          },
+          "price_label": "₦100,000/$100",
+          "audience_label": "(For Married Individuals)",
+          "format": null,
+          "notice": null,
+          "booking_url": "https://selar.com/7gxr",
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "One Hour Individual Counseling Session ₦100,000/$100 (For Married Individuals) WhatsApp Phone Call Session This is a one hour virtual counseling session for a married individual. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "service_type": [
+            "married"
+          ]
+        }
+      },
+      {
+        "id": "service-7",
+        "slug": "the-dating-couple-coaching-cycle",
+        "status": "published",
+        "order": 7,
+        "data": {
+          "title": "The Dating Couple Coaching Cycle",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Book-Dating-Couple-1024x1024-1.jpg",
+              "alt": "",
+              "filename": "Book-Dating-Couple-1024x1024-1.jpg"
+            }
+          },
+          "price_label": "₦470,000/$470",
+          "audience_label": null,
+          "format": "Zoom Video Session",
+          "notice": null,
+          "booking_url": "https://selar.com/kmoy",
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "The Dating Couple Coaching Cycle ₦470,000/$470 Zoom Video Sessions This is a four weeks (four sessions) coaching cycle for a dating couple. A session holds once weekly. A relationship does not only progress because you like each other, it progresses based on how much knowledge you both have to build the relationship. Even couples with the deepest affection for one another may run into issues. These coaching sessions will help you to individually become self-aware, learn effective communication and conflict resolution techniques, set appropriate boundaries in your relationships, and guide you to purposeful dating. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "service_type": [
+            "singles"
+          ]
+        }
+      },
+      {
+        "id": "service-8",
+        "slug": "private-premarital-counseling-classes",
+        "status": "published",
+        "order": 8,
+        "data": {
+          "title": "Private Premarital Counseling Classes",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Private-premarital-1024x1024-1.jpg",
+              "alt": "",
+              "filename": "Private-premarital-1024x1024-1.jpg"
+            }
+          },
+          "price_label": "₦590,000/$590",
+          "audience_label": null,
+          "format": "Zoom Video Session",
+          "notice": null,
+          "booking_url": "https://selar.com/d4av",
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Private Premarital Counseling Classes ₦590,000/$590 Zoom Video Sessions Ruth’s Marriage Private Premarital Counseling Classes is for seriously dating/courting, engaged, and newlywed couples. The classes are private – between Coach Ruth and the Couple only. The classes hold for six weeks – once a week and covers all foundational topics for marriage. These classes are very comprehensive and intricately designed to prepare both partners extensively for marriage, help them build a strong foundation; whilst also providing early intervention counseling on personal challenges they may be experiencing The private classes are a great opportunity for you to ask questions, confront issues and disagreements that could potentially harm the marriage. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "service_type": [
+            "singles"
+          ]
+        }
+      },
+      {
+        "id": "service-9",
+        "slug": "six-6-weeks-individual-therapy-cycle",
+        "status": "published",
+        "order": 9,
+        "data": {
+          "title": "Six (6) Weeks Individual Therapy Cycle",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Two-female-friends-talking-and-holding-hands-1024x819-1.jpg",
+              "alt": "",
+              "filename": "Two-female-friends-talking-and-holding-hands-1024x819-1.jpg"
+            }
+          },
+          "price_label": "₦510,000/$510",
+          "audience_label": "(For Single or Married Individual)",
+          "format": "Zoom Video Session",
+          "notice": null,
+          "booking_url": "https://selar.com/9jmn",
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Six (6) Weeks Individual Therapy Cycle ₦510,000/$510 (For Single or Married Individual) Zoom Video Sessions In this therapy cycle, my focus will be to help you become a better version of yourself, identify the changes & steps to take to have a healthier you and a healthier relationship or marriage You will have a safe space to explore your thoughts, feelings, and concerns without fear or judgement; while I hold your hands spiritually, mentally, and emotionally to ensure you achieve the goals we set during these sessions and leave no stone unturned. I will provide you with tools, practical wisdom, and research-based strategies that will propel you to the next level in your relationship and your personal life. Let’s begin the transformation you desire! After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "service_type": [
+            "singles"
+          ]
+        }
+      },
+      {
+        "id": "service-10",
+        "slug": "one-hour-dating-couples-counseling-session",
+        "status": "published",
+        "order": 10,
+        "data": {
+          "title": "One Hour Dating Couples Counseling Session",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Book-Dating-Couple-1024x1024-1.jpg",
+              "alt": "",
+              "filename": "Book-Dating-Couple-1024x1024-1.jpg"
+            }
+          },
+          "price_label": "₦150,000/$150",
+          "audience_label": null,
+          "format": "Zoom Video Session",
+          "notice": null,
+          "booking_url": "https://selar.com/610085",
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "One Hour Dating Couples Counseling Session ₦150,000/$150 Zoom Video Session This is a one-hour counseling/coaching session for a dating couple. In this session, you will be able to identify your unhealthy patterns, improve your communication & conflict resolution skills and gain insight into making an informed decision about your relationship In this session, it is compulsory for both partners to turn their videos on and be present. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "service_type": [
+            "singles"
+          ]
+        }
+      },
+      {
+        "id": "service-11",
+        "slug": "one-hour-relationship-clarity-session",
+        "status": "published",
+        "order": 11,
+        "data": {
+          "title": "One Hour Relationship Clarity Session",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Relationship-Clarity-1024x731-1.jpg",
+              "alt": "",
+              "filename": "Relationship-Clarity-1024x731-1.jpg"
+            }
+          },
+          "price_label": "₦90,000/$90",
+          "audience_label": "(For Singles Only)",
+          "format": null,
+          "notice": null,
+          "booking_url": "https://selar.com/s46z",
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "One Hour Relationship Clarity Session ₦90,000/$90 (For Singles Only) WhatsApp Phone Call Session The choice of a life partner is one of the most important decisions you will ever make. Many people do not have clarity regarding this and are confused about how to make that decision. In this clarity call, I will provide you counsel on how to navigate the process of choosing a life partner and also analyze your current relationship (if you are in one) whilst providing guidance on your decision. I will help you analyze your standards to be sure they are not unrealistic, unnecessary, and sub-standard. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "service_type": [
+            "singles"
+          ]
+        }
+      }
+    ],
+    "resources": [
+      {
+        "id": "resource-1",
+        "slug": "baddie-in-bed-a-sex-guide-for-wives",
+        "status": "published",
+        "order": 1,
+        "data": {
+          "title": "Baddie in Bed",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-21-at-18.20.27.jpeg",
+              "alt": "",
+              "filename": "WhatsApp-Image-2026-03-21-at-18.20.27.jpeg"
+            }
+          },
+          "badge_label": "Learn More",
+          "ctas": [
+            {
+              "label": "Learn More",
+              "url": "https://links.ruthsmarriage.com/baddie-in-bed-a-sex-guide-for-wives"
+            }
+          ],
+          "video_url": null,
+          "excerpt": null,
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "\n\t\t\t\t\t Become the woman who knows her body and is not ashamed to explore sex with her husband, shows up fully present instead of just going through the motions and actually enjoys sex \n The Baddie in Bed is a practical and deeply explorative guide for women who desire to enjoy more sexual intimacy in marriage \n\t\t\t\t"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "resource_type": [
+            "resource"
+          ]
+        }
+      },
+      {
+        "id": "resource-2",
+        "slug": "the-marriage-checkup-workbook",
+        "status": "published",
+        "order": 2,
+        "data": {
+          "title": "The Marriage Check-up Workbook.",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/The-Reconnected-Couples-Workbook.png",
+              "alt": "",
+              "filename": "The-Reconnected-Couples-Workbook.png"
+            }
+          },
+          "badge_label": "Learn More",
+          "ctas": [
+            {
+              "label": "Learn More",
+              "url": "https://links.ruthsmarriage.com/the-reconnected-couples-workbook"
+            }
+          ],
+          "video_url": null,
+          "excerpt": null,
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "\n\t\t\t\t\t Not just a Workbook – This is your Game-changing Relationship Maintenance System.” \n With Weekly, Quarterly, and Yearly Checkups, Clear Guides and Real-Life Examples of how this conversations should go, It’s the Tool Every Marriage Needs to Stay Connected and Growing – All Year Long ! It Transformed our Marriage, It Can Transform Yours Too. \n\t\t\t\t"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "resource_type": [
+            "resource"
+          ]
+        }
+      },
+      {
+        "id": "resource-3",
+        "slug": "the-love-playbook",
+        "status": "published",
+        "order": 3,
+        "data": {
+          "title": "The Love Playbook",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Copy-of-The-Love-Playbook.png",
+              "alt": "",
+              "filename": "Copy-of-The-Love-Playbook.png"
+            }
+          },
+          "badge_label": "Learn More",
+          "ctas": [
+            {
+              "label": "Learn More",
+              "url": "https://links.ruthsmarriage.com/love-playbook"
+            }
+          ],
+          "video_url": null,
+          "excerpt": null,
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "\n\t\t\t\t\t Want more passion, pleasurable sex, intimacy &amp; fun? Then The Love Playbook is for you \n Talk, Tease &amp; Touch: ‘Get Ready to Laugh, Flirt, and Get Emotionally &amp; Sexually Closer Tonight…And Every day!. \n\t\t\t\t"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "resource_type": [
+            "resource"
+          ]
+        }
+      },
+      {
+        "id": "resource-4",
+        "slug": "the-ultimate-couples-hard-conversations-guide",
+        "status": "published",
+        "order": 4,
+        "data": {
+          "title": "The Ultimate Couples Hard Conversations Guide",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/IMG_1053.png",
+              "alt": "",
+              "filename": "IMG_1053.png"
+            }
+          },
+          "badge_label": "Learn More",
+          "ctas": [
+            {
+              "label": "Learn More",
+              "url": "https://links.ruthsmarriage.com/couples-hard-conversations-guide"
+            }
+          ],
+          "video_url": null,
+          "excerpt": null,
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "\n\t\t\t\t\t Before Another Issue or Argument Pushes You Apart – This guide is a proven resource to help you talk about ANYTHING no matter how difficult…without fighting, shutting down or walking away \n The Ultimate Couples Hard Conversations Guide” is a step by step blueprint for navigating difficult topics with compassion, clarity and understanding. \n\t\t\t\t"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "resource_type": [
+            "resource"
+          ]
+        }
+      },
+      {
+        "id": "resource-5",
+        "slug": "how-do-we-discuss-our-sexual-fantasies-in-marriage",
+        "status": "published",
+        "order": 5,
+        "data": {
+          "title": "How do we discuss our sexual fantasies in Marriage?",
+          "featured_image": null,
+          "badge_label": null,
+          "ctas": [],
+          "video_url": "https://youtu.be/JdWGtwYFrQU",
+          "excerpt": null,
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "How do we discuss our sexual fantasies in Marriage?."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "resource_type": [
+            "video"
+          ]
+        }
+      },
+      {
+        "id": "resource-6",
+        "slug": "how-to-deal-with-a-husband-who-flirts-and-cheats-with-other-women",
+        "status": "published",
+        "order": 6,
+        "data": {
+          "title": "How to Deal with a Husband who Flirts and Cheats with other Women",
+          "featured_image": null,
+          "badge_label": null,
+          "ctas": [],
+          "video_url": "https://youtu.be/dBiH3LCTqP4",
+          "excerpt": null,
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "How to Deal with a Husband who Flirts and Cheats with other Women."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "resource_type": [
+            "video"
+          ]
+        }
+      },
+      {
+        "id": "resource-7",
+        "slug": "60-fun-games-and-activities-for-couples",
+        "status": "published",
+        "order": 7,
+        "data": {
+          "title": "The 60 Fun Games and Activities for Couples",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/IMG_1054.png",
+              "alt": "",
+              "filename": "IMG_1054.png"
+            }
+          },
+          "badge_label": "Download Here",
+          "ctas": [
+            {
+              "label": "Download Here",
+              "url": "https://selar.com/dg8w"
+            }
+          ],
+          "video_url": null,
+          "excerpt": null,
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "\n\t\t\t\t\t Do you always feel like your marriage is boring? Are you always lost on what to do for fun as a couple? Do you need fun, interesting games and activities that you can easily enjoy? Then, this is for you! \n\t\t\t\t"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "resource_type": [
+            "resource"
+          ]
+        }
+      },
+      {
+        "id": "resource-8",
+        "slug": "28-days-lovers-again-challenge",
+        "status": "published",
+        "order": 8,
+        "data": {
+          "title": "The 28 Days Lovers Again Challenge",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-12-17-at-5.06.03-PM.jpeg",
+              "alt": "",
+              "filename": "WhatsApp-Image-2025-12-17-at-5.06.03-PM.jpeg"
+            }
+          },
+          "badge_label": "Join the Challenge",
+          "ctas": [
+            {
+              "label": "Join the Challenge",
+              "url": "https://links.ruthsmarriage.com/28-days-lovers-again-challenge-"
+            }
+          ],
+          "video_url": null,
+          "excerpt": null,
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "\n\t\t\t\t\t The 28 Days Lovers Again Challenge is a daily, doable and deeply intentional experience. \n Each daily practice is designed to help you rebuild intimacy, gently shift old communication patterns, strengthen emotional closeness, and rebuild the sense of “us” that may have faded under the weight of daily life. \n It’s practical enough to start today, yet powerful &amp; deep enough to create mean"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "resource_type": [
+            "resource"
+          ]
+        }
+      },
+      {
+        "id": "resource-9",
+        "slug": "50-intimate-conversations-to-have-with-your-partner",
+        "status": "published",
+        "order": 9,
+        "data": {
+          "title": "50 Intimate Conversations to Have with Your Partner",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/50-intimate-conversations-selar.co-62e8fd101b57e-1024x1024-1.jpeg",
+              "alt": "",
+              "filename": "50-intimate-conversations-selar.co-62e8fd101b57e-1024x1024-1.jpeg"
+            }
+          },
+          "badge_label": null,
+          "ctas": [
+            {
+              "label": "Selar (ebook)",
+              "url": "https://selar.co/hhom"
+            }
+          ],
+          "video_url": null,
+          "excerpt": null,
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "\n\t\t\t\t\t When I got the inspiration to write this book, it was going to be for singles alone, but I soon realized that this book is for anyone in a romantic relationship who desires real connection with their partner – whether single or married. \nThis is a get-to-know-each-other guide for singles and married to move you from “small talk” to “real connecting talk” in your relationship. If getting to "
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "resource_type": [
+            "book"
+          ]
+        }
+      },
+      {
+        "id": "resource-10",
+        "slug": "have-sex-pray",
+        "status": "published",
+        "order": 10,
+        "data": {
+          "title": "Have Sex & Pray",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/IMG_5071.png",
+              "alt": "",
+              "filename": "IMG_5071.png"
+            }
+          },
+          "badge_label": null,
+          "ctas": [
+            {
+              "label": "Hardcopy (Nigeria)",
+              "url": "https://selar.co/410o83"
+            }
+          ],
+          "video_url": null,
+          "excerpt": null,
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "\n\t\t\t\t\t This is not a book that tells you to have sex in your marriage – I know you already know that! It’s the kind of book that gives you LIGHT. \n In this book, I shared practical and biblical knowledge that will help every married couple enjoy an exciting sex life. I demystified mindsets and religious doctrines that have held couples in bondage and confusion regarding God’s view of sex in marria"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "resource_type": [
+            "book"
+          ]
+        }
+      },
+      {
+        "id": "resource-11",
+        "slug": "52-rules-of-dating-and-relationships",
+        "status": "published",
+        "order": 11,
+        "data": {
+          "title": "52 Rules of Dating and Relationships",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/52-Rules-of-Dating-and-Relationships-1.png",
+              "alt": "",
+              "filename": "52-Rules-of-Dating-and-Relationships-1.png"
+            }
+          },
+          "badge_label": null,
+          "ctas": [
+            {
+              "label": "Selar (ebook)",
+              "url": "https://selar.co/4486h3"
+            }
+          ],
+          "video_url": null,
+          "excerpt": null,
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "\n\t\t\t\t\t This isn’t just another relationship book. It’s your roadmap to choosing well and loving wisely. Packed with timeless wisdom and practical principles, this book will shift how you date, how you connect, and how you prepare for the love that lasts. If you’re tired of guessing, settling, or just winging it – this book is your breakthrough. \n\t\t\t\t"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "resource_type": [
+            "book"
+          ]
+        }
+      }
+    ],
+    "testimonials": [
+      {
+        "id": "testimonial-1",
+        "slug": "testimonial-1",
+        "status": "published",
+        "order": 1,
+        "data": {
+          "title": null,
+          "quote": "I found talking to coach Ruth therapeutic. I also love how she reminded me of my identity in Christ.",
+          "author": null
+        }
+      },
+      {
+        "id": "testimonial-2",
+        "slug": "testimonial-2",
+        "status": "published",
+        "order": 2,
+        "data": {
+          "title": null,
+          "quote": "It gave me a more practical view of what marriage is all about from a godly perspective. It reaffirmed my decision of settling for the right partner. It also prepared me for the journey. The classes were very impactful. It was a learning process for me. Coach Ruth had answers to everything through the help of God and our relationship is definitely better because of this session we had and we know our marriage will be great.",
+          "author": null
+        }
+      },
+      {
+        "id": "testimonial-3",
+        "slug": "testimonial-3",
+        "status": "published",
+        "order": 3,
+        "data": {
+          "title": null,
+          "quote": "The sessions were very enlightening. She was very professional and non-judgemental. Talking to her felt safe and familiar. I learned so much about myself and how to communicate my feelings. I have been using the tools I learnt from my session with coach Ruth and I must confess it really works. My wife and I were on the verge of a separation but now we are working together towards building a stronger marriage.",
+          "author": null
+        }
+      },
+      {
+        "id": "testimonial-4",
+        "slug": "testimonial-4",
+        "status": "published",
+        "order": 4,
+        "data": {
+          "title": null,
+          "quote": "My sessions with Coach Ruth were life changing. She taught me valuable tools and methods to deal with not only situations from the past or ones that I’m currently facing but also those in the future that may arise. She made me realise so many things that I didn’t know before and it has impacted and improved my life in various aspects including personal growth and relationships. She’s also helped me significantly manage my anxiety and take back control of my own life. Therapy with Coach Ruth is one of the best decisions I’ve ever made. I highly recommend her to everyone.",
+          "author": null
+        }
+      },
+      {
+        "id": "testimonial-5",
+        "slug": "testimonial-5",
+        "status": "published",
+        "order": 5,
+        "data": {
+          "title": null,
+          "quote": "Now I am able to recognize the different emotions I am feeling and I have different strategies for managing my emotions. Before, when I was feeling different emotions, I’d let them overtake me, especially during conflict. I’d end up saying things I couldn’t take back and acting out in ways I wasn’t proud of. Ruth also gave me different tools for communicating better in my marriage. While I went through my sessions for me, my husband was able to see a positive change in me after just a few sessions with Ruth. I took a lot of notes during my sessions and I feel confident moving forward knowing that I have the notes to refer to if I ever feel like I’m slipping up or having a hard time!",
+          "author": null
+        }
+      },
+      {
+        "id": "testimonial-6",
+        "slug": "testimonial-6",
+        "status": "published",
+        "order": 6,
+        "data": {
+          "title": null,
+          "quote": "My experience with Ruth was amazing. She is honest, sincere, very knowledgable, and a great listener. I really enjoyed my sessions. Ruth helped me in just one session than my previous traditional therapist had in four sessions. She explains things in a way that is easy to digest and she provided worksheets and resources to help me along the way. I would highly recommend Ruth to anyone looking for individual therapy sessions that can help them recognize + manage their emotions, communicate effectively, and be a better spouse.",
+          "author": null
+        }
+      }
+    ],
+    "posts": [
+      {
+        "id": "post-1",
+        "slug": "6-reasons-why-couples-grow-apart-and-lose-their-intimacy",
+        "status": "published",
+        "published_at": "2025-04-18T18:59:47",
+        "data": {
+          "title": "6 Reasons Why Couples Grow Apart and Lose Their Intimacy",
+          "excerpt": "<p>Couples don’t just grow apart overnight. It’s not like one day you are madly in love, and the next day you are strangers living in the same house. No, it ha&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/6-Reasons-Why-Couples-Grow-Apart-and-Lose-Their-Intimacy.jpg",
+              "alt": "",
+              "filename": "6-Reasons-Why-Couples-Grow-Apart-and-Lose-Their-Intimacy.jpg"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": " Couples don’t just grow apart overnight. It’s not like one day you are madly in love, and the next day you are strangers living in the same house. No, it happens slowly, almost unnoticeably, like the gradual fading of a photograph left in the sun. Over time, there will be subtle changes in how you relate with each other, and before you know it, the intimacy you both share and enjoyed has become a distant memory. In this article, we will explore six reasons why couples grow apart and lose their intimacy. Understanding these patterns of occurrence is the first step towards reversing them. So le"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-2",
+        "slug": "building-a-healthy-family-how-to-create-the-kind-of-family-you-want",
+        "status": "published",
+        "published_at": "2025-03-04T14:59:18",
+        "data": {
+          "title": "Building a Healthy Family: How to Create the Kind of Family You Want",
+          "excerpt": "<p>It doesn’t really matter what family you come from; what matters is the kind of family you are now creating. Are you consciously creating the type of family y&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/03/black-family.jpg",
+              "alt": "",
+              "filename": "black-family.jpg"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "  It doesn’t really matter what family you come from; what matters is the kind of family you are now creating. Are you consciously creating the type of family you want? Or are you allowing old patterns, and unresolved trauma, and unconscious habits to dictate the dynamics of the family you are building? The truth is, the family you create is a reflection of the choices you make every single day. It starts with the two of you—the husband and the wife—and the intentional decisions you make to shape your family’s future.  \n  Creating the kind of family you want is a continuous process that requir"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-3",
+        "slug": "three-things-i-learnt-in-marriage-and-you-should-know-too",
+        "status": "published",
+        "published_at": "2024-10-26T22:57:14",
+        "data": {
+          "title": "Three Things I Learnt in Marriage and You Should Know Too",
+          "excerpt": "<p>Inside this Article I have worked with so many couples and one thing I realized is that most couples want to have a great marriage but almost don’t know what &#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Common-Causes-of-Conflicts-in-Marriage.webp",
+              "alt": "",
+              "filename": "Common-Causes-of-Conflicts-in-Marriage.webp"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": " \n Inside this Article \n \n I have worked with so many couples and one thing I realized is that most couples want to have a great marriage but almost don’t know what it takes to have one. \n Personally, I believe marriage is meant to be enjoyed and not endured. My marriage is a testament to that statement. \n However, we did not build our Rome in a day. It took years of making wrongs right and learning to get to where we are now. \n From my experiences, here are three things you can learn from our marriage. \n  1. Love in Marriage Takes Learning and Changing  \n God designed marriage to make us bett"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-4",
+        "slug": "5-signs-of-unhealthy-conflicts-in-your-relationship-or-marriage",
+        "status": "published",
+        "published_at": "2024-10-22T14:06:27",
+        "data": {
+          "title": "5 Signs of Unhealthy Conflicts in Your Relationship or Marriage ",
+          "excerpt": "<p>Inside this Article What if I told you that conflicts are good for your marriage? “Wow, Coach, how can you say that?” Healthy conflicts are necessary for an&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Tips-for-a-Successful-Marriage.webp",
+              "alt": "",
+              "filename": "Tips-for-a-Successful-Marriage.webp"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": " \n Inside this Article \n \n What if I told you that conflicts are good for your marriage? \n “Wow, Coach, how can you say that?” \n Healthy conflicts are necessary for any relationship. They increase trust, foster understanding and make connections between partners even stronger. \n Unhealthy conflicts, on the other hand, lead to built-up resentment, reduce trust, increase anxiety and can damage your relationship over time. \n The issue is, in my years of experience as a marriage counsellor, most couples do not even know when they are having unhealthy conflicts. This may be a result of past relatio"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-5",
+        "slug": "5-ways-to-have-more-fun-in-your-marriage",
+        "status": "published",
+        "published_at": "2024-10-18T19:51:58",
+        "data": {
+          "title": "5 Ways to Have More Fun in Your Marriage",
+          "excerpt": "<p>Inside this Article Over the years, I have realized that when it comes to talking about having fun in marriages, most couples picture these expensive actions th&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/5-Ways-to-Have-more-Fun-in-your-Marriage-photo.webp",
+              "alt": "",
+              "filename": "5-Ways-to-Have-more-Fun-in-your-Marriage-photo.webp"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": " \n Inside this Article \n \n Over the years, I have realized that when it comes to talking about having fun in marriages, most couples picture these expensive actions that require time, money and sacrifices. \n While this may work, if the foundation of your marriage is not built on a personal relationship with your partner, then you are just patching walls rather than fixing them up. \n In this piece, I will be sharing 5 proof-filed ways to have fun in your marriage. \n  1.   Your General Attitude  \n \n \n  People think fun is about just doing things. Fun starts when you and your spouse are friendly "
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-6",
+        "slug": "lessons-from-our-12-years-marriage",
+        "status": "published",
+        "published_at": "2024-10-15T23:38:11",
+        "data": {
+          "title": "Lessons From Our 12 Years Marriage",
+          "excerpt": "<p>Inside this Article For the longest, people have always asked me, “Coach, how did you do it? How did you make your marriage work?” While I have tried to ans&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/pexels-antoni-shkraba-6207751-scaled-1.jpg",
+              "alt": "",
+              "filename": "pexels-antoni-shkraba-6207751-scaled-1.jpg"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": " \n Inside this Article \n \n For the longest, people have always asked me, “Coach, how did you do it? How did you make your marriage work?” \n While I have tried to answer on the spot, I have decided to compile a few lessons from my marriage we can all learn from. These are practical experiences that have worked for me–and countless couples I have worked with in   One-on-One Individual Sessions   or   Couples Sessions   .  \n Most of these points require effort. It is not enough that you wish to build the marriage of your dreams. You must work for it. \n Here are 4 lessons from our marriage you can"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-7",
+        "slug": "how-to-handle-a-difficult-spouse",
+        "status": "published",
+        "published_at": "2024-10-04T15:22:07",
+        "data": {
+          "title": "How to Handle a Difficult Spouse",
+          "excerpt": "<p>Handling a difficult spouse can be one of the most challenging aspects of any marriage. Handling a difficult spouse can be one of the most challenging aspects o&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2024/10/GetPaidStock.com-627bf244d6abb.jpg",
+              "alt": "",
+              "filename": "GetPaidStock.com-627bf244d6abb.jpg"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "  Handling a difficult spouse can be one of the most challenging aspects of any marriage. Handling a difficult spouse can be one of the most challenging aspects of any marriage. It is crucial to approach the situation with understanding and patience, seeking open communication and professional guidance if necessary. Remember to prioritize self-care and maintain healthy boundaries while working towards resolution.   \n  When your partner acts difficult, one of the things to consider is it may not be about you, it may be as a result of their experiences and traumas and you are only a beneficiary "
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-8",
+        "slug": "how-to-rebuild-your-marriage-from-a-difficult-place-3-proven-steps",
+        "status": "published",
+        "published_at": "2024-09-04T07:37:39",
+        "data": {
+          "title": "How to Rebuild Your Marriage from a Difficult Place (3 Proven Steps) ",
+          "excerpt": "<p>“My marriage is finished. Nothing I do works.” She sat next to me and from the look of things, I could tell she was battling to keep the tears from flowing&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2024/09/GetPaidStock.com-62b341ff1cb63.jpg",
+              "alt": "",
+              "filename": "GetPaidStock.com-62b341ff1cb63.jpg"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": " “My marriage is finished. Nothing I do works.” She sat next to me and from the look of things, I could tell she was battling to keep the tears from flowing. \n Like her, I have counselled many couples whose marriages were on the brink of collapse. Marriage should be a place where you feel safe and vulnerable, not a place of pain. \n Before we continue, if your marriage is currently at a very difficult place, ensure you read this to the end. These 3 proven Steps will totally transform your marriage: \n  1. Start Making More Love Deposits Than Withdrawals  \n  Deposits are loving actions. Withdrawa"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-9",
+        "slug": "four-perspectives-for-building-an-intimate-marriage",
+        "status": "published",
+        "published_at": "2024-07-09T18:00:13",
+        "data": {
+          "title": "Four Perspectives for Building  an Intimate Marriage",
+          "excerpt": "<p>Have you ever thought about what makes a marriage truly intimate? Or have you wondered how to be really intimate with your partner? Intimacy goes beyond physica&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2024/07/Aerobic.jpeg",
+              "alt": "",
+              "filename": "Aerobic.jpeg"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": " Have you ever thought about what makes a marriage truly intimate? Or have you wondered how to be really intimate with your partner?   Intimacy goes beyond physical connection .  It is deeper than holding hands and public displays of affection. It is about building a deep emotional bond with your partner. \n It is a deeper level of connection from the physical to the emotional aspect of your marriage. It takes work and effort to build intimacy. \n If you have been in your marriage for a while, it is easy to lose sight of these perspectives that could improve your intimacy in your marriage. \n So "
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-10",
+        "slug": "expectations-realistic-and-unrealistic-expectations-in-relationships",
+        "status": "published",
+        "published_at": "2024-06-15T17:01:23",
+        "data": {
+          "title": "Expectations: Realistic and Unrealistic Expectations in Relationships ",
+          "excerpt": "<p>Do you ever feel like there are some things you wish your partner was doing that they are not? And because of these inactions, you feel dissatisfied or unloved&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Realistic-and-Unrealistic-Expectations-in-Relationships.webp",
+              "alt": "",
+              "filename": "Realistic-and-Unrealistic-Expectations-in-Relationships.webp"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": " Do you ever feel like there are some things you wish your partner was doing that they are not? And because of these inactions, you feel dissatisfied or unloved? \n While expectations are normal in every relationship, relying solely on them for happiness in your marriage sets you up for disappointment. \n No marriage is perfect. The beauty of marriage is   those imperfections that you work on together as a couple  . When you use expectations to judge if your marriage is a success or not, you will overlook the positive aspects of your marriage to focus on the moments those expectations aren’t met"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-11",
+        "slug": "building-a-thriving-marriage-three-things-to-let-go-in-your-marriage",
+        "status": "published",
+        "published_at": "2024-06-15T16:44:22",
+        "data": {
+          "title": "Building a Thriving Marriage: Three Things to Let Go in Your Marriage",
+          "excerpt": "<p>Marriage is a beautiful journey. Two people working together to create a healthy, happy relationship is a beautiful thing. But as with all things beautiful, eve&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Three-Things-to-Let-Go-in-Your-Marriage-1.webp",
+              "alt": "",
+              "filename": "Three-Things-to-Let-Go-in-Your-Marriage-1.webp"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "   Marriage is a beautiful journey  . Two people working together to create a healthy, happy relationship is a beautiful thing. But as with all things beautiful, even the strongest partnerships will encounter hiccups along the way.  \n How we navigate these hiccups will determine whether our marriages will become stronger or weaker.  \n In this article, we’ll explore three things you need to let go of, release control and allow new life into your marriage. \n  1. Petty Arguments  \n \n  You have to know what is really worth fighting over. Ask yourself – will this matter in 3 days? Your relationship"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-12",
+        "slug": "marriage-advice-4-tips-for-a-successful-marriage",
+        "status": "published",
+        "published_at": "2024-06-15T16:12:33",
+        "data": {
+          "title": "Marriage Advice: 4 Tips for a Successful Marriage ",
+          "excerpt": "<p>Marriage can become very monotonous as we stay longer in it. It is easy to lose the spark and connection we shared in the beginning and fall into a routine of j&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Tips-for-a-Successful-Marriage.webp",
+              "alt": "",
+              "filename": "Tips-for-a-Successful-Marriage.webp"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": " Marriage can become very monotonous as we stay longer in it. It is easy to lose the spark and connection we shared in the beginning and fall into a routine of just keeping up. You may even start to feel like you are losing all the steam you had in the beginning for your partner.  \n You see, having a happy and healthy marriage is possible. I won’t tell you this if I wasn’t a living example myself. Just before my husband and I got to this level of connection, we had our own issues and moments of disconnection. \n Ours was shortly after we got married and I almost felt like quitting. The turning "
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-13",
+        "slug": "3-habits-that-will-increase-your-intimacy-in-marriage",
+        "status": "published",
+        "published_at": "2024-05-31T14:55:09",
+        "data": {
+          "title": "3 Habits That Will Increase Your Intimacy in Marriage",
+          "excerpt": "<p>I have not come across anyone who got married and hoped to have a marriage that’s void of intimacy. We all get married with the desire to have an intimate rel&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Habits-That-Will-Increase-Your-Intimacy-in-Marriage.webp",
+              "alt": "",
+              "filename": "Habits-That-Will-Increase-Your-Intimacy-in-Marriage.webp"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": " I have not come across anyone who got married and hoped to have a marriage that’s void of intimacy. We all get married with the desire to have an intimate relationship with our spouses. \n However, this does not happen for every couple because intimacy in marriage does not happen by mere wishes, it requires intentionality and developing habits that would help us build intimacy. \n I like to describe intimacy simply as a a feeling of closeness you have with your partner. It’s the bond you share with your partner on an emotional, intellectual, and physical level. \n In marriages, intimacy is about"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-14",
+        "slug": "effective-communication-and-conflict-guide-for-relationships-and-marriage-common-causes-of-conflicts-in-marriage",
+        "status": "published",
+        "published_at": "2024-04-30T08:04:17",
+        "data": {
+          "title": "Effective Communication and Conflict Guide for Relationships and Marriage: Common Causes of Conflicts in Marriage",
+          "excerpt": "<p>People tend to avoid conflicts because of how it makes them feel. The hard truth is that conflict is inevitable when it comes to marriage. Think of it, while gr&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2025/06/Common-Causes-of-Conflicts-in-Marriage.webp",
+              "alt": "",
+              "filename": "Common-Causes-of-Conflicts-in-Marriage.webp"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": " People tend to avoid conflicts because of how it makes them feel. The hard truth is that conflict is inevitable when it comes to marriage. \n Think of it, while growing up, you must have had issues with your siblings, friends or even family. What is important is that we know how to communicate effectively and have healthy conflicts in our relationships.  \n Earlier in our marriage, my husband and I struggled with communication and this led to heated conflicts in our marriage. Over the years, we have had to work through our marriage and develop tools and strategies that have helped us resolve co"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-15",
+        "slug": "sexy-santa-4-ways-to-initiate-more-sex-intimacy-with-your-husband-this-holidays-2",
+        "status": "published",
+        "published_at": "2023-12-16T09:43:52",
+        "data": {
+          "title": "Sexy Santa: 4 Ways to Initiate More Sex & Intimacy with your Husband this Holidays",
+          "excerpt": "<p>While I cannot speak for every wife, I know most women could get into spending most of their time, energy, and focus on juggling motherhood and managing the ho&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2023/12/pexels-adrienne-andersen-1174503-2552131-scaled-e1761126986630.jpg",
+              "alt": "",
+              "filename": "pexels-adrienne-andersen-1174503-2552131-scaled-e1761126986630.jpg"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": " \n \n \n \n  While I cannot speak for every wife, I know most women could get into spending most of their time, energy, and focus on juggling motherhood and managing the home during the holidays. This has the potential to leave you as a wife feeling burned out most of the time and it can invariably lead to a low sexual desire in this period.   \n  Let me remind you that the holidays are one of the best periods to incorporate more sexual intimacy into our marriage because it’s a season where we have some work-free time as a couple. However, if you are not conscious and intentional, you can turn the"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "instagram"
+          ]
+        }
+      },
+      {
+        "id": "post-16",
+        "slug": "building-trust-in-your-marriage",
+        "status": "published",
+        "published_at": "2023-09-04T17:17:48",
+        "data": {
+          "title": "Building Trust in Your Marriage",
+          "excerpt": "<p>Trust is the cornerstone of any successful marriage. When you and your spouse trust each other deeply, you create a strong foundation for a thriving and lasting&#8230;</p>\n",
+          "featured_image": {
+            "$media": {
+              "url": "https://www.ruthsmarriage.com/wp-content/uploads/2023/09/Housing-Loan.jpg",
+              "alt": "",
+              "filename": "Housing-Loan.jpg"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": " Trust is the cornerstone of any successful marriage. When you and your spouse trust each other deeply, you create a strong foundation for a thriving and lasting relationship. At Ruth’s Marriage, we believe that building trust in your marriage is not only essential but also aligned with God’s plan for couples. In this blog post, we’ll explore how to build and maintain trust in your marriage from a Godly perspective. \n  1. Be Open and Honest  \n Transparency is a key element of trust. Be open and honest with your spouse about your thoughts, feelings, and experiences. Encourage your partner to do"
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "marriage"
+          ],
+          "tag": [
+            "godly-perspective"
+          ]
+        }
+      }
+    ]
+  }
 }

@@ -5,6 +5,10 @@
 **1:1 port** of **ruthsmarriage.com** (marriage counselling and coaching; WordPress + Hello Elementor + Elementor Pro + JetEngine) to **Astro on Cloudflare Workers**. The design must stay **pixel-identical** at 1440/1024/390. This is not a redesign.
 The plan lives at `~/Projects/ruthsmarriage/migration-plan/` (`$PLAN`). Read `$PLAN/README.md` and `$PLAN/00-site-audit.md` before any work. The visual and content reference is in `discovery/`.
 
+
+## ⏩ Current focus (2026-10-22): visual track
+Work only from `migration-plan/VISUAL-TRACK.md` until the human signs off **G2b**. Start with `migration-plan/reviews/G2-home-2026-10-22.md` (item 1: `@fontsource` imports must be at the top of `tokens.css`; no web fonts load today). Verify every change with `pnpm qa:visual -- --pages <keys>` (`scripts/qa/visual-compare.mjs`). **No deploy, Cloudflare, DNS or Resend work** until G2b. `dev.local` holds a secret: it's git-ignored, so never commit it or print its contents.
+
 ## Stack
 - Astro (`output: "server"`), `@astrojs/cloudflare`, `@astrojs/react` (the card/header/footer components are React)
 - **No CMS.** All content is JSON in `src/data/`; all images are local files in `public/assets/`

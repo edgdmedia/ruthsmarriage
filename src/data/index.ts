@@ -5,7 +5,6 @@
 import bannersJson from "./banners.json";
 import marqueeJson from "./marquee.json";
 import menusJson from "./menus.json";
-import pagesJson from "./pages.json";
 import postsJson from "./posts.json";
 import resourcesJson from "./resources.json";
 import servicesJson from "./services.json";
@@ -15,7 +14,6 @@ import testimonialsJson from "./testimonials.json";
 import type {
 	Banner,
 	Menu,
-	Page,
 	Post,
 	Resource,
 	Service,
@@ -34,7 +32,6 @@ export const services = servicesJson as Service[];
 export const resources = resourcesJson as Resource[];
 export const testimonials = testimonialsJson as Testimonial[];
 export const posts = postsJson as Post[];
-export const pages = pagesJson as Page[];
 export const taxonomies = taxonomiesJson as Taxonomy[];
 
 export const published = <T extends { status?: string }>(items: T[]) =>
@@ -50,12 +47,10 @@ const bySlug = <T extends { slug: string }>(items: T[]) => {
 const serviceBySlug = bySlug(services);
 const resourceBySlug = bySlug(resources);
 const postBySlug = bySlug(posts);
-const pageBySlug = bySlug(pages);
 
 export const getService = (slug: string) => serviceBySlug.get(slug);
 export const getResource = (slug: string) => resourceBySlug.get(slug);
 export const getPost = (slug: string) => postBySlug.get(slug);
-export const getPage = (slug: string) => pageBySlug.get(slug);
 
 export const getMenu = (name: string) => menus.find((m) => m.name === name);
 

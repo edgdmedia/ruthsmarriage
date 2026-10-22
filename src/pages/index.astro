@@ -12,35 +12,49 @@ import { Button } from "../components/Button";
 import { banners, posts, resources, services, settings, testimonials } from "../data";
 
 const heroSlides = banners;
+
+/** Live picks 6 slides at random on every request (JetEngine `orderby: rand`). */
+const pickRandom = <T,>(items: T[], n: number): T[] => {
+	const a = [...items];
+	for (let i = a.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[a[i], a[j]] = [a[j], a[i]];
+	}
+	return a.slice(0, n);
+};
+
+const serviceSlides = pickRandom(
+	services.filter((s) => s.status !== "draft"),
+	6,
+);
+const resourceSlides = pickRandom(
+	resources.filter((r) => r.status !== "draft"),
+	6,
+);
+const postSlides = pickRandom(
+	posts.filter((p) => p.status !== "draft"),
+	6,
+);
 ---
 
 <Base title={settings.title}>
     <HeroSlider slides={heroSlides} />
 
-    <section
-        style={{
-            padding: "0 50px 50px",
-            maxWidth: "1140px",
-            margin: "0 auto",
-            textAlign: "center",
-        }}
-    >
-        <h2
-            style={{
-                fontFamily: "Poppins, sans-serif",
-                fontSize: "24px",
-                lineHeight: "24px",
-                fontWeight: "500",
-                color: "#363636",
-                margin: "50px 0 30px 0",
-            }}
-        >
-            Ruth’s Marriage is a marriage counseling and relationship coaching
-            company focused on helping couples enjoy their marriage God’s way.
-        </h2>
-        <Button variant="pink" href="/about/">
-            About Us
-        </Button>
+    <!-- Intro statement: full-width section, boxed 1140 inner, 50px top/bottom -->
+    <section class="home-intro">
+        <div class="home-box">
+            <h2 class="home-intro__statement">
+                Ruth’s Marriage is a marriage counseling and relationship coaching
+                company focused on helping couples enjoy their marriage God’s way.
+            </h2>
+            <Button
+                variant="pink"
+                href="/about/"
+                style={{ display: "block", width: "fit-content", margin: "0 auto" }}
+            >
+                About Us
+            </Button>
+        </div>
     </section>
 
     <WaveSection>
@@ -49,81 +63,113 @@ const heroSlides = banners;
             subtitle="We provide counseling services for married couples and singles across different parts of the globe. Our services range from individual sessions to couples sessions and are held virtually."
         />
         <Carousel variant="content" autoplayMs={5000}>
-            {services.map((s) => (
+            {serviceSlides.map((s) => (
                 <div class="swiper-slide">
                     <ServiceCard service={s} />
                 </div>
             ))}
         </Carousel>
-        <Button
-            variant="pink"
-            href="/services/"
-            style={{
-                display: "block",
-                width: "fit-content",
-                margin: "20px auto 0 auto",
-            }}
-        >
+        <Button variant="pink" href="/services/" className="home-section-cta">
             All Services
         </Button>
     </WaveSection>
 
-    <section
-        style={{
-            padding: "70px 50px 50px",
-            maxWidth: "1140px",
-            margin: "0 auto",
-        }}
-    >
-        <SectionHeading
-            title="We believe you too can experience a positive transformation in your marriage. Hear what some of our clients are saying!!"
-            fontWeight="500"
-            showDivider={false}
-        />
-        <Carousel variant="content" autoplayMs={5000}>
-            {testimonials.map((t, i) => (
-                <div class="swiper-slide">
-                    <TestimonialCard
-                        testimonial={t}
-                        variant={i % 2 === 0 ? "dark" : "pink"}
-                    />
-                </div>
-            ))}
-        </Carousel>
+    <section class="home-testimonials">
+        <div class="home-box">
+            <SectionHeading
+                title="We believe you too can experience a positive transformation in your marriage. Hear what some of our clients are saying!!"
+                fontWeight="500"
+                showDivider={false}
+                className="section-heading--responsive"
+            />
+            <Carousel variant="content" autoplayMs={5000}>
+                {testimonials.map((t, i) => (
+                    <div class="swiper-slide">
+                        <TestimonialCard
+                            testimonial={t}
+                            variant={i % 2 === 0 ? "dark" : "pink"}
+                        />
+                    </div>
+                ))}
+            </Carousel>
+        </div>
     </section>
 
     <WaveSection>
         <SectionHeading title="Resources" />
         <Carousel variant="content" autoplayMs={5000}>
-            {resources.map((r) => (
+            {resourceSlides.map((r) => (
                 <div class="swiper-slide">
                     <ResourceCard resource={r} />
                 </div>
             ))}
         </Carousel>
-        <Button
-            variant="pink"
-            href="/resources/"
-            style={{
-                display: "block",
-                width: "fit-content",
-                margin: "20px auto 0 auto",
-            }}
-        >
+        <Button variant="pink" href="/resources/" className="home-section-cta">
             All Resources
         </Button>
     </WaveSection>
 
-    <section
-        style={{ padding: "50px 50px", maxWidth: "1140px", margin: "0 auto" }}
-    >
-        <SectionHeading title="Inspired Features" />
-        <Carousel variant="content" autoplayMs={5000}>
-            {posts.map((p) => (
-                <div class="swiper-slide">
-                    <PostCard post={p} />
-                </div>
-            ))}
-        </Carousel>
+    <section class="home-posts">
+        <div class="home-box">
+            <SectionHeading title="Inspired Features" fontWeight="700" />
+            <Carousel variant="content" autoplayMs={5000}>
+                {postSlides.map((p) => (
+                    <div class="swiper-slide">
+                        <PostCard post={p} />
+                    </div>
+                ))}
+            </Carousel>
+        </div>
     </section>
 </Base>
+
+<style>
+	/* All homepage sections are full-width with a boxed 1140 inner, matching
+	   live (the section carries the 50px gutter, the inner is 1140). */
+	.home-intro,
+	.home-testimonials,
+	.home-posts {
+		padding: 0 50px;
+	}
+	.home-box {
+		max-width: 1140px;
+		margin: 0 auto;
+	}
+	.home-intro .home-box {
+		padding: 50px 0;
+		text-align: center;
+	}
+	.home-intro__statement {
+		font-family: "Poppins", sans-serif;
+		font-size: 24px;
+		line-height: 24px;
+		font-weight: 500;
+		color: #363636;
+		margin: 0 0 30px 0;
+		text-align: center;
+	}
+	.home-testimonials .home-box {
+		padding: 70px 0 50px;
+	}
+	.home-posts .home-box {
+		padding: 50px 0;
+	}
+	/* The "All Services" / "All Resources" button sits 20px under the dots. */
+	.home-section-cta {
+		display: block;
+		width: fit-content;
+		margin: 20px auto 0 auto;
+	}
+	/* PostCard sits in a slide with 15px vertical padding (home.md §6); the
+	   horizontal padding stays 10px so the card is 360px wide, as on live. */
+	.home-posts .swiper-slide {
+		padding: 15px 10px;
+	}
+	@media (max-width: 767px) {
+		.home-intro,
+		.home-testimonials,
+		.home-posts {
+			padding: 0 50px;
+		}
+	}
+</style>

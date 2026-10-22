@@ -1,0 +1,78 @@
+---
+import Base from "../../layouts/Base.astro";
+import { PageHero } from "../../components/PageHero";
+import { resources, settings } from "../../data";
+import { getSeoMeta } from "../../lib/seo";
+
+const videoList = [...resources]
+	.filter((r) => r.status !== "draft")
+	.filter((r) => r.terms?.resource_type?.some((t) => t.slug === "video"))
+	.sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
+
+const seo = getSeoMeta({
+	title: "Videos",
+	description: null,
+	siteTitle: settings.title,
+	siteUrl: "https://www.ruthsmarriage.com",
+	path: "/videos",
+});
+---
+
+<Base
+	title={seo.title}
+	pageTitle={seo.ogTitle}
+	description={seo.description}
+	canonical={seo.canonical}
+	image={seo.ogImage}
+>
+	<PageHero variant="pattern-flat" title="Videos" />
+	<section class="video-list">
+		{videoList.map((video) => (
+			<div class="video-item">
+				<div class="video-embed">
+					<iframe
+						src={video.video_url ?? ""}
+						title={video.title}
+						loading="lazy"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen
+					/>
+				</div>
+			</div>
+		))}
+	</section>
+</Base>
+
+<style>
+	.video-list {
+		padding: 0 50px 50px;
+		box-sizing: border-box;
+		max-width: 1140px;
+		margin: 0 auto;
+	}
+	.video-item {
+		padding: 0 10px;
+		margin-bottom: 10px;
+		box-sizing: border-box;
+	}
+	.video-embed {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		height: 0;
+		overflow: hidden;
+		background: #000000;
+	}
+	.video-embed iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+	@media (max-width: 767px) {
+		.video-list {
+			padding: 0 20px 20px;
+		}
+	}
+</style>

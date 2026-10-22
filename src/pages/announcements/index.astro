@@ -1,0 +1,24 @@
+---
+import Base from "../../layouts/Base.astro";
+import { PageHero } from "../../components/PageHero";
+import { settings } from "../../data";
+import { getSeoMeta } from "../../lib/seo";
+
+const seo = getSeoMeta({
+	title: "Announcements",
+	description: settings.tagline || null,
+	siteTitle: settings.title,
+	siteUrl: "https://www.ruthsmarriage.com",
+	path: "/announcements",
+});
+---
+
+<Base
+	title={seo.title}
+	pageTitle={seo.ogTitle}
+	description={seo.description}
+	canonical={seo.canonical}
+	image={seo.ogImage}
+>
+	<PageHero variant="pattern" title="Announcements" />
+</Base>

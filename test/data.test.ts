@@ -4,13 +4,11 @@ import { join } from "node:path";
 import {
 	banners,
 	getMenu,
-	getPage,
 	getPost,
 	getResource,
 	getService,
 	getTerm,
 	menus,
-	pages,
 	posts,
 	postsInCategory,
 	postsWithTag,
@@ -46,7 +44,6 @@ describe("content data", () => {
 		expect(getService(services[0].slug)?.id).toBe(services[0].id);
 		expect(getResource(resources[0].slug)?.id).toBe(resources[0].id);
 		expect(getPost(posts[0].slug)?.id).toBe(posts[0].id);
-		expect(getPage("about")?.title).toBe("About Us");
 		expect(getService("does-not-exist")).toBeUndefined();
 	});
 
@@ -64,21 +61,16 @@ describe("content data", () => {
 	});
 
 	it("has a local file for every referenced image", () => {
-		for (const item of [...services, ...resources, ...posts, ...pages]) {
+		for (const item of [...services, ...resources, ...posts]) {
 			expect(imageExists(item.featured_image?.src)).toBe(true);
 			expect(imageExists(item.hero_image?.src)).toBe(true);
-			expect(imageExists(item.side_image?.src)).toBe(true);
 		}
 		expect(imageExists(settings.logo?.src)).toBe(true);
 		for (const banner of banners) {
 			expect(imageExists(banner.image)).toBe(true);
 		}
 		// Image blocks inside page content (e.g. story photo columns).
-		for (const page of pages) {
-			for (const block of page.content) {
-				if (block.type === "image") expect(imageExists(block.src)).toBe(true);
-			}
-		}
+		// Pages no longer use data-driven content; all page content is hardcoded inline.
 	});
 
 	it("keeps menu urls pointing at real pages", () => {

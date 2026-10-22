@@ -1,5 +1,7 @@
 /* SectionHeading — title + centred divider + optional subtitle (_global.md).
-   Testimonials use fontWeight 500 and showDivider false (home.md §4). */
+   Divider is a 19px-tall widget with the 66×3 bar 8px from its top; the gap
+   above it is 20px. Testimonials use fontWeight 500 and showDivider false
+   (home.md §4) and step the title size down at tablet/mobile. */
 export interface SectionHeadingProps {
 	title?: string;
 	subtitle?: string;
@@ -15,28 +17,16 @@ export const SectionHeading = ({
 	fontWeight = "600",
 	showDivider = true,
 }: SectionHeadingProps = {}) => (
-	<div
-		className={`section-heading ${className}`}
-		style={{ textAlign: "center", marginBottom: "20px" }}
-	>
+	<div className={`section-heading ${className}`}>
 		{title && (
 			<h2
-				style={{ fontFamily: "'Nunito',sans-serif", fontSize: "32px", lineHeight: "32px", fontWeight, color: "#000000", margin: "0 0 8px 0" }}
+				className="section-heading__title"
+				style={{ fontWeight }}
 			>
 				{title}
 			</h2>
 		)}
-		{title && showDivider && (
-			<div
-				style={{ width: "66px", height: "3px", borderTop: "3px solid #BF1E72", margin: "8px auto 0 auto" }}
-			/>
-		)}
-		{subtitle && (
-			<p
-				style={{ fontFamily: "'Poppins',sans-serif", fontSize: "16px", lineHeight: "21px", fontWeight: "500", color: "#000000", margin: "20px 0 0 0" }}
-			>
-				{subtitle}
-			</p>
-		)}
+		{title && showDivider && <div className="section-heading__divider" />}
+		{subtitle && <p className="section-heading__subtitle">{subtitle}</p>}
 	</div>
 );

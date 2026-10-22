@@ -1,0 +1,268 @@
+---
+import Base from "../../layouts/Base.astro";
+import { PageHero } from "../../components/PageHero";
+import PortableText from "../../components/PortableText.astro";
+import { services, settings } from "../../data";
+import { getSeoMeta } from "../../lib/seo";
+
+const serviceList = [...services]
+	.filter((s) => s.status !== "draft")
+	.sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
+
+const seo = getSeoMeta({
+	title: "Services",
+	description: null,
+	image: "/assets/media/2025/06/Relationship-Clarity-1024x731-1.jpg",
+	siteTitle: settings.title,
+	siteUrl: "https://www.ruthsmarriage.com",
+	path: "/services",
+});
+---
+
+<Base title={seo.title} pageTitle={seo.ogTitle} image={seo.ogImage}>
+	<PageHero variant="pattern" title="Services" />
+	<section class="service-list">
+		{serviceList.map((service) => {
+			const isA = serviceList.indexOf(service) % 2 === 0;
+			return (
+				<div class={`service-row row-${isA ? "a" : "b"}`}>
+					<div class="service-row-inner">
+						{isA ? (
+							<>
+								<div class="service-row__image">
+									{service.featured_image && (
+										<img
+											src={service.featured_image.src}
+											alt={service.featured_image.alt ?? ""}
+											loading="lazy"
+										/>
+									)}
+								</div>
+								<div class="service-row__text">
+									<h2 class="service-row__title">{service.title}</h2>
+									{service.audience_label && (
+										<p class="service-row__audience">{service.audience_label}</p>
+									)}
+									{service.format && (
+										<p class="service-row__format">{service.format}</p>
+									)}
+									<div class="service-row__description">
+										{service.content ? (
+											<PortableText value={service.content} />
+										) : null}
+									</div>
+									<a href={`/service/${service.slug}/`} class="service-row__btn">
+										Details & Pricing
+									</a>
+								</div>
+							</>
+						) : (
+							<>
+								<div class="service-row__text service-row__text--pink">
+									<h2 class="service-row__title">{service.title}</h2>
+									{service.audience_label && (
+										<p class="service-row__audience">{service.audience_label}</p>
+									)}
+									{service.format && (
+										<p class="service-row__format">{service.format}</p>
+									)}
+									<div class="service-row__description service-row__description--pink">
+										{service.content ? (
+											<PortableText value={service.content} />
+										) : null}
+									</div>
+									<a
+										href={`/service/${service.slug}/`}
+										class="service-row__btn service-row__btn--pink"
+									>
+										Details & Pricing
+									</a>
+								</div>
+								<div class="service-row__image">
+									{service.featured_image && (
+										<img
+											src={service.featured_image.src}
+											alt={service.featured_image.alt ?? ""}
+											loading="lazy"
+										/>
+									)}
+								</div>
+							</>
+						)}
+					</div>
+				</div>
+			)
+		})}
+	</section>
+</Base>
+
+<style>
+	.service-list {
+		padding: 0 10px;
+		box-sizing: border-box;
+	}
+	.service-row {
+		display: flex;
+		flex-direction: row;
+		padding: 0 10px;
+		box-sizing: border-box;
+		flex-wrap: wrap;
+	}
+	.row-a {
+		background: #ffffff;
+	}
+	.row-b {
+		background: #BF1E7224;
+	}
+	.service-row-inner {
+		max-width: 1140px;
+		margin: 0 auto;
+		display: flex;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.service-row__image {
+		flex: 0 0 40%;
+		padding: 20px;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.row-a .service-row__image {
+		padding: 20px 20px 50px;
+	}
+	.row-b .service-row__image {
+		padding: 20px 20px 50px;
+		justify-content: flex-start;
+	}
+	.service-row__image img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		display: block;
+	}
+	.row-a .service-row__image img {
+		border: 2px solid #BF1E7224;
+		border-radius: 5px;
+	}
+	.service-row__text {
+		flex: 0 0 60%;
+		padding: 50px 30px;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		gap: 20px;
+	}
+	.row-b .service-row__text {
+		padding: 70px 30px;
+	}
+	.service-row__title {
+		font-family: Nunito, sans-serif;
+		font-size: 32px;
+		line-height: 32px;
+		font-weight: 700;
+		color: #000000;
+		margin: 0;
+	}
+	.row-b .service-row__title {
+		color: #444547;
+	}
+	.service-row__audience {
+		font-family: Poppins, sans-serif;
+		font-size: 17px;
+		line-height: 17px;
+		font-weight: 400;
+		font-style: italic;
+		color: #000000;
+		margin: -10px 0 0;
+	}
+	.service-row__format {
+		font-family: Poppins, sans-serif;
+		font-size: 16px;
+		line-height: 16px;
+		font-weight: 600;
+		color: #000000;
+		margin: 0;
+	}
+	.row-b .service-row__format {
+		color: #000000;
+	}
+	.service-row__description {
+		font-family: Poppins, sans-serif;
+		font-size: 15px;
+		line-height: 22.5px;
+		font-weight: 400;
+		color: #2E2E2E;
+		margin: 0;
+		text-align: center;
+	}
+	.row-b .service-row__description {
+		font-size: 16px;
+		line-height: 24px;
+	}
+	.service-row__description p {
+		margin-bottom: 14.4px;
+	}
+	.service-row__btn {
+		font-family: Nunito, sans-serif;
+		font-size: 15px;
+		font-weight: 600;
+		color: #ffffff;
+		background: #BF1E72;
+		border-radius: 20px;
+		padding: 12px 24px;
+		border: none;
+		cursor: pointer;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+	}
+	.service-row__btn--pink {
+		background: #ED0D82;
+	}
+	@media (max-width: 1024px) {
+		.service-row__image {
+			flex: 0 0 38%;
+			padding: 20px 20px 50px;
+		}
+		.service-row__text {
+			flex: 0 0 58%;
+			padding: 50px 30px;
+		}
+		.row-b .service-row__text {
+			padding: 70px 30px;
+		}
+	}
+	@media (max-width: 767px) {
+		.service-row {
+			flex-direction: column;
+			padding: 0 20px;
+		}
+		.service-row-inner {
+			flex-direction: column;
+		}
+		.service-row__image {
+			flex: none;
+			width: 100%;
+			padding: 20px;
+		}
+		.row-a .service-row__image {
+			padding: 20px;
+		}
+		.row-b .service-row__image {
+			justify-content: center;
+		}
+		.service-row__text {
+			flex: none;
+			width: 100%;
+			padding: 20px;
+			gap: 20px;
+		}
+		.row-b .service-row__text {
+			padding: 20px;
+		}
+	}
+</style>

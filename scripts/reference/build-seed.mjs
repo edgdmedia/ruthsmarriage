@@ -35,12 +35,18 @@ const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$
 const services = c("discovery/content/services.json");
 const resources = c("discovery/content/resources.json");
 const testimonialsRaw = c("discovery/content/testimonials.json");
+// The scraped listing truncates each quote; the WP REST dump has the full text.
+const testimonialsFull = (() => {
+  try {
+    const raw = c("discovery/raw/json/testimonial.json");
+    const list = Array.isArray(raw) ? raw : raw.dom;
+    return new Map(list.map((t) => [String(t.id), (t.content?.rendered || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()]));
+  } catch {
+    return new Map();
+  }
+})();
 const postsRaw = c("discovery/content/posts.json");
 const site = c("discovery/content/site.json");
-const pages = {};
-for (const f of ["about","our-story","founder","singles","married","services","resources","books","videos","freebies","inspired-features","sponsored","announcements","event","askcoach","contact","cancellation-policy","confidentiality-policy","privacy-policy"]) {
-  try { pages[f] = c(`discovery/content/pages/${f}.json`); } catch {}
-}
 
 // ---------- helpers ----------
 // Featured images: discovery/content/*.json captured og:image (always the site
@@ -63,22 +69,6 @@ const termMap = {
   resources: { resource: "resource", book: "book", video: "video" },
 };
 const postTags = new Map(postsRaw.map(p => [p.slug, (p.tags || [])[0] || "instagram"]));
-
-const pagePT = (slugName) => {
-  const p = pages[slugName];
-  if (!p) return [{ _type: "block", style: "normal", children: [{ _type: "span", text: "" }] }];
-  const blocks = [];
-  for (const s of p.sections || []) {
-    for (const w of s.widgets || []) {
-      if (w.heading) blocks.push(PT(w.heading.text, w.heading.tag === "h1" ? "h1" : w.heading.tag === "h2" ? "h2" : w.heading.tag === "h3" ? "h3" : "normal"));
-      if (w.html) {
-        const text = w.html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
-        if (text) blocks.push(PT(text));
-      }
-    }
-  }
-  return blocks.length ? blocks : [{ _type: "block", style: "normal", children: [{ _type: "span", text: "" }] }];
-};
 
 const settingsSocial = {};
 for (const s of site.socials || []) {
@@ -113,18 +103,6 @@ const seed = {
         { slug: "title", label: "Title", type: "string", required: true, searchable: true },
         { slug: "featured_image", label: "Featured Image", type: "image" },
         { slug: "excerpt", label: "Excerpt", type: "text" },
-        { slug: "content", label: "Content", type: "portableText", searchable: true },
-      ],
-    },
-    {
-      slug: "pages", label: "Pages", labelSingular: "Page", urlPattern: "/{slug}",
-      supports: ["drafts", "revisions", "preview", "search", "seo"],
-      commentsEnabled: false,
-      fields: [
-        { slug: "title", label: "Title", type: "string", required: true, searchable: true },
-        { slug: "hero_title", label: "Hero Title", type: "string" },
-        { slug: "hero_image", label: "Hero Image", type: "image" },
-        { slug: "side_image", label: "Side Image", type: "image" },
         { slug: "content", label: "Content", type: "portableText", searchable: true },
       ],
     },
@@ -267,27 +245,17 @@ const seed = {
     })),
     testimonials: testimonialsRaw.dom.map((t, i) => ({
       id: `testimonial-${i + 1}`, slug: `testimonial-${i + 1}`, status: "published", order: i + 1,
-      data: { title: null, quote: t.text.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim(), author: null },
+      data: {
+        title: null,
+        quote: testimonialsFull.get(String(t.postId)) || t.text.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim(),
+        author: null,
+      },
     })),
-    pages: Object.entries(pages).map(([name, p], i) => {
-      const img = p.sections?.flatMap(s => s.widgets || []).find(w => w.image)?.image;
-      const heroImage = typeof img === "string" ? img : img?.src || null;
-      return {
-        id: `page-${i + 1}`, slug: name, status: "published",
-        data: {
-          title: decodeEntities(p.title).replace(/\s*-\s*Ruths Marriage$/, "").replace(/\s*-\s*Ruth's Marriage$/, ""),
-          hero_title: null,
-          hero_image: heroImage ? MEDIA(heroImage) : null,
-          side_image: null,
-          content: pagePT(name),
-        },
-      };
-    }),
     posts: postsRaw.filter(p => (p.status || "publish") === "publish")
       .sort((a, b) => new Date(b.date) - new Date(a.date))
-      .slice(0, 3)
       .map((p, i) => ({
         id: `post-${i + 1}`, slug: p.slug, status: "published",
+        published_at: p.date || null,
         data: {
           title: decodeEntities(p.title),
           excerpt: p.excerpt || null,
@@ -301,5 +269,5 @@ const seed = {
 
 mkdirSync(join(root, "seed"), { recursive: true });
 writeFileSync(join(root, "seed/seed.json"), JSON.stringify(seed, null, 2));
-const counts = { services: seed.content.services.length, resources: seed.content.resources.length, testimonials: seed.content.testimonials.length, pages: seed.content.pages.length, posts: seed.content.posts.length, marquee: seed.content.marquee_items.length };
+const counts = { services: seed.content.services.length, resources: seed.content.resources.length, testimonials: seed.content.testimonials.length, posts: seed.content.posts.length, marquee: seed.content.marquee_items.length };
 console.log(JSON.stringify(counts));

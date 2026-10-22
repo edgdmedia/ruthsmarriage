@@ -5,7 +5,7 @@ import type { Post } from "../data/types";
 
 /* The seeded excerpt is raw WP HTML (e.g. "<p>…&#8230;</p>"). Strip tags,
    decode the common entities, collapse whitespace, then trim to `words`. */
-function cleanExcerpt(raw: string | null | undefined, words = 25): string {
+function cleanExcerpt(raw: string | null | undefined, words = 10): string {
 	if (!raw) return "";
 	const decoded = raw
 		.replace(/<[^>]+>/g, " ")
@@ -25,13 +25,13 @@ function cleanExcerpt(raw: string | null | undefined, words = 25): string {
 		.trim();
 	const parts = decoded.split(" ");
 	if (parts.length <= words) return decoded;
-	return parts.slice(0, words).join(" ") + "…";
+	return parts.slice(0, words).join(" ") + "...";
 }
 
 export const PostCard = ({ post }: { post: Post }) => {
 	const img = post.featured_image;
 	const imgUrl = img?.src ?? "";
-	const excerpt = cleanExcerpt(post.excerpt, 25);
+	const excerpt = cleanExcerpt(post.excerpt, 10);
 	const category = post.terms?.category?.[0];
 	const catLabel = category?.label;
 	const catSlug = category?.slug;
@@ -53,7 +53,7 @@ export const PostCard = ({ post }: { post: Post }) => {
 		>
 			<div
 				style={{
-					padding: "15px 15px",
+					padding: "15px 15px 8px",
 					display: "flex",
 					flexDirection: "column",
 					gap: "13px",
@@ -64,7 +64,7 @@ export const PostCard = ({ post }: { post: Post }) => {
 					<img
 						src={imgUrl}
 						alt=""
-						style={{ width: "100%", minHeight: "164px", objectFit: "cover", borderRadius: 0, display: "block" }}
+						style={{ width: "100%", height: "164px", objectFit: "cover", borderRadius: 0, display: "block" }}
 					/>
 				)}
 				{catLabel && (
@@ -78,10 +78,11 @@ export const PostCard = ({ post }: { post: Post }) => {
 							padding: "0 5px 1px",
 							borderRadius: "20px",
 							fontSize: "12px",
-							lineHeight: "18px",
+							lineHeight: "24px",
 							fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
 							color: "#FDFDFD",
-							textDecoration: "none",
+              textDecoration: "none",
+							width: "fit-content"
 						}}
 					>
 						<span
@@ -106,7 +107,7 @@ export const PostCard = ({ post }: { post: Post }) => {
 				</h2>
 				{excerpt && (
 					<p
-						style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", lineHeight: "21px", fontWeight: "400", color: "#333333", margin: "0", display: "-webkit-box", WebkitLineClamp: "4", WebkitBoxOrient: "vertical", overflow: "hidden" }}
+						style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", lineHeight: "24px", fontWeight: "400", color: "#333333", margin: "0 0 8px 0", display: "-webkit-box", WebkitLineClamp: "2", WebkitBoxOrient: "vertical", overflow: "hidden" }}
 					>
 						{excerpt}
 					</p>

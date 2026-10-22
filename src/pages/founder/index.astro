@@ -1,0 +1,139 @@
+---
+import Base from "../../layouts/Base.astro";
+import { PageHero } from "../../components/PageHero";
+import { settings } from "../../data";
+import { getSeoMeta } from "../../lib/seo";
+
+const seo = getSeoMeta({
+	title: "Our Founder",
+	description: settings.tagline || null,
+	image: "/assets/media/2025/06/Runway-2023-10-23T08_30_02.310Z-Expand-Image-scaled-1.jpg",
+	siteTitle: settings.title,
+	siteUrl: "https://www.ruthsmarriage.com",
+	path: "/founder",
+});
+---
+
+<Base
+	title={seo.title}
+	pageTitle={seo.ogTitle}
+	description={seo.description}
+	canonical={seo.canonical}
+	image={seo.ogImage}
+>
+	<PageHero
+		variant="photo"
+		title="Our Founder"
+		image="/assets/media/2025/06/Runway-2023-10-23T08_30_02.310Z-Expand-Image-scaled-1.jpg"
+	/>
+
+	<section class="story-section">
+		<div class="story-inner">
+			<div class="story-col story-text">
+				<p class="story-para drop-cap">
+					Ruth Esumeh is the founder of Ruth’s Marriage Counseling Services, a marriage counseling and coaching company that focuses on helping couples enjoy their marriage God’s way. Her practical, professional, and godly approach to her teachings has made her a sought-after marriage counselor in the industry.
+				</p>
+				<p class="story-para">
+					Ruth Esumeh has worked with couples and singles from diverse parts of the world through counseling, coaching, and mentoring, and has seen God use her to transform their lives, homes, and marriages.<br /> She is a seasoned public speaker on marriage and family life and has authored two top-selling books, Have Sex &amp; Pray and 50 Intimate Conversations to Have with Your Partner.
+				</p>
+				<p class="story-para">
+					Prior to establishing Ruth’s Marriage, Ruth Esumeh spent over 10 years in the corporate world working with top multinationals and climbed the corporate ladder successfully. Her passion and zeal for marriage fueled her decision to establish Ruth’s Marriage.
+				</p>
+				<p class="story-para">
+					Ruth Esumeh is a Certified Marriage and Family Life Counselor and a Bible-believing Christian who strongly believes that beyond her certification, God is the principal source of her wisdom.
+				</p>
+				<p class="story-para">
+					Ruth has been happily married for eleven years to the love of her life, whom she really adores. Their love, friendship, and marriage have been an inspiration to many singles and married who desire to have a beautiful marriage. They are blessed with two lovely children and reside in Lagos, Nigeria.
+				</p>
+				<p class="story-para bold">
+					<strong>To book Ruth Esumeh to speak at your next event, fill the booking form</strong>
+					&nbsp;
+					<a
+						href="https://form.typeform.com/to/T6W82ycq"
+						target="_blank"
+						rel="noopener"
+						style="color: #cc3366"
+					>
+						here
+					</a>
+					.
+				</p>
+			</div>
+			<div
+				class="story-col story-photo"
+				style="background-image:url(/assets/media/2025/06/DSC08323-scaled-1.jpg)"
+			/>
+		</div>
+	</section>
+</Base>
+
+<style>
+	.story-section {
+		padding: 30px;
+		box-sizing: border-box;
+	}
+	.story-inner {
+		max-width: 1140px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 20px;
+		box-sizing: border-box;
+	}
+	.story-col {
+		flex: 0 0 560px;
+		width: 560px;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.story-para {
+		font-family: Poppins, sans-serif;
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 400;
+		color: #2e2e2e;
+		margin: 0 0 0.9em;
+		text-align: left;
+	}
+	.story-para.drop-cap::first-letter {
+		float: left;
+		font-family: Poppins, sans-serif;
+		font-size: 50px;
+		line-height: 50px;
+		font-weight: 400;
+		color: #bf1e72;
+		margin: 0 10px 0 0;
+		width: 36px;
+		height: 50px;
+	}
+	.story-photo {
+		height: 730px;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	@media (max-width: 1024px) {
+		.story-section {
+			padding: 30px 20px;
+		}
+		.story-inner {
+			flex-direction: column;
+			align-items: stretch;
+		}
+		.story-col {
+			flex: none;
+			width: 100%;
+		}
+		.story-photo {
+			height: 450px;
+			min-height: 450px;
+			background-position: 0 -110px;
+		}
+	}
+	@media (max-width: 767px) {
+		.story-photo {
+			background-position: center;
+		}
+	}
+</style>

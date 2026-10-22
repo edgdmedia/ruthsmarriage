@@ -1,0 +1,29 @@
+---
+import Base from "../../layouts/Base.astro";
+import { PageHero } from "../../components/PageHero";
+import { settings } from "../../data";
+import { getSeoMeta } from "../../lib/seo";
+
+const seo = getSeoMeta({
+	title: "Event Gallery",
+	description: settings.tagline || null,
+	image: "/assets/media/2025/06/photo-output-2.jpeg",
+	siteTitle: settings.title,
+	siteUrl: "https://www.ruthsmarriage.com",
+	path: "/event",
+});
+---
+
+<Base
+	title={seo.title}
+	pageTitle={seo.ogTitle}
+	description={seo.description}
+	canonical={seo.canonical}
+	image={seo.ogImage}
+>
+	<PageHero
+		variant="photo"
+		title="Event Gallery"
+		image="/assets/media/2025/06/photo-output-2.jpeg"
+	/>
+</Base>

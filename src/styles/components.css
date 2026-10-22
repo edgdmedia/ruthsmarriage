@@ -18,12 +18,13 @@
 .site-header-nav { width: 70%; display: flex; justify-content: center; align-items: center; }
 .site-header-nav-items { display: flex; align-items: center; justify-content: center; }
 .site-header-nav-item { display: flex; align-items: center; position: relative; }
-.site-header-nav-item:not(:first-child)::before {
-	content: "";
-	width: 1px;
+/* Divider between nav items (Elementor nav-menu ::after): 2px border, 12px tall. */
+.site-header-nav-divider {
+	width: 2px;
 	height: 12px;
-	background: #7a7a7a30;
-	margin-right: 14px;
+	border-left: 2px solid #7a7a7a30;
+	box-sizing: border-box;
+	flex: 0 0 2px;
 }
 .site-header-nav-item a,
 .site-header-nav-item button {
@@ -39,8 +40,15 @@
 	cursor: pointer;
 	display: flex;
 	align-items: center;
-	gap: 4px;
 }
+/* Caret: 1em (15px) icon with a 10px left pad; the -10px margins cancel the
+   vertical padding so the nav item stays 46px tall (matches live). */
+.site-header-nav-caret {
+	display: flex;
+	padding: 10px 0 10px 10px;
+	margin: -10px 0;
+}
+.site-header-nav-caret svg { width: 15px; height: 15px; }
 .site-header-nav-item a:hover,
 .site-header-nav-item button:hover { color: #bf1e72; }
 .site-header-dropdown {
@@ -97,14 +105,115 @@
 	.site-header-toggle svg { width: 25px; height: 25px; }
 }
 
-/* MarqueeBar */
+/* Header shrink on scroll (desktop/tablet sticky shadow stays) */
+.site-header--scrolled { padding-top: 3px; padding-bottom: 3px; }
+.site-header--scrolled .site-header-logo img { height: 56px; }
+
+/* Mobile header panel (full width, under the main bar, absolute so it pushes nothing) */
+.site-header-mobile-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 1000;
+}
+.site-header-mobile-panel {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background: #ffffff;
+	z-index: 1001;
+	overflow-y: auto;
+	max-height: calc(100vh - 76px);
+	display: flex;
+	flex-direction: column;
+}
+.site-header-mobile-close,
+.site-header-mobile-close-bottom {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 15px;
+	color: #ED0D82;
+	font-size: 24px;
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+}
+.site-header-mobile-close svg,
+.site-header-mobile-close-bottom svg { width: 28px; height: 28px; fill: currentColor; }
+.site-header-mobile-close-bottom { margin-top: auto; }
+
+.site-header-mobile-logo { padding: 20px; text-align: center; }
+.site-header-mobile-logo img { width: 116px; height: 65px; object-fit: contain; display: block; margin: 0 auto; }
+
+.site-header-mobile-nav { padding: 0 20px 20px; }
+.site-header-mobile-item { border-bottom: 1px solid #EBEBEB; }
+.site-header-mobile-parent,
+.site-header-mobile-link {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 15px 0;
+	font-family: Nunito, sans-serif;
+	font-size: 18px;
+	line-height: 1;
+	font-weight: 500;
+	color: #33373D;
+	text-decoration: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+	text-align: left;
+}
+.site-header-mobile-link { padding-right: 0; }
+.site-header-mobile-parent:hover,
+.site-header-mobile-link:hover { color: #BF1E72; }
+
+.site-header-mobile-submenu { padding-left: 20px; border-top: 1px solid #EBEBEB; }
+.site-header-mobile-sublink {
+	display: block;
+	font-family: Nunito, sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	font-weight: 400;
+	color: #33373D;
+	padding: 10px 0;
+	text-decoration: none;
+}
+.site-header-mobile-sublink:hover { color: #BF1E72; }
+
+.site-header-mobile-cta { padding: 20px; text-align: center; }
+
+/* MarqueeBar — live uses <marquee scrollamount=6 scrolldelay=85> (~70px/s).
+   The track starts just off the right edge of the box and scrolls left; two
+   copies of the group make the -50% loop seamless. */
 @keyframes marquee {
 	from { transform: translateX(0); }
 	to { transform: translateX(-50%); }
 }
 .marquee-bar { background: #5A0F36; height: 52px; padding: 0 10px; overflow: hidden; }
-.marquee-inner { max-width: 1140px; margin: 0 auto; padding: 10px 0; display: flex; align-items: center; overflow: hidden; }
-.marquee-track { display: flex; gap: 0; animation: marquee 14s linear infinite; white-space: nowrap; }
+.marquee-inner {
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 10px 0;
+	height: 32px;
+	position: relative;
+	overflow: hidden;
+}
+.marquee-track {
+	position: absolute;
+	left: 100%;
+	top: 0;
+	display: flex;
+	gap: 0;
+	animation: marquee 11s linear infinite;
+	white-space: nowrap;
+}
 .marquee-track a { color: #ffffff; font-family: system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-size: 17px; line-height: 25.5px; font-weight: 600; text-decoration: none; }
 .marquee-sep { color: #ffffff; font-size: 16px; line-height: 24px; font-weight: 400; padding: 0 150px; }
 @media (prefers-reduced-motion: reduce) {
@@ -126,6 +235,83 @@
 	.hero-slide__button { font-size: 15px !important; padding: 12px 24px !important; }
 }
 
+/* SectionHeading (_global.md → SectionHeading).
+   Title Nunito 32px/32px #000; divider is a 19px widget with the 66×3 bar
+   8px from its top and a 20px gap above; subtitle Poppins 16px/21px 500. */
+.section-heading { text-align: center; margin-bottom: 20px; }
+.section-heading__title {
+	font-family: "Nunito", sans-serif;
+	font-size: 32px;
+	line-height: 32px;
+	color: #000000;
+	margin: 0 0 20px 0;
+}
+.section-heading__divider {
+	position: relative;
+	width: 66px;
+	height: 19px;
+	margin: 0 auto;
+}
+.section-heading__divider::after {
+	content: "";
+	position: absolute;
+	top: 8px;
+	left: 0;
+	width: 66px;
+	border-top: 3px solid #bf1e72;
+}
+.section-heading__subtitle {
+	font-family: "Poppins", sans-serif;
+	font-size: 16px;
+	line-height: 21px;
+	font-weight: 500;
+	color: #000000;
+	margin: 20px 0 0 0;
+}
+/* The testimonials heading steps down at tablet/mobile (home.md §4). */
+@media (max-width: 1024px) {
+	.section-heading--responsive .section-heading__title {
+		font-size: 25px;
+		line-height: 25px;
+	}
+}
+@media (max-width: 767px) {
+	.section-heading--responsive .section-heading__title {
+		font-size: 19px;
+		line-height: 19px;
+	}
+}
+
+/* WaveSection (_global.md): wave-brush dividers, 52px top / 40px bottom. */
+.wave-section { overflow: hidden; }
+.wave-section__wave {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	pointer-events: none;
+	object-fit: fill;
+}
+.wave-section__wave--top {
+	top: -1px;
+	height: 52px;
+	width: calc(133% + 1.3px);
+}
+.wave-section__wave--bottom {
+	bottom: -1px;
+	height: 40px;
+	width: calc(116% + 1.3px);
+	transform: translateX(-50%) rotate(180deg);
+}
+.wave-section-inner {
+	position: relative;
+	z-index: 2;
+	max-width: 1140px;
+	margin: 0 auto;
+	/* 100px to the heading, 90px below the CTA (the 40px bottom wave sits
+	   inside that). */
+	padding: 100px 0 90px;
+}
+
 /* Carousel */
 .carousel .swiper-pagination,
 .heroslider .swiper-pagination {
@@ -133,13 +319,17 @@
 	bottom: auto;
 	left: auto;
 	width: auto;
+	margin: 10px 0 !important;
+	/* Flex (not inline) so the bullet row is exactly 18px tall. */
+	display: flex;
+	justify-content: center;
 }
 .swiper-pagination .swiper-pagination-bullet {
 	width: 12px !important;
 	height: 12px !important;
 	background: #BF1E7224 !important;
 	border-radius: 100% !important;
-	margin: 0 3px !important;
+	margin: 3px !important;
 	opacity: 1 !important;
 }
 .swiper-pagination .swiper-pagination-bullet-active {
@@ -176,7 +366,7 @@
 }
 
 /* Footer — _global.md spec: bg #0E0D0D, padding 0 10px, inner boxed 1140.
-   4 columns (Contact, Services, Resources, Links), each 270px (232 @1024), gap 20, padding 10, internal gap 20.
+   4 columns (Contact, Services, Resources, Links), 270px (232 @1024), gap 20, padding 10, internal gap 20.
    @390: columns stack full width (355px), gap 20.
    Bottom: flex space-between, align centre, padding 10, height 66. @390: row-reverse, wrap-reverse, centered. */
 .site-footer {
@@ -186,16 +376,20 @@
 .footer-inner {
 	max-width: 1140px;
 	margin: 0 auto;
-	padding: 50px 0 40px;
+	padding: 10px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 .footer-grid {
 	display: flex;
 	gap: 20px;
 	flex-wrap: wrap;
+	padding: 50px 0 40px;
 }
 .footer-col {
-	flex: 1 1 270px;
-	min-width: 232px;
+	flex: 0 0 270px;
+	width: 270px;
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
@@ -215,10 +409,12 @@
 	line-height: 22.5px;
 	font-weight: 400;
 	color: #CCCCCC;
+	/* Hello theme's default paragraph margin, kept so the block matches live. */
+	margin: 0 0 0.9rem;
 }
 .footer-emails a {
 	color: #CCCCCC;
-	text-decoration: underline;
+	text-decoration: none;
 }
 .footer-emails a:hover { color: #CCCCCC; }
 .footer-socials {
@@ -251,12 +447,13 @@
 	line-height: 16.8px;
 	font-weight: 400;
 	color: #CCCCCC;
-	text-decoration: underline;
+	text-decoration: none;
 	display: block;
-	max-width: 250px;
 }
 .footer-menu-link:hover { color: #CCCCCC; }
 .footer-links { }
+/* The Links column's dropdown rows are one widget on live: 30px rows, no gaps. */
+.footer-links-list { display: flex; flex-direction: column; }
 .footer-dropdown-item { }
 .footer-dropdown-toggle {
 	display: flex;
@@ -271,7 +468,7 @@
 	font-weight: 600;
 	cursor: pointer;
 	padding: 5px 0;
-	text-decoration: underline;
+	text-decoration: none;
 	transition: color 0.3s;
 }
 .footer-dropdown-toggle:hover { color: #BF1E72; }
@@ -296,7 +493,7 @@
 	line-height: 20px;
 	font-weight: 600;
 	color: #CCCCCC;
-	text-decoration: underline;
+	text-decoration: none;
 	display: block;
 	padding: 5px 0;
 	transition: color 0.3s;
@@ -334,12 +531,19 @@
 .footer-legal a:hover { color: #CCCCCC; }
 
 /* Mobile: columns stack full width (355px), gap 20; bottom: row-reverse, wrap-reverse, centered, link padding 2px 4px */
+@media (max-width: 1024px) {
+	/* 4 columns stay in one row down to 768px: 232px each + 3×20px gaps = 988px. */
+	.footer-col {
+		flex: 0 0 232px;
+		width: 232px;
+	}
+}
 @media (max-width: 767px) {
 	.footer-grid {
 		flex-direction: column;
 	}
 	.footer-col {
-		min-width: 0;
+		flex: 0 0 100%;
 		width: 100%;
 	}
 	.footer-bottom {
@@ -348,12 +552,25 @@
 		justify-content: center;
 		text-align: center;
 		height: auto;
+		gap: 20px;
 	}
 	.footer-legal a { padding: 2px 4px; }
 }
 
 /* ResourceCard hover */
 a.resource-card:hover { opacity: 0.5; }
+/* An empty badge renders an icon-only 33px pill (home.md §5). */
+.resource-card__badge-empty {
+	width: 33px;
+	height: auto;
+	border-radius: 20px;
+	background: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 10px 5px;
+	color: #bf1e72;
+}
 
 /* PostCard hover */
 a.post-card:hover { box-shadow: 0 0 22px -1px rgba(0,0,0,0.5); }
@@ -455,4 +672,174 @@ a.post-card:hover { box-shadow: 0 0 22px -1px rgba(0,0,0,0.5); }
 	max-width: 100%;
 	height: auto;
 	margin: 30px auto 0;
+}
+
+/* Booking modal — centred panel opened from the service page. */
+.booking-modal-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 1100;
+}
+.booking-modal {
+	position: fixed;
+	top: 5vh;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 70vw;
+	height: 90vh;
+	max-width: 1008px;
+	max-height: 810px;
+	background: #ffffff;
+	border-radius: 30px;
+	box-shadow: 2px 8px 23px 3px rgba(0, 0, 0, 0.2);
+	overflow-y: auto;
+	z-index: 1101;
+	display: flex;
+	flex-direction: column;
+}
+.booking-modal-close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 28px;
+	line-height: 1;
+	color: #000000;
+	padding: 0;
+	width: 44px;
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1102;
+}
+.booking-modal-content {
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	flex: 1;
+	overflow-y: auto;
+}
+.booking-policy {
+	padding: 50px 20px;
+}
+.booking-policy--cancellation {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+.booking-policy-title {
+	font-family: Nunito, sans-serif;
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: 600;
+	color: #000000;
+	text-align: center;
+	margin: 0 0 4px;
+}
+.booking-policy-divider {
+	width: 47%;
+	height: 2px;
+	background: #BF1E72;
+	margin: 4px auto 20px;
+}
+.booking-policy-body {
+	font-family: Poppins, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #2E2E2E;
+	text-align: left;
+}
+.booking-policy-body h4 {
+	font-family: Poppins, sans-serif;
+	font-size: 24px;
+	line-height: 28.8px;
+	font-weight: 500;
+	color: #000000;
+	margin: 8px 0 16px;
+}
+.booking-policy-body p {
+	margin-bottom: 14.4px;
+}
+.booking-policy-body p:first-child strong,
+.booking-policy-body p:first-child b {
+	font-weight: 700;
+}
+.booking-agreement {
+	background: #BF1E72;
+	border-radius: 30px;
+	padding: 30px;
+	min-height: 70px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+.booking-policy-agreement {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	padding: 10px;
+	margin-bottom: 15px;
+	transition: border 0.3s;
+	cursor: pointer;
+}
+.booking-policy-agreement--flash {
+	border: 2px solid #ff0000;
+}
+.booking-agree-checkbox {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	flex-shrink: 0;
+}
+.booking-agree-label {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: 400;
+	color: #ffffff;
+	margin: 0;
+	cursor: pointer;
+}
+.booking-agree-label a {
+	color: #ffffff;
+	font-weight: 600;
+	text-decoration: underline;
+}
+.booking-agree-label a:hover {
+	font-weight: 800;
+}
+.booking-book-now {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	padding: 10px 30px;
+	border-radius: 20px;
+	border: none;
+	cursor: pointer;
+}
+.booking-book-now:not(.booking-book-now--active) {
+	background: #CCCCCC;
+	color: #CC3366;
+	cursor: not-allowed;
+}
+.booking-book-now:not(.booking-book-now--active):hover {
+	background: transparent;
+	border: 1px solid #ffffff;
+	color: #ffffff;
+}
+.booking-book-now.booking-book-now--active {
+	background: #ffffff;
+	color: #BF1E72;
+	cursor: pointer;
+}
+.booking-book-now.booking-book-now--active:hover {
+	background: #ffffff;
 }

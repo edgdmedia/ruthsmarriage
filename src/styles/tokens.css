@@ -1,3 +1,14 @@
+/* Fonts (self-hosted via @fontsource, weights in use only).
+   These @imports MUST stay at the top of the file: browsers drop an @import
+   that appears after other rules, which silently kills every @font-face. */
+@import "@fontsource/nunito/500.css";
+@import "@fontsource/nunito/600.css";
+@import "@fontsource/nunito/800.css";
+@import "@fontsource/nunito/600-italic.css";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/roboto/600.css";
+
 /* Design tokens measured from the live Elementor kit (post-6.css) and
    discovery/specs/raw/*. Values are copied as measured — do not round.
    See migration-plan/page-maps/_global.md → Tokens. */
@@ -34,15 +45,6 @@
 	--bp-tablet: 1024px;
 	--bp-mobile: 767px;
 }
-
-/* Fonts (self-hosted via @fontsource, weights in use only) */
-@import "@fontsource/nunito/500.css";
-@import "@fontsource/nunito/600.css";
-@import "@fontsource/nunito/800.css";
-@import "@fontsource/nunito/600-italic.css";
-@import "@fontsource/poppins/400.css";
-@import "@fontsource/poppins/500.css";
-@import "@fontsource/roboto/600.css";
 
 html {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

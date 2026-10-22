@@ -158,7 +158,6 @@ write("services.json", collections.services || []);
 write("resources.json", collections.resources || []);
 write("testimonials.json", collections.testimonials || []);
 write("posts.json", collections.posts || []);
-write("pages.json", collections.pages || []);
 write(
 	"taxonomies.json",
 	(seed.taxonomies || []).map((t) => ({

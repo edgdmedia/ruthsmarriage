@@ -16,8 +16,8 @@ interface Slide {
 const { slides = [] } = Astro.props as { slides?: Slide[] };
 const cfg = JSON.stringify({ slidesPerView: 1, delay: 9000 });
 ---
-<div class="heroslider" style="position:relative;min-height:100vh;padding:10px">
-	<div class="swiper" data-swiper={cfg} style="--spv:1;margin:0 -10px;overflow:hidden">
+<div class="heroslider" style="position:relative;padding:10px">
+	<div class="swiper" data-swiper={cfg} style="--spv:1;min-height:100vh;overflow:hidden">
 		<div class="swiper-wrapper">
 			{slides.map((s) => (
 				<div class="swiper-slide">

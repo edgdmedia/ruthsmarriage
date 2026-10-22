@@ -55,14 +55,14 @@ export const Footer = ({
 					{/* 1. Contact */}
 					<div className="footer-col footer-contact">
 						<h5 className="footer-col-title">Contact</h5>
-						<div className="footer-emails">
+						<p className="footer-emails">
 							{emails.map((email, i) => (
 								<span key={i}>
 									<a href={`mailto:${email}`}>{email}</a>
 									{i < emails.length - 1 && ", "}
 								</span>
 							))}
-						</div>
+						</p>
 						<div className="footer-socials">
 							{SOCIALS.map((s) => {
 								const url = socials[s.key];
@@ -92,9 +92,11 @@ export const Footer = ({
 					{/* 4. Links (vertical primary menu with carets) */}
 					<div className="footer-col footer-links">
 						<h5 className="footer-col-title">Links</h5>
-						{primary.items.map((item, i) => (
-							<FooterDropdownItem key={i} item={item} />
-						))}
+						<div className="footer-links-list">
+							{primary.items.map((item, i) => (
+								<FooterDropdownItem key={i} item={item} />
+							))}
+						</div>
 					</div>
 				</div>
 

@@ -1,0 +1,23 @@
+---
+import Base from "../../layouts/Base.astro";
+import { settings } from "../../data";
+import { getSeoMeta } from "../../lib/seo";
+
+const seo = getSeoMeta({
+	title: "Freebies",
+	description: settings.tagline || null,
+	siteTitle: settings.title,
+	siteUrl: "https://www.ruthsmarriage.com",
+	path: "/freebies",
+});
+---
+
+<Base
+	title={seo.title}
+	pageTitle={seo.ogTitle}
+	description={seo.description}
+	canonical={seo.canonical}
+	image={seo.ogImage}
+>
+	<h1>Freebies</h1>
+</Base>

@@ -1,49 +1,21 @@
 ---
 import Base from "../layouts/Base.astro";
-import { PageHero } from "../components/PageHero";
-import PortableText from "../components/PortableText.astro";
-import { getPage, settings } from "../data";
+import { settings } from "../data";
 import { getSeoMeta } from "../lib/seo";
 
 const slug = Astro.params.slug ?? "";
-const page = getPage(slug);
-
-if (!page) {
-	return Astro.rewrite("/404");
-}
 
 const seo = getSeoMeta({
-	title: page.title,
+	title: `Page not found: ${slug}`,
 	description: settings.tagline || null,
-	image: page.hero_image?.src ?? page.side_image?.src ?? null,
 	siteTitle: settings.title,
 	siteUrl: Astro.url.origin,
 	path: Astro.url.pathname.replace(/\/$/, ""),
 });
-
-const showHero = Boolean(page.hero_image || page.hero_title);
 ---
 
-<Base
-	title={seo.title}
-	pageTitle={seo.ogTitle}
-	description={seo.description}
-	canonical={seo.canonical}
-	image={seo.ogImage}
->
-	{showHero ? (
-		<PageHero
-			variant="photo"
-			title={page.hero_title ?? page.title}
-			image={page.hero_image?.src ?? ""}
-		/>
-	) : (
-		<h1>{page.title}</h1>
-	)}
-	<article class="page-content">
-		<PortableText value={page.content} />
-		{page.side_image && (
-			<img src={page.side_image.src} alt="" class="page-side-image" loading="lazy" />
-		)}
-	</article>
+<Base title={seo.title} pageTitle={seo.ogTitle} description={seo.description} canonical={seo.canonical} image={seo.ogImage}>
+	<h1>Page not found</h1>
+	<p>The page you're looking for doesn't exist.</p>
+	<a href="/">Go home</a>
 </Base>

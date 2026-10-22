@@ -1,0 +1,83 @@
+---
+import Base from "../../layouts/Base.astro";
+import { PageHero } from "../../components/PageHero";
+import { settings } from "../../data";
+import { getSeoMeta } from "../../lib/seo";
+
+const seo = getSeoMeta({
+	title: "Confidentiality Policy",
+	description: settings.tagline || null,
+	image: "/assets/media/2025/06/istockphoto-109186945-612x612-1.jpg",
+	siteTitle: settings.title,
+	siteUrl: "https://www.ruthsmarriage.com",
+	path: "/confidentiality-policy",
+});
+---
+
+<Base
+	title={seo.title}
+	pageTitle={seo.ogTitle}
+	description={seo.description}
+	canonical={seo.canonical}
+	image={seo.ogImage}
+>
+	<PageHero variant="photo" title="Confidentiality Policy" image="/assets/media/2025/06/istockphoto-109186945-612x612-1.jpg" />
+
+	<section class="policy-section">
+		<div class="policy-inner">
+			<p><strong>Please scroll down to read our confidentiality and cancellation policy and check the “I agree” button to proceed.</strong></p>
+			<p><strong>1.</strong> INTRODUCTION</p>
+			<p>At Ruth’s Marriage, we are committed to providing a safe and confidential environment for our clients. This confidentiality policy outlines how we handle your personal information and the limits to confidentiality that may apply during the course of marriage counseling sessions.</p>
+			<h4>2. Confidentiality Assurance</h4>
+			<p><b>2.1 Client-Counselor Privilege:</b> All information shared during marriage counseling sessions is confidential. This means that your counselor will not disclose any information without your explicit written consent, except as required by law or ethical standards (see section 3).</p>
+			<p><b>2.3 Protection of Records:</b> Client records, including session notes, assessments, and any other documentation, will be securely stored and only accessible to authorized personnel as outlined in section 4.</p>
+			<h4>3. Limits to Confidentiality</h4>
+			<p><b>3.1 Domestic Abuse or Physical Abuse:</b> If there is a reasonable report of physical abuse, we are legally obligated to inform the victim to report this to the appropriate authorities.</p>
+			<p><b>3.2 Threats of Harm:</b> If you pose a serious threat of harm to yourself or others, we may need to take steps to ensure safety, which may include disclosing relevant information to appropriate parties, such as law enforcement or medical professionals.</p>
+			<p><b>3.3 Court Orders:</b> If a court orders the release of your counseling records, we may be required to comply with such an order.</p>
+			<p><b>3.4 Supervision and Consultation:</b> Your counselor may consult with other mental health professionals for supervision and training purposes. In such cases, your identity will be kept confidential.</p>
+			<h4>4. Access to Client Information</h4>
+			<p><b>4.1 Authorized Personnel:</b> Only authorized personnel, including your counselor, and administrative staff, of Ruth’s Marriage will have access to your information.</p>
+			<p><b>4.2 Security Measures:</b> We take all reasonable measures to protect your personal information, both in paper and electronic formats, from unauthorized access, disclosure, or alteration.</p>
+			<h4>5. Client Consent</h4>
+			<p>Before any disclosure beyond the limits outlined in this policy is made, we will seek your explicit written consent, explaining the purpose and recipients of the information to be disclosed.</p>
+			<h4>6. Record Retention</h4>
+			<p>Client records will be retained for a period determined by applicable laws and ethical standards. After the retention period expires, records will be securely destroyed.</p>
+			<h4>7. Questions and Concerns</h4>
+			<p>If you have any questions or concerns about our confidentiality policy, please feel free to discuss them with your counselor or write us at <a href="mailto:admin@ruthsmarriage.com">admin@ruthsmarriage.com</a></p>
+			<h4>8. Policy Updates</h4>
+			<p>We may update this confidentiality policy from time to time to reflect changes in laws, regulations, or our counseling practices. You will be notified of any significant changes.</p>
+		</div>
+	</section>
+</Base>
+
+<style>
+	.policy-section {
+		padding: 0 50px 50px;
+		box-sizing: border-box;
+	}
+	.policy-inner {
+		max-width: 1140px;
+		margin: 0 auto;
+	}
+	.policy-inner h4 {
+		font-family: Poppins, sans-serif;
+		font-size: 24px;
+		line-height: 28.8px;
+		font-weight: 500;
+		color: #2e2e2e;
+		margin: 8px 0 16px;
+	}
+	.policy-inner p {
+		font-family: Poppins, sans-serif;
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 400;
+		color: #2e2e2e;
+		margin: 0 0 0.9em;
+	}
+	.policy-inner a {
+		color: #cc3366;
+		text-decoration: underline;
+	}
+</style>

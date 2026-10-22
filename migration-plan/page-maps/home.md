@@ -16,7 +16,7 @@ Reference: `discovery/screenshots/live/home-{1440,1024,390}.png`. Spec: `discove
 | – | Footer | 4034+486 | 3787+503 | 4411+1099 |
 | | **Page height** | 4519 | 4289 | 5510 |
 
-Testimonial and carousel heights depend on which slides are visible. Mask carousel tracks in pixel diffs and compare these boxes instead.
+Testimonial and carousel heights depend on which slides are visible, and Services/Resources/Posts are **random per load on live**. So the live screenshots show one random draw. Mask the carousel tracks in pixel diffs and compare these boxes instead (`node scripts/qa/visual-compare.mjs --pages home`).
 
 ---
 
@@ -50,7 +50,7 @@ Testimonial and carousel heights depend on which slides are visible. Mask carous
 ## 3. Counseling Services → `WaveSection` + `SectionHeading` + `Carousel` of `ServiceCard`
 - `WaveSection` (`_global.md`), min-height 513, padding `0 50px`; the heading starts **100px** below the section top. Total 740 (856 @390).
 - `SectionHeading`: "Counseling Services" (32px/600), divider, subtitle h6 "We provide counseling services for married couples and singles across different parts of the globe. Our services range from individual sessions to couples sessions and are held virtually." (Poppins 16px/21px **500**, `#000`).
-- Carousel: **3 / 2 / 1** per view, autoplay 5000ms, dots, no arrows. Source: **all `services`** (live shows 15 slides including clones, i.e. 11 services, in menu order; use `order` then title).
+- Carousel: **3 / 2 / 1** per view, autoplay 5000ms, dots, no arrows. Source: **6 services picked at random on every request** (verified 2026-10-22: two consecutive live loads gave `142,141,139,131,140,137` and `131,139,142,141,137,130`; JetEngine `orderby: rand`, limit 6). So there are **6 dots**, not 11. Pick server-side per request (`Astro` SSR), and don't cache the HTML for long, or the "random" freezes.
 - **`ServiceCard`** (template 159), 367×**300** inside a 387px slide (10px side padding):
   - Whole card is a link to `/service/{slug}/`.
   - Box: `min-height: 300px`, bg = service `featured_image` (`cover`, `center`), **radius `0 0 30px 30px`**, padding `0 20px`, flex column, content at the **bottom** (`justify-content: flex-end`).
@@ -63,7 +63,7 @@ Testimonial and carousel heights depend on which slides are visible. Mask carous
 ## 4. Testimonials → `Carousel` of `TestimonialCard` (data: `testimonials`)
 - Plain white section, padding `0 50px`; the heading starts 70px below the section top, with 50px below the dots.
 - Heading h2: "We believe you too can experience a positive transformation in your marriage. Hear what some of our clients are saying!!" Nunito **500** 32px/32px `#000` centred; **25px** @1024, **19px** @390. No divider.
-- Carousel 3/2/1, 5000ms, dots. Slides alternate **dark / pink**, starting with dark at index 0 (live alternates templates 462/468).
+- Carousel 3/2/1, 5000ms, dots. **Fixed order**, all 6 testimonials (WP ids 456→461). Slides alternate **dark / pink**, starting with dark at index 0 (live alternates templates 462/468).
 - **`TestimonialCard`**, 367 wide, height = content (no equal heights: cards are top-aligned with different heights):
   - Padding `0 20px` plus the inner gaps below. Radius `20px 20px 2px 20px`. **Speech-bubble tail via clip-path**: `clip-path: polygon(0 0, 100% 0%, 99% 72%, 100% 100%, 88% 95%, 0 92%)`.
   - Icon `fas-users` (`assets/icons/fas-users.svg`) **23px**, 20px from the card top.
@@ -74,7 +74,7 @@ Testimonial and carousel heights depend on which slides are visible. Mask carous
 
 ## 5. Resources → `WaveSection` + `SectionHeading` + `Carousel` of `ResourceCard`
 - WaveSection as in 3 (648 tall at every width). Heading "Resources" (32px **600**) + divider. **No subtitle.**
-- Carousel 3/2/1, 5000ms, dots. Source: all `resources` (11), newest first (live order: Baddie in Bed, The Ultimate Couples Hard Conversations Guide, …; confirm against `discovery/content/resources.json` order).
+- Carousel 3/2/1, 5000ms, dots. Source: **6 random `resources`** per request, of any type including videos and books (same `orderby: rand`, limit 6 as Services). **6 dots.**
 - **`ResourceCard`** (template 225), 367×**270**:
   - Whole card links to `/resource/{slug}/`.
   - bg = `featured_image` `cover center`, **radius 25px**, padding **20px**, flex column, **centred** vertically, gap 10px.
@@ -87,7 +87,7 @@ Testimonial and carousel heights depend on which slides are visible. Mask carous
 ## 6. Inspired Features → `SectionHeading` + `Carousel` of `PostCard`
 - **White** background. Live sets wave-brush shape settings on this container, but with a white fill on white they're invisible, so skip them. Padding `0 50px`; heading 50px below the section top.
 - Heading "Inspired Features": Nunito **700** 32px (note: 700 here, 600 in the other sections) + divider.
-- Carousel 3/2/1, 5000ms, dots. Source: the latest **6** `posts` (live shows 6 dots).
+- Carousel 3/2/1, 5000ms, dots. Source: **6 random `posts`** per request (also `orderby: rand`, not "latest"). This needs ≥ 6 posts in the data, so seed more than 3 (all 16 are in `discovery/content/posts.json`).
 - **`PostCard`** (template 239) in a 390px slide with 15px outer padding (card 360 wide, 15px from the slide top):
   - Card: bg white, **radius 10px**, `box-shadow: 0 0 28px -10px rgba(156,156,156,.5)`; **hover** `0 0 22px -1px rgba(0,0,0,.5)`. Padding `15px 15px` (image starts 15px in), flex column, gap 13px. Whole card links to the post.
   - Image: 330×**164** (`min-height: 164px`), `featured_image` cover, centre. No radius.

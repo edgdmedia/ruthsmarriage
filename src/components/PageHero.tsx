@@ -55,6 +55,7 @@ export const PageHero = ({
 					position: "relative",
 					zIndex: 2,
 					color: "#ffffff",
+					width: "100%",
 					maxWidth: "1140px",
 					margin: "0 auto",
 					paddingBottom: flat ? 0 : isPattern ? 0 : "50px",

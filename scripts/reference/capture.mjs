@@ -5,6 +5,7 @@ import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { PAGES } from "./pages.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "../..");
@@ -22,39 +23,7 @@ const outSpecs = join(root, arg("specs", "discovery/specs/raw"));
 mkdirSync(outShots, { recursive: true });
 mkdirSync(outSpecs, { recursive: true });
 
-export const PAGES = {
-	home: "/",
-	about: "/about/",
-	"our-story": "/our-story/",
-	founder: "/founder/",
-	singles: "/singles/",
-	married: "/married/",
-	services: "/services/",
-	resources: "/resources/",
-	books: "/books/",
-	videos: "/videos/",
-	freebies: "/freebies/",
-	"inspired-features": "/inspired-features/",
-	sponsored: "/sponsored/",
-	announcements: "/announcements/",
-	event: "/event/",
-	askcoach: "/askcoach/",
-	contact: "/contact/",
-	"cancellation-policy": "/cancellation-policy/",
-	"confidentiality-policy": "/confidentiality-policy/",
-	"privacy-policy": "/privacy-policy/",
-	"single-service": "/service/one-hour-couples-counseling-session/",
-	"single-resource": "/resource/the-love-playbook/",
-	"single-resource-video": "/resource/how-do-we-discuss-our-sexual-fantasies-in-marriage/",
-	"single-resource-book": "/resource/52-rules-of-dating-and-relationships/",
-	"service-type": "/service-type/married/",
-	"resource-type": "/resource-type/book/",
-	"single-post": "/how-to-handle-a-difficult-spouse/",
-	category: "/category/marriage/",
-	tag: "/tag/instagram/",
-	search: "/?s=marriage",
-	"404": "/this-page-does-not-exist-xyz/",
-};
+export { PAGES };
 
 const extractor = readFileSync(join(here, "extract-spec.js"), "utf8");
 // Live bug: Elementor loads its local Google Fonts from the apex host while pages are served

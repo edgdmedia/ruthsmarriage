@@ -1,0 +1,38 @@
+---
+import Base from "../../layouts/Base.astro";
+import { PageHero } from "../../components/PageHero";
+import { settings } from "../../data";
+import { getSeoMeta } from "../../lib/seo";
+
+const seo = getSeoMeta({
+	title: "Sponsored",
+	description: settings.tagline || null,
+	siteTitle: settings.title,
+	siteUrl: "https://www.ruthsmarriage.com",
+	path: "/sponsored",
+});
+---
+
+<Base
+	title={seo.title}
+	pageTitle={seo.ogTitle}
+	description={seo.description}
+	canonical={seo.canonical}
+	image={seo.ogImage}
+>
+	<PageHero variant="pattern" title="Sponsored" className="sponsored-hero" />
+</Base>
+
+<style>
+	.sponsored-hero {
+		width: 1140px;
+		margin: 0 auto;
+	}
+	@media (max-width: 1024px) {
+		.sponsored-hero {
+			width: 100%;
+			padding: 0 10px;
+			box-sizing: border-box;
+		}
+	}
+</style>

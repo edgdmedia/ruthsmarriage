@@ -10,7 +10,7 @@
     "deploy": "astro build && wrangler deploy --config dist/server/wrangler.json",
     "typecheck": "astro check",
     "test": "vitest run",
-    "qa:visual": "node scripts/qa/placeholder.mjs qa:visual",
+    "qa:visual": "node scripts/qa/visual-compare.mjs",
     "qa:links": "node scripts/qa/placeholder.mjs qa:links",
     "qa:urls": "node scripts/qa/placeholder.mjs qa:urls",
     "qa:a11y": "node scripts/qa/placeholder.mjs qa:a11y",

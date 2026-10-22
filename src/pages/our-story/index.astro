@@ -1,0 +1,126 @@
+---
+import Base from "../../layouts/Base.astro";
+import { PageHero } from "../../components/PageHero";
+import { settings } from "../../data";
+import { getSeoMeta } from "../../lib/seo";
+
+const seo = getSeoMeta({
+	title: "Our Story",
+	description: settings.tagline || null,
+	image: "/assets/media/2025/06/GetPaidStock.com-6567a16e8212f.jpg",
+	siteTitle: settings.title,
+	siteUrl: "https://www.ruthsmarriage.com",
+	path: "/our-story",
+});
+---
+
+<Base
+	title={seo.title}
+	pageTitle={seo.ogTitle}
+	description={seo.description}
+	canonical={seo.canonical}
+	image={seo.ogImage}
+>
+	<PageHero
+		variant="photo"
+		title="Our Story"
+		image="/assets/media/2025/06/GetPaidStock.com-6567a16e8212f.jpg"
+	/>
+
+	<section class="story-section">
+		<div class="story-inner">
+			<div class="story-col story-text">
+				<p class="story-para drop-cap">
+					As a teenager, I have always been interested and curious about marriages. I was the child who would sit and watch a marriage teaching on the TV, read a relationship magazine and any article on marriage.
+				</p>
+				<p class="story-para">
+					I loved seeing happy couples and I felt passionate about relationships. As I became a young adult, I noticed I would get inspiration on building healthy relationships and give advice to friends and strangers, even though I wasn’t married at that time. I knew this was a natural passion God has given me. However, I was not sure or clear on how to express this gift as there was no profession called “Marriage Counseling” then; only pastors used to talk about marriage.
+				</p>
+				<p class="story-para">
+					The birth of Ruth’s Marriage officially started on social media a few years ago after I had worked in corporate employment for over 10 years.
+				</p>
+				<p class="story-para">
+					Our mission at Ruth’s Marriage is to help couples enjoy their marriage by providing them with the right professional and godly counsel and simple actionable tools that yield positive results.
+				</p>
+				<p class="story-para">
+					We believe that you can enjoy your marriage and that is why we are here to support you!
+				</p>
+			</div>
+			<div
+				class="story-col story-photo"
+				style="background-image:url(/assets/media/2025/06/DSC08323-scaled-1.jpg)"
+			/>
+		</div>
+	</section>
+</Base>
+
+<style>
+	.story-section {
+		padding: 30px;
+		box-sizing: border-box;
+	}
+	.story-inner {
+		max-width: 1140px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 20px;
+		box-sizing: border-box;
+	}
+	.story-col {
+		flex: 0 0 560px;
+		width: 560px;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.story-para {
+		font-family: Poppins, sans-serif;
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 400;
+		color: #2e2e2e;
+		margin: 0 0 0.9em;
+		text-align: left;
+	}
+	.story-para.drop-cap::first-letter {
+		float: left;
+		font-family: Poppins, sans-serif;
+		font-size: 50px;
+		line-height: 50px;
+		font-weight: 400;
+		color: #bf1e72;
+		margin: 0 10px 0 0;
+		width: 36px;
+		height: 50px;
+	}
+	.story-photo {
+		height: 572px;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	@media (max-width: 1024px) {
+		.story-section {
+			padding: 30px 20px;
+		}
+		.story-inner {
+			flex-direction: column;
+			align-items: stretch;
+		}
+		.story-col {
+			flex: none;
+			width: 100%;
+		}
+		.story-photo {
+			height: 450px;
+			min-height: 450px;
+			background-position: 0 -110px;
+		}
+	}
+	@media (max-width: 767px) {
+		.story-photo {
+			background-position: center;
+		}
+	}
+</style>

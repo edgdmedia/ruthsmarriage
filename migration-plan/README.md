@@ -52,10 +52,15 @@ Browser ─▶ Cloudflare (ruthsmarriage.com zone, already proxied)
 | Gate | Phase | What you provide |
 |---|---|---|
 | G1 | 0 | Run `! pnpm wrangler login` and confirm the Cloudflare account that owns the `ruthsmarriage.com` zone |
-| G2 | 4 | Approve the **header, footer and homepage** side-by-side against live (1440/1024/390) before the other templates are built |
+| G2 | V1 | Approve the **header, footer and homepage** side-by-side against live (1440/1024/390) before the other templates are built |
+| G2b | V8 | Visual sign-off of **all 31 pages × 3 widths** (`discovery/qa/REPORT.md` + side-by-sides). Nothing non-visual starts before this |
 | G3 | 6 | Resend API key + verified sending domain (`ruthsmarriage.com` DNS records in Resend), Turnstile site/secret keys, and the YouTube channel URL. (Recipient, socials, marquee and brand name are already decided: D4, D10, D13, D14) |
 | G4 | 9 | Create the editor accounts (names and emails) and review staging |
 | G5 | 10 | Approve the cutover window and the DNS/route switch. Decide whether to import all 16 posts now |
+
+## ⏩ Current focus: the visual track (decided 2026-10-22)
+
+**Work from [`VISUAL-TRACK.md`](VISUAL-TRACK.md) until the human signs off G2b.** It sets the build order (V1 homepage → V8 full sweep), the compare loop (`node scripts/qa/visual-compare.mjs`) and what's paused: the Ask Coach email backend, Phase 7 (SEO/redirects/perf), Phase 9 (deploy) and Phase 10 (cutover). The latest review is [`reviews/G2-home-2026-10-22.md`](reviews/G2-home-2026-10-22.md).
 
 ## Phases
 

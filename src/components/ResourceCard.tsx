@@ -1,6 +1,9 @@
 /* ResourceCard — home "Resources" carousel card (template 225).
-   367×270; whole card links to /resource/{slug}/. */
+   367×270; whole card links to /resource/{slug}/.
+   The badge pill carries a `fas-dot-circle` 13px icon before the label
+   (home.md §5); an empty badge renders an icon-only 33px pill. */
 import { Button } from "./Button";
+import { IconDotCircle } from "./icons/dot-circle";
 import type { Resource } from "../data/types";
 
 export const ResourceCard = ({ resource }: { resource: Resource }) => {
@@ -41,12 +44,13 @@ export const ResourceCard = ({ resource }: { resource: Resource }) => {
 					<Button
 						variant="badge"
 						href={`/resource/${resource.slug}/`}
+						iconBefore={<IconDotCircle style={{ width: "13px", height: "13px" }} />}
 					>
 						{resource.badge_label}
 					</Button>
 				) : (
-					<div style={{ width: "33px", height: "auto", borderRadius: "20px", background: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center", padding: "8px 10px 5px" }}>
-						<span style={{ display: "inline-block", width: "13px", height: "13px", borderRadius: "100%", background: "#BF1E72", marginRight: "6px" }} />
+					<div className="resource-card__badge-empty">
+						<IconDotCircle style={{ width: "13px", height: "13px" }} />
 					</div>
 				)}
 				<div style={{ width: "111px", height: "2px", borderTop: "2px solid #FFFFFF", margin: "0 auto" }} />

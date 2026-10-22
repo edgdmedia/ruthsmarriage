@@ -44,6 +44,7 @@ const siteTitle = settings.title;
 			menu={getMenu("primary") ?? null}
 			marqueeItems={marqueeItems}
 			logoSrc={settings.logo?.src}
+			client:load
 		/>
 		<main>
 			<slot />
