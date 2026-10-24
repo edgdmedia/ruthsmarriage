@@ -33,3 +33,33 @@ export const cleanPostHtml = (html, root) =>
 			localUpload(root, rel) ?? `https://www.ruthsmarriage.com/wp-content/uploads/${rel}`,
 		)
 		.trim();
+
+// Old post/resource URLs inside post bodies that live has since renamed (same
+// content, longer slug). Everything else that 404s on live too is unlinked.
+const RENAMED = {
+	"/habits-that-will-increase-your-intimacy-in-marriage/": "/3-habits-that-will-increase-your-intimacy-in-marriage/",
+	"/common-causes-of-conflicts-in-marriage/":
+		"/effective-communication-and-conflict-guide-for-relationships-and-marriage-common-causes-of-conflicts-in-marriage/",
+	"/how-to-rebuild-your-marriage-from-a-difficult-place/": "/how-to-rebuild-your-marriage-from-a-difficult-place-3-proven-steps/",
+	"/realistic-and-unrealistic-expectations-in-relationships/": "/expectations-realistic-and-unrealistic-expectations-in-relationships/",
+	"/three-things-to-let-go-in-your-marriage/": "/building-a-thriving-marriage-three-things-to-let-go-in-your-marriage/",
+	"/resource/60-fun-games-and-intimate-bonding-activities-for-couples/": "/resource/60-fun-games-and-activities-for-couples/",
+};
+
+/** Repoint renamed internal links and unwrap ones that don't exist (keeps the text). */
+export const fixInternalLinks = (html, validPaths) =>
+	html.replace(/<a\b([^>]*)href="(\/[^"]*)"([^>]*)>([\s\S]*?)<\/a>/g, (tag, pre, href, post, text) => {
+		const path = RENAMED[href] ?? href;
+		if (validPaths.has(path)) return `<a${pre}href="${path}"${post}>${text}</a>`;
+		return text;
+	});
+
+/** Every internal page path the site serves (for fixInternalLinks). */
+export const sitePaths = ({ posts, resources, services, pages }) =>
+	new Set([
+		"/",
+		...pages.map((p) => `/${p}/`),
+		...posts.map((s) => `/${s}/`),
+		...resources.map((s) => `/resource/${s}/`),
+		...services.map((s) => `/service/${s}/`),
+	]);

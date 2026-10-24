@@ -255,13 +255,12 @@ for (const page of pages) {
 			const layoutW = Math.max(...live.documents.map((d) => d.box?.[2] ?? 0)) || w;
 			ab("set", "viewport", String(layoutW), String(VIEWPORTS[w]));
 			ab("open", base + PAGES[page]);
-			// The test browser can show its own scrollbar too; widen the window by its
-			// width so the port's layout width really is layoutW.
-			const bar = layoutW - js("document.documentElement.clientWidth");
-			if (bar > 0) {
-				ab("set", "viewport", String(layoutW + bar), String(VIEWPORTS[w]));
-				ab("open", base + PAGES[page]);
-			}
+			// The test browser shows its own scrollbar too. Hide it (rather than widening
+			// the window, which pushed a 1024 reference past the ≤1024 breakpoint) so the
+			// port lays out at exactly layoutW with the same breakpoints as live.
+			js(`(() => { const s = document.createElement('style');
+				s.textContent = 'html { scrollbar-width: none } html::-webkit-scrollbar { display: none }';
+				document.head.append(s); return true; })()`);
 			ab("wait", "1500");
 			const { fonts } = js(settle);
 			const local = js(measure);

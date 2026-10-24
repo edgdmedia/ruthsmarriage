@@ -1,10 +1,10 @@
 // Phase 3 step 1: build seed/seed.json from discovery/content/* (captured from live).
 // Run: node scripts/reference/build-seed.mjs
 // Then: npx emdash seed seed/seed.json --validate
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { cleanPostHtml } from "./post-html.mjs";
+import { cleanPostHtml, fixInternalLinks, sitePaths } from "./post-html.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const c = (p) => JSON.parse(readFileSync(join(root, p), "utf8"));
@@ -66,6 +66,12 @@ const testimonialsFull = (() => {
   }
 })();
 const postsRaw = c("discovery/content/posts.json");
+const validPaths = sitePaths({
+  posts: postsRaw.map((p) => p.slug),
+  resources: resources.map((r) => r.slug),
+  services: services.map((s) => s.slug),
+  pages: readdirSync(join(root, "src/pages"), { withFileTypes: true }).filter((d) => d.isDirectory() && !d.name.startsWith("[")).map((d) => d.name),
+});
 const site = c("discovery/content/site.json");
 
 // ---------- helpers ----------
@@ -329,7 +335,7 @@ const seed = {
           title: decodeEntities(p.title),
           excerpt: p.excerpt || null,
           featured_image: p.featuredImage ? MEDIA(p.featuredImage) : null,
-          content: p.content ? [{ _type: "html", html: cleanPostHtml(p.content, root) }] : [PT(p.excerpt || "")],
+          content: p.content ? [{ _type: "html", html: fixInternalLinks(cleanPostHtml(p.content, root), validPaths) }] : [PT(p.excerpt || "")],
         },
         taxonomies: { category: ["marriage"], tag: [postTags.get(p.slug) || "instagram"] },
       })),
