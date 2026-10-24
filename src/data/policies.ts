@@ -1,0 +1,44 @@
+/* Policy page bodies (HTML). One source for the /confidentiality-policy/ and
+   /cancellation-policy/ pages and the booking modal, so they never drift. */
+export const confidentialityPolicyHtml = `<p><strong>Please scroll down to read our confidentiality and cancellation policy and check the “I agree” button to proceed.</strong></p>
+<p><strong>1.</strong> INTRODUCTION</p>
+<p>At Ruth’s Marriage, we are committed to providing a safe and confidential environment for our clients. This confidentiality policy outlines how we handle your personal information and the limits to confidentiality that may apply during the course of marriage counseling sessions.</p>
+<h4>2. Confidentiality Assurance</h4>
+<p><b>2.1 Client-Counselor Privilege:</b> All information shared during marriage counseling sessions is confidential. This means that your counselor will not disclose any information without your explicit written consent, except as required by law or ethical standards (see section 3).</p>
+<p><b>2.3 Protection of Records:</b> Client records, including session notes, assessments, and any other documentation, will be securely stored and only accessible to authorized personnel as outlined in section 4.</p>
+<h4>3. Limits to Confidentiality</h4>
+<p><b>3.1 Domestic Abuse or Physical Abuse:</b> If there is a reasonable report of physical abuse, we are legally obligated to inform the victim to report this to the appropriate authorities.</p>
+<p><b>3.2 Threats of Harm:</b> If you pose a serious threat of harm to yourself or others, we may need to take steps to ensure safety, which may include disclosing relevant information to appropriate parties, such as law enforcement or medical professionals.</p>
+<p><b>3.3 Court Orders:</b> If a court orders the release of your counseling records, we may be required to comply with such an order.</p>
+<p><b>3.4 Supervision and Consultation:</b> Your counselor may consult with other mental health professionals for supervision and training purposes. In such cases, your identity will be kept confidential.</p>
+<h4>4. Access to Client Information</h4>
+<p><b>4.1 Authorized Personnel:</b> Only authorized personnel, including your counselor, and administrative staff, of Ruth’s Marriage will have access to your information.</p>
+<p><b>4.2 Security Measures:</b> We take all reasonable measures to protect your personal information, both in paper and electronic formats, from unauthorized access, disclosure, or alteration.</p>
+<h4>5. Client Consent</h4>
+<p>Before any disclosure beyond the limits outlined in this policy is made, we will seek your explicit written consent, explaining the purpose and recipients of the information to be disclosed.</p>
+<h4>6. Record Retention</h4>
+<p>Client records will be retained for a period determined by applicable laws and ethical standards. After the retention period expires, records will be securely destroyed.</p>
+<h4>7. Questions and Concerns</h4>
+<p>If you have any questions or concerns about our confidentiality policy, please feel free to discuss them with your counselor or write us at <a href="mailto:admin@ruthsmarriage.com">admin@ruthsmarriage.com</a></p>
+<h4>8. Policy Updates</h4>
+<p>We may update this confidentiality policy from time to time to reflect changes in laws, regulations, or our counseling practices. You will be notified of any significant changes.</p>`;
+
+export const cancellationPolicyHtml = `<h5>$50 fee (converted to your currency rate at the point of payment)</h5>
+<h4>CANCELLATIONS AND MISSED APPOINTMENTS</h4>
+<p>The client is expected to arrive on time for each booked session. A cancelled or postponed appointment slows down our work and might have a negative influence on other clients. Because your appointments include the reserve of time expressly for you, and out of mutual respect for each other and our other clients, postponing or cancelling an appointment requires a minimum of 24 hours’ notice in advance.</p>
+<h4>WHEN THE NO-SHOW/LATE CANCEL FEE IS WAIVED</h4>
+<p>This means if your appointment is supposed to be 9am on Wednesday and you wish to cancel, we expect to have received your email by 9am on Tuesday, then we can waive the cancellation fee. If we receive your cancellation later than that, then you will be charged the cancellation fee to have another appointment. Note that if your appointment is on a Monday, the cancellation needs to be provided no later than the prior Friday, by your appointment time, to be considered proper 24-hour notice.</p>
+<p>If you can, we would appreciate more than 24-hour notice so that we can make that time available to other clients.</p>
+<p>As a result, if you find out before the mandatory 24-hour notice that you will be unable to attend our session, please send an email so that we can fill your slot and place another client in your space who may require it. Counseling appointments are designated exclusively for our clients and are booked in advance. We are unable to cover this time slot by providing it to another client when a session is canceled without adequate notice. The email to send a cancellation notification to is <a href="mailto:ruthsmarriage@gmail.com">ruthsmarriage@gmail.com</a></p>
+<h4>WHEN THE NO-SHOW/LATE CANCEL FEE IS WAIVED</h4>
+<p>This cancellation policy is only waived in the event of a serious sickness or emergency. Car accidents, family deaths, and severe illness are all examples of emergencies. In this case, if you are not physically able to cancel your appointment, you can get someone to write us an email on your behalf. Our cancellation policy applies even if the missed appointment was unintended. Work-related issues are not emergencies.</p>
+<p><strong>Late Cancellation Fees Process:</strong> Any session missed due to a cancellation less than 24 hours in advance will be assessed at $50/standard fee. You will be charged even if the cancellation was due to work or if you rescheduled the appointment without adequate notice. We will send you a payment link immediately to pay the cancellation fee before you can have another appointment or continue your sessions.</p>
+<h4>WAIT TIME GRACE PERIOD</h4>
+<p>Your wait time is kept to a minimum. Due to the length of time provided for each appointment, it is critical that you arrive on time for your appointments. If you are more than 10 minutes late to your appointment, we will have no choice but to reschedule your appointment and you will be responsible for the $50 fee of a no show. To avoid paying no show fees, we require at least twenty-four (24) hours’ notice for all cancellations (as described above). Both counselor and client have a grace period of 10 minutes.</p>
+<h4>RECURRING SESSIONS: CANCELLATION FEE PAYMENT ENFORCEMENT</h4>
+<p>For recurring therapy/counselling sessions, when you miss a session without adequate notice, you will pay the cancellation fee of $50 for that session, before another session. The same standard above applies for each session.</p>
+<p>Ruth’s Marriage Counselling Services sends automated email reminders of forthcoming appointments as a courtesy. Whether or not you receive the text or email reminder, it is your sole duty to keep track of and attend any planned appointments/sessions on time. If your phone number or email address changes, please notify us via email.</p>
+<p>We appreciate your understanding and our policy is hinged on the fact that a late cancel or no-show hurts at least three people: you, the counsellor, and another client who could have potentially utilized your time slot</p>
+<h5>THANK YOU</h5>
+<p>We value you and are committed to your journey, however, we can only accomplish this with your understanding of the obligations set forth in this policy. Time is of the essence in our practice and we encourage good use of time to accommodate more clients who need help. Thank you</p>
+<p>Making a booking means you have accepted the terms guiding our Cancellation Policy.</p>`;

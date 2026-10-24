@@ -1,0 +1,95 @@
+---
+/* Single resource (Elementor single template 590) — page-maps/single-resource.md.
+   Resources and books: cover image + title, content and CTA buttons.
+   Videos: live shows only the title; the port puts the video in the image
+   column (deliberate improvement, audit "Known issues"). */
+import Base from "../../layouts/Base.astro";
+import DetailShell from "../../components/DetailShell.astro";
+import YouTubeEmbed from "../../components/YouTubeEmbed.astro";
+import PortableText from "../../components/PortableText.astro";
+import { getResource } from "../../data";
+
+const slug = Astro.params.slug ?? "";
+const resource = getResource(slug);
+
+if (!resource || resource.status === "draft") {
+	return Astro.rewrite("/404");
+}
+
+const isVideo = resource.terms?.resource_type?.some((t) => t.slug === "video") ?? false;
+const image = resource.featured_image;
+---
+
+<Base title={resource.title} image={image?.src ?? null}>
+	<DetailShell variant="resource" section="179cb8b6">
+		{isVideo ? (
+			<YouTubeEmbed slot="image" url={resource.video_url} title={resource.title} />
+		) : (
+			image && (
+				<img
+					slot="image"
+					src={image.src}
+					alt={image.alt || resource.title}
+					width={image.width}
+					height={image.height}
+				/>
+			)
+		)}
+		<h1 class="resource-title">{resource.title}</h1>
+		{!isVideo && (
+			<div class="resource-content">
+				<PortableText value={resource.content} />
+			</div>
+		)}
+		{!isVideo && resource.ctas?.length > 0 && (
+			<div class="resource-ctas">
+				{resource.ctas.map((cta) => (
+					<a class="resource-cta" href={cta.url}>{cta.label}</a>
+				))}
+			</div>
+		)}
+	</DetailShell>
+</Base>
+
+<style>
+	/* Live renders an empty 1px term pill (+20px gap) above the title; keep its space. */
+	.resource-title {
+		font-family: Nunito, sans-serif;
+		font-size: 24px;
+		line-height: 24px;
+		font-weight: 700;
+		color: #444547;
+		margin: 21px 0 0;
+	}
+	.resource-content {
+		width: 100%;
+		font-family: Poppins, sans-serif;
+		font-size: 16px;
+		line-height: 24px;
+		color: #2e2e2e;
+	}
+	/* Elementor paragraphs keep a 14.4px bottom margin, the last one included. */
+	.resource-content :global(p) {
+		margin: 0 0 14.4px;
+	}
+	.resource-ctas {
+		width: 100%;
+		box-sizing: border-box;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 20px;
+		padding: 10px;
+	}
+	.resource-cta {
+		font-family: Nunito, sans-serif;
+		font-size: 15px;
+		line-height: 15px;
+		font-weight: 600;
+		color: #ffffff;
+		background: #ed0d82;
+		border-radius: 20px;
+		padding: 12px 24px;
+		text-decoration: none;
+	}
+</style>

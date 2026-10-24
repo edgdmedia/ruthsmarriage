@@ -1,0 +1,101 @@
+---
+/* DetailShell — the pink two-column section shared by the single service
+   (template 143) and single resource (template 590) pages.
+   Spec: page-maps/single-service.md and single-resource.md.
+   - Section: bg #BF1E7224, min-height 100vh, 10px padding, boxed 1140, columns
+     544 (image, padding 20) + 576 (text, padding 50), 20px gap, both centred.
+   - variant "service": stacks at ≤1024 (section padding 50, image fixed 357 wide);
+     ≤767 padding 20 and text padding 20.
+   - variant "resource": no tablet override (stays a row, shrinking to 468:501);
+     stacks at ≤767 keeping the 50px text padding.
+   Slots: "image" (image column) and default (text column). */
+interface Props {
+	variant: "service" | "resource";
+	section?: string;
+}
+const { variant, section } = Astro.props;
+---
+
+<article class={`detail detail--${variant}`} data-section={section}>
+	<div class="detail__inner">
+		<div class="detail__image"><slot name="image" /></div>
+		<div class="detail__text"><slot /></div>
+	</div>
+</article>
+
+<style>
+	.detail {
+		background: #bf1e7224;
+		min-height: 100vh;
+		padding: 10px;
+		box-sizing: border-box;
+		display: flex;
+	}
+	.detail__inner {
+		width: 100%;
+		max-width: 1140px;
+		margin: 0 auto;
+		display: flex;
+		gap: 20px;
+	}
+	.detail__image,
+	.detail__text {
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-width: 0;
+	}
+	.detail__image {
+		flex: 0 1 544px;
+		padding: 20px;
+	}
+	.detail__image :global(img) {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.detail__text {
+		flex: 0 1 576px;
+		padding: 50px;
+		gap: 20px;
+		align-items: center;
+		text-align: center;
+	}
+
+	@media (max-width: 1024px) {
+		.detail--service {
+			padding: 50px;
+		}
+		.detail--service .detail__inner {
+			flex-direction: column;
+		}
+		.detail--service .detail__image,
+		.detail--service .detail__text {
+			flex: none;
+		}
+		.detail--service .detail__image :global(img) {
+			width: 357px;
+			max-width: 100%;
+			margin: 0 auto;
+		}
+	}
+	@media (max-width: 767px) {
+		.detail--service {
+			padding: 20px;
+		}
+		.detail--service .detail__text {
+			padding: 20px;
+		}
+		.detail--service .detail__image :global(img) {
+			width: 100%;
+		}
+		.detail--resource .detail__inner {
+			flex-direction: column;
+		}
+		.detail--resource .detail__image,
+		.detail--resource .detail__text {
+			flex: none;
+		}
+	}
+</style>

@@ -1,0 +1,74 @@
+---
+/* YouTubeEmbed — lite 16:9 embed (resources-books-videos.md, README Phase 6.6).
+   Shows the YouTube thumbnail + play button; the player iframe only loads on
+   click, so a page of videos doesn't pull in YouTube's player up front. */
+import { youtubeId } from "../lib/youtube";
+
+interface Props {
+	url: string | null | undefined;
+	title: string;
+}
+const { url, title } = Astro.props;
+const id = youtubeId(url);
+---
+
+{id && (
+	<div class="yt" data-yt-id={id} data-yt-title={title}>
+		<img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" />
+		<button type="button" class="yt__play" aria-label={`Play video: ${title}`}>
+			<svg viewBox="0 0 68 48" aria-hidden="true">
+				<path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00" />
+				<path d="M45 24 27 14v20" fill="#fff" />
+			</svg>
+		</button>
+	</div>
+)}
+
+<script>
+	document.addEventListener("click", (event) => {
+		const box = (event.target as Element | null)?.closest<HTMLElement>(".yt");
+		if (!box || box.querySelector("iframe")) return;
+		const iframe = document.createElement("iframe");
+		iframe.src = `https://www.youtube.com/embed/${box.dataset.ytId}?autoplay=1`;
+		iframe.title = box.dataset.ytTitle ?? "YouTube video";
+		iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+		iframe.allowFullscreen = true;
+		box.replaceChildren(iframe);
+	});
+</script>
+
+<style>
+	.yt {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		background: #000000;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	.yt img,
+	.yt :global(iframe) {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+		object-fit: cover;
+	}
+	.yt__play {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 68px;
+		height: 48px;
+		padding: 0;
+		border: 0;
+		background: none;
+		transform: translate(-50%, -50%);
+		cursor: pointer;
+	}
+	.yt__play svg {
+		width: 100%;
+		height: 100%;
+	}
+</style>

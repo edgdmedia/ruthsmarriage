@@ -701,41 +701,15 @@ a.post-card:hover { box-shadow: 0 0 22px -1px rgba(0,0,0,0.5); }
 	transform: translateX(-50%);
 	width: 70vw;
 	height: 90vh;
-	max-width: 1008px;
-	max-height: 810px;
 	background: #ffffff;
 	border-radius: 30px;
 	box-shadow: 2px 8px 23px 3px rgba(0, 0, 0, 0.2);
 	overflow-y: auto;
 	z-index: 1101;
-	display: flex;
-	flex-direction: column;
-}
-.booking-modal-close {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	background: none;
-	border: none;
-	cursor: pointer;
-	font-size: 28px;
-	line-height: 1;
-	color: #000000;
-	padding: 0;
-	width: 44px;
-	height: 44px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 1102;
+	outline: none;
 }
 .booking-modal-content {
 	padding: 30px;
-	display: flex;
-	flex-direction: column;
-	gap: 0;
-	flex: 1;
-	overflow-y: auto;
 }
 .booking-policy {
 	padding: 50px 20px;
@@ -751,13 +725,14 @@ a.post-card:hover { box-shadow: 0 0 22px -1px rgba(0,0,0,0.5); }
 	font-weight: 600;
 	color: #000000;
 	text-align: center;
-	margin: 0 0 4px;
+	margin: 0;
 }
+/* 20px widget gap + 4px divider padding on each side. */
 .booking-policy-divider {
 	width: 47%;
 	height: 2px;
 	background: #BF1E72;
-	margin: 4px auto 20px;
+	margin: 24px auto;
 }
 .booking-policy-body {
 	font-family: Poppins, sans-serif;
@@ -766,11 +741,21 @@ a.post-card:hover { box-shadow: 0 0 22px -1px rgba(0,0,0,0.5); }
 	font-weight: 400;
 	color: #2E2E2E;
 	text-align: left;
+	/* The email addresses are wider than the 138px text column at 390. */
+	overflow-wrap: anywhere;
 }
 .booking-policy-body h4 {
 	font-family: Poppins, sans-serif;
 	font-size: 24px;
 	line-height: 28.8px;
+	font-weight: 500;
+	color: #000000;
+	margin: 8px 0 16px;
+}
+.booking-policy-body h5 {
+	font-family: Poppins, sans-serif;
+	font-size: 20px;
+	line-height: 24px;
 	font-weight: 500;
 	color: #000000;
 	margin: 8px 0 16px;
