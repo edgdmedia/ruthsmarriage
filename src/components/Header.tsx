@@ -7,8 +7,10 @@
 
    Behaviour:
    - Desktop dropdowns open on hover/focus (CSS) and close on Esc (JS).
-   - Mobile: hamburger opens a full-width panel under the main bar with accordion
-     submenus; Esc closes, focus is trapped inside the panel, body scroll is locked.
+   - Mobile (≤1024): the hamburger is a disclosure button for a full-width panel
+     directly under the main bar (as live: no overlay, no extra close buttons, page
+     still scrolls). Accordion submenus; opening focuses the first item; Esc
+     closes and returns focus to the hamburger.
    - Main bar shrinks slightly on scroll (sticky shadow stays).
  */
 import { Fragment, useCallback, useEffect, useRef, useState } from "react";
@@ -49,16 +51,8 @@ export const Header = ({
 		if (searchOpen) searchInputRef.current?.focus({ preventScroll: true });
 	}, [searchOpen]);
 	const panelRef = useRef<HTMLDivElement>(null);
-	const firstFocusableRef = useRef<HTMLElement | null>(null);
-	const lastFocusableRef = useRef<HTMLElement | null>(null);
-	const prevFocusedRef = useRef<HTMLElement | null>(null);
-
-	const setFirstFocusableRef = useCallback((el: HTMLElement | null) => {
-		firstFocusableRef.current = el;
-	}, []);
-	const setLastFocusableRef = useCallback((el: HTMLElement | null) => {
-		lastFocusableRef.current = el;
-	}, []);
+	// Focus returns here when the mobile panel closes (it opened from this button).
+	const toggleRef = useRef<HTMLButtonElement>(null);
 
 	// --- sticky header shrink on scroll ---
 	const onScroll = useCallback(() => {
@@ -70,18 +64,10 @@ export const Header = ({
 	}, [onScroll]);
 
 	// --- open / close mobile panel ---
-	const openPanel = useCallback(() => {
-		prevFocusedRef.current = document.activeElement as HTMLElement | null;
-		setOpen(true);
-		document.body.style.overflow = "hidden";
-	}, []);
+	const openPanel = useCallback(() => setOpen(true), []);
 	const closePanel = useCallback(() => {
 		setOpen(false);
-		document.body.style.overflow = "";
-		if (prevFocusedRef.current) {
-			prevFocusedRef.current.focus({ preventScroll: true });
-			prevFocusedRef.current = null;
-		}
+		toggleRef.current?.focus({ preventScroll: true });
 	}, []);
 
 	// --- Esc closes desktop dropdowns (blur the focused item/button) ---
@@ -105,35 +91,11 @@ export const Header = ({
 		return () => window.removeEventListener("keydown", handleKeyDown);
 	}, [open, closePanel]);
 
-	// --- focus trap inside the mobile panel ---
-	const onPanelKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-		if (event.key !== "Escape") {
-			// Cycle tab focus within the panel.
-			if (event.key === "Tab") {
-				if (event.shiftKey) {
-					if (
-						document.activeElement === firstFocusableRef.current
-					) {
-						event.preventDefault();
-						lastFocusableRef.current?.focus({ preventScroll: true });
-					}
-				} else if (
-					document.activeElement === lastFocusableRef.current
-				) {
-					event.preventDefault();
-					firstFocusableRef.current?.focus({ preventScroll: true });
-				}
-			}
-			return;
-		}
-		closePanel();
-	};
-
 	// Focus the first focusable element when the panel opens.
 	useEffect(() => {
 		if (!open || !panelRef.current) return;
 		const timer = setTimeout(() => {
-			firstFocusableRef.current?.focus({ preventScroll: true });
+			panelRef.current?.querySelector<HTMLElement>("a, button")?.focus({ preventScroll: true });
 		}, 50);
 		return () => clearTimeout(timer);
 	}, [open]);
@@ -145,8 +107,6 @@ export const Header = ({
 
 	const hasChildren = (item: MenuItem) =>
 		Boolean(item.children && item.children.length);
-
-	const itemCount = items.length;
 
 	return (
 		<header className="site-header">
@@ -176,10 +136,12 @@ export const Header = ({
 						))}
 					</div>
 					<button
+						ref={toggleRef}
 						type="button"
 						className="site-header-toggle"
-						aria-label="Menu"
+						aria-label={open ? "Close menu" : "Menu"}
 						aria-expanded={open}
+						aria-controls="site-header-mobile-panel"
 						onClick={open ? closePanel : openPanel}
 					>
 						{open ? <IconTimes /> : <IconBars />}
@@ -222,68 +184,19 @@ export const Header = ({
 				)}
 			</div>
 			{open && (
-				<div
-					className="site-header-mobile-overlay"
-					onClick={closePanel}
-					aria-hidden="true"
-				/>
-			)}
-			{open && (
-				<div
-					ref={panelRef}
-					className="site-header-mobile-panel"
-					onKeyDown={onPanelKeyDown}
-					role="dialog"
-					aria-modal="true"
-					aria-label="Main menu"
-				>
-					<button
-						type="button"
-						className="site-header-mobile-close"
-						ref={setFirstFocusableRef}
-						onClick={closePanel}
-						aria-label="Close menu"
-					>
-						<IconTimes />
-					</button>
-					<div className="site-header-mobile-logo">
-						<a href="/" aria-label="Ruth's Marriage">
-							<img
-								src={logoSrc || "/assets/logo-2-1.png"}
-								alt="Ruth's Marriage"
-							/>
-						</a>
-					</div>
+				<div ref={panelRef} id="site-header-mobile-panel" className="site-header-mobile-panel">
 					<nav className="site-header-mobile-nav" aria-label="Primary">
 						{items.map((item, i) => (
 							<MobileNavItem
 								key={i}
 								item={item}
 								index={i}
-								isFirst={i === 0}
-								isLast={i === itemCount - 1}
 								isOpen={subOpen === i}
 								toggleSubmenu={toggleSubmenu}
 								hasChildren={hasChildren(item)}
-								setFirstFocusableRef={setFirstFocusableRef}
-								setLastFocusableRef={setLastFocusableRef}
 							/>
 						))}
 					</nav>
-					<div className="site-header-mobile-cta">
-						<Button variant="plum-sm" href={askCoachHref}>
-							Ask Coach Ruth
-						</Button>
-					</div>
-					<button
-						type="button"
-						className="site-header-mobile-close-bottom"
-						ref={setLastFocusableRef}
-						onClick={closePanel}
-						aria-label="Close menu"
-					>
-						<IconTimes />
-					</button>
 				</div>
 			)}
 		</header>
@@ -320,26 +233,12 @@ const DesktopNavItem = ({ item }: { item: MenuItem }) => {
 type MobileNavItemProps = {
 	item: MenuItem;
 	index: number;
-	isFirst: boolean;
-	isLast: boolean;
 	isOpen: boolean;
 	toggleSubmenu: (i: number) => void;
 	hasChildren: boolean;
-	setFirstFocusableRef: (el: HTMLElement | null) => void;
-	setLastFocusableRef: (el: HTMLElement | null) => void;
 };
 
-const MobileNavItem = ({
-	item,
-	index,
-	isFirst,
-	isLast,
-	isOpen,
-	toggleSubmenu,
-	hasChildren,
-	setFirstFocusableRef,
-	setLastFocusableRef,
-}: MobileNavItemProps) => (
+const MobileNavItem = ({ item, index, isOpen, toggleSubmenu, hasChildren }: MobileNavItemProps) => (
 	<div className="site-header-mobile-item">
 		{hasChildren ? (
 			<button
@@ -349,37 +248,17 @@ const MobileNavItem = ({
 				onClick={() => toggleSubmenu(index)}
 			>
 				{item.label}
-				<IconCaretDown
-					style={{
-						width: "12px",
-						height: "12px",
-						marginLeft: "auto",
-					}}
-				/>
+				<IconCaretDown className="site-header-mobile-caret" />
 			</button>
 		) : (
-			<a
-				className="site-header-mobile-link"
-				href={item.url || "#"}
-				ref={
-					isFirst
-						? setFirstFocusableRef
-						: isLast
-							? setLastFocusableRef
-							: undefined
-				}
-			>
+			<a className="site-header-mobile-link" href={item.url || "#"}>
 				{item.label}
 			</a>
 		)}
 		{hasChildren && isOpen && (
 			<div className="site-header-mobile-submenu">
 				{item.children!.map((c, j) => (
-					<a
-						key={j}
-						className="site-header-mobile-sublink"
-						href={c.url || "#"}
-					>
+					<a key={j} className="site-header-mobile-sublink" href={c.url || "#"}>
 						{c.label}
 					</a>
 				))}
