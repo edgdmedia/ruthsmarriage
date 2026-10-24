@@ -4,7 +4,7 @@
   390,
   844
  ],
- "pageHeight": 8148,
+ "pageHeight": 8243,
  "bodyFont": {
   "fontFamily": "-apple-system",
   "fontSize": "16px",
@@ -19,8 +19,8 @@
    "box": [
     0,
     0,
-    375,
-    128
+    390,
+    130
    ],
    "children": [
     {
@@ -30,12 +30,12 @@
      "box": [
       0,
       0,
-      375,
+      390,
       52
      ],
      "display": "flex",
      "flexDirection": "column",
-     "width": "375px",
+     "width": "390px",
      "maxWidth": "100%",
      "paddingRight": "10px",
      "paddingLeft": "10px",
@@ -49,11 +49,11 @@
        "box": [
         10,
         10,
-        355,
+        370,
         32
        ],
        "gap": "20px",
-       "width": "355px",
+       "width": "370px",
        "maxWidth": "100%",
        "position": "relative",
        "html": " <marquee class=\"ruth-marquee\"><a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a> <span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a><span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a><span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a></marquee> ",
@@ -64,17 +64,17 @@
     {
      "id": "e9d8317",
      "type": "container",
-     "cls": "e-con-full e-flex e-con e-parent elementor-sticky elementor-sticky--active elementor-section--handles-inside elementor-sticky--effects",
+     "cls": "e-con-full e-flex e-con e-parent elementor-sticky",
      "box": [
       0,
-      217,
-      375,
-      76
+      52,
+      390,
+      79
      ],
      "display": "flex",
      "justifyContent": "space-between",
      "gap": "10px",
-     "width": "375px",
+     "width": "390px",
      "maxWidth": "100%",
      "paddingTop": "10px",
      "paddingRight": "20px",
@@ -82,7 +82,7 @@
      "paddingLeft": "20px",
      "backgroundColor": "rgb(255, 255, 255)",
      "boxShadow": "rgba(86, 86, 86, 0.23) 0px 0px 31px -11px",
-     "position": "fixed",
+     "position": "relative",
      "zIndex": "1000",
      "settings": {
       "sticky": "top",
@@ -102,16 +102,16 @@
        "cls": "e-con-full e-flex e-con e-child",
        "box": [
         20,
-        227,
-        99,
-        56
+        62,
+        104,
+        59
        ],
        "display": "flex",
        "flexDirection": "column",
        "flexWrap": "wrap",
        "justifyContent": "center",
        "gap": "20px",
-       "width": "99.4688px",
+       "width": "104.203px",
        "position": "relative",
        "zIndex": "1000",
        "children": [
@@ -121,12 +121,12 @@
          "cls": "",
          "box": [
           20,
-          227,
-          99,
-          56
+          62,
+          104,
+          59
          ],
          "gap": "20px",
-         "width": "99.4688px",
+         "width": "104.203px",
          "maxWidth": "100%",
          "position": "relative",
          "parts": [
@@ -134,9 +134,9 @@
            "tag": "img",
            "box": [
             20,
-            227,
-            99,
-            56
+            62,
+            104,
+            59
            ],
            "fontFamily": "-apple-system",
            "fontSize": "16px",
@@ -145,7 +145,7 @@
            "color": "rgb(204, 51, 102)",
            "textAlign": "center",
            "display": "inline-block",
-           "width": "99.4688px",
+           "width": "104.203px",
            "maxWidth": "100%",
            "overflow": "clip",
            "src": "uploads/2025/06/logo-2-1.png",
@@ -165,10 +165,10 @@
        "type": "container",
        "cls": "e-con-full e-flex e-con e-child",
        "box": [
-        305,
-        227,
-        50,
-        56
+        318,
+        62,
+        52,
+        59
        ],
        "display": "flex",
        "flexDirection": "column",
@@ -176,7 +176,7 @@
        "justifyContent": "center",
        "alignItems": "center",
        "gap": "20px",
-       "width": "49.7344px",
+       "width": "52.1094px",
        "position": "relative",
        "zIndex": "1000",
        "children": [
@@ -185,8 +185,8 @@
          "type": "nav-menu",
          "cls": "",
          "box": [
-          310,
-          235,
+          324,
+          71,
           40,
           40
          ],
@@ -200,8 +200,8 @@
           {
            "tag": "div",
            "box": [
-            310,
-            235,
+            324,
+            71,
             40,
             40
            ],
@@ -234,10 +234,10 @@
        "type": "container",
        "cls": "e-con-full e-flex e-con e-child",
        "box": [
-        129,
-        227,
-        166,
-        56
+        134,
+        62,
+        174,
+        59
        ],
        "display": "flex",
        "flexDirection": "column",
@@ -245,7 +245,7 @@
        "justifyContent": "center",
        "alignItems": "flex-end",
        "gap": "20px",
-       "width": "165.797px",
+       "width": "173.688px",
        "position": "relative",
        "zIndex": "1000",
        "children": [
@@ -254,8 +254,8 @@
          "type": "button",
          "cls": "",
          "box": [
-          189,
-          239,
+          202,
+          75,
           106,
           32
          ],
@@ -267,8 +267,8 @@
           {
            "tag": "a",
            "box": [
-            189,
-            239,
+            202,
+            75,
             106,
             32
            ],
@@ -292,8 +292,8 @@
           {
            "tag": "span",
            "box": [
-            199,
-            249,
+            212,
+            85,
             86,
             12
            ],
@@ -311,255 +311,6 @@
        ]
       }
      ]
-    },
-    {
-     "id": "e9d8317",
-     "type": "container",
-     "cls": "e-con-full e-flex e-con e-parent elementor-sticky elementor-sticky__spacer",
-     "box": [
-      0,
-      52,
-      375,
-      76
-     ],
-     "display": "flex",
-     "justifyContent": "space-between",
-     "gap": "10px",
-     "width": "375px",
-     "maxWidth": "100%",
-     "paddingTop": "10px",
-     "paddingRight": "20px",
-     "paddingBottom": "10px",
-     "paddingLeft": "20px",
-     "backgroundColor": "rgb(255, 255, 255)",
-     "boxShadow": "rgba(86, 86, 86, 0.23) 0px 0px 31px -11px",
-     "position": "relative",
-     "zIndex": "1000",
-     "settings": {
-      "sticky": "top",
-      "sticky_on": [
-       "desktop",
-       "tablet",
-       "mobile"
-      ],
-      "sticky_offset": 0,
-      "sticky_effects_offset": 0,
-      "sticky_anchor_link_offset": 0
-     },
-     "children": [
-      {
-       "id": "5a9c508",
-       "type": "container",
-       "cls": "e-con-full e-flex e-con e-child",
-       "box": [
-        20,
-        62,
-        99,
-        56
-       ],
-       "display": "flex",
-       "flexDirection": "column",
-       "flexWrap": "wrap",
-       "justifyContent": "center",
-       "gap": "20px",
-       "width": "99.4688px",
-       "position": "relative",
-       "zIndex": "1000",
-       "children": [
-        {
-         "id": "cd2eff3",
-         "type": "theme-site-logo",
-         "cls": "",
-         "box": [
-          20,
-          62,
-          99,
-          56
-         ],
-         "gap": "20px",
-         "width": "99.4688px",
-         "maxWidth": "100%",
-         "position": "relative",
-         "parts": [
-          {
-           "tag": "img",
-           "box": [
-            20,
-            62,
-            99,
-            56
-           ],
-           "fontFamily": "-apple-system",
-           "fontSize": "16px",
-           "fontWeight": "400",
-           "lineHeight": "24px",
-           "color": "rgb(204, 51, 102)",
-           "textAlign": "center",
-           "display": "inline-block",
-           "width": "99.4688px",
-           "maxWidth": "100%",
-           "overflow": "clip",
-           "src": "uploads/2025/06/logo-2-1.png",
-           "natural": [
-            390,
-            219
-           ],
-           "alt": "",
-           "objectFit": "fill"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "id": "689f944",
-       "type": "container",
-       "cls": "e-con-full e-flex e-con e-child",
-       "box": [
-        305,
-        62,
-        50,
-        56
-       ],
-       "display": "flex",
-       "flexDirection": "column",
-       "flexWrap": "wrap",
-       "justifyContent": "center",
-       "alignItems": "center",
-       "gap": "20px",
-       "width": "49.7344px",
-       "position": "relative",
-       "zIndex": "1000",
-       "children": [
-        {
-         "id": "1e0d83a",
-         "type": "nav-menu",
-         "cls": "",
-         "box": [
-          310,
-          70,
-          40,
-          40
-         ],
-         "display": "flex",
-         "flexDirection": "column",
-         "gap": "20px",
-         "width": "39.5px",
-         "maxWidth": "100%",
-         "position": "relative",
-         "parts": [
-          {
-           "tag": "div",
-           "box": [
-            310,
-            70,
-            40,
-            40
-           ],
-           "fontFamily": "-apple-system",
-           "fontSize": "25px",
-           "fontWeight": "400",
-           "lineHeight": "37.5px",
-           "color": "rgb(237, 13, 130)",
-           "display": "flex",
-           "justifyContent": "center",
-           "alignItems": "center",
-           "width": "39.5px",
-           "paddingTop": "6.25px",
-           "paddingRight": "6.25px",
-           "paddingBottom": "6.25px",
-           "paddingLeft": "6.25px",
-           "backgroundColor": "rgba(2, 1, 1, 0)",
-           "borderRadius": "3px",
-           "borderTop": "1px solid rgb(237, 13, 130)",
-           "borderBottom": "1px solid rgb(237, 13, 130)",
-           "borderLeft": "1px solid rgb(237, 13, 130)",
-           "borderRight": "1px solid rgb(237, 13, 130)"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "id": "8406e16",
-       "type": "container",
-       "cls": "e-con-full e-flex e-con e-child",
-       "box": [
-        129,
-        62,
-        166,
-        56
-       ],
-       "display": "flex",
-       "flexDirection": "column",
-       "flexWrap": "wrap",
-       "justifyContent": "center",
-       "alignItems": "flex-end",
-       "gap": "20px",
-       "width": "165.797px",
-       "position": "relative",
-       "zIndex": "1000",
-       "children": [
-        {
-         "id": "55521df",
-         "type": "button",
-         "cls": "",
-         "box": [
-          189,
-          74,
-          106,
-          32
-         ],
-         "gap": "20px",
-         "width": "106.219px",
-         "maxWidth": "100%",
-         "position": "relative",
-         "parts": [
-          {
-           "tag": "a",
-           "box": [
-            189,
-            74,
-            106,
-            32
-           ],
-           "fontFamily": "Nunito",
-           "fontSize": "12px",
-           "fontWeight": "500",
-           "lineHeight": "12px",
-           "color": "rgb(255, 255, 255)",
-           "textAlign": "center",
-           "display": "inline-block",
-           "width": "106.219px",
-           "paddingTop": "10px",
-           "paddingRight": "10px",
-           "paddingBottom": "10px",
-           "paddingLeft": "10px",
-           "backgroundColor": "rgb(114, 22, 70)",
-           "borderRadius": "10px",
-           "href": "/askcoach"
-          },
-          {
-           "tag": "span",
-           "box": [
-            199,
-            84,
-            86,
-            12
-           ],
-           "fontFamily": "Nunito",
-           "fontSize": "12px",
-           "fontWeight": "500",
-           "lineHeight": "12px",
-           "color": "rgb(255, 255, 255)",
-           "textAlign": "center",
-           "width": "86.2188px"
-          }
-         ]
-        }
-       ]
-      }
-     ]
     }
    ]
   },
@@ -568,9 +319,9 @@
    "id": "37",
    "box": [
     0,
-    128,
-    375,
-    6922
+    130,
+    390,
+    7015
    ],
    "children": [
     {
@@ -579,13 +330,13 @@
      "cls": "e-flex e-con-boxed e-con e-parent",
      "box": [
       0,
-      128,
-      375,
+      130,
+      390,
       350
      ],
      "display": "flex",
      "flexDirection": "column",
-     "width": "375px",
+     "width": "390px",
      "maxWidth": "100%",
      "minHeight": "350px",
      "paddingRight": "20px",
@@ -603,12 +354,12 @@
        "cls": "",
        "box": [
         20,
-        266,
-        335,
+        268,
+        350,
         74
        ],
        "gap": "20px",
-       "width": "335px",
+       "width": "350px",
        "maxWidth": "100%",
        "position": "relative",
        "parts": [
@@ -616,8 +367,8 @@
          "tag": "h2",
          "box": [
           20,
-          266,
-          335,
+          268,
+          350,
           74
          ],
          "fontFamily": "Nunito",
@@ -626,7 +377,7 @@
          "lineHeight": "37px",
          "color": "rgb(255, 255, 255)",
          "textAlign": "center",
-         "width": "335px",
+         "width": "350px",
          "text": "Courses, Guides & Intimacy Builders"
         }
        ]
@@ -639,15 +390,15 @@
      "cls": "e-con-full e-flex e-con e-parent",
      "box": [
       0,
-      478,
-      375,
-      6572
+      480,
+      390,
+      6665
      ],
      "display": "flex",
      "flexDirection": "column",
      "flexWrap": "wrap",
      "gap": "20px",
-     "width": "375px",
+     "width": "390px",
      "maxWidth": "100%",
      "position": "relative",
      "children": [
@@ -657,12 +408,12 @@
        "cls": "",
        "box": [
         0,
-        478,
-        375,
-        6572
+        480,
+        390,
+        6665
        ],
        "gap": "20px",
-       "width": "375px",
+       "width": "390px",
        "maxWidth": "100%",
        "position": "relative",
        "settings": {
@@ -678,9 +429,9 @@
          "item": true,
          "box": [
           -10,
-          478,
-          395,
-          1176
+          480,
+          410,
+          1202
          ],
          "template": "301",
          "children": [
@@ -690,13 +441,13 @@
            "cls": "e-flex e-con-boxed e-con e-parent",
            "box": [
             0,
-            488,
-            375,
-            1156
+            490,
+            390,
+            1182
            ],
            "display": "flex",
            "flexDirection": "column",
-           "width": "375px",
+           "width": "390px",
            "maxWidth": "100%",
            "paddingRight": "10px",
            "paddingLeft": "10px",
@@ -708,16 +459,16 @@
              "cls": "e-con-full e-flex e-con e-child",
              "box": [
               10,
-              498,
-              355,
-              597
+              500,
+              370,
+              624
              ],
              "display": "flex",
              "flexDirection": "column",
              "flexWrap": "wrap",
              "justifyContent": "center",
              "gap": "20px",
-             "width": "355px",
+             "width": "370px",
              "paddingTop": "20px",
              "paddingRight": "20px",
              "paddingBottom": "20px",
@@ -741,12 +492,12 @@
                "cls": "",
                "box": [
                 30,
-                518,
-                315,
-                557
+                520,
+                330,
+                584
                ],
                "gap": "20px",
-               "width": "315px",
+               "width": "330px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
@@ -754,9 +505,9 @@
                  "tag": "img",
                  "box": [
                   30,
-                  518,
-                  315,
-                  557
+                  520,
+                  330,
+                  584
                  ],
                  "fontFamily": "-apple-system",
                  "fontSize": "16px",
@@ -765,7 +516,7 @@
                  "color": "rgb(51, 51, 51)",
                  "textAlign": "center",
                  "display": "inline-block",
-                 "width": "315px",
+                 "width": "330px",
                  "maxWidth": "100%",
                  "borderRadius": "5px",
                  "borderTop": "2px solid rgba(191, 30, 114, 0.14)",
@@ -791,8 +542,8 @@
              "cls": "e-con-full e-flex e-con e-child",
              "box": [
               10,
-              1114,
-              355,
+              1144,
+              370,
               519
              ],
              "display": "flex",
@@ -800,7 +551,7 @@
              "flexWrap": "wrap",
              "justifyContent": "center",
              "gap": "20px",
-             "width": "355px",
+             "width": "370px",
              "paddingTop": "20px",
              "paddingRight": "20px",
              "paddingBottom": "20px",
@@ -813,12 +564,12 @@
                "cls": "",
                "box": [
                 30,
-                1134,
-                315,
+                1164,
+                330,
                 64
                ],
                "gap": "20px",
-               "width": "315px",
+               "width": "330px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
@@ -826,8 +577,8 @@
                  "tag": "h2",
                  "box": [
                   30,
-                  1134,
-                  315,
+                  1164,
+                  330,
                   64
                  ],
                  "fontFamily": "Nunito",
@@ -836,7 +587,7 @@
                  "lineHeight": "32px",
                  "color": "rgb(0, 0, 0)",
                  "textAlign": "center",
-                 "width": "315px",
+                 "width": "330px",
                  "text": "The 28 Days Lovers Again Challenge"
                 }
                ]
@@ -847,12 +598,12 @@
                "cls": "",
                "box": [
                 30,
-                1218,
-                315,
+                1248,
+                330,
                 336
                ],
                "gap": "20px",
-               "width": "315px",
+               "width": "330px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
@@ -860,8 +611,8 @@
                  "tag": "p",
                  "box": [
                   30,
-                  1218,
-                  315,
+                  1248,
+                  330,
                   68
                  ],
                  "fontFamily": "Poppins",
@@ -870,7 +621,7 @@
                  "lineHeight": "22.5px",
                  "color": "rgb(46, 46, 46)",
                  "textAlign": "center",
-                 "width": "315px",
+                 "width": "330px",
                  "marginBottom": "14.4px",
                  "text": "The 28 Days Lovers Again Challenge is a daily, doable and deeply intentional experience."
                 },
@@ -878,8 +629,8 @@
                  "tag": "p",
                  "box": [
                   30,
-                  1300,
-                  315,
+                  1330,
+                  330,
                   135
                  ],
                  "fontFamily": "Poppins",
@@ -888,7 +639,7 @@
                  "lineHeight": "22.5px",
                  "color": "rgb(46, 46, 46)",
                  "textAlign": "center",
-                 "width": "315px",
+                 "width": "330px",
                  "marginBottom": "14.4px",
                  "text": "Each daily practice is designed to help you rebuild intimacy, gently shift old communication patterns, strengthen emotional closeness, and rebuild the sense of “us” that may have faded under the weight of daily life."
                 },
@@ -896,8 +647,8 @@
                  "tag": "p",
                  "box": [
                   30,
-                  1450,
-                  315,
+                  1479,
+                  330,
                   90
                  ],
                  "fontFamily": "Poppins",
@@ -906,7 +657,7 @@
                  "lineHeight": "22.5px",
                  "color": "rgb(46, 46, 46)",
                  "textAlign": "center",
-                 "width": "315px",
+                 "width": "330px",
                  "marginBottom": "14.4px",
                  "text": "It’s practical enough to start today, yet powerful & deep enough to create meaningful, lasting change in your marriage."
                 }
@@ -917,8 +668,8 @@
                "type": "button",
                "cls": "",
                "box": [
-                101,
-                1574,
+                108,
+                1603,
                 174,
                 39
                ],
@@ -930,8 +681,8 @@
                 {
                  "tag": "a",
                  "box": [
-                  101,
-                  1574,
+                  108,
+                  1603,
                   174,
                   39
                  ],
@@ -955,8 +706,8 @@
                 {
                  "tag": "span",
                  "box": [
-                  125,
-                  1586,
+                  132,
+                  1615,
                   126,
                   15
                  ],
@@ -977,7 +728,7 @@
                "cls": "e-con-full elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile e-flex e-con e-child",
                "box": [
                 0,
-                217,
+                47,
                 0,
                 0
                ],
@@ -994,7 +745,7 @@
                  "cls": "",
                  "box": [
                   0,
-                  217,
+                  47,
                   0,
                   0
                  ],
@@ -1016,9 +767,9 @@
          "item": true,
          "box": [
           -10,
-          1653,
-          395,
-          1203
+          1682,
+          410,
+          1195
          ],
          "template": "305",
          "children": [
@@ -1028,13 +779,13 @@
            "cls": "e-flex e-con-boxed e-con e-parent",
            "box": [
             0,
-            1663,
-            375,
-            1183
+            1692,
+            390,
+            1175
            ],
            "display": "flex",
            "flexDirection": "column",
-           "width": "375px",
+           "width": "390px",
            "maxWidth": "100%",
            "paddingRight": "20px",
            "paddingLeft": "20px",
@@ -1051,16 +802,16 @@
              "cls": "e-con-full e-flex e-con e-child",
              "box": [
               20,
-              2256,
-              335,
-              540
+              2309,
+              350,
+              508
              ],
              "display": "flex",
              "flexDirection": "column",
              "flexWrap": "wrap",
              "justifyContent": "center",
              "gap": "20px",
-             "width": "335px",
+             "width": "350px",
              "paddingTop": "20px",
              "paddingRight": "20px",
              "paddingBottom": "20px",
@@ -1073,12 +824,12 @@
                "cls": "",
                "box": [
                 40,
-                2276,
-                295,
-                128
+                2329,
+                310,
+                96
                ],
                "gap": "20px",
-               "width": "295px",
+               "width": "310px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
@@ -1086,9 +837,9 @@
                  "tag": "h2",
                  "box": [
                   40,
-                  2276,
-                  295,
-                  128
+                  2329,
+                  310,
+                  96
                  ],
                  "fontFamily": "Nunito",
                  "fontSize": "32px",
@@ -1096,7 +847,7 @@
                  "lineHeight": "32px",
                  "color": "rgb(68, 69, 71)",
                  "textAlign": "center",
-                 "width": "295px",
+                 "width": "310px",
                  "text": "The Ultimate Couples Hard Conversations Guide"
                 }
                ]
@@ -1107,12 +858,12 @@
                "cls": "",
                "box": [
                 40,
-                2424,
-                295,
+                2445,
+                310,
                 293
                ],
                "gap": "20px",
-               "width": "295px",
+               "width": "310px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
@@ -1120,8 +871,8 @@
                  "tag": "p",
                  "box": [
                   40,
-                  2424,
-                  295,
+                  2445,
+                  310,
                   144
                  ],
                  "fontFamily": "Poppins",
@@ -1130,7 +881,7 @@
                  "lineHeight": "24px",
                  "color": "rgb(46, 46, 46)",
                  "textAlign": "center",
-                 "width": "295px",
+                 "width": "310px",
                  "marginBottom": "14.4px",
                  "text": "Before Another Issue or Argument Pushes You Apart – This guide is a proven resource to help you talk about ANYTHING no matter how difficult…without fighting, shutting down or walking away"
                 },
@@ -1138,8 +889,8 @@
                  "tag": "p",
                  "box": [
                   40,
-                  2583,
-                  295,
+                  2604,
+                  310,
                   120
                  ],
                  "fontFamily": "Poppins",
@@ -1148,7 +899,7 @@
                  "lineHeight": "24px",
                  "color": "rgb(46, 46, 46)",
                  "textAlign": "center",
-                 "width": "295px",
+                 "width": "310px",
                  "marginBottom": "14.4px",
                  "text": "The Ultimate Couples Hard Conversations Guide” is a step by step blueprint for navigating difficult topics with compassion, clarity and understanding."
                 }
@@ -1159,8 +910,8 @@
                "type": "button",
                "cls": "",
                "box": [
-                125,
-                2737,
+                132,
+                2758,
                 125,
                 39
                ],
@@ -1172,8 +923,8 @@
                 {
                  "tag": "a",
                  "box": [
-                  125,
-                  2737,
+                  132,
+                  2758,
                   125,
                   39
                  ],
@@ -1197,8 +948,8 @@
                 {
                  "tag": "span",
                  "box": [
-                  149,
-                  2749,
+                  156,
+                  2770,
                   77,
                   15
                  ],
@@ -1219,7 +970,7 @@
                "cls": "e-con-full elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile e-flex e-con e-child",
                "box": [
                 0,
-                217,
+                47,
                 0,
                 0
                ],
@@ -1236,7 +987,7 @@
                  "cls": "",
                  "box": [
                   0,
-                  217,
+                  47,
                   0,
                   0
                  ],
@@ -1256,15 +1007,15 @@
              "cls": "e-con-full e-flex e-con e-child",
              "box": [
               20,
-              1713,
-              335,
-              523
+              1742,
+              350,
+              547
              ],
              "display": "flex",
              "flexDirection": "column",
              "flexWrap": "wrap",
              "gap": "20px",
-             "width": "335px",
+             "width": "350px",
              "position": "relative",
              "settings": {
               "sticky": "top",
@@ -1284,12 +1035,12 @@
                "cls": "",
                "box": [
                 20,
-                1713,
-                335,
-                523
+                1742,
+                350,
+                547
                ],
                "gap": "20px",
-               "width": "335px",
+               "width": "350px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
@@ -1297,9 +1048,9 @@
                  "tag": "img",
                  "box": [
                   20,
-                  1713,
-                  335,
-                  523
+                  1742,
+                  350,
+                  547
                  ],
                  "fontFamily": "-apple-system",
                  "fontSize": "16px",
@@ -1308,7 +1059,7 @@
                  "color": "rgb(51, 51, 51)",
                  "textAlign": "center",
                  "display": "inline-block",
-                 "width": "335px",
+                 "width": "350px",
                  "maxWidth": "100%",
                  "overflow": "clip",
                  "src": "uploads/2025/06/IMG_1053.png",
@@ -1338,8 +1089,8 @@
    "id": "329",
    "box": [
     0,
-    7049,
-    375,
+    7145,
+    390,
     1099
    ],
    "children": [
@@ -1349,13 +1100,13 @@
      "cls": "e-flex e-con-boxed e-con e-parent",
      "box": [
       0,
-      7049,
-      375,
+      7145,
+      390,
       1099
      ],
      "display": "flex",
      "flexDirection": "column",
-     "width": "375px",
+     "width": "390px",
      "maxWidth": "100%",
      "paddingRight": "10px",
      "paddingLeft": "10px",
@@ -1368,14 +1119,14 @@
        "cls": "e-con-full e-flex e-con e-child",
        "box": [
         10,
-        7059,
-        355,
+        7155,
+        370,
         979
        ],
        "display": "flex",
        "flexWrap": "wrap",
        "gap": "20px",
-       "width": "355px",
+       "width": "370px",
        "paddingTop": "50px",
        "paddingBottom": "40px",
        "position": "relative",
@@ -1386,15 +1137,15 @@
          "cls": "e-con-full e-flex e-con e-child",
          "box": [
           10,
-          7109,
-          355,
+          7205,
+          370,
           173
          ],
          "display": "flex",
          "flexDirection": "column",
          "flexWrap": "wrap",
          "gap": "20px",
-         "width": "355px",
+         "width": "370px",
          "paddingTop": "10px",
          "paddingRight": "10px",
          "paddingBottom": "10px",
@@ -1407,12 +1158,12 @@
            "cls": "",
            "box": [
             20,
-            7119,
-            335,
+            7215,
+            350,
             20
            ],
            "gap": "20px",
-           "width": "335px",
+           "width": "350px",
            "maxWidth": "100%",
            "position": "relative",
            "parts": [
@@ -1420,8 +1171,8 @@
              "tag": "h5",
              "box": [
               20,
-              7119,
-              335,
+              7215,
+              350,
               20
              ],
              "fontFamily": "Nunito",
@@ -1429,7 +1180,7 @@
              "fontWeight": "600",
              "lineHeight": "20px",
              "color": "rgb(223, 223, 223)",
-             "width": "335px",
+             "width": "350px",
              "text": "Contact"
             }
            ]
@@ -1440,12 +1191,12 @@
            "cls": "",
            "box": [
             20,
-            7159,
-            335,
+            7255,
+            350,
             59
            ],
            "gap": "20px",
-           "width": "335px",
+           "width": "350px",
            "maxWidth": "100%",
            "position": "relative",
            "parts": [
@@ -1453,8 +1204,8 @@
              "tag": "p",
              "box": [
               20,
-              7159,
-              335,
+              7255,
+              350,
               45
              ],
              "fontFamily": "Poppins",
@@ -1462,7 +1213,7 @@
              "fontWeight": "400",
              "lineHeight": "22.5px",
              "color": "rgb(204, 204, 204)",
-             "width": "335px",
+             "width": "350px",
              "marginBottom": "14.4px",
              "text": "admin@ruthsmarriage.com, ruthsmarriage@gmail.com"
             },
@@ -1470,7 +1221,7 @@
              "tag": "a",
              "box": [
               24,
-              7159,
+              7255,
               210,
               21
              ],
@@ -1487,7 +1238,7 @@
              "tag": "a",
              "box": [
               20,
-              7182,
+              7277,
               204,
               21
              ],
@@ -1508,12 +1259,12 @@
            "cls": "e-grid-align-left",
            "box": [
             20,
-            7239,
-            335,
+            7334,
+            350,
             34
            ],
            "gap": "20px",
-           "width": "335px",
+           "width": "350px",
            "maxWidth": "100%",
            "position": "relative",
            "parts": [
@@ -1521,7 +1272,7 @@
              "tag": "a",
              "box": [
               20,
-              7239,
+              7334,
               34,
               34
              ],
@@ -1544,7 +1295,7 @@
              "tag": "a",
              "box": [
               59,
-              7239,
+              7334,
               34,
               34
              ],
@@ -1567,7 +1318,7 @@
              "tag": "a",
              "box": [
               98,
-              7239,
+              7334,
               34,
               34
              ],
@@ -1590,7 +1341,7 @@
              "tag": "a",
              "box": [
               137,
-              7239,
+              7334,
               34,
               34
              ],
@@ -1613,7 +1364,7 @@
              "tag": "a",
              "box": [
               176,
-              7239,
+              7334,
               34,
               34
              ],
@@ -1642,15 +1393,15 @@
          "cls": "e-con-full e-flex e-con e-child",
          "box": [
           10,
-          7303,
-          355,
+          7398,
+          370,
           206
          ],
          "display": "flex",
          "flexDirection": "column",
          "flexWrap": "wrap",
          "gap": "20px",
-         "width": "355px",
+         "width": "370px",
          "paddingTop": "10px",
          "paddingRight": "10px",
          "paddingBottom": "10px",
@@ -1663,12 +1414,12 @@
            "cls": "",
            "box": [
             20,
-            7313,
-            335,
+            7408,
+            350,
             20
            ],
            "gap": "20px",
-           "width": "335px",
+           "width": "350px",
            "maxWidth": "100%",
            "position": "relative",
            "parts": [
@@ -1676,8 +1427,8 @@
              "tag": "h5",
              "box": [
               20,
-              7313,
-              335,
+              7408,
+              350,
               20
              ],
              "fontFamily": "Nunito",
@@ -1685,7 +1436,7 @@
              "fontWeight": "600",
              "lineHeight": "20px",
              "color": "rgb(223, 223, 223)",
-             "width": "335px",
+             "width": "350px",
              "text": "Services"
             }
            ]
@@ -1696,12 +1447,12 @@
            "cls": "",
            "box": [
             20,
-            7353,
-            335,
+            7448,
+            350,
             146
            ],
            "gap": "20px",
-           "width": "335px",
+           "width": "350px",
            "maxWidth": "100%",
            "position": "relative",
            "settings": {
@@ -1713,7 +1464,7 @@
            "carousel": false,
            "grid": {
             "display": "grid",
-            "gridTemplateColumns": "335px",
+            "gridTemplateColumns": "350px",
             "gap": "9px 30px",
             "columnGap": "30px",
             "rowGap": "9px"
@@ -1723,8 +1474,8 @@
              "item": true,
              "box": [
               20,
-              7353,
-              335,
+              7448,
+              350,
               17
              ],
              "children": [
@@ -1732,8 +1483,8 @@
                "tag": "h3",
                "box": [
                 20,
-                7353,
-                335,
+                7448,
+                350,
                 17
                ],
                "fontFamily": "Poppins",
@@ -1741,7 +1492,7 @@
                "fontWeight": "400",
                "lineHeight": "16.8px",
                "color": "rgb(204, 204, 204)",
-               "width": "335px",
+               "width": "350px",
                "text": "One Hour Relationship Clarity Session"
               }
              ]
@@ -1750,8 +1501,8 @@
              "item": true,
              "box": [
               20,
-              7379,
-              335,
+              7474,
+              350,
               17
              ],
              "children": [
@@ -1759,8 +1510,8 @@
                "tag": "h3",
                "box": [
                 20,
-                7379,
-                335,
+                7474,
+                350,
                 17
                ],
                "fontFamily": "Poppins",
@@ -1768,7 +1519,7 @@
                "fontWeight": "400",
                "lineHeight": "16.8px",
                "color": "rgb(204, 204, 204)",
-               "width": "335px",
+               "width": "350px",
                "text": "One Hour Dating Couples Counseling Session"
               }
              ]
@@ -1783,15 +1534,15 @@
          "cls": "e-con-full e-flex e-con e-child",
          "box": [
           10,
-          7529,
-          355,
+          7624,
+          370,
           239
          ],
          "display": "flex",
          "flexDirection": "column",
          "flexWrap": "wrap",
          "gap": "20px",
-         "width": "355px",
+         "width": "370px",
          "paddingTop": "10px",
          "paddingRight": "10px",
          "paddingBottom": "10px",
@@ -1804,12 +1555,12 @@
            "cls": "",
            "box": [
             20,
-            7539,
-            335,
+            7634,
+            350,
             20
            ],
            "gap": "20px",
-           "width": "335px",
+           "width": "350px",
            "maxWidth": "100%",
            "position": "relative",
            "parts": [
@@ -1817,8 +1568,8 @@
              "tag": "h5",
              "box": [
               20,
-              7539,
-              335,
+              7634,
+              350,
               20
              ],
              "fontFamily": "Nunito",
@@ -1826,7 +1577,7 @@
              "fontWeight": "600",
              "lineHeight": "20px",
              "color": "rgb(223, 223, 223)",
-             "width": "335px",
+             "width": "350px",
              "text": "Resources"
             }
            ]
@@ -1837,12 +1588,12 @@
            "cls": "",
            "box": [
             20,
-            7579,
-            335,
+            7674,
+            350,
             179
            ],
            "gap": "20px",
-           "width": "335px",
+           "width": "350px",
            "maxWidth": "100%",
            "position": "relative",
            "settings": {
@@ -1854,7 +1605,7 @@
            "carousel": false,
            "grid": {
             "display": "grid",
-            "gridTemplateColumns": "335px",
+            "gridTemplateColumns": "350px",
             "gap": "9px 30px",
             "columnGap": "30px",
             "rowGap": "9px"
@@ -1864,8 +1615,8 @@
              "item": true,
              "box": [
               20,
-              7579,
-              335,
+              7674,
+              350,
               17
              ],
              "children": [
@@ -1873,8 +1624,8 @@
                "tag": "h3",
                "box": [
                 20,
-                7579,
-                335,
+                7674,
+                350,
                 17
                ],
                "fontFamily": "Poppins",
@@ -1882,7 +1633,7 @@
                "fontWeight": "400",
                "lineHeight": "16.8px",
                "color": "rgb(204, 204, 204)",
-               "width": "335px",
+               "width": "350px",
                "text": "52 Rules of Dating and Relationships"
               }
              ]
@@ -1891,8 +1642,8 @@
              "item": true,
              "box": [
               20,
-              7604,
-              335,
+              7700,
+              350,
               17
              ],
              "children": [
@@ -1900,8 +1651,8 @@
                "tag": "h3",
                "box": [
                 20,
-                7604,
-                335,
+                7700,
+                350,
                 17
                ],
                "fontFamily": "Poppins",
@@ -1909,7 +1660,7 @@
                "fontWeight": "400",
                "lineHeight": "16.8px",
                "color": "rgb(204, 204, 204)",
-               "width": "335px",
+               "width": "350px",
                "text": "Have Sex & Pray"
               }
              ]
@@ -1924,15 +1675,15 @@
          "cls": "e-con-full e-flex e-con e-child",
          "box": [
           10,
-          7788,
-          355,
+          7883,
+          370,
           210
          ],
          "display": "flex",
          "flexDirection": "column",
          "flexWrap": "wrap",
          "gap": "20px",
-         "width": "355px",
+         "width": "370px",
          "paddingTop": "10px",
          "paddingRight": "10px",
          "paddingBottom": "10px",
@@ -1945,12 +1696,12 @@
            "cls": "",
            "box": [
             20,
-            7798,
-            335,
+            7893,
+            350,
             20
            ],
            "gap": "20px",
-           "width": "335px",
+           "width": "350px",
            "maxWidth": "100%",
            "position": "relative",
            "parts": [
@@ -1958,8 +1709,8 @@
              "tag": "h5",
              "box": [
               20,
-              7798,
-              335,
+              7893,
+              350,
               20
              ],
              "fontFamily": "Nunito",
@@ -1967,7 +1718,7 @@
              "fontWeight": "600",
              "lineHeight": "20px",
              "color": "rgb(223, 223, 223)",
-             "width": "335px",
+             "width": "350px",
              "text": "Links"
             }
            ]
@@ -1978,14 +1729,14 @@
            "cls": "",
            "box": [
             20,
-            7838,
-            335,
+            7933,
+            350,
             150
            ],
            "display": "flex",
            "flexDirection": "column",
            "gap": "20px",
-           "width": "335px",
+           "width": "350px",
            "maxWidth": "100%",
            "position": "relative",
            "parts": [
@@ -1993,8 +1744,8 @@
              "tag": "a",
              "box": [
               20,
-              7838,
-              335,
+              7933,
+              350,
               30
              ],
              "fontFamily": "Nunito",
@@ -2004,7 +1755,7 @@
              "color": "rgb(204, 204, 204)",
              "display": "flex",
              "alignItems": "center",
-             "width": "335px",
+             "width": "350px",
              "paddingTop": "5px",
              "paddingBottom": "5px",
              "position": "relative",
@@ -2015,8 +1766,8 @@
              "tag": "a",
              "box": [
               20,
-              7868,
-              335,
+              7963,
+              350,
               30
              ],
              "fontFamily": "Nunito",
@@ -2026,7 +1777,7 @@
              "color": "rgb(204, 204, 204)",
              "display": "flex",
              "alignItems": "center",
-             "width": "335px",
+             "width": "350px",
              "paddingTop": "5px",
              "paddingBottom": "5px",
              "position": "relative",
@@ -2037,8 +1788,8 @@
              "tag": "a",
              "box": [
               20,
-              7898,
-              335,
+              7993,
+              350,
               30
              ],
              "fontFamily": "Nunito",
@@ -2048,7 +1799,7 @@
              "color": "rgb(204, 204, 204)",
              "display": "flex",
              "alignItems": "center",
-             "width": "335px",
+             "width": "350px",
              "paddingTop": "5px",
              "paddingBottom": "5px",
              "position": "relative",
@@ -2059,8 +1810,8 @@
              "tag": "a",
              "box": [
               20,
-              7928,
-              335,
+              8023,
+              350,
               30
              ],
              "fontFamily": "Nunito",
@@ -2070,7 +1821,7 @@
              "color": "rgb(204, 204, 204)",
              "display": "flex",
              "alignItems": "center",
-             "width": "335px",
+             "width": "350px",
              "paddingTop": "5px",
              "paddingBottom": "5px",
              "position": "relative",
@@ -2081,8 +1832,8 @@
              "tag": "a",
              "box": [
               20,
-              7958,
-              335,
+              8053,
+              350,
               30
              ],
              "fontFamily": "Nunito",
@@ -2092,7 +1843,7 @@
              "color": "rgb(204, 204, 204)",
              "display": "flex",
              "alignItems": "center",
-             "width": "335px",
+             "width": "350px",
              "paddingTop": "5px",
              "paddingBottom": "5px",
              "position": "relative",
@@ -2111,8 +1862,8 @@
        "cls": "e-con-full e-flex e-con e-child",
        "box": [
         10,
-        8058,
-        355,
+        8153,
+        370,
         80
        ],
        "display": "flex",
@@ -2121,7 +1872,7 @@
        "justifyContent": "space-between",
        "alignItems": "center",
        "gap": "20px",
-       "width": "355px",
+       "width": "370px",
        "paddingTop": "10px",
        "paddingRight": "10px",
        "paddingBottom": "10px",
@@ -2133,8 +1884,8 @@
          "type": "heading",
          "cls": "",
          "box": [
-          32,
-          8112,
+          47,
+          8207,
           323,
           16
          ],
@@ -2146,8 +1897,8 @@
           {
            "tag": "div",
            "box": [
-            32,
-            8112,
+            47,
+            8207,
             323,
             16
            ],
@@ -2167,8 +1918,8 @@
          "type": "nav-menu",
          "cls": "",
          "box": [
-          46,
-          8068,
+          61,
+          8163,
           309,
           24
          ],
@@ -2182,8 +1933,8 @@
           {
            "tag": "a",
            "box": [
-            46,
-            8068,
+            61,
+            8163,
             147,
             24
            ],
@@ -2206,8 +1957,8 @@
           {
            "tag": "a",
            "box": [
-            193,
-            8068,
+            208,
+            8163,
             162,
             24
            ],

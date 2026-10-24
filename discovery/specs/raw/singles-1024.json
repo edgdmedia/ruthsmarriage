@@ -4,7 +4,7 @@
   1024,
   768
  ],
- "pageHeight": 4146,
+ "pageHeight": 4124,
  "bodyFont": {
   "fontFamily": "-apple-system",
   "fontSize": "16px",
@@ -19,7 +19,7 @@
    "box": [
     0,
     0,
-    1009,
+    1024,
     137
    ],
    "children": [
@@ -30,12 +30,12 @@
      "box": [
       0,
       0,
-      1009,
+      1024,
       52
      ],
      "display": "flex",
      "flexDirection": "column",
-     "width": "1009px",
+     "width": "1024px",
      "maxWidth": "100%",
      "paddingRight": "10px",
      "paddingLeft": "10px",
@@ -49,11 +49,11 @@
        "box": [
         10,
         10,
-        989,
+        1004,
         32
        ],
        "gap": "20px",
-       "width": "989px",
+       "width": "1004px",
        "maxWidth": "100%",
        "position": "relative",
        "html": " <marquee class=\"ruth-marquee\"><a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a> <span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a><span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a><span> | </span> <a href=\"/resource/28-days-lovers-again-challenge/\">Join the 28 Days Lovers Again Challenge with Coach Ruth</a></marquee> ",
@@ -68,12 +68,12 @@
      "box": [
       0,
       52,
-      1009,
+      1024,
       85
      ],
      "display": "flex",
      "gap": "10px",
-     "width": "1009px",
+     "width": "1024px",
      "maxWidth": "100%",
      "paddingTop": "10px",
      "paddingRight": "20px",
@@ -102,14 +102,14 @@
        "box": [
         20,
         62,
-        142,
+        145,
         65
        ],
        "display": "flex",
        "flexDirection": "column",
        "justifyContent": "center",
        "gap": "20px",
-       "width": "142.344px",
+       "width": "144.594px",
        "position": "relative",
        "zIndex": "1000",
        "children": [
@@ -120,18 +120,18 @@
          "box": [
           20,
           62,
-          142,
+          145,
           65
          ],
          "gap": "20px",
-         "width": "142.344px",
+         "width": "144.594px",
          "maxWidth": "100%",
          "position": "relative",
          "parts": [
           {
            "tag": "img",
            "box": [
-            33,
+            34,
             62,
             116,
             65
@@ -163,9 +163,9 @@
        "type": "container",
        "cls": "e-con-full e-flex e-con e-child",
        "box": [
-        894,
+        908,
         62,
-        95,
+        96,
         65
        ],
        "display": "flex",
@@ -173,7 +173,7 @@
        "justifyContent": "center",
        "alignItems": "center",
        "gap": "20px",
-       "width": "94.8906px",
+       "width": "96.3906px",
        "position": "relative",
        "zIndex": "1000",
        "children": [
@@ -182,7 +182,7 @@
          "type": "nav-menu",
          "cls": "",
          "box": [
-          920,
+          934,
           72,
           44,
           44
@@ -197,7 +197,7 @@
           {
            "tag": "div",
            "box": [
-            920,
+            934,
             72,
             44,
             44
@@ -231,9 +231,9 @@
        "type": "container",
        "cls": "e-con-full e-flex e-con e-child",
        "box": [
-        172,
+        175,
         62,
-        712,
+        723,
         65
        ],
        "display": "flex",
@@ -241,7 +241,7 @@
        "justifyContent": "center",
        "alignItems": "flex-end",
        "gap": "20px",
-       "width": "711.766px",
+       "width": "723.016px",
        "position": "relative",
        "zIndex": "1000",
        "children": [
@@ -250,7 +250,7 @@
          "type": "button",
          "cls": "",
          "box": [
-          778,
+          791,
           78,
           106,
           32
@@ -263,7 +263,7 @@
           {
            "tag": "a",
            "box": [
-            778,
+            791,
             78,
             106,
             32
@@ -288,7 +288,7 @@
           {
            "tag": "span",
            "box": [
-            788,
+            801,
             88,
             86,
             12
@@ -316,8 +316,8 @@
    "box": [
     0,
     137,
-    1009,
-    3507
+    1024,
+    3485
    ],
    "children": [
     {
@@ -327,12 +327,12 @@
      "box": [
       0,
       137,
-      1009,
+      1024,
       350
      ],
      "display": "flex",
      "flexDirection": "column",
-     "width": "1009px",
+     "width": "1024px",
      "maxWidth": "100%",
      "minHeight": "350px",
      "paddingRight": "10px",
@@ -349,7 +349,7 @@
        "type": "heading",
        "cls": "",
        "box": [
-        412,
+        420,
         284,
         185,
         55
@@ -362,7 +362,7 @@
         {
          "tag": "h2",
          "box": [
-          412,
+          420,
           284,
           185,
           55
@@ -386,13 +386,13 @@
      "box": [
       0,
       487,
-      1009,
-      3157
+      1024,
+      3135
      ],
      "display": "flex",
      "flexDirection": "column",
      "gap": "20px",
-     "width": "1009px",
+     "width": "1024px",
      "maxWidth": "100%",
      "position": "relative",
      "children": [
@@ -403,11 +403,11 @@
        "box": [
         0,
         487,
-        1009,
-        3157
+        1024,
+        3135
        ],
        "gap": "20px",
-       "width": "1009px",
+       "width": "1024px",
        "maxWidth": "100%",
        "position": "relative",
        "settings": {
@@ -424,7 +424,7 @@
          "box": [
           -10,
           487,
-          1029,
+          1044,
           592
          ],
          "template": "153",
@@ -436,12 +436,12 @@
            "box": [
             0,
             497,
-            1009,
+            1024,
             572
            ],
            "display": "flex",
            "flexDirection": "column",
-           "width": "1009px",
+           "width": "1024px",
            "maxWidth": "100%",
            "paddingRight": "10px",
            "paddingLeft": "10px",
@@ -454,14 +454,14 @@
              "box": [
               10,
               507,
-              388,
+              394,
               552
              ],
              "display": "flex",
              "flexDirection": "column",
              "justifyContent": "center",
              "gap": "20px",
-             "width": "387.594px",
+             "width": "393.594px",
              "paddingTop": "20px",
              "paddingRight": "20px",
              "paddingBottom": "50px",
@@ -485,12 +485,12 @@
                "cls": "",
                "box": [
                 30,
-                643,
-                348,
-                249
+                641,
+                354,
+                254
                ],
                "gap": "20px",
-               "width": "347.594px",
+               "width": "353.594px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
@@ -498,9 +498,9 @@
                  "tag": "img",
                  "box": [
                   30,
-                  643,
-                  348,
-                  249
+                  641,
+                  354,
+                  254
                  ],
                  "fontFamily": "-apple-system",
                  "fontSize": "16px",
@@ -509,7 +509,7 @@
                  "color": "rgb(51, 51, 51)",
                  "textAlign": "center",
                  "display": "inline-block",
-                 "width": "347.594px",
+                 "width": "353.594px",
                  "maxWidth": "100%",
                  "borderRadius": "5px",
                  "borderTop": "2px solid rgba(191, 30, 114, 0.14)",
@@ -534,16 +534,16 @@
              "type": "container",
              "cls": "e-con-full e-flex e-con e-child",
              "box": [
-              418,
+              424,
               507,
-              581,
+              590,
               552
              ],
              "display": "flex",
              "flexDirection": "column",
              "justifyContent": "center",
              "gap": "20px",
-             "width": "581.406px",
+             "width": "590.406px",
              "paddingTop": "50px",
              "paddingRight": "30px",
              "paddingBottom": "50px",
@@ -555,22 +555,22 @@
                "type": "heading",
                "cls": "",
                "box": [
-                448,
+                454,
                 557,
-                521,
+                530,
                 64
                ],
                "gap": "20px",
-               "width": "521.406px",
+               "width": "530.406px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
                 {
                  "tag": "h2",
                  "box": [
-                  448,
+                  454,
                   557,
-                  521,
+                  530,
                   64
                  ],
                  "fontFamily": "Nunito",
@@ -579,7 +579,7 @@
                  "lineHeight": "32px",
                  "color": "rgb(0, 0, 0)",
                  "textAlign": "center",
-                 "width": "521.406px",
+                 "width": "530.406px",
                  "text": "One Hour Relationship Clarity Session"
                 }
                ]
@@ -589,13 +589,13 @@
                "type": "heading",
                "cls": "",
                "box": [
-                448,
+                454,
                 631,
-                521,
+                530,
                 17
                ],
                "gap": "20px",
-               "width": "521.406px",
+               "width": "530.406px",
                "maxWidth": "100%",
                "marginTop": "-10px",
                "position": "relative",
@@ -603,9 +603,9 @@
                 {
                  "tag": "div",
                  "box": [
-                  448,
+                  454,
                   631,
-                  521,
+                  530,
                   17
                  ],
                  "fontFamily": "Poppins",
@@ -615,7 +615,7 @@
                  "color": "rgb(0, 0, 0)",
                  "textAlign": "center",
                  "fontStyle": "italic",
-                 "width": "521.406px",
+                 "width": "530.406px",
                  "text": "(For Singles Only)"
                 }
                ]
@@ -625,22 +625,22 @@
                "type": "heading",
                "cls": "",
                "box": [
-                448,
+                454,
                 668,
-                521,
+                530,
                 16
                ],
                "gap": "20px",
-               "width": "521.406px",
+               "width": "530.406px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
                 {
                  "tag": "div",
                  "box": [
-                  448,
+                  454,
                   668,
-                  521,
+                  530,
                   16
                  ],
                  "fontFamily": "Poppins",
@@ -649,7 +649,7 @@
                  "lineHeight": "16px",
                  "color": "rgb(0, 0, 0)",
                  "textAlign": "center",
-                 "width": "521.406px",
+                 "width": "530.406px",
                  "text": "WhatsApp Phone Call Session"
                 }
                ]
@@ -659,22 +659,22 @@
                "type": "theme-post-content",
                "cls": "",
                "box": [
-                448,
+                454,
                 704,
-                521,
+                530,
                 246
                ],
                "gap": "20px",
-               "width": "521.406px",
+               "width": "530.406px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
                 {
                  "tag": "p",
                  "box": [
-                  448,
+                  454,
                   704,
-                  521,
+                  530,
                   68
                  ],
                  "fontFamily": "Poppins",
@@ -683,16 +683,16 @@
                  "lineHeight": "22.5px",
                  "color": "rgb(46, 46, 46)",
                  "textAlign": "center",
-                 "width": "521.406px",
+                 "width": "530.406px",
                  "marginBottom": "14.4px",
                  "text": "The choice of a life partner is one of the most important decisions you will ever make. Many people do not have clarity regarding this and are confused about how to make that decision."
                 },
                 {
                  "tag": "p",
                  "box": [
-                  448,
+                  454,
                   786,
-                  521,
+                  530,
                   90
                  ],
                  "fontFamily": "Poppins",
@@ -701,16 +701,16 @@
                  "lineHeight": "22.5px",
                  "color": "rgb(46, 46, 46)",
                  "textAlign": "center",
-                 "width": "521.406px",
+                 "width": "530.406px",
                  "marginBottom": "14.4px",
                  "text": "In this clarity call, I will provide you counsel on how to navigate the process of choosing a life partner and also analyze your current relationship (if you are in one) whilst providing guidance on your decision."
                 },
                 {
                  "tag": "p",
                  "box": [
-                  448,
+                  454,
                   890,
-                  521,
+                  530,
                   45
                  ],
                  "fontFamily": "Poppins",
@@ -719,7 +719,7 @@
                  "lineHeight": "22.5px",
                  "color": "rgb(46, 46, 46)",
                  "textAlign": "center",
-                 "width": "521.406px",
+                 "width": "530.406px",
                  "marginBottom": "14.4px",
                  "text": "I will help you analyze your standards to be sure they are not unrealistic, unnecessary, and sub-standard."
                 }
@@ -730,20 +730,20 @@
                "type": "button",
                "cls": "",
                "box": [
-                448,
+                454,
                 969,
-                521,
+                530,
                 39
                ],
                "gap": "20px",
-               "width": "521.406px",
+               "width": "530.406px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
                 {
                  "tag": "a",
                  "box": [
-                  627,
+                  638,
                   969,
                   162,
                   39
@@ -768,7 +768,7 @@
                 {
                  "tag": "span",
                  "box": [
-                  651,
+                  662,
                   981,
                   114,
                   15
@@ -795,7 +795,7 @@
          "box": [
           -10,
           1078,
-          1029,
+          1044,
           584
          ],
          "template": "149",
@@ -807,12 +807,12 @@
            "box": [
             0,
             1088,
-            1009,
+            1024,
             564
            ],
            "display": "flex",
            "flexDirection": "column",
-           "width": "1009px",
+           "width": "1024px",
            "maxWidth": "100%",
            "paddingRight": "50px",
            "paddingLeft": "50px",
@@ -830,14 +830,14 @@
              "box": [
               50,
               1168,
-              533,
+              542,
               414
              ],
              "display": "flex",
              "flexDirection": "column",
              "justifyContent": "center",
              "gap": "20px",
-             "width": "532.844px",
+             "width": "541.859px",
              "position": "relative",
              "children": [
               {
@@ -847,11 +847,11 @@
                "box": [
                 50,
                 1168,
-                533,
+                542,
                 64
                ],
                "gap": "20px",
-               "width": "532.844px",
+               "width": "541.859px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
@@ -860,7 +860,7 @@
                  "box": [
                   50,
                   1168,
-                  533,
+                  542,
                   64
                  ],
                  "fontFamily": "Nunito",
@@ -869,7 +869,7 @@
                  "lineHeight": "32px",
                  "color": "rgb(68, 69, 71)",
                  "textAlign": "center",
-                 "width": "532.844px",
+                 "width": "541.859px",
                  "text": "One Hour Dating Couples Counseling Session"
                 }
                ]
@@ -881,11 +881,11 @@
                "box": [
                 50,
                 1252,
-                533,
+                542,
                 16
                ],
                "gap": "20px",
-               "width": "532.844px",
+               "width": "541.859px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
@@ -894,7 +894,7 @@
                  "box": [
                   50,
                   1252,
-                  533,
+                  542,
                   16
                  ],
                  "fontFamily": "Poppins",
@@ -903,7 +903,7 @@
                  "lineHeight": "16px",
                  "color": "rgb(0, 0, 0)",
                  "textAlign": "center",
-                 "width": "532.844px",
+                 "width": "541.859px",
                  "text": "Zoom Video Session"
                 }
                ]
@@ -915,11 +915,11 @@
                "box": [
                 50,
                 1288,
-                533,
+                542,
                 235
                ],
                "gap": "20px",
-               "width": "532.844px",
+               "width": "541.859px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
@@ -928,7 +928,7 @@
                  "box": [
                   50,
                   1288,
-                  533,
+                  542,
                   120
                  ],
                  "fontFamily": "Poppins",
@@ -937,7 +937,7 @@
                  "lineHeight": "24px",
                  "color": "rgb(46, 46, 46)",
                  "textAlign": "center",
-                 "width": "532.844px",
+                 "width": "541.859px",
                  "marginBottom": "14.4px",
                  "text": "This is a one-hour counseling/coaching session for a dating couple. In this session, you will be able to identify your unhealthy patterns, improve your communication & conflict resolution skills and gain insight into making an informed decision about your relationship"
                 },
@@ -946,7 +946,7 @@
                  "box": [
                   50,
                   1423,
-                  533,
+                  542,
                   48
                  ],
                  "fontFamily": "Poppins",
@@ -955,7 +955,7 @@
                  "lineHeight": "24px",
                  "color": "rgb(46, 46, 46)",
                  "textAlign": "center",
-                 "width": "532.844px",
+                 "width": "541.859px",
                  "marginBottom": "14.4px",
                  "text": "In this session, it is compulsory for both partners to turn their videos on and be present."
                 },
@@ -964,7 +964,7 @@
                  "box": [
                   50,
                   1485,
-                  533,
+                  542,
                   24
                  ],
                  "fontFamily": "Poppins",
@@ -973,7 +973,7 @@
                  "lineHeight": "24px",
                  "color": "rgb(46, 46, 46)",
                  "textAlign": "center",
-                 "width": "532.844px",
+                 "width": "541.859px",
                  "marginBottom": "14.4px"
                 }
                ]
@@ -985,18 +985,18 @@
                "box": [
                 50,
                 1544,
-                533,
+                542,
                 39
                ],
                "gap": "20px",
-               "width": "532.844px",
+               "width": "541.859px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
                 {
                  "tag": "a",
                  "box": [
-                  236,
+                  240,
                   1544,
                   162,
                   39
@@ -1021,7 +1021,7 @@
                 {
                  "tag": "span",
                  "box": [
-                  260,
+                  264,
                   1556,
                   114,
                   15
@@ -1044,15 +1044,15 @@
              "type": "container",
              "cls": "e-con-full e-flex e-con e-child elementor-sticky",
              "box": [
-              603,
+              612,
               1168,
-              356,
+              362,
               414
              ],
              "display": "flex",
              "flexDirection": "column",
              "gap": "20px",
-             "width": "356.156px",
+             "width": "362.141px",
              "paddingTop": "20px",
              "paddingRight": "20px",
              "paddingBottom": "50px",
@@ -1075,23 +1075,23 @@
                "type": "theme-post-featured-image",
                "cls": "",
                "box": [
-                623,
+                632,
                 1188,
-                316,
-                316
+                322,
+                322
                ],
                "gap": "20px",
-               "width": "316.156px",
+               "width": "322.141px",
                "maxWidth": "100%",
                "position": "relative",
                "parts": [
                 {
                  "tag": "img",
                  "box": [
-                  623,
+                  632,
                   1188,
-                  316,
-                  316
+                  322,
+                  322
                  ],
                  "fontFamily": "-apple-system",
                  "fontSize": "16px",
@@ -1100,7 +1100,7 @@
                  "color": "rgb(51, 51, 51)",
                  "textAlign": "center",
                  "display": "inline-block",
-                 "width": "316.156px",
+                 "width": "322.141px",
                  "maxWidth": "100%",
                  "overflow": "clip",
                  "src": "uploads/2025/06/Book-Dating-Couple-1024x1024-1.jpg",
@@ -1130,8 +1130,8 @@
    "id": "329",
    "box": [
     0,
-    3644,
-    1009,
+    3621,
+    1024,
     503
    ],
    "children": [
@@ -1141,13 +1141,13 @@
      "cls": "e-flex e-con-boxed e-con e-parent",
      "box": [
       0,
-      3644,
-      1009,
+      3621,
+      1024,
       503
      ],
      "display": "flex",
      "flexDirection": "column",
-     "width": "1009px",
+     "width": "1024px",
      "maxWidth": "100%",
      "paddingRight": "10px",
      "paddingLeft": "10px",
@@ -1160,13 +1160,13 @@
        "cls": "e-con-full e-flex e-con e-child",
        "box": [
         10,
-        3654,
-        989,
+        3631,
+        1004,
         397
        ],
        "display": "flex",
        "gap": "20px",
-       "width": "989px",
+       "width": "1004px",
        "paddingTop": "50px",
        "paddingBottom": "40px",
        "position": "relative",
@@ -1177,14 +1177,14 @@
          "cls": "e-con-full e-flex e-con e-child",
          "box": [
           10,
-          3704,
-          232,
+          3681,
+          236,
           307
          ],
          "display": "flex",
          "flexDirection": "column",
          "gap": "20px",
-         "width": "232.25px",
+         "width": "236px",
          "paddingTop": "10px",
          "paddingRight": "10px",
          "paddingBottom": "10px",
@@ -1197,12 +1197,12 @@
            "cls": "",
            "box": [
             20,
-            3714,
-            212,
+            3691,
+            216,
             20
            ],
            "gap": "20px",
-           "width": "212.25px",
+           "width": "216px",
            "maxWidth": "100%",
            "position": "relative",
            "parts": [
@@ -1210,8 +1210,8 @@
              "tag": "h5",
              "box": [
               20,
-              3714,
-              212,
+              3691,
+              216,
               20
              ],
              "fontFamily": "Nunito",
@@ -1219,7 +1219,7 @@
              "fontWeight": "600",
              "lineHeight": "20px",
              "color": "rgb(223, 223, 223)",
-             "width": "212.25px",
+             "width": "216px",
              "text": "Contact"
             }
            ]
@@ -1230,12 +1230,12 @@
            "cls": "",
            "box": [
             20,
-            3754,
-            212,
+            3731,
+            216,
             59
            ],
            "gap": "20px",
-           "width": "212.25px",
+           "width": "216px",
            "maxWidth": "100%",
            "position": "relative",
            "parts": [
@@ -1243,8 +1243,8 @@
              "tag": "p",
              "box": [
               20,
-              3754,
-              212,
+              3731,
+              216,
               45
              ],
              "fontFamily": "Poppins",
@@ -1252,7 +1252,7 @@
              "fontWeight": "400",
              "lineHeight": "22.5px",
              "color": "rgb(204, 204, 204)",
-             "width": "212.25px",
+             "width": "216px",
              "marginBottom": "14.4px",
              "text": "admin@ruthsmarriage.com, ruthsmarriage@gmail.com"
             },
@@ -1260,7 +1260,7 @@
              "tag": "a",
              "box": [
               24,
-              3754,
+              3731,
               210,
               21
              ],
@@ -1277,7 +1277,7 @@
              "tag": "a",
              "box": [
               20,
-              3776,
+              3754,
               204,
               21
              ],
@@ -1298,12 +1298,12 @@
            "cls": "e-grid-align-left",
            "box": [
             20,
-            3833,
-            212,
+            3811,
+            216,
             34
            ],
            "gap": "20px",
-           "width": "212.25px",
+           "width": "216px",
            "maxWidth": "100%",
            "position": "relative",
            "parts": [
@@ -1311,7 +1311,7 @@
              "tag": "a",
              "box": [
               20,
-              3833,
+              3811,
               34,
               34
              ],
@@ -1334,7 +1334,7 @@
              "tag": "a",
              "box": [
               59,
-              3833,
+              3811,
               34,
               34
              ],
@@ -1357,7 +1357,7 @@
              "tag": "a",
              "box": [
               98,
-              3833,
+              3811,
               34,
               34
              ],
@@ -1380,7 +1380,7 @@
              "tag": "a",
              "box": [
               137,
-              3833,
+              3811,
               34,
               34
              ],
@@ -1403,7 +1403,7 @@
              "tag": "a",
              "box": [
               176,
-              3833,
+              3811,
               34,
               34
              ],
@@ -1431,15 +1431,15 @@
          "type": "container",
          "cls": "e-con-full e-flex e-con e-child",
          "box": [
-          262,
-          3704,
-          232,
+          266,
+          3681,
+          236,
           307
          ],
          "display": "flex",
          "flexDirection": "column",
          "gap": "20px",
-         "width": "232.25px",
+         "width": "236px",
          "paddingTop": "10px",
          "paddingRight": "10px",
          "paddingBottom": "10px",
@@ -1451,22 +1451,22 @@
            "type": "heading",
            "cls": "",
            "box": [
-            272,
-            3714,
-            212,
+            276,
+            3691,
+            216,
             20
            ],
            "gap": "20px",
-           "width": "212.25px",
+           "width": "216px",
            "maxWidth": "100%",
            "position": "relative",
            "parts": [
             {
              "tag": "h5",
              "box": [
-              272,
-              3714,
-              212,
+              276,
+              3691,
+              216,
               20
              ],
              "fontFamily": "Nunito",
@@ -1474,7 +1474,7 @@
              "fontWeight": "600",
              "lineHeight": "20px",
              "color": "rgb(223, 223, 223)",
-             "width": "212.25px",
+             "width": "216px",
              "text": "Services"
             }
            ]
@@ -1484,13 +1484,13 @@
            "type": "posts",
            "cls": "",
            "box": [
-            272,
-            3754,
-            212,
+            276,
+            3731,
+            216,
             247
            ],
            "gap": "20px",
-           "width": "212.25px",
+           "width": "216px",
            "maxWidth": "100%",
            "position": "relative",
            "settings": {
@@ -1502,7 +1502,7 @@
            "carousel": false,
            "grid": {
             "display": "grid",
-            "gridTemplateColumns": "212.25px",
+            "gridTemplateColumns": "216px",
             "gap": "9px 30px",
             "columnGap": "30px",
             "rowGap": "9px"
@@ -1511,18 +1511,18 @@
             {
              "item": true,
              "box": [
-              272,
-              3754,
-              212,
+              276,
+              3731,
+              216,
               34
              ],
              "children": [
               {
                "tag": "h3",
                "box": [
-                272,
-                3754,
-                212,
+                276,
+                3731,
+                216,
                 34
                ],
                "fontFamily": "Poppins",
@@ -1530,7 +1530,7 @@
                "fontWeight": "400",
                "lineHeight": "16.8px",
                "color": "rgb(204, 204, 204)",
-               "width": "212.25px",
+               "width": "216px",
                "text": "One Hour Relationship Clarity Session"
               }
              ]
@@ -1538,18 +1538,18 @@
             {
              "item": true,
              "box": [
-              272,
-              3796,
-              212,
+              276,
+              3774,
+              216,
               34
              ],
              "children": [
               {
                "tag": "h3",
                "box": [
-                272,
-                3796,
-                212,
+                276,
+                3774,
+                216,
                 34
                ],
                "fontFamily": "Poppins",
@@ -1557,7 +1557,7 @@
                "fontWeight": "400",
                "lineHeight": "16.8px",
                "color": "rgb(204, 204, 204)",
-               "width": "212.25px",
+               "width": "216px",
                "text": "One Hour Dating Couples Counseling Session"
               }
              ]
@@ -1571,15 +1571,15 @@
          "type": "container",
          "cls": "e-con-full e-flex e-con e-child",
          "box": [
-          515,
-          3704,
-          232,
+          522,
+          3681,
+          236,
           307
          ],
          "display": "flex",
          "flexDirection": "column",
          "gap": "20px",
-         "width": "232.25px",
+         "width": "236px",
          "paddingTop": "10px",
          "paddingRight": "10px",
          "paddingBottom": "10px",
@@ -1591,22 +1591,22 @@
            "type": "heading",
            "cls": "",
            "box": [
-            525,
-            3714,
-            212,
+            532,
+            3691,
+            216,
             20
            ],
            "gap": "20px",
-           "width": "212.25px",
+           "width": "216px",
            "maxWidth": "100%",
            "position": "relative",
            "parts": [
             {
              "tag": "h5",
              "box": [
-              525,
-              3714,
-              212,
+              532,
+              3691,
+              216,
               20
              ],
              "fontFamily": "Nunito",
@@ -1614,7 +1614,7 @@
              "fontWeight": "600",
              "lineHeight": "20px",
              "color": "rgb(223, 223, 223)",
-             "width": "212.25px",
+             "width": "216px",
              "text": "Resources"
             }
            ]
@@ -1624,13 +1624,13 @@
            "type": "posts",
            "cls": "",
            "box": [
-            525,
-            3754,
-            212,
+            532,
+            3731,
+            216,
             247
            ],
            "gap": "20px",
-           "width": "212.25px",
+           "width": "216px",
            "maxWidth": "100%",
            "position": "relative",
            "settings": {
@@ -1642,7 +1642,7 @@
            "carousel": false,
            "grid": {
             "display": "grid",
-            "gridTemplateColumns": "212.25px",
+            "gridTemplateColumns": "216px",
             "gap": "9px 30px",
             "columnGap": "30px",
             "rowGap": "9px"
@@ -1651,18 +1651,18 @@
             {
              "item": true,
              "box": [
-              525,
-              3754,
-              212,
+              532,
+              3731,
+              216,
               34
              ],
              "children": [
               {
                "tag": "h3",
                "box": [
-                525,
-                3754,
-                212,
+                532,
+                3731,
+                216,
                 34
                ],
                "fontFamily": "Poppins",
@@ -1670,7 +1670,7 @@
                "fontWeight": "400",
                "lineHeight": "16.8px",
                "color": "rgb(204, 204, 204)",
-               "width": "212.25px",
+               "width": "216px",
                "text": "52 Rules of Dating and Relationships"
               }
              ]
@@ -1678,18 +1678,18 @@
             {
              "item": true,
              "box": [
-              525,
-              3796,
-              212,
+              532,
+              3774,
+              216,
               17
              ],
              "children": [
               {
                "tag": "h3",
                "box": [
-                525,
-                3796,
-                212,
+                532,
+                3774,
+                216,
                 17
                ],
                "fontFamily": "Poppins",
@@ -1697,7 +1697,7 @@
                "fontWeight": "400",
                "lineHeight": "16.8px",
                "color": "rgb(204, 204, 204)",
-               "width": "212.25px",
+               "width": "216px",
                "text": "Have Sex & Pray"
               }
              ]
@@ -1711,15 +1711,15 @@
          "type": "container",
          "cls": "e-con-full e-flex e-con e-child",
          "box": [
-          767,
-          3704,
-          232,
+          778,
+          3681,
+          236,
           307
          ],
          "display": "flex",
          "flexDirection": "column",
          "gap": "20px",
-         "width": "232.25px",
+         "width": "236px",
          "paddingTop": "10px",
          "paddingRight": "10px",
          "paddingBottom": "10px",
@@ -1731,22 +1731,22 @@
            "type": "heading",
            "cls": "",
            "box": [
-            777,
-            3714,
-            212,
+            788,
+            3691,
+            216,
             20
            ],
            "gap": "20px",
-           "width": "212.25px",
+           "width": "216px",
            "maxWidth": "100%",
            "position": "relative",
            "parts": [
             {
              "tag": "h5",
              "box": [
-              777,
-              3714,
-              212,
+              788,
+              3691,
+              216,
               20
              ],
              "fontFamily": "Nunito",
@@ -1754,7 +1754,7 @@
              "fontWeight": "600",
              "lineHeight": "20px",
              "color": "rgb(223, 223, 223)",
-             "width": "212.25px",
+             "width": "216px",
              "text": "Links"
             }
            ]
@@ -1764,24 +1764,24 @@
            "type": "nav-menu",
            "cls": "",
            "box": [
-            777,
-            3754,
-            212,
+            788,
+            3731,
+            216,
             150
            ],
            "display": "flex",
            "flexDirection": "column",
            "gap": "20px",
-           "width": "212.25px",
+           "width": "216px",
            "maxWidth": "100%",
            "position": "relative",
            "parts": [
             {
              "tag": "a",
              "box": [
-              777,
-              3754,
-              212,
+              788,
+              3731,
+              216,
               30
              ],
              "fontFamily": "Nunito",
@@ -1791,7 +1791,7 @@
              "color": "rgb(204, 204, 204)",
              "display": "flex",
              "alignItems": "center",
-             "width": "212.25px",
+             "width": "216px",
              "paddingTop": "5px",
              "paddingBottom": "5px",
              "position": "relative",
@@ -1801,9 +1801,9 @@
             {
              "tag": "a",
              "box": [
-              777,
-              3784,
-              212,
+              788,
+              3761,
+              216,
               30
              ],
              "fontFamily": "Nunito",
@@ -1813,7 +1813,7 @@
              "color": "rgb(204, 204, 204)",
              "display": "flex",
              "alignItems": "center",
-             "width": "212.25px",
+             "width": "216px",
              "paddingTop": "5px",
              "paddingBottom": "5px",
              "position": "relative",
@@ -1823,9 +1823,9 @@
             {
              "tag": "a",
              "box": [
-              777,
-              3814,
-              212,
+              788,
+              3791,
+              216,
               30
              ],
              "fontFamily": "Nunito",
@@ -1835,7 +1835,7 @@
              "color": "rgb(204, 204, 204)",
              "display": "flex",
              "alignItems": "center",
-             "width": "212.25px",
+             "width": "216px",
              "paddingTop": "5px",
              "paddingBottom": "5px",
              "position": "relative",
@@ -1845,9 +1845,9 @@
             {
              "tag": "a",
              "box": [
-              777,
-              3844,
-              212,
+              788,
+              3821,
+              216,
               30
              ],
              "fontFamily": "Nunito",
@@ -1857,7 +1857,7 @@
              "color": "rgb(204, 204, 204)",
              "display": "flex",
              "alignItems": "center",
-             "width": "212.25px",
+             "width": "216px",
              "paddingTop": "5px",
              "paddingBottom": "5px",
              "position": "relative",
@@ -1867,9 +1867,9 @@
             {
              "tag": "a",
              "box": [
-              777,
-              3874,
-              212,
+              788,
+              3851,
+              216,
               30
              ],
              "fontFamily": "Nunito",
@@ -1879,7 +1879,7 @@
              "color": "rgb(204, 204, 204)",
              "display": "flex",
              "alignItems": "center",
-             "width": "212.25px",
+             "width": "216px",
              "paddingTop": "5px",
              "paddingBottom": "5px",
              "position": "relative",
@@ -1898,15 +1898,15 @@
        "cls": "e-con-full e-flex e-con e-child",
        "box": [
         10,
-        4070,
-        989,
+        4048,
+        1004,
         66
        ],
        "display": "flex",
        "justifyContent": "space-between",
        "alignItems": "center",
        "gap": "20px",
-       "width": "989px",
+       "width": "1004px",
        "paddingTop": "10px",
        "paddingRight": "10px",
        "paddingBottom": "10px",
@@ -1919,7 +1919,7 @@
          "cls": "",
          "box": [
           20,
-          4095,
+          4073,
           323,
           16
          ],
@@ -1932,7 +1932,7 @@
            "tag": "div",
            "box": [
             20,
-            4095,
+            4073,
             323,
             16
            ],
@@ -1951,8 +1951,8 @@
          "type": "nav-menu",
          "cls": "",
          "box": [
-          616,
-          4080,
+          631,
+          4058,
           373,
           46
          ],
@@ -1966,8 +1966,8 @@
           {
            "tag": "a",
            "box": [
-            616,
-            4080,
+            631,
+            4058,
             179,
             46
            ],
@@ -1990,8 +1990,8 @@
           {
            "tag": "a",
            "box": [
-            795,
-            4080,
+            810,
+            4058,
             194,
             46
            ],

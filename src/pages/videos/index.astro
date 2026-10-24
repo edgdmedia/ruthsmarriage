@@ -9,6 +9,12 @@ const videoList = [...resources]
 	.filter((r) => r.terms?.resource_type?.some((t) => t.slug === "video"))
 	.sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
 
+// youtu.be / watch URLs refuse to load in an iframe; YouTube only allows /embed/.
+const embedUrl = (url: string | null | undefined) => {
+	const id = url?.match(/(?:youtu\.be\/|[?&]v=|\/embed\/)([\w-]{11})/)?.[1];
+	return id ? `https://www.youtube.com/embed/${id}` : (url ?? "");
+};
+
 const seo = getSeoMeta({
 	title: "Videos",
 	description: null,
@@ -31,7 +37,7 @@ const seo = getSeoMeta({
 			<div class="video-item">
 				<div class="video-embed">
 					<iframe
-						src={video.video_url ?? ""}
+						src={embedUrl(video.video_url)}
 						title={video.title}
 						loading="lazy"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

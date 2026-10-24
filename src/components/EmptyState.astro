@@ -1,0 +1,33 @@
+---
+/* EmptyState — shown under the hero on section pages that have no entries yet
+   (sponsored, announcements, event gallery). */
+interface Props {
+	message?: string;
+}
+const { message = "There's nothing here yet. Please check back soon." } = Astro.props;
+---
+
+<section class="empty-state">
+	<p>{message}</p>
+</section>
+
+<style>
+	.empty-state {
+		max-width: 1140px;
+		margin: 0 auto;
+		padding: 80px 20px;
+		text-align: center;
+		box-sizing: border-box;
+	}
+	.empty-state p {
+		margin: 0;
+		font-family: Nunito, sans-serif;
+		font-size: 18px;
+		line-height: 1.6;
+		color: #54595f;
+	}
+	@media (max-width: 767px) {
+		.empty-state { padding: 50px 20px; }
+		.empty-state p { font-size: 16px; }
+	}
+</style>

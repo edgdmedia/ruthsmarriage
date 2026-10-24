@@ -29,6 +29,9 @@ const siteTitle = settings.title;
 		<title>{fullTitle}</title>
 		{pageDescription && <meta name="description" content={pageDescription} />}
 		{canonical && <link rel="canonical" href={canonical} />}
+		<link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" href="/favicon-192x192.png" sizes="192x192" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<meta property="og:site_name" content={siteTitle} />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={fullTitle} />

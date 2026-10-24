@@ -1,0 +1,370 @@
+---
+/* ListingRow — the alternating A/B list row used by the service and resource
+   listings (JetEngine templates 153/149 for services, 301/305 for resources,
+   724/728 for books).
+
+   The live DOM nests three levels, and each one adds padding:
+     listing item (10px) > container (10px for A, 70/50 for B) > inner > columns
+   The waves on row B are absolutely positioned at the container's edges, so
+   they don't add height.
+
+   Measured on live at 1440:
+   - Row A service: image column 448 (40%), text column 672 (60%), gap 20.
+   - Row A resource/book: both columns 560 (50%), gap 20.
+   - Row B (all): text column 672 (60%), image column 448 (40%), gap 20.
+   Sized like Elementor's flex containers: each column is `flex: 0 1 <pct>` and
+   the 20px gap is shrunk out of them in proportion to their content-box width
+   (padding excluded). A fixed calc() is off by up to half a pixel, which is
+   enough to change a line break.
+   - Image column: padding 20px 20px 50px. Row A centres the image, row B
+     pins it to the top.
+   - Text column: centred content, padding 50px 30px (row A) / 70px 30px
+     (row B). Below 1025px the templates diverge; see the media queries. */
+import PortableText from "./PortableText.astro";
+import type { MediaRef, PortableText as PT } from "../data/types";
+
+interface Props {
+	/** "service" → 40:60 rows (153/149), "resource" → 50:50 rows (301/305),
+	 *  "book" → 50:50 rows (724/728). The three templates differ at ≤767. */
+	kind?: "service" | "resource" | "book";
+	/** 0-based index: even = row A, odd = row B. */
+	index: number;
+	/** width/height become the <img> attributes, so the lazy image reserves its box. */
+	image?: MediaRef | null;
+	title: string;
+	audienceLabel?: string | null;
+	format?: string | null;
+	content?: PT | null;
+	href: string;
+	buttonLabel: string;
+}
+
+const {
+	kind = "service",
+	index,
+	image,
+	title,
+	audienceLabel,
+	format,
+	content,
+	href,
+	buttonLabel,
+} = Astro.props;
+
+const isA = index % 2 === 0;
+// Resource and book rows link their title to the detail page (templates 301/305,
+// 724/728); service rows don't (153/149).
+const linkTitle = kind !== "service";
+---
+
+<div class={`listing-row listing-row--${isA ? "a" : "b"} listing-row--${kind}`}>
+	<div class="listing-row__container">
+		{
+			!isA && (
+				<img
+					class="listing-row__wave listing-row__wave--top"
+					src="/assets/wave-brush.svg"
+					alt=""
+					aria-hidden="true"
+				/>
+			)
+		}
+		<div class="listing-row__inner">
+			{
+				isA ? (
+					<>
+						<div class="listing-row__image">
+							{image?.src && (
+								<img
+									src={image.src}
+									alt={image.alt}
+									width={image.width}
+									height={image.height}
+									loading="lazy"
+								/>
+							)}
+						</div>
+						<div class="listing-row__text">
+							<h2 class="listing-row__title">
+								{linkTitle ? <a href={href}>{title}</a> : title}
+							</h2>
+							{audienceLabel && (
+								<p class="listing-row__audience">{audienceLabel}</p>
+							)}
+							{format && <p class="listing-row__format">{format}</p>}
+							{content && (
+								<div class="listing-row__description">
+									<PortableText value={content} />
+								</div>
+							)}
+							<a href={href} class="listing-row__btn">
+								{buttonLabel}
+							</a>
+						</div>
+					</>
+				) : (
+					<>
+						<div class="listing-row__text">
+							<h2 class="listing-row__title">
+								{linkTitle ? <a href={href}>{title}</a> : title}
+							</h2>
+							{audienceLabel && (
+								<p class="listing-row__audience">{audienceLabel}</p>
+							)}
+							{format && <p class="listing-row__format">{format}</p>}
+							{content && (
+								<div class="listing-row__description">
+									<PortableText value={content} />
+								</div>
+							)}
+							<a href={href} class="listing-row__btn">
+								{buttonLabel}
+							</a>
+						</div>
+						<div class="listing-row__image">
+							{image?.src && (
+								<img
+									src={image.src}
+									alt={image.alt}
+									width={image.width}
+									height={image.height}
+									loading="lazy"
+								/>
+							)}
+						</div>
+					</>
+				)
+			}
+		</div>
+		{
+			!isA && (
+				<img
+					class="listing-row__wave listing-row__wave--bottom"
+					src="/assets/wave-brush.svg"
+					alt=""
+					aria-hidden="true"
+				/>
+			)
+		}
+	</div>
+</div>
+
+<style>
+	/* Live: the listing item has a -10px horizontal margin (so it is 20px wider
+	   than the grid) and 10px of vertical padding; the row container adds 10px
+	   of its own. Net: 20px above and below the row, 10px of horizontal
+	   inset on the columns. */
+	.listing-row {
+		padding: 10px 0;
+	}
+	.listing-row__container {
+		position: relative;
+	}
+	.listing-row--a .listing-row__container {
+		padding: 10px;
+	}
+	.listing-row--b .listing-row__container {
+		padding: 70px 50px;
+		background: #bf1e7224;
+	}
+	.listing-row__inner {
+		max-width: 1140px;
+		margin: 0 auto;
+		display: flex;
+		gap: 20px;
+	}
+
+	/* Row A: image left (40% for services, 50% for resources/books), text right. */
+	.listing-row--a.listing-row--service .listing-row__image {
+		flex: 0 1 40%;
+	}
+	.listing-row--a.listing-row--service .listing-row__text {
+		flex: 0 1 60%;
+	}
+	.listing-row--a.listing-row--resource .listing-row__image,
+	.listing-row--a.listing-row--book .listing-row__image,
+	.listing-row--a.listing-row--resource .listing-row__text,
+	.listing-row--a.listing-row--book .listing-row__text {
+		flex: 0 1 50%;
+	}
+	/* Row B: text left (60%), image right (40%). */
+	.listing-row--b .listing-row__text {
+		flex: 0 1 60%;
+	}
+	.listing-row--b .listing-row__image {
+		flex: 0 1 40%;
+	}
+
+	.listing-row__image {
+		padding: 20px 20px 50px;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.listing-row--b .listing-row__image {
+		align-items: flex-start;
+	}
+	.listing-row__image img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		display: block;
+	}
+	.listing-row--a .listing-row__image img {
+		border: 2px solid #bf1e7224;
+		border-radius: 5px;
+		box-sizing: border-box;
+	}
+	.listing-row__text {
+		padding: 50px 30px;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		gap: 20px;
+	}
+	.listing-row--b .listing-row__text {
+		padding: 70px 30px;
+	}
+	.listing-row__title {
+		font-family: "Nunito", sans-serif;
+		font-size: 32px;
+		line-height: 32px;
+		font-weight: 700;
+		color: #000000;
+		margin: 0;
+	}
+	.listing-row--b .listing-row__title {
+		color: #444547;
+	}
+	.listing-row__title a {
+		color: inherit;
+		text-decoration: none;
+	}
+	.listing-row__audience {
+		font-family: "Poppins", sans-serif;
+		font-size: 17px;
+		line-height: 17px;
+		font-weight: 400;
+		font-style: italic;
+		color: #000000;
+		margin: -10px 0 0;
+	}
+	.listing-row__format {
+		font-family: "Poppins", sans-serif;
+		font-size: 16px;
+		line-height: 16px;
+		font-weight: 600;
+		color: #000000;
+		margin: 0;
+	}
+	.listing-row__description {
+		font-family: "Poppins", sans-serif;
+		font-size: 15px;
+		line-height: 22.5px;
+		font-weight: 400;
+		color: #2e2e2e;
+		margin: 0;
+		text-align: center;
+	}
+	.listing-row--b .listing-row__description {
+		font-size: 16px;
+		line-height: 24px;
+	}
+	/* Every paragraph keeps its 14.4px bottom margin, the last one included. */
+	.listing-row__description :global(p) {
+		margin: 0 0 14.4px;
+	}
+	.listing-row__btn {
+		font-family: "Nunito", sans-serif;
+		font-size: 15px;
+		line-height: 15px;
+		font-weight: 600;
+		color: #ffffff;
+		background: #bf1e72;
+		border-radius: 20px;
+		padding: 12px 24px;
+		border: none;
+		cursor: pointer;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+	}
+	.listing-row--b .listing-row__btn {
+		background: #ed0d82;
+	}
+	.listing-row__wave {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		height: 60px;
+		width: calc(100% + 1.3px);
+		pointer-events: none;
+		object-fit: fill;
+	}
+	.listing-row__wave--top {
+		top: 0;
+	}
+	.listing-row__wave--bottom {
+		bottom: 0;
+		transform: translateX(-50%) rotate(180deg);
+	}
+
+	/* Responsive values from the live template CSS (post-149/153/301/305/724/728.css).
+	   The resource and book templates are identical below 768px; only the
+	   service templates differ. */
+	@media (max-width: 1024px) {
+		/* 149 (service B) only: 80/70 container, text column loses its padding. */
+		.listing-row--service.listing-row--b .listing-row__container {
+			padding: 80px 50px 70px;
+		}
+		.listing-row--service.listing-row--b .listing-row__text {
+			padding: 0;
+		}
+	}
+	@media (max-width: 767px) {
+		.listing-row__inner {
+			flex-direction: column;
+			gap: 20px;
+		}
+		.listing-row--b .listing-row__inner {
+			flex-direction: column-reverse;
+		}
+		.listing-row__image,
+		.listing-row__text {
+			flex: none;
+			width: 100%;
+		}
+		.listing-row--a .listing-row__image {
+			padding: 20px;
+		}
+		/* Text column: 30px (153), 20px (301/305/724/728); 149 keeps 0. */
+		.listing-row--a .listing-row__text {
+			padding: 30px;
+		}
+		.listing-row--resource .listing-row__text,
+		.listing-row--book .listing-row__text {
+			padding: 20px;
+		}
+		/* Row B container: 80px 20px (149), 50px 20px (305/728). */
+		.listing-row--service.listing-row--b .listing-row__container {
+			padding: 80px 20px;
+		}
+		.listing-row--resource.listing-row--b .listing-row__container,
+		.listing-row--book.listing-row--b .listing-row__container {
+			padding: 50px 20px;
+		}
+		/* Row B image column: 149 keeps 20/20/50, 305/728 drop it. */
+		.listing-row--resource.listing-row--b .listing-row__image,
+		.listing-row--book.listing-row--b .listing-row__image {
+			padding: 0;
+		}
+		.listing-row__wave {
+			width: calc(150% + 1.3px);
+			height: 40px;
+		}
+	}
+</style>

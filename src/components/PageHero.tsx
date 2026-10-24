@@ -1,5 +1,7 @@
 /* PageHero — page header variants (JetEngine components 377 "photo" / 394 "pattern").
-   Data: page fields hero_title (default page title) and hero_image. */
+   Data: page fields hero_title (default page title) and hero_image.
+   min-height, padding, title size and wave height change per breakpoint, so they
+   live in components.css ("PageHero"), not inline. */
 export interface PageHeroProps {
 	variant?: "photo" | "pattern" | "pattern-flat";
 	title?: string;
@@ -21,8 +23,6 @@ export const PageHero = ({
 			style={{
 				width: "100%",
 				position: "relative",
-				minHeight: "350px",
-				padding: isPattern ? "0 10px" : "0 50px",
 				backgroundImage: image ? `url(${image})` : undefined,
 				backgroundSize: isPattern ? "auto" : "cover",
 				backgroundPosition: "center",
@@ -51,6 +51,7 @@ export const PageHero = ({
 				/>
 			)}
 			<div
+				className="page-hero__inner"
 				style={{
 					position: "relative",
 					zIndex: 2,
@@ -58,14 +59,12 @@ export const PageHero = ({
 					width: "100%",
 					maxWidth: "1140px",
 					margin: "0 auto",
-					paddingBottom: flat ? 0 : isPattern ? 0 : "50px",
 				}}
 			>
 				{title && (
 					<h1
 						style={{
 							fontFamily: "Nunito, sans-serif",
-							fontSize: "55px",
 							lineHeight: "1",
 							fontWeight: flat ? 600 : 700,
 							margin: 0,
@@ -87,7 +86,6 @@ export const PageHero = ({
 						left: "50%",
 						transform: "translateX(-50%) rotate(180deg)",
 						width: flat ? "calc(100% + 1.3px)" : "calc(117% + 1.3px)",
-						height: flat ? "37px" : "23px",
 						objectFit: "cover",
 						display: "block",
 					}}

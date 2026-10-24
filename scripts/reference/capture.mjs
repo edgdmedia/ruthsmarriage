@@ -3,7 +3,7 @@
 // Skips page/width pairs that already have both a spec and a screenshot unless --force.
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { PAGES } from "./pages.mjs";
 
@@ -18,8 +18,8 @@ const widths = arg("widths", "1440,1024,390").split(",").map(Number);
 const only = arg("only", "")?.split(",").filter(Boolean);
 const session = arg("session", "default");
 const force = process.argv.includes("--force");
-const outShots = join(root, arg("shots", "discovery/screenshots/live"));
-const outSpecs = join(root, arg("specs", "discovery/specs/raw"));
+const outShots = resolve(root, arg("shots", "discovery/screenshots/live"));
+const outSpecs = resolve(root, arg("specs", "discovery/specs/raw"));
 mkdirSync(outShots, { recursive: true });
 mkdirSync(outSpecs, { recursive: true });
 

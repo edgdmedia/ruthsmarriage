@@ -2,20 +2,8 @@
    Data: menus "primary" / "footer-services" / "footer-resources", settings socials + emails.
    Spec: _global.md Footer section. */
 import { useState } from "react";
-import { IconFacebook } from "./icons/facebook";
-import { IconTwitter } from "./icons/twitter";
-import { IconInstagram } from "./icons/instagram";
-import { IconYoutube } from "./icons/youtube";
-import { IconThreads } from "./icons/threads";
 import { IconCaretDown } from "./icons/caret-down";
-
-const SOCIALS = [
-	{ key: "facebook", bg: "#3B5998", Icon: IconFacebook },
-	{ key: "twitter", bg: "#1DA1F2", Icon: IconTwitter },
-	{ key: "instagram", bg: "#262626", Icon: IconInstagram },
-	{ key: "youtube", bg: "#CD201F", Icon: IconYoutube },
-	{ key: "threads", bg: "#000000", Icon: IconThreads },
-];
+import { SocialIcons } from "./SocialIcons";
 
 interface MenuItem {
 	label: string;
@@ -63,24 +51,7 @@ export const Footer = ({
 								</span>
 							))}
 						</p>
-						<div className="footer-socials">
-							{SOCIALS.map((s) => {
-								const url = socials[s.key];
-								if (!url) return null;
-								return (
-									<a
-										key={s.key}
-										href={url}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="footer-social"
-										style={{ background: s.bg }}
-									>
-										<s.Icon />
-									</a>
-								);
-							})}
-						</div>
+						<SocialIcons social={socials} className="footer-socials" />
 					</div>
 
 					{/* 2. Services */}

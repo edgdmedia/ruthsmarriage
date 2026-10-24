@@ -1,9 +1,14 @@
 ---
 import Base from "../layouts/Base.astro";
-import { settings } from "../data";
+import { getPost, settings } from "../data";
 import { getSeoMeta } from "../lib/seo";
 
 const slug = Astro.params.slug ?? "";
+
+// Posts live at /<slug>/ (same as WordPress); the template is posts/[slug].astro.
+if (getPost(slug)) {
+	return Astro.rewrite(`/posts/${slug}/`);
+}
 
 const seo = getSeoMeta({
 	title: `Page not found: ${slug}`,

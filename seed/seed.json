@@ -553,7 +553,7 @@
         "id": "service-1",
         "slug": "private-premarital-counseling-classes-2",
         "status": "published",
-        "order": 1,
+        "order": 11,
         "data": {
           "title": "Private Premarital Counseling Classes",
           "featured_image": {
@@ -565,7 +565,7 @@
           },
           "price_label": "₦590,000/$590",
           "audience_label": null,
-          "format": "Zoom Video Session",
+          "format": "Zoom Video Sessions",
           "notice": null,
           "booking_url": "https://selar.com/d4av",
           "content": [
@@ -575,7 +575,27 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "Private Premarital Counseling Classes ₦590,000/$590 Zoom Video Sessions Ruth’s Marriage Private Premarital Counseling Classes is for seriously dating/courting, engaged, and newlywed couples. The classes are private – between Coach Ruth and the Couple only. The classes hold for six weeks – once a week and covers all foundational topics for marriage. These classes are very comprehensive and intricately designed to prepare both partners extensively for marriage, help them build a strong foundation; whilst also providing early intervention counseling on personal challenges they may be experiencing The private classes are a great opportunity for you to ask questions, confront issues and disagreements that could potentially harm the marriage. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                  "text": "Ruth’s Marriage Private Premarital Counseling Classes is for seriously dating/courting, engaged, and newlywed couples. The classes are private – between Coach Ruth and the Couple only."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "The classes hold for six weeks – once a week and covers all foundational topics for marriage. These classes are very comprehensive and intricately designed to prepare both partners extensively for marriage, help them build a strong foundation; whilst also providing&nbsp;<strong>early intervention counseling</strong>&nbsp;on personal challenges they may be experiencing"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "The private classes are a great opportunity for you to ask questions, confront issues and disagreements that could potentially harm the marriage."
                 }
               ]
             }
@@ -591,7 +611,7 @@
         "id": "service-2",
         "slug": "six-6-weeks-individual-therapy-cycle-2",
         "status": "published",
-        "order": 2,
+        "order": 9,
         "data": {
           "title": "Six (6) Weeks Individual Therapy Cycle",
           "featured_image": {
@@ -603,7 +623,7 @@
           },
           "price_label": "₦510,000/$510",
           "audience_label": "(For Single or Married Individual)",
-          "format": "Zoom Video Session",
+          "format": "Zoom Video Sessions",
           "notice": null,
           "booking_url": "https://selar.com/9jmn",
           "content": [
@@ -613,7 +633,37 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "Six (6) Weeks Individual Therapy Cycle ₦510,000/$510 (For Single or Married Individual) Zoom Video Sessions In this therapy cycle, my focus will be to help you become a better version of yourself, identify the changes & steps to take to have a healthier you and a healthier relationship or marriage You will have a safe space to explore your thoughts, feelings, and concerns without fear or judgement; while I hold your hands spiritually, mentally, and emotionally to ensure you achieve the goals we set during these sessions and leave no stone unturned. I will provide you with tools, practical wisdom, and research-based strategies that will propel you to the next level in your relationship and your personal life. Let’s begin the transformation you desire! After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                  "text": "In this therapy cycle, my focus will be to help you become a better version of yourself, identify the changes & steps to take to have a healthier you and a healthier relationship or marriage"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "You will have a safe space to explore your thoughts, feelings, and concerns without fear or judgement; while I hold your hands spiritually, mentally, and emotionally to ensure you achieve the goals we set during these sessions and leave no stone unturned. I will provide you with tools, practical wisdom, and research-based strategies that will propel you to the next level in your relationship and your personal life."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Let’s begin the transformation you desire!"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "&nbsp;"
                 }
               ]
             }
@@ -629,7 +679,7 @@
         "id": "service-3",
         "slug": "six-6-weeks-marriage-therapy-cycle",
         "status": "published",
-        "order": 3,
+        "order": 10,
         "data": {
           "title": "Six (6) Weeks Marriage Therapy Cycle",
           "featured_image": {
@@ -641,7 +691,7 @@
           },
           "price_label": "₦750,000/$750",
           "audience_label": "(For Married Couples Only)",
-          "format": "Zoom Video Session",
+          "format": "Zoom Video Sessions",
           "notice": null,
           "booking_url": "https://selar.com/fh75",
           "content": [
@@ -651,7 +701,37 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "Six (6) Weeks Marriage Therapy Cycle ₦750,000/$750 (For Married Couples Only) Zoom Video Sessions Marriages sometimes require a long process of counseling and therapy to effect a change. These therapy sessions will help you identify the pitfalls in your marriage and provide you with tools, counsel, and research-based solutions that will help you achieve the kind of marriage you desire In these sessions, it is important that you are both willing to put in the work with me. We will set the goals of your therapy and I will work with you to achieve the goals we set. Before you give up on that marriage, let’s have therapy! Let me help you! After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                  "text": "Marriages sometimes require a long process of counseling and therapy to effect a change. These therapy sessions will help you identify the pitfalls in your marriage and provide you with tools, counsel, and research-based solutions that will help you achieve the kind of marriage you desire"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "In these sessions, it is important that you are both willing to put in the work with me. We will set the goals of your therapy and I will work with you to achieve the goals we set."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Before you give up on that marriage, let’s have therapy! Let me help you!"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "&nbsp;"
                 }
               ]
             }
@@ -667,7 +747,7 @@
         "id": "service-4",
         "slug": "two-sessions-couples-counseling",
         "status": "published",
-        "order": 4,
+        "order": 5,
         "data": {
           "title": "Two Sessions Couples Counseling",
           "featured_image": {
@@ -679,7 +759,7 @@
           },
           "price_label": "₦300,000/$300",
           "audience_label": "(For Married or Engaged Couples)",
-          "format": "Zoom Video Session",
+          "format": "Zoom Video Sessions",
           "notice": null,
           "booking_url": "https://selar.com/3i84",
           "content": [
@@ -689,7 +769,17 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "Two Sessions Couples Counseling ₦300,000/$300 (For Married or Engaged Couples) Zoom Video Sessions This is a two-time zoom video session with a married or engaged couple. In these sessions, it is compulsory for both partners to turn their videos on and be present. After the first session, the second session holds the following week. Each session lasts for one hour. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                  "text": "This is a two-time zoom video session with a married or engaged couple. In these sessions, it is compulsory for both partners to turn their videos on and be present. After the first session, the second session holds the following week. Each session lasts for one hour."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "&nbsp;"
                 }
               ]
             }
@@ -705,7 +795,7 @@
         "id": "service-5",
         "slug": "one-hour-couples-counseling-session",
         "status": "published",
-        "order": 5,
+        "order": 4,
         "data": {
           "title": "One Hour Couples Counseling Session",
           "featured_image": {
@@ -727,7 +817,7 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "One Hour Couples Counseling Session ₦160,000/$160 (For Married or Engaged Couples) Zoom Video Session This is a one hour virtual counseling session for a married or engaged couple. In this zoom session, it is compulsory for both partners to turn their videos on and be present After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                  "text": "This is a one hour virtual counseling session for a married or engaged couple. In this zoom session, it is compulsory for both partners to turn their videos on and be present"
                 }
               ]
             }
@@ -743,7 +833,7 @@
         "id": "service-6",
         "slug": "one-hour-individual-counseling-session",
         "status": "published",
-        "order": 6,
+        "order": 3,
         "data": {
           "title": "One Hour Individual Counseling Session",
           "featured_image": {
@@ -755,7 +845,7 @@
           },
           "price_label": "₦100,000/$100",
           "audience_label": "(For Married Individuals)",
-          "format": null,
+          "format": "WhatsApp Phone Call Session",
           "notice": null,
           "booking_url": "https://selar.com/7gxr",
           "content": [
@@ -765,7 +855,17 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "One Hour Individual Counseling Session ₦100,000/$100 (For Married Individuals) WhatsApp Phone Call Session This is a one hour virtual counseling session for a married individual. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                  "text": "This is a one hour virtual counseling session for a married individual."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "&nbsp;"
                 }
               ]
             }
@@ -793,7 +893,7 @@
           },
           "price_label": "₦470,000/$470",
           "audience_label": null,
-          "format": "Zoom Video Session",
+          "format": "Zoom Video Sessions",
           "notice": null,
           "booking_url": "https://selar.com/kmoy",
           "content": [
@@ -803,7 +903,37 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "The Dating Couple Coaching Cycle ₦470,000/$470 Zoom Video Sessions This is a four weeks (four sessions) coaching cycle for a dating couple. A session holds once weekly. A relationship does not only progress because you like each other, it progresses based on how much knowledge you both have to build the relationship. Even couples with the deepest affection for one another may run into issues. These coaching sessions will help you to individually become self-aware, learn effective communication and conflict resolution techniques, set appropriate boundaries in your relationships, and guide you to purposeful dating. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                  "text": "This is a four weeks (four sessions) coaching cycle for a dating couple. A session holds once weekly."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "A relationship does not only progress because you like each other, it progresses based on how much knowledge you both have to build the relationship. Even couples with the deepest affection for one another may run into issues."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "These coaching sessions will help you to individually become self-aware, learn effective communication and conflict resolution techniques, set appropriate boundaries in your relationships, and guide you to purposeful dating."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "&nbsp;"
                 }
               ]
             }
@@ -819,7 +949,7 @@
         "id": "service-8",
         "slug": "private-premarital-counseling-classes",
         "status": "published",
-        "order": 8,
+        "order": 6,
         "data": {
           "title": "Private Premarital Counseling Classes",
           "featured_image": {
@@ -831,7 +961,7 @@
           },
           "price_label": "₦590,000/$590",
           "audience_label": null,
-          "format": "Zoom Video Session",
+          "format": "Zoom Video Sessions",
           "notice": null,
           "booking_url": "https://selar.com/d4av",
           "content": [
@@ -841,7 +971,37 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "Private Premarital Counseling Classes ₦590,000/$590 Zoom Video Sessions Ruth’s Marriage Private Premarital Counseling Classes is for seriously dating/courting, engaged, and newlywed couples. The classes are private – between Coach Ruth and the Couple only. The classes hold for six weeks – once a week and covers all foundational topics for marriage. These classes are very comprehensive and intricately designed to prepare both partners extensively for marriage, help them build a strong foundation; whilst also providing early intervention counseling on personal challenges they may be experiencing The private classes are a great opportunity for you to ask questions, confront issues and disagreements that could potentially harm the marriage. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                  "text": "Ruth’s Marriage Private Premarital Counseling Classes is for seriously dating/courting, engaged, and newlywed couples. The classes are private – between Coach Ruth and the Couple only."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "The classes hold for six weeks – once a week and covers all foundational topics for marriage. These classes are very comprehensive and intricately designed to prepare both partners extensively for marriage, help them build a strong foundation; whilst also providing&nbsp;<strong>early intervention counseling</strong>&nbsp;on personal challenges they may be experiencing"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "The private classes are a great opportunity for you to ask questions, confront issues and disagreements that could potentially harm the marriage."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "&nbsp;"
                 }
               ]
             }
@@ -857,7 +1017,7 @@
         "id": "service-9",
         "slug": "six-6-weeks-individual-therapy-cycle",
         "status": "published",
-        "order": 9,
+        "order": 8,
         "data": {
           "title": "Six (6) Weeks Individual Therapy Cycle",
           "featured_image": {
@@ -869,7 +1029,7 @@
           },
           "price_label": "₦510,000/$510",
           "audience_label": "(For Single or Married Individual)",
-          "format": "Zoom Video Session",
+          "format": "Zoom Video Sessions",
           "notice": null,
           "booking_url": "https://selar.com/9jmn",
           "content": [
@@ -879,7 +1039,37 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "Six (6) Weeks Individual Therapy Cycle ₦510,000/$510 (For Single or Married Individual) Zoom Video Sessions In this therapy cycle, my focus will be to help you become a better version of yourself, identify the changes & steps to take to have a healthier you and a healthier relationship or marriage You will have a safe space to explore your thoughts, feelings, and concerns without fear or judgement; while I hold your hands spiritually, mentally, and emotionally to ensure you achieve the goals we set during these sessions and leave no stone unturned. I will provide you with tools, practical wisdom, and research-based strategies that will propel you to the next level in your relationship and your personal life. Let’s begin the transformation you desire! After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                  "text": "In this therapy cycle, my focus will be to help you become a better version of yourself, identify the changes & steps to take to have a healthier you and a healthier relationship or marriage"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "You will have a safe space to explore your thoughts, feelings, and concerns without fear or judgement; while I hold your hands spiritually, mentally, and emotionally to ensure you achieve the goals we set during these sessions and leave no stone unturned. I will provide you with tools, practical wisdom, and research-based strategies that will propel you to the next level in your relationship and your personal life."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Let’s begin the transformation you desire!"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "&nbsp;"
                 }
               ]
             }
@@ -895,7 +1085,7 @@
         "id": "service-10",
         "slug": "one-hour-dating-couples-counseling-session",
         "status": "published",
-        "order": 10,
+        "order": 2,
         "data": {
           "title": "One Hour Dating Couples Counseling Session",
           "featured_image": {
@@ -917,7 +1107,27 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "One Hour Dating Couples Counseling Session ₦150,000/$150 Zoom Video Session This is a one-hour counseling/coaching session for a dating couple. In this session, you will be able to identify your unhealthy patterns, improve your communication & conflict resolution skills and gain insight into making an informed decision about your relationship In this session, it is compulsory for both partners to turn their videos on and be present. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                  "text": "This is a one-hour counseling/coaching session for a dating couple. In this session, you will be able to identify your unhealthy patterns, improve your communication & conflict resolution skills and gain insight into making an informed decision about your relationship"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "In this session, it is compulsory for both partners to turn their videos on and be present."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "&nbsp;"
                 }
               ]
             }
@@ -933,7 +1143,7 @@
         "id": "service-11",
         "slug": "one-hour-relationship-clarity-session",
         "status": "published",
-        "order": 11,
+        "order": 1,
         "data": {
           "title": "One Hour Relationship Clarity Session",
           "featured_image": {
@@ -945,7 +1155,7 @@
           },
           "price_label": "₦90,000/$90",
           "audience_label": "(For Singles Only)",
-          "format": null,
+          "format": "WhatsApp Phone Call Session",
           "notice": null,
           "booking_url": "https://selar.com/s46z",
           "content": [
@@ -955,7 +1165,27 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "One Hour Relationship Clarity Session ₦90,000/$90 (For Singles Only) WhatsApp Phone Call Session The choice of a life partner is one of the most important decisions you will ever make. Many people do not have clarity regarding this and are confused about how to make that decision. In this clarity call, I will provide you counsel on how to navigate the process of choosing a life partner and also analyze your current relationship (if you are in one) whilst providing guidance on your decision. I will help you analyze your standards to be sure they are not unrealistic, unnecessary, and sub-standard. After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking. Contact admin@ruthsmarriage.com, ruthsmarriage@gmail.com Services One Hour Relationship Clarity Session One Hour Dating Couples Counseling Session Six (6) Weeks Individual Therapy Cycle Private Premarital Counseling Classes The Dating Couple Coaching Cycle One Hour Individual Counseling Session Resources 52 Rules of Dating and Relationships Have Sex & Pray 50 Intimate Conversations to Have with Your Partner The 28 Days Lovers Again Challenge The 60 Fun Games and Activities for Couples How to Deal with a Husband who Flirts and Cheats with other Women Links Ruth's Marriage © 2025. All rights reserved."
+                  "text": "The choice of a life partner is one of the most important decisions you will ever make. Many people do not have clarity regarding this and are confused about how to make that decision."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "In this clarity call, I will provide you counsel on how to navigate the process of choosing a life partner and also analyze your current relationship (if you are in one) whilst providing guidance on your decision."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "I will help you analyze your standards to be sure they are not unrealistic, unnecessary, and sub-standard."
                 }
               ]
             }
@@ -973,7 +1203,7 @@
         "id": "resource-1",
         "slug": "baddie-in-bed-a-sex-guide-for-wives",
         "status": "published",
-        "order": 1,
+        "order": 4,
         "data": {
           "title": "Baddie in Bed",
           "featured_image": {
@@ -999,7 +1229,17 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "\n\t\t\t\t\t Become the woman who knows her body and is not ashamed to explore sex with her husband, shows up fully present instead of just going through the motions and actually enjoys sex \n The Baddie in Bed is a practical and deeply explorative guide for women who desire to enjoy more sexual intimacy in marriage \n\t\t\t\t"
+                  "text": "Become the woman who knows her body and is not ashamed to explore sex with her husband, shows up fully present instead of just going through the motions and actually enjoys sex"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "The Baddie in Bed is a practical and deeply explorative guide for women who desire to enjoy more sexual intimacy in marriage"
                 }
               ]
             }
@@ -1015,7 +1255,7 @@
         "id": "resource-2",
         "slug": "the-marriage-checkup-workbook",
         "status": "published",
-        "order": 2,
+        "order": 6,
         "data": {
           "title": "The Marriage Check-up Workbook.",
           "featured_image": {
@@ -1041,7 +1281,17 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "\n\t\t\t\t\t Not just a Workbook – This is your Game-changing Relationship Maintenance System.” \n With Weekly, Quarterly, and Yearly Checkups, Clear Guides and Real-Life Examples of how this conversations should go, It’s the Tool Every Marriage Needs to Stay Connected and Growing – All Year Long ! It Transformed our Marriage, It Can Transform Yours Too. \n\t\t\t\t"
+                  "text": "Not just a Workbook – This is your Game-changing Relationship Maintenance System.”"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "With Weekly, Quarterly, and Yearly Checkups, Clear Guides and Real-Life Examples of how this conversations should go, It’s the Tool Every Marriage Needs to Stay Connected and Growing – All Year Long ! It Transformed our Marriage, It Can Transform Yours Too."
                 }
               ]
             }
@@ -1083,7 +1333,17 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "\n\t\t\t\t\t Want more passion, pleasurable sex, intimacy &amp; fun? Then The Love Playbook is for you \n Talk, Tease &amp; Touch: ‘Get Ready to Laugh, Flirt, and Get Emotionally &amp; Sexually Closer Tonight…And Every day!. \n\t\t\t\t"
+                  "text": "Want more passion, pleasurable sex, intimacy & fun? Then The Love Playbook is for you"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Talk, Tease & Touch: ‘Get Ready to Laugh, Flirt, and Get Emotionally & Sexually Closer Tonight…And Every day!."
                 }
               ]
             }
@@ -1099,7 +1359,7 @@
         "id": "resource-4",
         "slug": "the-ultimate-couples-hard-conversations-guide",
         "status": "published",
-        "order": 4,
+        "order": 2,
         "data": {
           "title": "The Ultimate Couples Hard Conversations Guide",
           "featured_image": {
@@ -1125,7 +1385,17 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "\n\t\t\t\t\t Before Another Issue or Argument Pushes You Apart – This guide is a proven resource to help you talk about ANYTHING no matter how difficult…without fighting, shutting down or walking away \n The Ultimate Couples Hard Conversations Guide” is a step by step blueprint for navigating difficult topics with compassion, clarity and understanding. \n\t\t\t\t"
+                  "text": "Before Another Issue or Argument Pushes You Apart – This guide is a proven resource to help you talk about ANYTHING no matter how difficult…without fighting, shutting down or walking away"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "The Ultimate Couples Hard Conversations Guide” is a step by step blueprint for navigating difficult topics with compassion, clarity and understanding."
                 }
               ]
             }
@@ -1141,7 +1411,7 @@
         "id": "resource-5",
         "slug": "how-do-we-discuss-our-sexual-fantasies-in-marriage",
         "status": "published",
-        "order": 5,
+        "order": 10,
         "data": {
           "title": "How do we discuss our sexual fantasies in Marriage?",
           "featured_image": null,
@@ -1172,7 +1442,7 @@
         "id": "resource-6",
         "slug": "how-to-deal-with-a-husband-who-flirts-and-cheats-with-other-women",
         "status": "published",
-        "order": 6,
+        "order": 11,
         "data": {
           "title": "How to Deal with a Husband who Flirts and Cheats with other Women",
           "featured_image": null,
@@ -1203,7 +1473,7 @@
         "id": "resource-7",
         "slug": "60-fun-games-and-activities-for-couples",
         "status": "published",
-        "order": 7,
+        "order": 5,
         "data": {
           "title": "The 60 Fun Games and Activities for Couples",
           "featured_image": {
@@ -1229,7 +1499,7 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "\n\t\t\t\t\t Do you always feel like your marriage is boring? Are you always lost on what to do for fun as a couple? Do you need fun, interesting games and activities that you can easily enjoy? Then, this is for you! \n\t\t\t\t"
+                  "text": "Do you always feel like your marriage is boring? Are you always lost on what to do for fun as a couple? Do you need fun, interesting games and activities that you can easily enjoy? Then, this is for you!"
                 }
               ]
             }
@@ -1245,7 +1515,7 @@
         "id": "resource-8",
         "slug": "28-days-lovers-again-challenge",
         "status": "published",
-        "order": 8,
+        "order": 1,
         "data": {
           "title": "The 28 Days Lovers Again Challenge",
           "featured_image": {
@@ -1271,7 +1541,27 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "\n\t\t\t\t\t The 28 Days Lovers Again Challenge is a daily, doable and deeply intentional experience. \n Each daily practice is designed to help you rebuild intimacy, gently shift old communication patterns, strengthen emotional closeness, and rebuild the sense of “us” that may have faded under the weight of daily life. \n It’s practical enough to start today, yet powerful &amp; deep enough to create mean"
+                  "text": "The 28 Days Lovers Again Challenge is a daily, doable and deeply intentional experience."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Each daily practice is designed to help you rebuild intimacy, gently shift old communication patterns, strengthen emotional closeness, and rebuild the sense of “us” that may have faded under the weight of daily life."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "It’s practical enough to start today, yet powerful & deep enough to create meaningful, lasting change in your marriage."
                 }
               ]
             }
@@ -1287,7 +1577,7 @@
         "id": "resource-9",
         "slug": "50-intimate-conversations-to-have-with-your-partner",
         "status": "published",
-        "order": 9,
+        "order": 8,
         "data": {
           "title": "50 Intimate Conversations to Have with Your Partner",
           "featured_image": {
@@ -1313,7 +1603,7 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "\n\t\t\t\t\t When I got the inspiration to write this book, it was going to be for singles alone, but I soon realized that this book is for anyone in a romantic relationship who desires real connection with their partner – whether single or married. \nThis is a get-to-know-each-other guide for singles and married to move you from “small talk” to “real connecting talk” in your relationship. If getting to "
+                  "text": "When I got the inspiration to write this book, it was going to be for singles alone, but I soon realized that this book is for anyone in a romantic relationship who desires real connection with their partner – whether single or married.<br> This is a get-to-know-each-other guide for singles and married to move you from “small talk” to “real connecting talk” in your relationship. If getting to know your partner intimately beyond the surface level is your goal, then this book is for you.<br> This is an absolute must-read!"
                 }
               ]
             }
@@ -1329,7 +1619,7 @@
         "id": "resource-10",
         "slug": "have-sex-pray",
         "status": "published",
-        "order": 10,
+        "order": 7,
         "data": {
           "title": "Have Sex & Pray",
           "featured_image": {
@@ -1355,7 +1645,37 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "\n\t\t\t\t\t This is not a book that tells you to have sex in your marriage – I know you already know that! It’s the kind of book that gives you LIGHT. \n In this book, I shared practical and biblical knowledge that will help every married couple enjoy an exciting sex life. I demystified mindsets and religious doctrines that have held couples in bondage and confusion regarding God’s view of sex in marria"
+                  "text": "This is not a book that tells you to have sex in your marriage – I know you already know that! It’s the kind of book that gives you LIGHT."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "In this book, I shared practical and biblical knowledge that will help every married couple enjoy an exciting sex life. I demystified mindsets and religious doctrines that have held couples in bondage and confusion regarding God’s view of sex in marriage."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "After you read this book, you will have deeper insights into sex in marriage and begin to enjoy pleasurable sex without shame or guilt."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "This is an absolute must-read for every married couple or anyone preparing for marriage!"
                 }
               ]
             }
@@ -1371,7 +1691,7 @@
         "id": "resource-11",
         "slug": "52-rules-of-dating-and-relationships",
         "status": "published",
-        "order": 11,
+        "order": 9,
         "data": {
           "title": "52 Rules of Dating and Relationships",
           "featured_image": {
@@ -1397,7 +1717,7 @@
               "children": [
                 {
                   "_type": "span",
-                  "text": "\n\t\t\t\t\t This isn’t just another relationship book. It’s your roadmap to choosing well and loving wisely. Packed with timeless wisdom and practical principles, this book will shift how you date, how you connect, and how you prepare for the love that lasts. If you’re tired of guessing, settling, or just winging it – this book is your breakthrough. \n\t\t\t\t"
+                  "text": "This isn’t just another relationship book. It’s your roadmap to choosing well and loving wisely. Packed with timeless wisdom and practical principles, this book will shift how you date, how you connect, and how you prepare for the love that lasts. If you’re tired of guessing, settling, or just winging it – this book is your breakthrough."
                 }
               ]
             }

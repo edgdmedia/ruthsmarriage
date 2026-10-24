@@ -3,6 +3,8 @@
 export interface MediaRef {
 	src: string;
 	alt: string;
+	width?: number;
+	height?: number;
 }
 
 export interface Term {
@@ -13,6 +15,11 @@ export interface Term {
 export interface PortableTextSpan {
 	_type: "span";
 	text: string;
+}
+
+export interface ImageMetadata {
+	width: number;
+	height: number;
 }
 
 export interface PortableTextBlock {

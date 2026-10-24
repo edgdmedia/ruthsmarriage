@@ -3,11 +3,13 @@
 		"id": "resource-1",
 		"slug": "baddie-in-bed-a-sex-guide-for-wives",
 		"status": "published",
-		"order": 1,
+		"order": 4,
 		"title": "Baddie in Bed",
 		"featured_image": {
 			"src": "/assets/media/2026/03/WhatsApp-Image-2026-03-21-at-18.20.27.jpeg",
-			"alt": ""
+			"alt": "",
+			"width": 720,
+			"height": 1280
 		},
 		"badge_label": "Learn More",
 		"ctas": [
@@ -25,7 +27,17 @@
 				"children": [
 					{
 						"_type": "span",
-						"text": "\n\t\t\t\t\t Become the woman who knows her body and is not ashamed to explore sex with her husband, shows up fully present instead of just going through the motions and actually enjoys sex \n The Baddie in Bed is a practical and deeply explorative guide for women who desire to enjoy more sexual intimacy in marriage \n\t\t\t\t"
+						"text": "Become the woman who knows her body and is not ashamed to explore sex with her husband, shows up fully present instead of just going through the motions and actually enjoys sex"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "The Baddie in Bed is a practical and deeply explorative guide for women who desire to enjoy more sexual intimacy in marriage"
 					}
 				]
 			}
@@ -43,11 +55,13 @@
 		"id": "resource-2",
 		"slug": "the-marriage-checkup-workbook",
 		"status": "published",
-		"order": 2,
+		"order": 6,
 		"title": "The Marriage Check-up Workbook.",
 		"featured_image": {
 			"src": "/assets/media/2025/06/The-Reconnected-Couples-Workbook.png",
-			"alt": ""
+			"alt": "",
+			"width": 512,
+			"height": 800
 		},
 		"badge_label": "Learn More",
 		"ctas": [
@@ -65,7 +79,17 @@
 				"children": [
 					{
 						"_type": "span",
-						"text": "\n\t\t\t\t\t Not just a Workbook – This is your Game-changing Relationship Maintenance System.” \n With Weekly, Quarterly, and Yearly Checkups, Clear Guides and Real-Life Examples of how this conversations should go, It’s the Tool Every Marriage Needs to Stay Connected and Growing – All Year Long ! It Transformed our Marriage, It Can Transform Yours Too. \n\t\t\t\t"
+						"text": "Not just a Workbook – This is your Game-changing Relationship Maintenance System.”"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "With Weekly, Quarterly, and Yearly Checkups, Clear Guides and Real-Life Examples of how this conversations should go, It’s the Tool Every Marriage Needs to Stay Connected and Growing – All Year Long ! It Transformed our Marriage, It Can Transform Yours Too."
 					}
 				]
 			}
@@ -87,7 +111,9 @@
 		"title": "The Love Playbook",
 		"featured_image": {
 			"src": "/assets/media/2025/06/Copy-of-The-Love-Playbook.png",
-			"alt": ""
+			"alt": "",
+			"width": 1080,
+			"height": 1920
 		},
 		"badge_label": "Learn More",
 		"ctas": [
@@ -105,7 +131,17 @@
 				"children": [
 					{
 						"_type": "span",
-						"text": "\n\t\t\t\t\t Want more passion, pleasurable sex, intimacy &amp; fun? Then The Love Playbook is for you \n Talk, Tease &amp; Touch: ‘Get Ready to Laugh, Flirt, and Get Emotionally &amp; Sexually Closer Tonight…And Every day!. \n\t\t\t\t"
+						"text": "Want more passion, pleasurable sex, intimacy & fun? Then The Love Playbook is for you"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Talk, Tease & Touch: ‘Get Ready to Laugh, Flirt, and Get Emotionally & Sexually Closer Tonight…And Every day!."
 					}
 				]
 			}
@@ -123,11 +159,13 @@
 		"id": "resource-4",
 		"slug": "the-ultimate-couples-hard-conversations-guide",
 		"status": "published",
-		"order": 4,
+		"order": 2,
 		"title": "The Ultimate Couples Hard Conversations Guide",
 		"featured_image": {
 			"src": "/assets/media/2025/06/IMG_1053.png",
-			"alt": ""
+			"alt": "",
+			"width": 512,
+			"height": 800
 		},
 		"badge_label": "Learn More",
 		"ctas": [
@@ -145,7 +183,17 @@
 				"children": [
 					{
 						"_type": "span",
-						"text": "\n\t\t\t\t\t Before Another Issue or Argument Pushes You Apart – This guide is a proven resource to help you talk about ANYTHING no matter how difficult…without fighting, shutting down or walking away \n The Ultimate Couples Hard Conversations Guide” is a step by step blueprint for navigating difficult topics with compassion, clarity and understanding. \n\t\t\t\t"
+						"text": "Before Another Issue or Argument Pushes You Apart – This guide is a proven resource to help you talk about ANYTHING no matter how difficult…without fighting, shutting down or walking away"
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "The Ultimate Couples Hard Conversations Guide” is a step by step blueprint for navigating difficult topics with compassion, clarity and understanding."
 					}
 				]
 			}
@@ -163,7 +211,7 @@
 		"id": "resource-5",
 		"slug": "how-do-we-discuss-our-sexual-fantasies-in-marriage",
 		"status": "published",
-		"order": 5,
+		"order": 10,
 		"title": "How do we discuss our sexual fantasies in Marriage?",
 		"featured_image": null,
 		"badge_label": null,
@@ -195,7 +243,7 @@
 		"id": "resource-6",
 		"slug": "how-to-deal-with-a-husband-who-flirts-and-cheats-with-other-women",
 		"status": "published",
-		"order": 6,
+		"order": 11,
 		"title": "How to Deal with a Husband who Flirts and Cheats with other Women",
 		"featured_image": null,
 		"badge_label": null,
@@ -227,11 +275,13 @@
 		"id": "resource-7",
 		"slug": "60-fun-games-and-activities-for-couples",
 		"status": "published",
-		"order": 7,
+		"order": 5,
 		"title": "The 60 Fun Games and Activities for Couples",
 		"featured_image": {
 			"src": "/assets/media/2025/06/IMG_1054.png",
-			"alt": ""
+			"alt": "",
+			"width": 554,
+			"height": 800
 		},
 		"badge_label": "Download Here",
 		"ctas": [
@@ -249,7 +299,7 @@
 				"children": [
 					{
 						"_type": "span",
-						"text": "\n\t\t\t\t\t Do you always feel like your marriage is boring? Are you always lost on what to do for fun as a couple? Do you need fun, interesting games and activities that you can easily enjoy? Then, this is for you! \n\t\t\t\t"
+						"text": "Do you always feel like your marriage is boring? Are you always lost on what to do for fun as a couple? Do you need fun, interesting games and activities that you can easily enjoy? Then, this is for you!"
 					}
 				]
 			}
@@ -267,11 +317,13 @@
 		"id": "resource-8",
 		"slug": "28-days-lovers-again-challenge",
 		"status": "published",
-		"order": 8,
+		"order": 1,
 		"title": "The 28 Days Lovers Again Challenge",
 		"featured_image": {
 			"src": "/assets/media/2025/06/WhatsApp-Image-2025-12-17-at-5.06.03-PM.jpeg",
-			"alt": ""
+			"alt": "",
+			"width": 720,
+			"height": 1280
 		},
 		"badge_label": "Join the Challenge",
 		"ctas": [
@@ -289,7 +341,27 @@
 				"children": [
 					{
 						"_type": "span",
-						"text": "\n\t\t\t\t\t The 28 Days Lovers Again Challenge is a daily, doable and deeply intentional experience. \n Each daily practice is designed to help you rebuild intimacy, gently shift old communication patterns, strengthen emotional closeness, and rebuild the sense of “us” that may have faded under the weight of daily life. \n It’s practical enough to start today, yet powerful &amp; deep enough to create mean"
+						"text": "The 28 Days Lovers Again Challenge is a daily, doable and deeply intentional experience."
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "Each daily practice is designed to help you rebuild intimacy, gently shift old communication patterns, strengthen emotional closeness, and rebuild the sense of “us” that may have faded under the weight of daily life."
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "It’s practical enough to start today, yet powerful & deep enough to create meaningful, lasting change in your marriage."
 					}
 				]
 			}
@@ -307,11 +379,13 @@
 		"id": "resource-9",
 		"slug": "50-intimate-conversations-to-have-with-your-partner",
 		"status": "published",
-		"order": 9,
+		"order": 8,
 		"title": "50 Intimate Conversations to Have with Your Partner",
 		"featured_image": {
 			"src": "/assets/media/2025/06/50-intimate-conversations-selar.co-62e8fd101b57e-1024x1024-1.jpeg",
-			"alt": ""
+			"alt": "",
+			"width": 1024,
+			"height": 1024
 		},
 		"badge_label": null,
 		"ctas": [
@@ -329,7 +403,7 @@
 				"children": [
 					{
 						"_type": "span",
-						"text": "\n\t\t\t\t\t When I got the inspiration to write this book, it was going to be for singles alone, but I soon realized that this book is for anyone in a romantic relationship who desires real connection with their partner – whether single or married. \nThis is a get-to-know-each-other guide for singles and married to move you from “small talk” to “real connecting talk” in your relationship. If getting to "
+						"text": "When I got the inspiration to write this book, it was going to be for singles alone, but I soon realized that this book is for anyone in a romantic relationship who desires real connection with their partner – whether single or married.<br> This is a get-to-know-each-other guide for singles and married to move you from “small talk” to “real connecting talk” in your relationship. If getting to know your partner intimately beyond the surface level is your goal, then this book is for you.<br> This is an absolute must-read!"
 					}
 				]
 			}
@@ -347,11 +421,13 @@
 		"id": "resource-10",
 		"slug": "have-sex-pray",
 		"status": "published",
-		"order": 10,
+		"order": 7,
 		"title": "Have Sex & Pray",
 		"featured_image": {
 			"src": "/assets/media/2025/06/IMG_5071.png",
-			"alt": ""
+			"alt": "",
+			"width": 800,
+			"height": 800
 		},
 		"badge_label": null,
 		"ctas": [
@@ -369,7 +445,37 @@
 				"children": [
 					{
 						"_type": "span",
-						"text": "\n\t\t\t\t\t This is not a book that tells you to have sex in your marriage – I know you already know that! It’s the kind of book that gives you LIGHT. \n In this book, I shared practical and biblical knowledge that will help every married couple enjoy an exciting sex life. I demystified mindsets and religious doctrines that have held couples in bondage and confusion regarding God’s view of sex in marria"
+						"text": "This is not a book that tells you to have sex in your marriage – I know you already know that! It’s the kind of book that gives you LIGHT."
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "In this book, I shared practical and biblical knowledge that will help every married couple enjoy an exciting sex life. I demystified mindsets and religious doctrines that have held couples in bondage and confusion regarding God’s view of sex in marriage."
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "After you read this book, you will have deeper insights into sex in marriage and begin to enjoy pleasurable sex without shame or guilt."
+					}
+				]
+			},
+			{
+				"_type": "block",
+				"style": "normal",
+				"children": [
+					{
+						"_type": "span",
+						"text": "This is an absolute must-read for every married couple or anyone preparing for marriage!"
 					}
 				]
 			}
@@ -387,11 +493,13 @@
 		"id": "resource-11",
 		"slug": "52-rules-of-dating-and-relationships",
 		"status": "published",
-		"order": 11,
+		"order": 9,
 		"title": "52 Rules of Dating and Relationships",
 		"featured_image": {
 			"src": "/assets/media/2025/06/52-Rules-of-Dating-and-Relationships-1.png",
-			"alt": ""
+			"alt": "",
+			"width": 640,
+			"height": 800
 		},
 		"badge_label": null,
 		"ctas": [
@@ -409,7 +517,7 @@
 				"children": [
 					{
 						"_type": "span",
-						"text": "\n\t\t\t\t\t This isn’t just another relationship book. It’s your roadmap to choosing well and loving wisely. Packed with timeless wisdom and practical principles, this book will shift how you date, how you connect, and how you prepare for the love that lasts. If you’re tired of guessing, settling, or just winging it – this book is your breakthrough. \n\t\t\t\t"
+						"text": "This isn’t just another relationship book. It’s your roadmap to choosing well and loving wisely. Packed with timeless wisdom and practical principles, this book will shift how you date, how you connect, and how you prepare for the love that lasts. If you’re tired of guessing, settling, or just winging it – this book is your breakthrough."
 					}
 				]
 			}

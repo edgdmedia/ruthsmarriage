@@ -22,7 +22,7 @@ const list = postsInCategory(term.slug);
 			<ul>
 				{list.map((post) => (
 					<li>
-						<a href={`/posts/${post.slug}/`}>
+						<a href={`/${post.slug}/`}>
 							{post.featured_image && (
 								<img
 									src={post.featured_image.src}

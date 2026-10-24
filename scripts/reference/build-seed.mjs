@@ -28,6 +28,25 @@ const PT = (text, style = "normal") => ({
   children: [{ _type: "span", text: text || "" }],
 });
 
+/** Split an HTML description into PortableText blocks, one per <p>.
+    The inline markup (<strong>, <em>, <br>) is kept — the span is rendered as
+    HTML, and dropping the <br>s would collapse the line breaks the live
+    listing shows. Empty `&nbsp;` paragraphs are kept too: the live renders
+    them as a blank line, and they change the block's height. */
+const htmlPT = (html) => {
+  const out = [];
+  const re = /<p[^>]*>([\s\S]*?)<\/p>/gi;
+  let m;
+  while ((m = re.exec(String(html || "")))) {
+    const inner = m[1];
+    const blank = !inner.replace(/&nbsp;/gi, "").replace(/<[^>]+>/g, "").trim();
+    const t = inner.replace(/[ \t\r\n]+/g, " ").trim();
+    if (!t && !blank) continue;
+    out.push(PT(decodeEntities(t || "\u00a0")));
+  }
+  return out;
+};
+
 const now = new Date().toISOString();
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 
@@ -67,6 +86,55 @@ const FEAT = (file) => {
 const termMap = {
   services: { married: "married", singles: "singles" },
   resources: { resource: "resource", book: "book", video: "video" },
+};
+// The live listing order, read off /singles/ and /married/ on 2026-10-22 (stable
+// across loads). The two pages use different queries: /services/ has a third
+// order, but the port lists all 11 services there anyway, so this order is the
+// one that matches the pages the port can reproduce.
+// NOTE: page-maps/singles-married.md lists a different singles order
+// (Relationship Clarity, Dating Couples, Six Weeks Individual, Private
+// Premarital, Dating Couple Coaching) — that is live's /services/ order, not
+// /singles/. Logged in progress/visual-listing-rows.md.
+const SERVICE_ORDER = [
+  "one-hour-relationship-clarity-session",
+  "one-hour-dating-couples-counseling-session",
+  "one-hour-individual-counseling-session",
+  "one-hour-couples-counseling-session",
+  "two-sessions-couples-counseling",
+  "private-premarital-counseling-classes",
+  "the-dating-couple-coaching-cycle",
+  "six-6-weeks-individual-therapy-cycle",
+  "six-6-weeks-individual-therapy-cycle-2",
+  "six-6-weeks-marriage-therapy-cycle",
+  "private-premarital-counseling-classes-2",
+];
+const RESOURCE_ORDER = [
+  "28-days-lovers-again-challenge",
+  "the-ultimate-couples-hard-conversations-guide",
+  "the-love-playbook",
+  "baddie-in-bed-a-sex-guide-for-wives",
+  "60-fun-games-and-activities-for-couples",
+  "the-marriage-checkup-workbook",
+  "have-sex-pray",
+  "50-intimate-conversations-to-have-with-your-partner",
+  "52-rules-of-dating-and-relationships",
+  "how-do-we-discuss-our-sexual-fantasies-in-marriage",
+  "how-to-deal-with-a-husband-who-flirts-and-cheats-with-other-women",
+];
+const orderOf = (list, slug) => {
+  const i = list.indexOf(slug);
+  return i === -1 ? list.length + 1 : i + 1;
+};
+
+/** The format line the live listing shows. `allTexts` is
+    [title, price, (audience)?, format, ...description]; the scraped `format`
+    field is missing for some services and singular where the listing is
+    plural, so take it from allTexts and fall back to the scraped value. */
+const formatOf = (s) => {
+  const i = s.audienceLabel ? 3 : 2;
+  const f = (s.allTexts || [])[i];
+  if (f && f.length < 60 && !f.startsWith("(")) return f;
+  return s.format || null;
 };
 const postTags = new Map(postsRaw.map(p => [p.slug, (p.tags || [])[0] || "instagram"]));
 
@@ -217,21 +285,21 @@ const seed = {
         data: { text: "Join the 28 Days Lovers Again Challenge with Coach Ruth", link: "/resource/28-days-lovers-again-challenge/" } },
     ],
     services: services.map((s, i) => ({
-      id: `service-${i + 1}`, slug: s.slug, status: "published", order: i + 1,
+      id: `service-${i + 1}`, slug: s.slug, status: "published", order: orderOf(SERVICE_ORDER, s.slug),
       data: {
         title: decodeEntities(s.title),
         featured_image: FEAT(`service__${s.slug}.html`),
         price_label: s.price || null,
         audience_label: s.audienceLabel || null,
-        format: s.format || null,
+        format: formatOf(s),
         notice: null,
         booking_url: s.bookingUrl || null,
-        content: s.allTexts ? [PT(s.allTexts.slice(0, 300).join(" ") || `${s.title} counseling service.`)] : [PT(`${s.title}.`)],
+        content: htmlPT(s.description).length ? htmlPT(s.description) : [PT(`${s.title} counseling service.`)],
       },
       taxonomies: { service_type: [termMap.services[s.serviceType] || "married"] },
     })),
     resources: resources.map((r, i) => ({
-      id: `resource-${i + 1}`, slug: r.slug, status: "published", order: i + 1,
+      id: `resource-${i + 1}`, slug: r.slug, status: "published", order: orderOf(RESOURCE_ORDER, r.slug),
       data: {
         title: decodeEntities(r.title),
         featured_image: FEAT(`resource__${r.slug}.html`),
@@ -239,7 +307,7 @@ const seed = {
         ctas: r.ctaUrl ? [{ label: r.ctaLabel || "Learn More", url: r.ctaUrl }] : [],
         video_url: r.videoUrl || null,
         excerpt: r.excerpt || null,
-        content: r.content ? [PT(r.content.replace(/<[^>]+>/g, " ").slice(0, 400))] : [PT(`${r.title}.`)],
+        content: htmlPT(r.content).length ? htmlPT(r.content) : [PT(`${r.title}.`)],
       },
       taxonomies: { resource_type: [termMap.resources[r.resourceType] || "resource"] },
     })),

@@ -28,7 +28,8 @@ function cleanExcerpt(raw: string | null | undefined, words = 10): string {
 	return parts.slice(0, words).join(" ") + "...";
 }
 
-export const PostCard = ({ post }: { post: Post }) => {
+/* maxWidth: 360 in the home carousel; the Blog Articles grid uses 400. */
+export const PostCard = ({ post, maxWidth = 360 }: { post: Post; maxWidth?: number }) => {
 	const img = post.featured_image;
 	const imgUrl = img?.src ?? "";
 	const excerpt = cleanExcerpt(post.excerpt, 10);
@@ -41,7 +42,7 @@ export const PostCard = ({ post }: { post: Post }) => {
 			style={{
 				display: "block",
 				width: "100%",
-				maxWidth: "360px",
+				maxWidth: `${maxWidth}px`,
 				background: "#ffffff",
 				borderRadius: "10px",
 				boxShadow: "0 0 28px -10px rgba(156,156,156,0.5)",

@@ -43,7 +43,7 @@ const settle = `(async () => {
   window.scrollTo(0, 0);
   // Force the web fonts in before measuring: they change the line wrapping, and
   // a late swap reflows the page underneath the screenshot.
-  await Promise.allSettled(['600 16px Nunito','800 16px Nunito','500 16px Nunito','400 16px Poppins','500 16px Poppins','600 15px Roboto'].map(f => document.fonts.load(f)));
+  await Promise.allSettled(['600 16px Nunito','700 16px Nunito','800 16px Nunito','500 16px Nunito','400 16px Poppins','italic 400 16px Poppins','500 16px Poppins','600 16px Poppins','600 15px Roboto'].map(f => document.fonts.load(f)));
   await document.fonts.ready;
   // Then wait until the page height stops changing.
   let prev = -1, stable = 0;
@@ -89,11 +89,13 @@ const liveSections = (spec) => {
 // random per request, so the two sides never show the same cards), the marquee
 // (it scrolls) and video frames (iframes). VISUAL-TRACK.md gates on the diff
 // with these masked.
+// Only carousel listings are masked: on the listing pages (services, resources,
+// …) the jet-listing-grid is static and is the content under test.
 const maskTypes = new Set(["jet-listing-grid"]);
 const maskRegions = (spec, imgW) => {
 	const out = [];
 	const walk = (n) => {
-		if (n.type && maskTypes.has(n.type) && Array.isArray(n.box) && n.box[3] > 0) {
+		if (n.type && maskTypes.has(n.type) && n.carousel && Array.isArray(n.box) && n.box[3] > 0) {
 			out.push({ x: n.box[0], y: n.box[1], w: n.box[2], h: n.box[3] });
 		}
 		(n.children || []).forEach(walk);
@@ -145,7 +147,8 @@ const pair = (live, local) => {
 	return rows;
 };
 
-const diffImages = (livePath, localPath, name, mask = [], rows = []) => {	const a = PNG.sync.read(readFileSync(livePath));
+const diffImages = (livePath, localPath, name, mask = [], rows = []) => {
+	const a = PNG.sync.read(readFileSync(livePath));
 	const b = PNG.sync.read(readFileSync(localPath));
 	const w = Math.min(a.width, b.width);
 	const h = Math.min(a.height, b.height);
@@ -156,24 +159,30 @@ const diffImages = (livePath, localPath, name, mask = [], rows = []) => {	const 
 	};
 	/** Crop a horizontal band of an image, starting at `y0`, `hh` tall. */
 	const band = (img, y0, hh) => {
-		const h = Math.max(0, Math.min(hh, img.height - y0));
-		const o = new PNG({ width: w, height: h });
-		for (let y = 0; y < h; y++) {
+		const bh = Math.max(0, Math.min(hh, img.height - y0));
+		const o = new PNG({ width: w, height: bh });
+		for (let y = 0; y < bh; y++) {
 			img.data.copy(o.data, y * w * 4, (y + y0) * img.width * 4, (y + y0) * img.width * 4 + w * 4);
 		}
 		return o;
 	};
-	const ca = crop(a);
-	const cb = crop(b);
-	// Mask the same regions on both sides so scrolling/random content is ignored.
-	applyMask(ca, mask);
-	applyMask(cb, mask);
+	// Full-page diff: mask the page-absolute regions on both sides.
+	const ma = PNG.sync.read(readFileSync(livePath));
+	const mb = PNG.sync.read(readFileSync(localPath));
+	applyMask(ma, mask);
+	applyMask(mb, mask);
+
+	const ca = crop(ma);
+	const cb = crop(mb);
 	const diff = new PNG({ width: w, height: h });
 	const bad = pixelmatch(ca.data, cb.data, diff.data, w, h, { threshold: 0.1 });
 	writeFileSync(join(out, `${name}-diff.png`), PNG.sync.write(diff));
 
 	// Section-aligned diff: compare each section at its own y on both sides, so a
 	// height drift in one section does not shift every section below it.
+	// The bands come from the UNMASKED images: a page-absolute mask would land on
+	// a different section on the other side. Each band's mask is re-expressed
+	// relative to its section, so the same content is ignored on both sides.
 	let sBad = 0;
 	let sArea = 0;
 	const perSection = [];
@@ -194,13 +203,11 @@ const diffImages = (livePath, localPath, name, mask = [], rows = []) => {	const 
 		}
 		const la = band(a, ly, hh);
 		const lb = band(b, ny, hh);
-		// Shift the page-level mask into each side's band.
-		const maskIn = (y0) =>
-			mask
-				.map((m) => ({ ...m, y: m.y - y0 }))
-				.filter((m) => m.y + m.h > 0 && m.y < hh);
-		applyMask(la, maskIn(ly));
-		applyMask(lb, maskIn(ny));
+		const rel = mask
+			.map((m) => ({ ...m, y: m.y - ly }))
+			.filter((m) => m.y + m.h > 0 && m.y < hh);
+		applyMask(la, rel);
+		applyMask(lb, rel);
 		const d = new PNG({ width: w, height: hh });
 		const bad = pixelmatch(la.data, lb.data, d.data, w, hh, { threshold: 0.1 });
 		sBad += bad;
@@ -240,14 +247,19 @@ for (const page of pages) {
 		}
 		const name = `${page}-${w}`;
 		try {
-			ab("set", "viewport", String(w), String(VIEWPORTS[w]));
+			const live = JSON.parse(readFileSync(specFile, "utf8"));
+			// Most Oct 16 references were captured with a 15px classic scrollbar, so the live
+			// layout was 1425/1009/375 wide, not 1440/1024/390. Render the port at the
+			// reference's own layout width (the full-width header/footer documents) so line
+			// wraps compare like for like. The breakpoints still land in the same bucket.
+			const layoutW = Math.max(...live.documents.map((d) => d.box?.[2] ?? 0)) || w;
+			ab("set", "viewport", String(layoutW), String(VIEWPORTS[w]));
 			ab("open", base + PAGES[page]);
 			ab("wait", "1500");
 			const { fonts } = js(settle);
 			const local = js(measure);
 			const localPng = join(out, `${name}-local.png`);
 			ab("screenshot", "--full", localPng);
-			const live = JSON.parse(readFileSync(specFile, "utf8"));
 			const rows = pair(liveSections(live), local.rows);
 			const livePngW = PNG.sync.read(readFileSync(livePng)).width;
 			const mask = maskRegions(live, livePngW);
@@ -262,7 +274,7 @@ for (const page of pages) {
 				return `| ${l ? `${l.key}${l.type && l.type !== "container" ? ` (${l.type})` : ""}` : "—"} | ${l ? l.box.join("+") : "—"} | ${n ? `${n.key} ${n.box.join("+")}` : "—"} | ${dh ?? "—"} | ${dy ?? "—"} | ${pd === null ? "—" : `${pd}%`} | ${flag} |`;
 			});
 			summary.push(`| ${page} | ${w} | ${live.pageHeight} → ${local.page} (${local.page - live.pageHeight >= 0 ? "+" : ""}${local.page - live.pageHeight}) | ${pct.aligned}% (full ${pct.full}%) | ${off}/${rows.length} |`);
-			details.push(`## ${page} @${w}`, ``, `Fonts loaded on new site: ${fonts.join(", ") || "**none**"}`, ``, "| Live section | Live y+h | New section y+h | Δh | Δy | Diff | |", "|---|---|---|---|---|---|---|", ...lines, ``, `Images: \`discovery/qa/${name}-sbs.png\` (live left), \`${name}-diff.png\``, ``);
+			details.push(`## ${page} @${w}`, ``, `Fonts loaded on new site: ${fonts.join(", ") || "**none**"} · layout width ${layoutW}${layoutW !== w ? " (reference had a scrollbar)" : ""}`, ``, "| Live section | Live y+h | New section y+h | Δh | Δy | Diff | |", "|---|---|---|---|---|---|---|", ...lines, ``, `Images: \`discovery/qa/${name}-sbs.png\` (live left), \`${name}-diff.png\``, ``);
 			console.log(`ok ${name}: diff ${pct.aligned}% (full ${pct.full}%), ${off}/${rows.length} sections off, height ${live.pageHeight} → ${local.page}`);
 		} catch (e) {
 			console.log(`FAIL ${name}: ${String(e.message).slice(0, 200)}`);

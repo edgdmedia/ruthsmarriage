@@ -19,7 +19,7 @@
    "box": [
     0,
     0,
-    1425,
+    1440,
     137
    ],
    "children": [
@@ -30,12 +30,12 @@
      "box": [
       0,
       0,
-      1425,
+      1440,
       52
      ],
      "display": "flex",
      "flexDirection": "column",
-     "width": "1425px",
+     "width": "1440px",
      "maxWidth": "100%",
      "paddingRight": "10px",
      "paddingLeft": "10px",
@@ -47,7 +47,7 @@
        "type": "html",
        "cls": "",
        "box": [
-        143,
+        150,
         10,
         1140,
         32
@@ -64,16 +64,355 @@
     {
      "id": "e9d8317",
      "type": "container",
-     "cls": "e-con-full e-flex e-con e-parent elementor-sticky",
+     "cls": "e-con-full e-flex e-con e-parent elementor-sticky elementor-sticky--active elementor-section--handles-inside elementor-sticky--effects",
      "box": [
       0,
-      52,
-      1425,
+      104,
+      1440,
       85
      ],
      "display": "flex",
      "gap": "10px",
-     "width": "1425px",
+     "width": "1440px",
+     "maxWidth": "100%",
+     "paddingTop": "10px",
+     "paddingRight": "20px",
+     "paddingBottom": "10px",
+     "paddingLeft": "20px",
+     "backgroundColor": "rgb(255, 255, 255)",
+     "boxShadow": "rgba(86, 86, 86, 0.23) 0px 0px 31px -11px",
+     "position": "fixed",
+     "zIndex": "1000",
+     "settings": {
+      "sticky": "top",
+      "sticky_on": [
+       "desktop",
+       "tablet",
+       "mobile"
+      ],
+      "sticky_offset": 0,
+      "sticky_effects_offset": 0,
+      "sticky_anchor_link_offset": 0
+     },
+     "children": [
+      {
+       "id": "5a9c508",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        20,
+        114,
+        205,
+        65
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "justifyContent": "center",
+       "gap": "20px",
+       "width": "204.953px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "cd2eff3",
+         "type": "theme-site-logo",
+         "cls": "",
+         "box": [
+          20,
+          114,
+          205,
+          65
+         ],
+         "gap": "20px",
+         "width": "204.953px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "img",
+           "box": [
+            64,
+            114,
+            116,
+            65
+           ],
+           "fontFamily": "-apple-system",
+           "fontSize": "16px",
+           "fontWeight": "400",
+           "lineHeight": "24px",
+           "color": "rgb(204, 51, 102)",
+           "textAlign": "center",
+           "display": "inline-block",
+           "width": "116px",
+           "maxWidth": "100%",
+           "overflow": "clip",
+           "src": "uploads/2025/06/logo-2-1.png",
+           "natural": [
+            1000,
+            563
+           ],
+           "alt": "",
+           "objectFit": "fill"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "689f944",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        235,
+        114,
+        956,
+        65
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "justifyContent": "center",
+       "alignItems": "center",
+       "gap": "20px",
+       "width": "956.438px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "1e0d83a",
+         "type": "nav-menu",
+         "cls": "",
+         "box": [
+          438,
+          124,
+          551,
+          46
+         ],
+         "display": "flex",
+         "flexDirection": "column",
+         "gap": "20px",
+         "width": "550.641px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "a",
+           "box": [
+            438,
+            124,
+            79,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "79.3594px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#",
+           "text": "About"
+          },
+          {
+           "tag": "a",
+           "box": [
+            519,
+            124,
+            176,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "176.047px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#",
+           "text": "Counseling Services"
+          },
+          {
+           "tag": "a",
+           "box": [
+            697,
+            124,
+            110,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "110.047px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#",
+           "text": "Resources"
+          },
+          {
+           "tag": "a",
+           "box": [
+            809,
+            124,
+            97,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "96.5781px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#",
+           "text": "Freebies"
+          },
+          {
+           "tag": "a",
+           "box": [
+            908,
+            124,
+            81,
+            46
+           ],
+           "fontFamily": "Roboto",
+           "fontSize": "15px",
+           "fontWeight": "600",
+           "lineHeight": "20px",
+           "color": "rgb(0, 0, 0)",
+           "display": "flex",
+           "alignItems": "center",
+           "width": "80.6094px",
+           "paddingTop": "13px",
+           "paddingRight": "7px",
+           "paddingBottom": "13px",
+           "paddingLeft": "7px",
+           "position": "relative",
+           "href": "#",
+           "text": "Media"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "8406e16",
+       "type": "container",
+       "cls": "e-con-full e-flex e-con e-child",
+       "box": [
+        1201,
+        114,
+        219,
+        65
+       ],
+       "display": "flex",
+       "flexDirection": "column",
+       "justifyContent": "center",
+       "alignItems": "flex-end",
+       "gap": "20px",
+       "width": "218.609px",
+       "position": "relative",
+       "zIndex": "1000",
+       "children": [
+        {
+         "id": "55521df",
+         "type": "button",
+         "cls": "",
+         "box": [
+          1314,
+          131,
+          106,
+          32
+         ],
+         "gap": "20px",
+         "width": "106.219px",
+         "maxWidth": "100%",
+         "position": "relative",
+         "parts": [
+          {
+           "tag": "a",
+           "box": [
+            1314,
+            131,
+            106,
+            32
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "12px",
+           "fontWeight": "500",
+           "lineHeight": "12px",
+           "color": "rgb(255, 255, 255)",
+           "textAlign": "center",
+           "display": "inline-block",
+           "width": "106.219px",
+           "paddingTop": "10px",
+           "paddingRight": "10px",
+           "paddingBottom": "10px",
+           "paddingLeft": "10px",
+           "backgroundColor": "rgb(114, 22, 70)",
+           "borderRadius": "10px",
+           "href": "/askcoach",
+           "text": "Ask Coach Ruth"
+          },
+          {
+           "tag": "span",
+           "box": [
+            1324,
+            141,
+            86,
+            12
+           ],
+           "fontFamily": "Nunito",
+           "fontSize": "12px",
+           "fontWeight": "500",
+           "lineHeight": "12px",
+           "color": "rgb(255, 255, 255)",
+           "textAlign": "center",
+           "width": "86.2188px",
+           "text": "Ask Coach Ruth"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "e9d8317",
+     "type": "container",
+     "cls": "e-con-full e-flex e-con e-parent elementor-sticky elementor-sticky__spacer",
+     "box": [
+      0,
+      52,
+      1440,
+      85
+     ],
+     "display": "flex",
+     "gap": "10px",
+     "width": "1440px",
      "maxWidth": "100%",
      "paddingTop": "10px",
      "paddingRight": "20px",
@@ -102,14 +441,14 @@
        "box": [
         20,
         62,
-        203,
+        205,
         65
        ],
        "display": "flex",
        "flexDirection": "column",
        "justifyContent": "center",
        "gap": "20px",
-       "width": "202.719px",
+       "width": "204.953px",
        "position": "relative",
        "zIndex": "1000",
        "children": [
@@ -120,18 +459,18 @@
          "box": [
           20,
           62,
-          203,
+          205,
           65
          ],
          "gap": "20px",
-         "width": "202.719px",
+         "width": "204.953px",
          "maxWidth": "100%",
          "position": "relative",
          "parts": [
           {
            "tag": "img",
            "box": [
-            63,
+            64,
             62,
             116,
             65
@@ -163,9 +502,9 @@
        "type": "container",
        "cls": "e-con-full e-flex e-con e-child",
        "box": [
-        233,
+        235,
         62,
-        946,
+        956,
         65
        ],
        "display": "flex",
@@ -173,7 +512,7 @@
        "justifyContent": "center",
        "alignItems": "center",
        "gap": "20px",
-       "width": "946.047px",
+       "width": "956.438px",
        "position": "relative",
        "zIndex": "1000",
        "children": [
@@ -182,7 +521,7 @@
          "type": "nav-menu",
          "cls": "",
          "box": [
-          430,
+          438,
           71,
           551,
           46
@@ -197,7 +536,7 @@
           {
            "tag": "a",
            "box": [
-            430,
+            438,
             71,
             79,
             46
@@ -215,13 +554,12 @@
            "paddingBottom": "13px",
            "paddingLeft": "7px",
            "position": "relative",
-           "href": "#",
-           "text": "About"
+           "href": "#"
           },
           {
            "tag": "a",
            "box": [
-            512,
+            519,
             71,
             176,
             46
@@ -239,13 +577,12 @@
            "paddingBottom": "13px",
            "paddingLeft": "7px",
            "position": "relative",
-           "href": "#",
-           "text": "Counseling Services"
+           "href": "#"
           },
           {
            "tag": "a",
            "box": [
-            690,
+            697,
             71,
             110,
             46
@@ -263,13 +600,12 @@
            "paddingBottom": "13px",
            "paddingLeft": "7px",
            "position": "relative",
-           "href": "#",
-           "text": "Resources"
+           "href": "#"
           },
           {
            "tag": "a",
            "box": [
-            802,
+            809,
             71,
             97,
             46
@@ -287,13 +623,12 @@
            "paddingBottom": "13px",
            "paddingLeft": "7px",
            "position": "relative",
-           "href": "#",
-           "text": "Freebies"
+           "href": "#"
           },
           {
            "tag": "a",
            "box": [
-            900,
+            908,
             71,
             81,
             46
@@ -311,8 +646,7 @@
            "paddingBottom": "13px",
            "paddingLeft": "7px",
            "position": "relative",
-           "href": "#",
-           "text": "Media"
+           "href": "#"
           }
          ]
         }
@@ -323,9 +657,9 @@
        "type": "container",
        "cls": "e-con-full e-flex e-con e-child",
        "box": [
-        1189,
+        1201,
         62,
-        216,
+        219,
         65
        ],
        "display": "flex",
@@ -333,7 +667,7 @@
        "justifyContent": "center",
        "alignItems": "flex-end",
        "gap": "20px",
-       "width": "216.234px",
+       "width": "218.609px",
        "position": "relative",
        "zIndex": "1000",
        "children": [
@@ -342,7 +676,7 @@
          "type": "button",
          "cls": "",
          "box": [
-          1299,
+          1314,
           78,
           106,
           32
@@ -355,7 +689,7 @@
           {
            "tag": "a",
            "box": [
-            1299,
+            1314,
             78,
             106,
             32
@@ -374,13 +708,12 @@
            "paddingLeft": "10px",
            "backgroundColor": "rgb(114, 22, 70)",
            "borderRadius": "10px",
-           "href": "/askcoach",
-           "text": "Ask Coach Ruth"
+           "href": "/askcoach"
           },
           {
            "tag": "span",
            "box": [
-            1309,
+            1324,
             88,
             86,
             12
@@ -391,8 +724,7 @@
            "lineHeight": "12px",
            "color": "rgb(255, 255, 255)",
            "textAlign": "center",
-           "width": "86.2188px",
-           "text": "Ask Coach Ruth"
+           "width": "86.2188px"
           }
          ]
         }
@@ -408,7 +740,7 @@
    "box": [
     0,
     137,
-    1425,
+    1440,
     5961
    ],
    "children": [
@@ -419,12 +751,12 @@
      "box": [
       0,
       137,
-      1425,
+      1440,
       350
      ],
      "display": "flex",
      "flexDirection": "column",
-     "width": "1425px",
+     "width": "1440px",
      "maxWidth": "100%",
      "minHeight": "350px",
      "paddingRight": "10px",
@@ -441,7 +773,7 @@
        "type": "heading",
        "cls": "",
        "box": [
-        261,
+        268,
         284,
         904,
         55
@@ -454,7 +786,7 @@
         {
          "tag": "h2",
          "box": [
-          261,
+          268,
           284,
           904,
           55
@@ -479,13 +811,13 @@
      "box": [
       0,
       487,
-      1425,
+      1440,
       5611
      ],
      "display": "flex",
      "flexDirection": "column",
      "gap": "20px",
-     "width": "1425px",
+     "width": "1440px",
      "maxWidth": "100%",
      "position": "relative",
      "children": [
@@ -496,11 +828,11 @@
        "box": [
         0,
         487,
-        1425,
+        1440,
         5611
        ],
        "gap": "20px",
-       "width": "1425px",
+       "width": "1440px",
        "maxWidth": "100%",
        "position": "relative",
        "settings": {
@@ -517,7 +849,7 @@
          "box": [
           -10,
           487,
-          1445,
+          1460,
           1031
          ],
          "template": "301",
@@ -529,12 +861,12 @@
            "box": [
             0,
             497,
-            1425,
+            1440,
             1011
            ],
            "display": "flex",
            "flexDirection": "column",
-           "width": "1425px",
+           "width": "1440px",
            "maxWidth": "100%",
            "paddingRight": "10px",
            "paddingLeft": "10px",
@@ -545,7 +877,7 @@
              "type": "container",
              "cls": "e-con-full e-flex e-con e-child elementor-sticky",
              "box": [
-              143,
+              150,
               507,
               560,
               991
@@ -577,7 +909,7 @@
                "type": "theme-post-featured-image",
                "cls": "",
                "box": [
-                163,
+                170,
                 527,
                 520,
                 921
@@ -590,7 +922,7 @@
                 {
                  "tag": "img",
                  "box": [
-                  163,
+                  170,
                   527,
                   520,
                   921
@@ -627,7 +959,7 @@
              "type": "container",
              "cls": "e-con-full e-flex e-con e-child",
              "box": [
-              722,
+              730,
               507,
               560,
               991
@@ -648,7 +980,7 @@
                "type": "heading",
                "cls": "",
                "box": [
-                752,
+                760,
                 819,
                 500,
                 64
@@ -661,7 +993,7 @@
                 {
                  "tag": "h2",
                  "box": [
-                  752,
+                  760,
                   819,
                   500,
                   64
@@ -682,7 +1014,7 @@
                "type": "theme-post-content",
                "cls": "",
                "box": [
-                752,
+                760,
                 903,
                 500,
                 223
@@ -695,7 +1027,7 @@
                 {
                  "tag": "p",
                  "box": [
-                  752,
+                  760,
                   903,
                   500,
                   45
@@ -713,7 +1045,7 @@
                 {
                  "tag": "p",
                  "box": [
-                  752,
+                  760,
                   963,
                   500,
                   90
@@ -731,7 +1063,7 @@
                 {
                  "tag": "p",
                  "box": [
-                  752,
+                  760,
                   1067,
                   500,
                   45
@@ -753,7 +1085,7 @@
                "type": "button",
                "cls": "",
                "box": [
-                916,
+                923,
                 1146,
                 174,
                 39
@@ -766,7 +1098,7 @@
                 {
                  "tag": "a",
                  "box": [
-                  916,
+                  923,
                   1146,
                   174,
                   39
@@ -791,7 +1123,7 @@
                 {
                  "tag": "span",
                  "box": [
-                  940,
+                  947,
                   1158,
                   126,
                   15
@@ -813,7 +1145,7 @@
                "cls": "e-con-full elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile e-flex e-con e-child",
                "box": [
                 0,
-                0,
+                104,
                 0,
                 0
                ],
@@ -834,7 +1166,7 @@
                  "cls": "",
                  "box": [
                   0,
-                  0,
+                  104,
                   0,
                   0
                  ],
@@ -857,7 +1189,7 @@
          "box": [
           -10,
           1518,
-          1445,
+          1460,
           868
          ],
          "template": "305",
@@ -869,12 +1201,12 @@
            "box": [
             0,
             1528,
-            1425,
+            1440,
             848
            ],
            "display": "flex",
            "flexDirection": "column",
-           "width": "1425px",
+           "width": "1440px",
            "maxWidth": "100%",
            "paddingRight": "50px",
            "paddingLeft": "50px",
@@ -890,7 +1222,7 @@
              "type": "container",
              "cls": "e-con-full e-flex e-con e-child",
              "box": [
-              143,
+              150,
               1598,
               672,
               708
@@ -911,7 +1243,7 @@
                "type": "heading",
                "cls": "",
                "box": [
-                173,
+                180,
                 1806,
                 612,
                 64
@@ -924,7 +1256,7 @@
                 {
                  "tag": "h2",
                  "box": [
-                  173,
+                  180,
                   1806,
                   612,
                   64
@@ -945,7 +1277,7 @@
                "type": "theme-post-content",
                "cls": "",
                "box": [
-                173,
+                180,
                 1890,
                 612,
                 149
@@ -958,7 +1290,7 @@
                 {
                  "tag": "p",
                  "box": [
-                  173,
+                  180,
                   1890,
                   612,
                   72
@@ -976,7 +1308,7 @@
                 {
                  "tag": "p",
                  "box": [
-                  173,
+                  180,
                   1976,
                   612,
                   48
@@ -998,7 +1330,7 @@
                "type": "button",
                "cls": "",
                "box": [
-                416,
+                423,
                 2058,
                 125,
                 39
@@ -1011,7 +1343,7 @@
                 {
                  "tag": "a",
                  "box": [
-                  416,
+                  423,
                   2058,
                   125,
                   39
@@ -1036,7 +1368,7 @@
                 {
                  "tag": "span",
                  "box": [
-                  440,
+                  447,
                   2070,
                   77,
                   15
@@ -1058,7 +1390,7 @@
                "cls": "e-con-full elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile e-flex e-con e-child",
                "box": [
                 0,
-                0,
+                104,
                 0,
                 0
                ],
@@ -1075,7 +1407,7 @@
                  "cls": "",
                  "box": [
                   0,
-                  0,
+                  104,
                   0,
                   0
                  ],
@@ -1094,7 +1426,7 @@
              "type": "container",
              "cls": "e-con-full e-flex e-con e-child elementor-sticky",
              "box": [
-              835,
+              842,
               1598,
               448,
               708
@@ -1125,7 +1457,7 @@
                "type": "theme-post-featured-image",
                "cls": "",
                "box": [
-                855,
+                862,
                 1618,
                 408,
                 638
@@ -1138,7 +1470,7 @@
                 {
                  "tag": "img",
                  "box": [
-                  855,
+                  862,
                   1618,
                   408,
                   638
@@ -1181,7 +1513,7 @@
    "box": [
     0,
     6098,
-    1425,
+    1440,
     486
    ],
    "children": [
@@ -1192,12 +1524,12 @@
      "box": [
       0,
       6098,
-      1425,
+      1440,
       486
      ],
      "display": "flex",
      "flexDirection": "column",
-     "width": "1425px",
+     "width": "1440px",
      "maxWidth": "100%",
      "paddingRight": "10px",
      "paddingLeft": "10px",
@@ -1209,7 +1541,7 @@
        "type": "container",
        "cls": "e-con-full e-flex e-con e-child",
        "box": [
-        143,
+        150,
         6108,
         1140,
         380
@@ -1226,7 +1558,7 @@
          "type": "container",
          "cls": "e-con-full e-flex e-con e-child",
          "box": [
-          143,
+          150,
           6158,
           270,
           290
@@ -1246,7 +1578,7 @@
            "type": "heading",
            "cls": "",
            "box": [
-            153,
+            160,
             6168,
             250,
             20
@@ -1259,7 +1591,7 @@
             {
              "tag": "h5",
              "box": [
-              153,
+              160,
               6168,
               250,
               20
@@ -1279,7 +1611,7 @@
            "type": "text-editor",
            "cls": "",
            "box": [
-            153,
+            160,
             6208,
             250,
             59
@@ -1292,7 +1624,7 @@
             {
              "tag": "p",
              "box": [
-              153,
+              160,
               6208,
               250,
               45
@@ -1309,7 +1641,7 @@
             {
              "tag": "a",
              "box": [
-              157,
+              164,
               6208,
               210,
               21
@@ -1326,7 +1658,7 @@
             {
              "tag": "a",
              "box": [
-              153,
+              160,
               6230,
               204,
               21
@@ -1347,7 +1679,7 @@
            "type": "social-icons",
            "cls": "e-grid-align-left",
            "box": [
-            153,
+            160,
             6287,
             250,
             34
@@ -1360,7 +1692,7 @@
             {
              "tag": "a",
              "box": [
-              153,
+              160,
               6287,
               34,
               34
@@ -1383,7 +1715,7 @@
             {
              "tag": "a",
              "box": [
-              192,
+              199,
               6287,
               34,
               34
@@ -1406,7 +1738,7 @@
             {
              "tag": "a",
              "box": [
-              231,
+              238,
               6287,
               34,
               34
@@ -1429,7 +1761,7 @@
             {
              "tag": "a",
              "box": [
-              270,
+              277,
               6287,
               34,
               34
@@ -1452,7 +1784,7 @@
             {
              "tag": "a",
              "box": [
-              309,
+              316,
               6287,
               34,
               34
@@ -1481,7 +1813,7 @@
          "type": "container",
          "cls": "e-con-full e-flex e-con e-child",
          "box": [
-          433,
+          440,
           6158,
           270,
           290
@@ -1501,7 +1833,7 @@
            "type": "heading",
            "cls": "",
            "box": [
-            443,
+            450,
             6168,
             250,
             20
@@ -1514,7 +1846,7 @@
             {
              "tag": "h5",
              "box": [
-              443,
+              450,
               6168,
               250,
               20
@@ -1534,7 +1866,7 @@
            "type": "posts",
            "cls": "",
            "box": [
-            443,
+            450,
             6208,
             250,
             230
@@ -1561,7 +1893,7 @@
             {
              "item": true,
              "box": [
-              443,
+              450,
               6208,
               250,
               34
@@ -1570,7 +1902,7 @@
               {
                "tag": "h3",
                "box": [
-                443,
+                450,
                 6208,
                 250,
                 34
@@ -1588,7 +1920,7 @@
             {
              "item": true,
              "box": [
-              443,
+              450,
               6251,
               250,
               34
@@ -1597,7 +1929,7 @@
               {
                "tag": "h3",
                "box": [
-                443,
+                450,
                 6251,
                 250,
                 34
@@ -1621,7 +1953,7 @@
          "type": "container",
          "cls": "e-con-full e-flex e-con e-child",
          "box": [
-          723,
+          730,
           6158,
           270,
           290
@@ -1641,7 +1973,7 @@
            "type": "heading",
            "cls": "",
            "box": [
-            733,
+            740,
             6168,
             250,
             20
@@ -1654,7 +1986,7 @@
             {
              "tag": "h5",
              "box": [
-              733,
+              740,
               6168,
               250,
               20
@@ -1674,7 +2006,7 @@
            "type": "posts",
            "cls": "",
            "box": [
-            733,
+            740,
             6208,
             250,
             230
@@ -1701,7 +2033,7 @@
             {
              "item": true,
              "box": [
-              733,
+              740,
               6208,
               250,
               34
@@ -1710,7 +2042,7 @@
               {
                "tag": "h3",
                "box": [
-                733,
+                740,
                 6208,
                 250,
                 34
@@ -1728,7 +2060,7 @@
             {
              "item": true,
              "box": [
-              733,
+              740,
               6251,
               250,
               17
@@ -1737,7 +2069,7 @@
               {
                "tag": "h3",
                "box": [
-                733,
+                740,
                 6251,
                 250,
                 17
@@ -1761,7 +2093,7 @@
          "type": "container",
          "cls": "e-con-full e-flex e-con e-child",
          "box": [
-          1013,
+          1020,
           6158,
           270,
           290
@@ -1781,7 +2113,7 @@
            "type": "heading",
            "cls": "",
            "box": [
-            1023,
+            1030,
             6168,
             250,
             20
@@ -1794,7 +2126,7 @@
             {
              "tag": "h5",
              "box": [
-              1023,
+              1030,
               6168,
               250,
               20
@@ -1814,7 +2146,7 @@
            "type": "nav-menu",
            "cls": "",
            "box": [
-            1023,
+            1030,
             6208,
             250,
             150
@@ -1829,7 +2161,7 @@
             {
              "tag": "a",
              "box": [
-              1023,
+              1030,
               6208,
               250,
               30
@@ -1851,7 +2183,7 @@
             {
              "tag": "a",
              "box": [
-              1023,
+              1030,
               6238,
               250,
               30
@@ -1873,7 +2205,7 @@
             {
              "tag": "a",
              "box": [
-              1023,
+              1030,
               6268,
               250,
               30
@@ -1895,7 +2227,7 @@
             {
              "tag": "a",
              "box": [
-              1023,
+              1030,
               6298,
               250,
               30
@@ -1917,7 +2249,7 @@
             {
              "tag": "a",
              "box": [
-              1023,
+              1030,
               6328,
               250,
               30
@@ -1947,7 +2279,7 @@
        "type": "container",
        "cls": "e-con-full e-flex e-con e-child",
        "box": [
-        143,
+        150,
         6508,
         1140,
         66
@@ -1968,7 +2300,7 @@
          "type": "heading",
          "cls": "",
          "box": [
-          153,
+          160,
           6533,
           323,
           16
@@ -1981,7 +2313,7 @@
           {
            "tag": "div",
            "box": [
-            153,
+            160,
             6533,
             323,
             16
@@ -2001,7 +2333,7 @@
          "type": "nav-menu",
          "cls": "",
          "box": [
-          899,
+          907,
           6518,
           373,
           46
@@ -2016,7 +2348,7 @@
           {
            "tag": "a",
            "box": [
-            899,
+            907,
             6518,
             179,
             46
@@ -2040,7 +2372,7 @@
           {
            "tag": "a",
            "box": [
-            1078,
+            1086,
             6518,
             194,
             46

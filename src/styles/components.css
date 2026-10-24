@@ -48,7 +48,8 @@
 	padding: 10px 0 10px 10px;
 	margin: -10px 0;
 }
-.site-header-nav-caret svg { width: 15px; height: 15px; }
+/* The glyph sits in the lower half of its box; lift it to the text midline. */
+.site-header-nav-caret svg { width: 13px; height: 13px; transform: translateY(-3px); }
 .site-header-nav-item a:hover,
 .site-header-nav-item button:hover { color: #bf1e72; }
 .site-header-dropdown {
@@ -57,7 +58,7 @@
 	top: 100%;
 	left: 0;
 	background: #ffffff;
-	min-width: 130px;
+	min-width: 220px;
 	z-index: 1001;
 }
 .site-header-nav-item:hover .site-header-dropdown,
@@ -324,6 +325,8 @@
 	display: flex;
 	justify-content: center;
 }
+/* Extra gap so the dots read as navigation, not part of the last card row. */
+.carousel .swiper-pagination { margin-top: 30px !important; }
 .swiper-pagination .swiper-pagination-bullet {
 	width: 12px !important;
 	height: 12px !important;
@@ -417,11 +420,12 @@
 	text-decoration: none;
 }
 .footer-emails a:hover { color: #CCCCCC; }
-.footer-socials {
+/* SocialIcons (footer + contact) */
+.social-icons {
 	display: flex;
 	gap: 5px;
 }
-.footer-social {
+.social-icon {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -432,8 +436,8 @@
 	text-decoration: none;
 	transition: opacity 0.3s;
 }
-.footer-social:hover { opacity: 0.9; }
-.footer-social svg { width: 17px; height: 17px; }
+.social-icon:hover { opacity: 0.9; }
+.social-icon svg { width: 17px; height: 17px; }
 .footer-menu {
 	list-style: none;
 	padding: 0;
@@ -595,19 +599,28 @@ a.post-card:hover { box-shadow: 0 0 22px -1px rgba(0,0,0,0.5); }
 .resource-card:hover { box-shadow: 0 0 22px -1px rgba(0,0,0,0.5); }
 .resource-card:hover { opacity: 0.5; }
 
-/* PageHero responsive */
+/* PageHero (_global.md). pattern-flat (Singles, Married) keeps its desktop
+   sizes at every width. */
+.page-hero { min-height: 350px; }
+.page-hero--photo { padding: 0 50px; }
+.page-hero--pattern, .page-hero--pattern-flat { padding: 0 10px; }
+.page-hero h1 { font-size: 55px; }
+.page-hero--photo .page-hero__inner { padding-bottom: 50px; }
+.page-hero--pattern .page-hero-waves { height: 23px; }
+.page-hero--pattern-flat .page-hero-waves { height: 37px; }
 @media (max-width: 1024px) {
-	.page-hero--photo { min-height: 309px; padding: 0 25px; }
-	.page-hero--photo h1 { font-size: 40px; padding-bottom: 25px; }
-	.page-hero--pattern, .page-hero--pattern-flat { min-height: 300px; padding: 0 50px; }
+	.page-hero--photo { min-height: 309px; }
+	.page-hero--photo h1 { font-size: 40px; }
+	.page-hero--pattern { min-height: 300px; padding: 0 50px; }
 	.page-hero--pattern h1 { font-size: 40px; }
 }
 @media (max-width: 767px) {
 	.page-hero--photo { min-height: 259px; padding: 0 25px; }
-	.page-hero--photo h1 { font-size: 30px; padding-bottom: 25px; }
-	.page-hero--pattern, .page-hero--pattern-flat { min-height: 250px; padding: 0 30px; }
+	.page-hero--photo h1 { font-size: 30px; }
+	.page-hero--photo .page-hero__inner { padding-bottom: 25px; }
+	.page-hero--pattern { min-height: 250px; padding: 0 30px; }
 	.page-hero--pattern h1 { font-size: 35px; }
-	.page-hero--pattern .page-hero-waves, .page-hero--pattern-flat img[src*="waves"] { height: 17px; }
+	.page-hero--pattern .page-hero-waves { height: 17px; }
 }
 
 /* Rich page content (PortableText page blocks) */

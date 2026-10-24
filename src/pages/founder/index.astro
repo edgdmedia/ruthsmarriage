@@ -114,9 +114,6 @@ const seo = getSeoMeta({
 		background-repeat: no-repeat;
 	}
 	@media (max-width: 1024px) {
-		.story-section {
-			padding: 30px 20px;
-		}
 		.story-inner {
 			flex-direction: column;
 			align-items: stretch;
@@ -132,6 +129,10 @@ const seo = getSeoMeta({
 		}
 	}
 	@media (max-width: 767px) {
+		/* Live keeps 30px at tablet; 20px all round only on mobile. */
+		.story-section {
+			padding: 20px;
+		}
 		.story-photo {
 			background-position: center;
 		}

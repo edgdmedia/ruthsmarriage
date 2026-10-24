@@ -1,6 +1,7 @@
 import type { IconProps } from "./types";
+/** Font Awesome 5 `fas fa-check`. */
 export const IconCheck = ({ className = "", style }: IconProps = {}) => (
-	<svg className={className} style={style} aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor">
-		<path d="M16.7 7.3l-8 8.7-3-3.2-1.3 1.2 4.3 4.5 7.8-8.7z"></path>
+	<svg className={className} style={style} aria-hidden="true" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor">
+		<path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
 	</svg>
 );
