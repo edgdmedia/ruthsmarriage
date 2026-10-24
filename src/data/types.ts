@@ -28,7 +28,13 @@ export interface PortableTextBlock {
 	children: PortableTextSpan[];
 }
 
-export type PortableText = PortableTextBlock[];
+/** Raw HTML body (blog posts, ported verbatim from WordPress; see scripts/reference/post-html.mjs). */
+export interface PortableTextHtml {
+	_type: "html";
+	html: string;
+}
+
+export type PortableText = Array<PortableTextBlock | PortableTextHtml>;
 
 export interface BaseEntry {
 	id: string;

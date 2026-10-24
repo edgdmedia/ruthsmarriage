@@ -1,26 +1,8 @@
 ---
-import Base from "../layouts/Base.astro";
-import { getPost, settings } from "../data";
-import { getSeoMeta } from "../lib/seo";
+// Single-segment URLs: blog posts live at /<slug>/ (as on WordPress); anything
+// else is a 404. The post template is posts/[slug].astro.
+import { getPost } from "../data";
 
 const slug = Astro.params.slug ?? "";
-
-// Posts live at /<slug>/ (same as WordPress); the template is posts/[slug].astro.
-if (getPost(slug)) {
-	return Astro.rewrite(`/posts/${slug}/`);
-}
-
-const seo = getSeoMeta({
-	title: `Page not found: ${slug}`,
-	description: settings.tagline || null,
-	siteTitle: settings.title,
-	siteUrl: Astro.url.origin,
-	path: Astro.url.pathname.replace(/\/$/, ""),
-});
+return Astro.rewrite(getPost(slug) ? `/posts/${slug}/` : "/404");
 ---
-
-<Base title={seo.title} pageTitle={seo.ogTitle} description={seo.description} canonical={seo.canonical} image={seo.ogImage}>
-	<h1>Page not found</h1>
-	<p>The page you're looking for doesn't exist.</p>
-	<a href="/">Go home</a>
-</Base>

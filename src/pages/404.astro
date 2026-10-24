@@ -1,9 +1,13 @@
 ---
+/* 404 (Hello default) — page-maps/default-pages.md "404". */
 import Base from "../layouts/Base.astro";
+import HelloMain from "../components/HelloMain.astro";
+
+Astro.response.status = 404;
 ---
 
-<Base title="Not Found">
-	<h1>Page not found</h1>
-	<p>The page you're looking for doesn't exist.</p>
-	<a href="/">Go home</a>
+<Base title="Page not found">
+	<HelloMain title="The page can’t be found.">
+		<p>It looks like nothing was found at this location.</p>
+	</HelloMain>
 </Base>

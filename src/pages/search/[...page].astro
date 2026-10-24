@@ -1,0 +1,490 @@
+---
+/* Search results — reached via /?s=term and /page/N/?s=term (WordPress URLs),
+   see index.astro and page/[n].astro. `type` narrows to one content type.
+   Owner-requested redesign (2026-10-24), replacing live's plain Hello archive:
+   plum WaveHero with the query and a refine box, type filters with counts,
+   result cards with the query highlighted, numbered paging. */
+import Base from "../../layouts/Base.astro";
+import WaveHero from "../../components/WaveHero.astro";
+import type { ArchiveItem } from "../../components/ArchiveList.astro";
+import { IconSearch } from "../../components/icons/search";
+import { youtubeId } from "../../lib/youtube";
+import { posts, published, resources, services } from "../../data";
+import { pageNumber, paginate, postItem, resourceItem, searchEntries, searchSource, serviceItem } from "../../lib/archive";
+
+const query = (Astro.url.searchParams.get("s") ?? "").trim();
+const type = Astro.url.searchParams.get("type");
+const page = pageNumber(Astro.params.page);
+if (page === null) return Astro.rewrite("/404");
+
+const all = searchEntries(query, [
+	// Videos have no featured image; show their YouTube thumbnail instead.
+	...published(resources).map((r) => {
+		const id = youtubeId(r.video_url);
+		const item = resourceItem(r);
+		if (!item.image && id) item.image = { src: `https://i.ytimg.com/vi/${id}/hqdefault.jpg` };
+		return searchSource(r, item);
+	}),
+	...published(services).map((s) => searchSource(s, serviceItem(s))),
+	...published(posts).map((p) => searchSource(p, postItem(p))),
+]);
+
+const FILTERS: { kind: ArchiveItem["kind"] | null; label: string }[] = [
+	{ kind: null, label: "All" },
+	{ kind: "article", label: "Articles" },
+	{ kind: "service", label: "Services" },
+	{ kind: "resource", label: "Resources" },
+];
+const active = FILTERS.find((f) => f.kind === type) ?? FILTERS[0];
+const results = active.kind ? all.filter((i) => i.kind === active.kind) : all;
+
+const urlFor = (n: number, kind = active.kind) => {
+	const params = new URLSearchParams({ s: query });
+	if (kind) params.set("type", kind);
+	return n === 1 ? `/?${params}` : `/page/${n}/?${params}`;
+};
+const result = paginate(results, page, (n) => urlFor(n));
+if (!result) return Astro.rewrite("/404");
+
+const ACTION = { article: "Read article", service: "View service", resource: "View resource" } as const;
+
+// Escape, then wrap each query word in <mark> (titles and excerpts are plain text).
+const escape = (s: string) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
+const words = query.split(/\s+/).filter(Boolean).map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+const highlight = (s: string) =>
+	words.length ? escape(s).replace(new RegExp(`(${words.map(escape).join("|")})`, "gi"), "<mark>$1</mark>") : escape(s);
+
+const countLabel = `${results.length} ${results.length === 1 ? "result" : "results"}`;
+---
+
+<Base title={query ? `Search results for “${query}”` : "Search"}>
+	<WaveHero>
+		<div class="search-hero">
+			<p class="search-eyebrow">Search results</p>
+			<h1 class="search-title">{query ? <>“{query}”</> : "Search the site"}</h1>
+			<form class="search-form" action="/" method="get" role="search">
+				<input type="search" name="s" value={query} placeholder="Search the site" aria-label="Search" required />
+				<button type="submit"><IconSearch /><span>Search</span></button>
+			</form>
+		</div>
+	</WaveHero>
+
+	<section class="search-body">
+		{all.length > 0 && (
+			<nav class="search-filters" aria-label="Filter results">
+				{FILTERS.map((f) => {
+					const n = f.kind ? all.filter((i) => i.kind === f.kind).length : all.length;
+					return (
+						<a
+							href={urlFor(1, f.kind)}
+							class:list={["search-filter", { "is-active": f === active, "is-empty": n === 0 }]}
+							aria-current={f === active ? "page" : undefined}
+						>
+							{f.label} <span>{n}</span>
+						</a>
+					);
+				})}
+			</nav>
+		)}
+
+		{result.items.length > 0 ? (
+			<>
+				<p class="search-count">
+					{countLabel}{result.pages > 1 && <> · page {result.page} of {result.pages}</>}
+				</p>
+				<ol class="search-results">
+					{result.items.map((item) => (
+						<li class="search-card">
+							<a class="search-card__media" href={item.url} tabindex="-1" aria-hidden="true">
+								{item.image ? (
+									<img src={item.image.src} alt="" loading="lazy" />
+								) : (
+									<span class="search-card__placeholder"><IconSearch /></span>
+								)}
+							</a>
+							<div class="search-card__body">
+								<span class={`search-card__type search-card__type--${item.kind}`}>{item.label}</span>
+								<h2><a href={item.url} set:html={highlight(item.title)} /></h2>
+								{item.excerpt && <p set:html={highlight(item.excerpt)} />}
+								<a class="search-card__more" href={item.url}>
+									{ACTION[item.kind ?? "article"]} <span aria-hidden="true">→</span>
+								</a>
+							</div>
+						</li>
+					))}
+				</ol>
+				{result.pages > 1 && (
+					<nav class="search-paging" aria-label="Pages">
+						{result.prevUrl ? <a class="search-paging__step" href={result.prevUrl}>← Previous</a> : <span />}
+						<span class="search-paging__pages">
+							{Array.from({ length: result.pages }, (_, i) => i + 1).map((n) =>
+								n === result.page ? (
+									<span class="is-current" aria-current="page">{n}</span>
+								) : (
+									<a href={urlFor(n)}>{n}</a>
+								),
+							)}
+						</span>
+						{result.nextUrl ? <a class="search-paging__step" href={result.nextUrl}>Next →</a> : <span />}
+					</nav>
+				)}
+			</>
+		) : (
+			<div class="search-empty">
+				<h2>{query ? <>Nothing matches “{query}”</> : "What are you looking for?"}</h2>
+				<p>Try a shorter or different word, or browse one of these:</p>
+				<div class="search-empty__links">
+					<a href="/inspired-features/">Blog articles</a>
+					<a href="/services/">Counseling services</a>
+					<a href="/resources/">Resources</a>
+					<a href="/videos/">Videos</a>
+				</div>
+			</div>
+		)}
+	</section>
+</Base>
+
+<style>
+	/* ---------------------------------------------------------------- hero */
+	/* Same 900px column as the results below. */
+	.search-hero {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+	.search-eyebrow {
+		margin: 0 0 10px;
+		font-family: Poppins, sans-serif;
+		font-size: 14px;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.7);
+	}
+	.search-title {
+		margin: 0 0 28px;
+		font-family: Nunito, sans-serif;
+		font-weight: 800;
+		font-size: 52px;
+		line-height: 1.1;
+		overflow-wrap: anywhere;
+	}
+	.search-form {
+		display: flex;
+		max-width: 620px;
+		padding: 6px;
+		background: #ffffff;
+		border-radius: 30px;
+		box-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.5);
+	}
+	.search-form input {
+		flex: 1;
+		min-width: 0;
+		padding: 0 18px;
+		border: 0;
+		background: transparent;
+		font-family: Poppins, sans-serif;
+		font-size: 16px;
+		color: #2e2e2e;
+	}
+	.search-form input:focus {
+		outline: none;
+	}
+	.search-form:focus-within {
+		box-shadow: 0 0 0 3px #ed0d82, 0 18px 40px -20px rgba(0, 0, 0, 0.5);
+	}
+	.search-form button {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		height: 44px;
+		padding: 0 22px;
+		border: 0;
+		border-radius: 24px;
+		background: #ed0d82;
+		color: #ffffff;
+		font-family: Nunito, sans-serif;
+		font-weight: 700;
+		font-size: 15px;
+		cursor: pointer;
+	}
+	.search-form button:hover {
+		background: #bf1e72;
+	}
+	.search-form button :global(svg) {
+		width: 14px;
+		height: 14px;
+	}
+
+	/* ---------------------------------------------------------------- body */
+	.search-body {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 40px 50px 80px;
+		box-sizing: content-box;
+	}
+	.search-filters {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin-bottom: 24px;
+	}
+	.search-filter {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 8px 16px;
+		border: 1px solid #e4c3d4;
+		border-radius: 20px;
+		font-family: Poppins, sans-serif;
+		font-size: 14px;
+		color: #5a0f36;
+		text-decoration: none;
+	}
+	.search-filter span {
+		min-width: 22px;
+		padding: 0 6px;
+		border-radius: 11px;
+		background: #bf1e7224;
+		font-size: 12px;
+		line-height: 20px;
+		text-align: center;
+		box-sizing: border-box;
+	}
+	.search-filter:hover {
+		border-color: #bf1e72;
+	}
+	.search-filter.is-active {
+		background: #5a0f36;
+		border-color: #5a0f36;
+		color: #ffffff;
+	}
+	.search-filter.is-active span {
+		background: rgba(255, 255, 255, 0.2);
+	}
+	.search-filter.is-empty {
+		opacity: 0.5;
+	}
+	.search-count {
+		margin: 0 0 16px;
+		font-family: Poppins, sans-serif;
+		font-size: 14px;
+		color: #6b6b6b;
+	}
+
+	/* -------------------------------------------------------------- results */
+	.search-results {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	.search-card {
+		display: grid;
+		grid-template-columns: 220px minmax(0, 1fr);
+		gap: 24px;
+		padding: 16px;
+		background: #ffffff;
+		border: 1px solid #f0dde7;
+		border-radius: 24px;
+		transition: box-shadow 0.2s, border-color 0.2s;
+	}
+	.search-card:hover {
+		border-color: #e4c3d4;
+		box-shadow: 0 18px 36px -24px rgba(90, 15, 54, 0.45);
+	}
+	.search-card__media {
+		display: block;
+		aspect-ratio: 4 / 3;
+		border-radius: 16px;
+		overflow: hidden;
+		background: #bf1e7224;
+	}
+	.search-card__media img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+	.search-card__placeholder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		color: #bf1e72;
+	}
+	.search-card__placeholder :global(svg) {
+		width: 32px;
+		height: 32px;
+		opacity: 0.5;
+	}
+	.search-card__body {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 8px;
+		padding: 4px 8px 4px 0;
+	}
+	.search-card__type {
+		padding: 2px 10px;
+		border-radius: 20px;
+		font-family: Poppins, sans-serif;
+		font-size: 12px;
+		line-height: 20px;
+		color: #ffffff;
+		background: #bf1e72;
+	}
+	.search-card__type--service {
+		background: #5a0f36;
+	}
+	.search-card__type--resource {
+		background: #ed0d82;
+	}
+	.search-card h2 {
+		margin: 0;
+		font-family: Nunito, sans-serif;
+		font-weight: 800;
+		font-size: 22px;
+		line-height: 1.25;
+	}
+	.search-card h2 a {
+		color: #2e2e2e;
+		text-decoration: none;
+	}
+	.search-card h2 a:hover {
+		color: #bf1e72;
+	}
+	.search-card p {
+		margin: 0;
+		font-family: Poppins, sans-serif;
+		font-size: 15px;
+		line-height: 24px;
+		color: #555555;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	/* The signature: matches carry a pink highlighter stroke. */
+	.search-card :global(mark) {
+		background: linear-gradient(transparent 58%, #ed0d8240 58%);
+		color: inherit;
+	}
+	.search-card__more {
+		margin-top: auto;
+		font-family: Nunito, sans-serif;
+		font-weight: 700;
+		font-size: 14px;
+		color: #bf1e72;
+		text-decoration: none;
+	}
+	.search-card__more:hover {
+		color: #ed0d82;
+	}
+
+	/* --------------------------------------------------------------- paging */
+	.search-paging {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		margin-top: 36px;
+		font-family: Nunito, sans-serif;
+		font-weight: 700;
+		font-size: 15px;
+	}
+	.search-paging__step {
+		padding: 10px 20px;
+		border: 1px solid #bf1e72;
+		border-radius: 20px;
+		color: #bf1e72;
+		text-decoration: none;
+	}
+	.search-paging__step:hover {
+		background: #bf1e72;
+		color: #ffffff;
+	}
+	.search-paging__pages {
+		display: flex;
+		gap: 6px;
+	}
+	.search-paging__pages > * {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 38px;
+		height: 38px;
+		border-radius: 50%;
+		color: #5a0f36;
+		text-decoration: none;
+	}
+	.search-paging__pages a:hover {
+		background: #bf1e7224;
+	}
+	.search-paging__pages .is-current {
+		background: #5a0f36;
+		color: #ffffff;
+	}
+
+	/* ---------------------------------------------------------------- empty */
+	.search-empty {
+		padding: 40px;
+		border-radius: 30px;
+		background: #bf1e7224;
+		text-align: center;
+	}
+	.search-empty h2 {
+		margin: 0 0 8px;
+		font-family: Nunito, sans-serif;
+		font-weight: 800;
+		font-size: 26px;
+		color: #5a0f36;
+		overflow-wrap: anywhere;
+	}
+	.search-empty p {
+		margin: 0 0 20px;
+		font-family: Poppins, sans-serif;
+		font-size: 16px;
+		color: #2e2e2e;
+	}
+	.search-empty__links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+	}
+	.search-empty__links a {
+		padding: 10px 20px;
+		border-radius: 20px;
+		background: #ed0d82;
+		color: #ffffff;
+		font-family: Nunito, sans-serif;
+		font-weight: 600;
+		font-size: 15px;
+		text-decoration: none;
+	}
+	.search-empty__links a:hover {
+		background: #bf1e72;
+	}
+
+	@media (max-width: 767px) {
+		.search-title { font-size: 34px; }
+		.search-form button span { display: none; }
+		.search-form button { padding: 0 16px; }
+		.search-body { padding: 28px 20px 60px; }
+		.search-card {
+			grid-template-columns: 96px minmax(0, 1fr);
+			gap: 14px;
+			padding: 12px;
+			border-radius: 20px;
+		}
+		.search-card__media { aspect-ratio: 1; border-radius: 14px; }
+		.search-card h2 { font-size: 18px; }
+		.search-card p { font-size: 14px; line-height: 22px; -webkit-line-clamp: 2; }
+		.search-paging__pages { display: none; }
+		.search-empty { padding: 28px 20px; }
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.search-card { transition: none; }
+	}
+</style>

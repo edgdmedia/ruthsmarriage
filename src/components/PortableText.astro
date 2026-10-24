@@ -1,13 +1,13 @@
 ---
 // Renders PortableText content (block/span shape) used by services, resources and posts.
-import type { PortableText, PortableTextBlock } from "../data/types";
+import type { PortableText } from "../data/types";
 
 interface Props {
 	value?: PortableText | null;
 }
 
 const { value } = Astro.props;
-const blocks: PortableTextBlock[] = value ?? [];
+const blocks = value ?? [];
 
 ---
 {blocks.map((block) => {
@@ -23,5 +23,6 @@ const blocks: PortableTextBlock[] = value ?? [];
 			default: return <p set:html={text} />;
 		}
 	}
+	if (block._type === "html") return <Fragment set:html={block.html} />;
 	return null;
 })}

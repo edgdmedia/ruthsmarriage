@@ -17,6 +17,7 @@ import { Button } from "./Button";
 import { IconCaretDown } from "./icons/caret-down";
 import { IconTimes } from "./icons/times";
 import { IconBars } from "./icons/bars";
+import { IconSearch } from "./icons/search";
 
 interface MenuItem {
 	label: string;
@@ -42,6 +43,11 @@ export const Header = ({
 	const items = menu?.items || [];
 	const [open, setOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
+	const [searchOpen, setSearchOpen] = useState(false);
+	const searchInputRef = useRef<HTMLInputElement>(null);
+	useEffect(() => {
+		if (searchOpen) searchInputRef.current?.focus({ preventScroll: true });
+	}, [searchOpen]);
 	const panelRef = useRef<HTMLDivElement>(null);
 	const firstFocusableRef = useRef<HTMLElement | null>(null);
 	const lastFocusableRef = useRef<HTMLElement | null>(null);
@@ -180,10 +186,40 @@ export const Header = ({
 					</button>
 				</nav>
 				<div className="site-header-cta">
+					<button
+						type="button"
+						className="site-header-search-toggle"
+						aria-label={searchOpen ? "Close search" : "Search"}
+						aria-expanded={searchOpen}
+						aria-controls="site-header-search"
+						onClick={() => setSearchOpen((v) => !v)}
+					>
+						{searchOpen ? <IconTimes /> : <IconSearch />}
+					</button>
 					<Button variant="plum-sm" href={askCoachHref}>
 						Ask Coach Ruth
 					</Button>
 				</div>
+				{searchOpen && (
+					<form
+						id="site-header-search"
+						className="site-header-search"
+						action="/"
+						method="get"
+						role="search"
+						onKeyDown={(e) => e.key === "Escape" && setSearchOpen(false)}
+					>
+						<input
+							ref={searchInputRef}
+							type="search"
+							name="s"
+							placeholder="Search the site"
+							aria-label="Search"
+							required
+						/>
+						<button type="submit">Search</button>
+					</form>
+				)}
 			</div>
 			{open && (
 				<div

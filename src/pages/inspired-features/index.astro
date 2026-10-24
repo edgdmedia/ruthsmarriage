@@ -4,14 +4,13 @@
 import Base from "../../layouts/Base.astro";
 import { PageHero } from "../../components/PageHero";
 import { PostCard } from "../../components/PostCard";
-import { IconSearch } from "../../components/icons/search";
+import BlogSidebar from "../../components/BlogSidebar.astro";
 import { posts, published, settings } from "../../data";
 import { getSeoMeta } from "../../lib/seo";
 
 const list = published(posts).sort((a, b) =>
 	(b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""),
 );
-const popular = list.slice(0, 6);
 
 const heroImage = "/assets/media/2025/06/GetPaidStock.com-64e4f5133c96c.jpg";
 const seo = getSeoMeta({
@@ -44,36 +43,7 @@ const seo = getSeoMeta({
 			</div>
 
 			<aside class="blog__sidebar">
-				<div class="blog__panel">
-					<h5 class="blog__heading">Search</h5>
-					<hr class="blog__divider" />
-					<form class="blog__search" action="/search/" method="get" role="search">
-						<input
-							type="search"
-							name="q"
-							placeholder="Type to start searching..."
-							aria-label="Search"
-						/>
-						<button type="submit" aria-label="Search"><IconSearch /></button>
-					</form>
-				</div>
-
-				<div class="blog__panel">
-					<h5 class="blog__heading">Popular Posts</h5>
-					<hr class="blog__divider" />
-					<ul class="blog__popular">
-						{popular.map((post) => (
-							<li>
-								<a class="blog__thumb" href={`/${post.slug}/`} tabindex="-1" aria-hidden="true">
-									{post.featured_image && (
-										<img src={post.featured_image.src} alt="" loading="lazy" />
-									)}
-								</a>
-								<h6><a href={`/${post.slug}/`}>{post.title}</a></h6>
-							</li>
-						))}
-					</ul>
-				</div>
+				<BlogSidebar />
 			</aside>
 		</div>
 	</section>
@@ -117,97 +87,6 @@ const seo = getSeoMeta({
 		gap: 20px;
 		position: sticky;
 		top: 0;
-	}
-	.blog__panel {
-		background: rgba(141, 141, 141, 0.13);
-		border-radius: 20px;
-		padding: 20px;
-		display: flex;
-		flex-direction: column;
-		gap: 5px;
-	}
-	.blog__heading {
-		font-family: Roboto, sans-serif;
-		font-weight: 600;
-		font-size: 19px;
-		line-height: 19px;
-		color: #000000;
-		margin: 0;
-	}
-	.blog__divider {
-		border: 0;
-		border-top: 1px solid #000000;
-		margin: 7px 0;
-	}
-	.blog__search {
-		display: flex;
-		margin: 0;
-	}
-	.blog__search input {
-		flex: 1;
-		min-width: 0;
-		height: 35px;
-		box-sizing: border-box;
-		background: rgba(255, 255, 255, 0.35);
-		border: 0;
-		border-radius: 20px 0 0 20px;
-		padding: 5px 22px 5px 10px;
-		font-size: 16px;
-		color: #2e2e2e;
-	}
-	.blog__search button {
-		width: 38px;
-		height: 35px;
-		flex-shrink: 0;
-		border: 0;
-		border-radius: 0 20px 20px 0;
-		background: #ed0d82;
-		color: #ffffff;
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	.blog__search button :global(svg) {
-		width: 15px;
-		height: 15px;
-	}
-	.blog__popular {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: flex;
-		flex-direction: column;
-		gap: 19px;
-	}
-	.blog__popular li {
-		display: flex;
-		align-items: flex-start;
-	}
-	.blog__thumb {
-		width: 77px;
-		flex-shrink: 0;
-		margin-right: 20px;
-	}
-	.blog__thumb img {
-		display: block;
-		width: 77px;
-		height: 72px;
-		object-fit: cover;
-	}
-	.blog__popular h6 {
-		margin: 0;
-		font-family: Nunito, sans-serif;
-		font-weight: 600;
-		font-size: 13px;
-		line-height: 15.6px;
-	}
-	.blog__popular h6 a {
-		color: #000000;
-		text-decoration: none;
-	}
-	.blog__popular h6 a:hover {
-		color: #bf1e72;
 	}
 
 	@media (max-width: 1024px) {

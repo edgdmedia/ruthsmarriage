@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import HelloMain from "../../components/HelloMain.astro";
 import { settings } from "../../data";
 import { getSeoMeta } from "../../lib/seo";
 
@@ -19,5 +20,5 @@ const seo = getSeoMeta({
 	canonical={seo.canonical}
 	image={seo.ogImage}
 >
-	<h1>Freebies</h1>
+	<HelloMain title="Freebies" />
 </Base>

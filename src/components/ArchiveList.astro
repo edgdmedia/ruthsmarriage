@@ -1,0 +1,72 @@
+---
+/* ArchiveList — Hello Elementor's archive loop (category, tag, service type,
+   resource type, search). Spec: page-maps/default-pages.md "Archives".
+   Each entry: h2 title link, featured image link (inline, full width,
+   max-height 500 cover), excerpt. 15px between entries; pagination row below. */
+export interface ArchiveItem {
+	title: string;
+	url: string;
+	image?: { src: string; alt?: string; width?: number; height?: number } | null;
+	excerpt?: string;
+	/** Content type (search filters) and its display label, e.g. "resource" / "Book". */
+	kind?: "article" | "service" | "resource";
+	label?: string;
+}
+interface Props {
+	items: ArchiveItem[];
+	prevUrl?: string | null;
+	nextUrl?: string | null;
+}
+const { items, prevUrl, nextUrl } = Astro.props;
+---
+
+{items.map((item) => (
+	<article class="archive-entry">
+		<h2><a href={item.url}>{item.title}</a></h2>
+		{item.image && (
+			<a href={item.url}>
+				<img
+					class="wp-post-image"
+					src={item.image.src}
+					alt={item.image.alt ?? ""}
+					width={item.image.width}
+					height={item.image.height}
+					loading="lazy"
+				/>
+			</a>
+		)}
+		{item.excerpt && <p>{item.excerpt}</p>}
+	</article>
+))}
+
+{(prevUrl || nextUrl) && (
+	<nav class="archive-pagination" aria-label="Pagination">
+		<div>{prevUrl && <a href={prevUrl}><span aria-hidden="true">←</span> Previous</a>}</div>
+		<div>{nextUrl && <a href={nextUrl}>Next <span aria-hidden="true">→</span></a>}</div>
+	</nav>
+)}
+
+<style>
+	.archive-entry {
+		margin-bottom: 15px;
+	}
+	.archive-entry h2 a {
+		text-decoration: none;
+	}
+	/* Hello's .wp-post-image; inline, so the line box adds the ~6px descender gap live has. */
+	.wp-post-image {
+		display: inline;
+		vertical-align: baseline;
+		width: 100%;
+		max-height: 500px;
+		object-fit: cover;
+	}
+	.archive-pagination {
+		display: flex;
+		justify-content: space-between;
+		margin: 20px 0;
+	}
+	.archive-pagination a {
+		text-decoration: none;
+	}
+</style>

@@ -1,0 +1,22 @@
+---
+/* Category archive (Hello default) — page-maps/default-pages.md "Archives". */
+import Base from "../../../layouts/Base.astro";
+import HelloMain from "../../../components/HelloMain.astro";
+import ArchiveList from "../../../components/ArchiveList.astro";
+import { getTerm, published, posts } from "../../../data";
+import { postItem, pageNumber, paginate, pagedUrl } from "../../../lib/archive";
+
+const term = getTerm("category", Astro.params.slug ?? "");
+const page = pageNumber(Astro.params.page);
+if (!term || page === null) return Astro.rewrite("/404");
+
+const entries = published(posts).filter((e) => e.terms?.category?.some((t) => t.slug === term.slug));
+const result = paginate(entries.map(postItem), page, pagedUrl(`/category/${term.slug}/`));
+if (!result) return Astro.rewrite("/404");
+---
+
+<Base title={`Category: ${term.label}`}>
+	<HelloMain title={`Category: ${term.label}`}>
+		<ArchiveList items={result.items} prevUrl={result.prevUrl} nextUrl={result.nextUrl} />
+	</HelloMain>
+</Base>

@@ -1,0 +1,22 @@
+---
+/* Service Type archive (Hello default) — page-maps/default-pages.md "Archives". */
+import Base from "../../../layouts/Base.astro";
+import HelloMain from "../../../components/HelloMain.astro";
+import ArchiveList from "../../../components/ArchiveList.astro";
+import { getTerm, published, services } from "../../../data";
+import { serviceItem, pageNumber, paginate, pagedUrl } from "../../../lib/archive";
+
+const term = getTerm("service_type", Astro.params.slug ?? "");
+const page = pageNumber(Astro.params.page);
+if (!term || page === null) return Astro.rewrite("/404");
+
+const entries = published(services).filter((e) => e.terms?.service_type?.some((t) => t.slug === term.slug));
+const result = paginate(entries.map(serviceItem), page, pagedUrl(`/service-type/${term.slug}/`));
+if (!result) return Astro.rewrite("/404");
+---
+
+<Base title={`Service Type: ${term.label}`}>
+	<HelloMain title={`Service Type: ${term.label}`}>
+		<ArchiveList items={result.items} prevUrl={result.prevUrl} nextUrl={result.nextUrl} />
+	</HelloMain>
+</Base>

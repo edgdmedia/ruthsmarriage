@@ -1,0 +1,7 @@
+---
+// WordPress paged search URL: /page/N/?s=term → the search route's page N.
+const { n } = Astro.params;
+const s = Astro.url.searchParams.get("s");
+if (s === null || !/^\d+$/.test(n ?? "")) return Astro.rewrite("/404");
+return Astro.rewrite(`/search/page/${n}/${Astro.url.search}`);
+---

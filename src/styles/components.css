@@ -88,7 +88,63 @@
 	justify-content: center;
 }
 .site-header-toggle svg { width: 28px; height: 28px; }
-.site-header-cta { width: 16%; display: flex; justify-content: flex-end; }
+.site-header-cta { width: 16%; display: flex; justify-content: flex-end; align-items: center; gap: 10px; }
+/* Header search: round toggle beside "Ask Coach Ruth"; the form drops below the bar. */
+.site-header-search-toggle {
+	width: 34px;
+	height: 34px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: 1px solid #ed0d82;
+	border-radius: 50%;
+	background: transparent;
+	color: #ed0d82;
+	cursor: pointer;
+}
+.site-header-search-toggle:hover,
+.site-header-search-toggle[aria-expanded="true"] { background: #ed0d82; color: #ffffff; }
+.site-header-search-toggle svg { width: 14px; height: 14px; }
+.site-header-search {
+	position: absolute;
+	top: 100%;
+	right: 20px;
+	width: min(440px, calc(100% - 40px));
+	display: flex;
+	padding: 12px;
+	background: #ffffff;
+	border-radius: 0 0 20px 20px;
+	box-shadow: 0 16px 31px -11px rgba(86, 86, 86, 0.35);
+	box-sizing: border-box;
+}
+.site-header-search input {
+	flex: 1;
+	min-width: 0;
+	height: 40px;
+	padding: 0 16px;
+	border: 1px solid #e4c3d4;
+	border-right: 0;
+	border-radius: 20px 0 0 20px;
+	font-family: Poppins, sans-serif;
+	font-size: 14px;
+	color: #2e2e2e;
+}
+.site-header-search input:focus { outline: 2px solid #bf1e72; outline-offset: -2px; }
+.site-header-search button {
+	height: 40px;
+	padding: 0 18px;
+	border: 0;
+	border-radius: 0 20px 20px 0;
+	background: #ed0d82;
+	color: #ffffff;
+	font-family: Nunito, sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	cursor: pointer;
+}
+.site-header-search button:hover { background: #bf1e72; }
 @media (max-width: 1024px) {
 	.site-header-logo { width: 142px; justify-content: flex-start; }
 	.site-header-nav { order: 99999; width: 10%; justify-content: flex-end; }
@@ -455,54 +511,6 @@
 	display: block;
 }
 .footer-menu-link:hover { color: #CCCCCC; }
-.footer-links { }
-/* The Links column's dropdown rows are one widget on live: 30px rows, no gaps. */
-.footer-links-list { display: flex; flex-direction: column; }
-.footer-dropdown-item { }
-.footer-dropdown-toggle {
-	display: flex;
-	align-items: center;
-	gap: 4px;
-	background: transparent;
-	border: none;
-	color: #CCCCCC;
-	font-family: Nunito, sans-serif;
-	font-size: 16px;
-	line-height: 20px;
-	font-weight: 600;
-	cursor: pointer;
-	padding: 5px 0;
-	text-decoration: none;
-	transition: color 0.3s;
-}
-.footer-dropdown-toggle:hover { color: #BF1E72; }
-.footer-dropdown-toggle svg { width: 12px; height: 12px; flex-shrink: 0; }
-.footer-dropdown-children {
-	list-style: none;
-	padding: 0 0 0 20px;
-	margin: 0;
-	display: none;
-	flex-direction: column;
-}
-.footer-dropdown-children li { }
-/* Show children on hover/focus (desktop) or when active class is set (mobile tap) */
-.footer-dropdown-item:hover .footer-dropdown-children,
-.footer-dropdown-item:focus-within .footer-dropdown-children,
-.footer-dropdown-item.active .footer-dropdown-children {
-	display: flex;
-}
-.footer-dropdown-child-link {
-	font-family: Nunito, sans-serif;
-	font-size: 16px;
-	line-height: 20px;
-	font-weight: 600;
-	color: #CCCCCC;
-	text-decoration: none;
-	display: block;
-	padding: 5px 0;
-	transition: color 0.3s;
-}
-.footer-dropdown-child-link:hover { color: #BF1E72; }
 
 /* Bottom bar: flex space-between, align centre, padding 10, height 66 */
 .footer-bottom {

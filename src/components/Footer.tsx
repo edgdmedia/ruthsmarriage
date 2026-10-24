@@ -1,8 +1,6 @@
 /* Footer — Elementor template 329. Near-black, 4 columns + bottom row.
-   Data: menus "primary" / "footer-services" / "footer-resources", settings socials + emails.
+   Data: menus "footer-services" / "footer-resources", FOOTER_LINKS, settings socials + emails.
    Spec: _global.md Footer section. */
-import { useState } from "react";
-import { IconCaretDown } from "./icons/caret-down";
 import { SocialIcons } from "./SocialIcons";
 
 interface MenuItem {
@@ -17,6 +15,15 @@ interface FooterMenus {
 	footerResources?: { items: MenuItem[] };
 }
 
+const FOOTER_LINKS: MenuItem[] = [
+	{ label: "About Us", url: "/about/" },
+	{ label: "Our Story", url: "/our-story/" },
+	{ label: "Blog Articles", url: "/inspired-features/" },
+	{ label: "Videos", url: "/videos/" },
+	{ label: "Ask Coach Ruth", url: "/askcoach/" },
+	{ label: "Contact", url: "/contact/" },
+];
+
 interface FooterSettings {
 	social?: Record<string, string>;
 	contactEmails?: string[];
@@ -28,7 +35,6 @@ export const Footer = ({
 	menus,
 	settings,
 }: { menus?: FooterMenus; settings?: FooterSettings } = {}) => {
-	const primary = menus?.primary || { items: [] };
 	const services = menus?.footerServices || { items: [] };
 	const resources = menus?.footerResources || { items: [] };
 	const socials = settings?.social || {};
@@ -60,15 +66,8 @@ export const Footer = ({
 					{/* 3. Resources */}
 					<FooterMenuColumn title="Resources" items={resources.items} />
 
-					{/* 4. Links (vertical primary menu with carets) */}
-					<div className="footer-col footer-links">
-						<h5 className="footer-col-title">Links</h5>
-						<div className="footer-links-list">
-							{primary.items.map((item, i) => (
-								<FooterDropdownItem key={i} item={item} />
-							))}
-						</div>
-					</div>
+					{/* 4. Links: a short list of plain links (owner request 2026-10-24; live repeats the dropdown menu) */}
+					<FooterMenuColumn title="Links" items={FOOTER_LINKS} />
 				</div>
 
 				{/* Bottom bar: copyright left, legal links right (desktop); legal above copyright centered (mobile) */}
@@ -101,31 +100,3 @@ const FooterMenuColumn = ({ title, items }: { title: string; items: MenuItem[] }
 	</div>
 );
 
-const FooterDropdownItem = ({ item }: { item: MenuItem }) => {
-	const hasChildren = item.children && item.children.length;
-	const [open, setOpen] = useState(false);
-	return (
-		<div className={`footer-dropdown-item${open ? " active" : ""}`}>
-			<button
-				type="button"
-				className="footer-dropdown-toggle"
-				aria-expanded={open}
-				onClick={() => setOpen((o) => !o)}
-			>
-				<span>{item.label}</span>
-				{hasChildren && <IconCaretDown style={{ width: "12px", height: "12px", flexShrink: 0 }} />}
-			</button>
-			{hasChildren && (
-				<ul className="footer-dropdown-children">
-					{item.children!.map((c, j) => (
-						<li key={j}>
-							<a href={c.url || "#"} className="footer-dropdown-child-link">
-								{c.label}
-							</a>
-						</li>
-					))}
-				</ul>
-			)}
-		</div>
-	);
-};

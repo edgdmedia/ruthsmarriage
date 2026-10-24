@@ -1,28 +1,12 @@
 import type { Post } from "../data/types";
+import { htmlToText } from "../lib/excerpt";
 
 /* PostCard — home "Inspired Features" carousel card (template 239).
    360 wide in a 390px slide; whole card links to the post. */
 
-/* The seeded excerpt is raw WP HTML (e.g. "<p>…&#8230;</p>"). Strip tags,
-   decode the common entities, collapse whitespace, then trim to `words`. */
+/* Decoded excerpt minus its trailing ellipsis, trimmed to `words`. */
 function cleanExcerpt(raw: string | null | undefined, words = 10): string {
-	if (!raw) return "";
-	const decoded = raw
-		.replace(/<[^>]+>/g, " ")
-		.replace(/&#8230;|&hellip;/gi, "…")
-		.replace(/&#8217;|&rsquo;/gi, "’")
-		.replace(/&#8216;|&lsquo;/gi, "‘")
-		.replace(/&#8220;|&ldquo;/gi, "“")
-		.replace(/&#8221;|&rdquo;/gi, "”")
-		.replace(/&#8211;|&ndash;/gi, "–")
-		.replace(/&#8212;|&mdash;/gi, "—")
-		.replace(/&nbsp;/gi, " ")
-		.replace(/&amp;/gi, "&")
-		.replace(/&#\d+;/g, "")
-		.replace(/\s+/g, " ")
-		.trim()
-		.replace(/[.…]+$/g, "")
-		.trim();
+	const decoded = htmlToText(raw).replace(/[.…]+$/g, "").trim();
 	const parts = decoded.split(" ");
 	if (parts.length <= words) return decoded;
 	return parts.slice(0, words).join(" ") + "...";

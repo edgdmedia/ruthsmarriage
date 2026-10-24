@@ -1,82 +1,428 @@
 ---
+/* Single blog post — served at /<slug>/ via [slug].astro.
+   Owner-requested redesign (2026-10-24), replacing live's plain Hello template:
+   plum hero with the site's wave edge, the featured image straddling it, a
+   reading column + the Blog Articles sidebar, tags, a "talk it through" panel
+   and three more articles. No comments (README D3). */
 import Base from "../../layouts/Base.astro";
+import BlogSidebar from "../../components/BlogSidebar.astro";
+import WaveHero from "../../components/WaveHero.astro";
 import PortableText from "../../components/PortableText.astro";
-import { getPost, settings } from "../../data";
+import { PostCard } from "../../components/PostCard";
+import { getPost, posts, published, settings } from "../../data";
+import { contentText, htmlToText } from "../../lib/excerpt";
 import { getSeoMeta } from "../../lib/seo";
 
-const slug = Astro.params.slug ?? "";
-const post = getPost(slug);
-
-if (!post) {
-	return Astro.rewrite("/404");
-}
+const post = getPost(Astro.params.slug ?? "");
+if (!post || post.status === "draft") return Astro.rewrite("/404");
 
 const seo = getSeoMeta({
 	title: post.title,
-	description: post.excerpt,
+	description: htmlToText(post.excerpt) || null,
 	image: post.featured_image?.src ?? null,
 	siteTitle: settings.title,
-	siteUrl: Astro.url.origin,
-	path: Astro.url.pathname.replace(/\/$/, ""),
+	siteUrl: "https://www.ruthsmarriage.com",
+	path: `/${post.slug}`,
 });
 
+const category = post.terms?.category?.[0];
 const tags = post.terms?.tag ?? [];
-const categories = post.terms?.category ?? [];
+const date = post.publishedAt
+	? new Date(post.publishedAt).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
+	: null;
+const minutes = Math.max(1, Math.round(contentText(post.content).split(" ").length / 200));
+const more = published(posts)
+	.filter((p) => p.slug !== post.slug)
+	.sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""))
+	.slice(0, 3);
 ---
 
-<Base
-	title={seo.title}
-	pageTitle={seo.ogTitle}
-	description={seo.description}
-	canonical={seo.canonical}
-	image={seo.ogImage}
->
-	<article>
-		{
-			post.featured_image && (
+<Base title={seo.title} pageTitle={seo.ogTitle} description={seo.description} canonical={seo.canonical} image={seo.ogImage}>
+	<article class="post">
+		<WaveHero overlap>
+				<p class="post-meta">
+					{category && (
+						<a class="post-pill" href={`/category/${category.slug}/`}>{category.label}</a>
+					)}
+					<span>
+						{date && <><time datetime={post.publishedAt}>{date}</time> · </>}
+						{minutes} min read
+					</span>
+				</p>
+				<h1 class="post-title">{post.title}</h1>
+		</WaveHero>
+
+		{post.featured_image && (
+			<figure class="post-cover">
 				<img
 					src={post.featured_image.src}
-					alt={post.featured_image.alt}
-					width="1200"
-					height="630"
+					alt={post.featured_image.alt ?? ""}
+					width={post.featured_image.width}
+					height={post.featured_image.height}
 				/>
-			)
-		}
+			</figure>
+		)}
 
-		<h1>{post.title}</h1>
-
-		{
-			post.publishedAt && (
-				<time datetime={post.publishedAt}>
-					{new Date(post.publishedAt).toLocaleDateString("en-US", {
-						year: "numeric",
-						month: "long",
-						day: "numeric",
-					})}
-				</time>
-			)
-		}
-
-		{
-			categories.length > 0 && (
-				<div>
-					{categories.map((c) => (
-						<a href={`/category/${c.slug}/`}>{c.label}</a>
-					))}
+		<div class:list={["post-layout", { "post-layout--no-cover": !post.featured_image }]}>
+			<div class="post-main">
+				<div class="post-content">
+					<PortableText value={post.content} />
 				</div>
-			)
-		}
 
-		<PortableText value={post.content} />
+				{tags.length > 0 && (
+					<p class="post-tags">
+						<span>Tagged</span>
+						{tags.map((t) => <a class="post-tag" href={`/tag/${t.slug}/`}>{t.label}</a>)}
+					</p>
+				)}
 
-		{
-			tags.length > 0 && (
-				<div>
-					{tags.map((t) => (
-						<a href={`/tag/${t.slug}/`}>{t.label}</a>
-					))}
-				</div>
-			)
-		}
+				<aside class="post-help">
+					<h2>Want to talk this through?</h2>
+					<p>
+						Book a private session with Coach Ruth, or send an anonymous question for an Ask
+						Coach Ruth episode.
+					</p>
+					<div class="post-help__actions">
+						<a class="post-btn" href="/services/">See counseling sessions</a>
+						<a class="post-btn post-btn--ghost" href="/askcoach/">Ask a question</a>
+					</div>
+				</aside>
+			</div>
+
+			<aside class="post-sidebar" aria-label="Blog">
+				<BlogSidebar exclude={post.slug} />
+			</aside>
+		</div>
 	</article>
+
+	{more.length > 0 && (
+		<section class="post-more" aria-labelledby="post-more-title">
+			<div class="post-more__inner">
+				<h2 id="post-more-title">Keep reading</h2>
+				<div class="post-more__grid">
+					{more.map((p) => <PostCard post={p} maxWidth={400} />)}
+				</div>
+			</div>
+		</section>
+	)}
 </Base>
+
+<style>
+	/* ---------------------------------------------------------------- hero */
+	.post-meta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 8px 18px;
+		margin: 0 0 22px;
+		font-family: Poppins, sans-serif;
+		font-size: 14px;
+		line-height: 20px;
+		color: rgba(255, 255, 255, 0.78);
+	}
+	.post-pill {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		padding: 3px 12px 3px 8px;
+		border-radius: 20px;
+		background: #bf1e72;
+		color: #ffffff;
+		font-size: 13px;
+		text-decoration: none;
+	}
+	.post-pill::before {
+		content: "";
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: #ffffff;
+	}
+	.post-pill:hover {
+		background: #ed0d82;
+	}
+	.post-title {
+		max-width: 900px;
+		margin: 0;
+		font-family: Nunito, sans-serif;
+		font-weight: 800;
+		font-size: 52px;
+		line-height: 1.1;
+		letter-spacing: -0.01em;
+		text-wrap: balance;
+	}
+
+	/* The signature: the cover sits half on the plum hero, half on white. */
+	.post-cover {
+		position: relative;
+		z-index: 1;
+		max-width: 1140px;
+		margin: -150px auto 0;
+		padding: 0 50px;
+		box-sizing: content-box;
+	}
+	.post-cover img {
+		display: block;
+		width: 100%;
+		height: auto;
+		max-height: 540px;
+		object-fit: cover;
+		border-radius: 30px;
+		box-shadow: 0 24px 48px -24px rgba(90, 15, 54, 0.45);
+	}
+
+	/* -------------------------------------------------------------- layout */
+	.post-layout {
+		max-width: 1140px;
+		margin: 0 auto;
+		padding: 60px 50px 70px;
+		box-sizing: content-box;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 280px;
+		gap: 60px;
+		align-items: start;
+	}
+	.post-layout--no-cover {
+		padding-top: 0;
+		margin-top: -110px;
+		position: relative;
+	}
+	.post-main {
+		max-width: 720px;
+	}
+	.post-sidebar {
+		position: sticky;
+		top: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	/* ------------------------------------------------------------- content */
+	.post-content {
+		font-family: Poppins, sans-serif;
+		font-size: 17px;
+		line-height: 30px;
+		color: #2e2e2e;
+	}
+	.post-content :global(p) {
+		margin: 0 0 22px;
+	}
+	.post-content :global(> p:first-child) {
+		font-size: 20px;
+		line-height: 34px;
+		color: #5a0f36;
+	}
+	.post-content :global(:is(h2, h3, h4)) {
+		font-family: Nunito, sans-serif;
+		font-weight: 800;
+		color: #5a0f36;
+		margin: 44px 0 16px;
+		line-height: 1.25;
+	}
+	.post-content :global(h2) { font-size: 30px; }
+	.post-content :global(h3) { font-size: 24px; }
+	.post-content :global(h4) { font-size: 20px; }
+	.post-content :global(a) {
+		color: #bf1e72;
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 3px;
+	}
+	.post-content :global(a:hover) {
+		color: #ed0d82;
+	}
+	.post-content :global(:is(ul, ol)) {
+		margin: 0 0 22px;
+		padding-left: 24px;
+	}
+	.post-content :global(li) {
+		margin-bottom: 8px;
+	}
+	.post-content :global(li::marker) {
+		color: #bf1e72;
+	}
+	.post-content :global(blockquote) {
+		position: relative;
+		margin: 36px 0;
+		padding: 32px 32px 32px 76px;
+		background: #f8e8f0;
+		border-radius: 20px;
+		color: #5a0f36;
+		font-size: 19px;
+		line-height: 32px;
+	}
+	.post-content :global(blockquote::before) {
+		content: "“";
+		position: absolute;
+		top: 14px;
+		left: 24px;
+		font-family: Nunito, sans-serif;
+		font-weight: 800;
+		font-size: 72px;
+		line-height: 1;
+		color: #ed0d82;
+	}
+	.post-content :global(blockquote p:last-child) {
+		margin-bottom: 0;
+	}
+	.post-content :global(cite) {
+		display: block;
+		margin-top: 10px;
+		font-size: 14px;
+		font-style: normal;
+		color: #bf1e72;
+	}
+	.post-content :global(figure) {
+		margin: 0;
+	}
+	.post-content :global(.has-text-align-center) {
+		text-align: center;
+	}
+	.post-content :global(.has-vivid-cyan-blue-color) {
+		background: none;
+		color: #bf1e72;
+	}
+	.post-content :global(img) {
+		max-width: 100%;
+		height: auto;
+		border-radius: 20px;
+	}
+
+	/* ---------------------------------------------------------- tags + help */
+	.post-tags {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 8px;
+		margin: 36px 0 0;
+		padding-top: 24px;
+		border-top: 1px solid #ecd3e0;
+		font-family: Poppins, sans-serif;
+		font-size: 14px;
+		color: #6b6b6b;
+	}
+	.post-tag {
+		padding: 4px 14px;
+		border: 1px solid #bf1e72;
+		border-radius: 20px;
+		color: #bf1e72;
+		text-decoration: none;
+	}
+	.post-tag:hover {
+		background: #bf1e72;
+		color: #ffffff;
+	}
+	.post-help {
+		margin-top: 44px;
+		padding: 36px 40px;
+		border-radius: 30px;
+		background: #bf1e7224;
+	}
+	.post-help h2 {
+		margin: 0 0 10px;
+		font-family: Nunito, sans-serif;
+		font-weight: 800;
+		font-size: 26px;
+		line-height: 1.2;
+		color: #5a0f36;
+	}
+	.post-help p {
+		margin: 0 0 24px;
+		font-family: Poppins, sans-serif;
+		font-size: 16px;
+		line-height: 26px;
+		color: #2e2e2e;
+	}
+	.post-help__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+	.post-btn {
+		padding: 12px 24px;
+		border: 1px solid #ed0d82;
+		border-radius: 20px;
+		background: #ed0d82;
+		color: #ffffff;
+		font-family: Nunito, sans-serif;
+		font-weight: 600;
+		font-size: 15px;
+		line-height: 15px;
+		text-decoration: none;
+	}
+	.post-btn:hover {
+		background: #bf1e72;
+		border-color: #bf1e72;
+	}
+	.post-btn--ghost {
+		background: transparent;
+		color: #bf1e72;
+		border-color: #bf1e72;
+	}
+	.post-btn--ghost:hover {
+		color: #ffffff;
+	}
+
+	/* -------------------------------------------------------------- more */
+	.post-more {
+		background: #bf1e7224;
+		padding: 60px 50px 70px;
+	}
+	.post-more__inner {
+		max-width: 1140px;
+		margin: 0 auto;
+	}
+	.post-more h2 {
+		margin: 0 0 28px;
+		font-family: Nunito, sans-serif;
+		font-weight: 800;
+		font-size: 30px;
+		color: #5a0f36;
+	}
+	.post-more__grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 20px;
+	}
+	.post-more__grid :global(.post-card) {
+		max-width: none !important;
+		height: 100%;
+	}
+
+	/* ---------------------------------------------------------- responsive */
+	@media (max-width: 1024px) {
+		.post-title { font-size: 42px; }
+		.post-layout {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 40px;
+		}
+		.post-main { max-width: none; }
+		.post-sidebar {
+			position: static;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			align-items: start;
+		}
+		.post-more__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	}
+	@media (max-width: 767px) {
+		.post-title { font-size: 32px; }
+		.post-cover {
+			margin-top: -90px;
+			padding: 0 20px;
+		}
+		.post-cover img { border-radius: 20px; }
+		.post-layout { padding: 36px 20px 50px; }
+		.post-layout--no-cover { margin-top: -70px; }
+		.post-content { font-size: 16px; line-height: 28px; }
+		.post-content :global(> p:first-child) { font-size: 18px; line-height: 30px; }
+		.post-content :global(h2) { font-size: 25px; }
+		.post-content :global(blockquote) { padding: 56px 22px 24px; }
+		.post-content :global(blockquote::before) { top: 8px; left: 20px; }
+		.post-help { padding: 28px 24px; }
+		.post-sidebar { grid-template-columns: 1fr; }
+		.post-more { padding: 44px 20px 50px; }
+		.post-more__grid { grid-template-columns: 1fr; }
+	}
+</style>

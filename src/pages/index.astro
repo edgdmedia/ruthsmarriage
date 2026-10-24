@@ -11,6 +11,9 @@ import { PostCard } from "../components/PostCard";
 import { Button } from "../components/Button";
 import { banners, posts, resources, services, settings, testimonials } from "../data";
 
+// WordPress search lives at /?s=term; serve it from the search route.
+if (Astro.url.searchParams.has("s")) return Astro.rewrite(`/search/${Astro.url.search}`);
+
 const heroSlides = banners;
 
 /** Live picks 6 slides at random on every request (JetEngine `orderby: rand`). */
