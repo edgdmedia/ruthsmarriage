@@ -24,9 +24,11 @@ Tip: put `data-section="<live container id>"` on each top-level section (ids are
 | V8 | **Full sweep**: `node scripts/qa/visual-compare.mjs` (all 31 pages × 3 widths) | all | 🧑 **G2b**: human signs off the full REPORT + side-by-sides |
 
 ## After G2b (unpause in this order)
-1. Phase 6.4: Ask Coach backend (Astro action + Turnstile + **Resend**: the key is in `dev.local`, git-ignored; move it to `.dev.vars` for local and a Worker secret for prod).
-2. Phase 7: SEO, legacy redirects, caching, performance.
-3. Phase 9: staging deploy. Phase 10: cutover.
+Owner decisions (2026-10-24): **no legacy redirects**; deploy to a **VPS** (not Cloudflare Workers) and **set EmDash up** there as the CMS.
+
+1. Phase 6.4: Ask Coach backend (Astro action + Turnstile + **Resend**: the key is in `dev.local`, git-ignored; keep it in a server env file on the VPS, never in git).
+2. Phase 7: SEO, caching, performance. **Skip the legacy redirects.**
+3. Phase 9: deploy to the VPS with EmDash set up (replaces the Workers/D1 staging plan). Phase 10: cutover.
 
 ## Rules during the visual track
 - The page maps win. If the map and live disagree, check live with the reference tools (`outline.mjs`, `responsive.mjs`, `sections.mjs`) and note it in the progress file; don't guess.
