@@ -1,8 +1,9 @@
 ---
-/* Tag archive (Hello default) — page-maps/default-pages.md "Archives". */
+/* Tag archive — same page and listing as search (owner request
+   2026-10-24): ListingHero + ResultList, WordPress /page/N/ URLs. */
 import Base from "../../../layouts/Base.astro";
-import HelloMain from "../../../components/HelloMain.astro";
-import ArchiveList from "../../../components/ArchiveList.astro";
+import ListingHero from "../../../components/ListingHero.astro";
+import ResultList from "../../../components/ResultList.astro";
 import { getTerm, published, posts } from "../../../data";
 import { postItem, pageNumber, paginate, pagedUrl } from "../../../lib/archive";
 
@@ -11,12 +12,17 @@ const page = pageNumber(Astro.params.page);
 if (!term || page === null) return Astro.rewrite("/404");
 
 const entries = published(posts).filter((e) => e.terms?.tag?.some((t) => t.slug === term.slug));
-const result = paginate(entries.map(postItem), page, pagedUrl(`/tag/${term.slug}/`));
+const pageUrl = pagedUrl(`/tag/${term.slug}/`);
+const result = paginate(entries.map(postItem), page, pageUrl);
 if (!result) return Astro.rewrite("/404");
 ---
 
 <Base title={`Tag: ${term.label}`}>
-	<HelloMain title={`Tag: ${term.label}`}>
-		<ArchiveList items={result.items} prevUrl={result.prevUrl} nextUrl={result.nextUrl} />
-	</HelloMain>
+	<ListingHero eyebrow="Tag" title={term.label} />
+	<ResultList
+		{...result}
+		pageUrl={pageUrl}
+		countLabel={`${entries.length} ${entries.length === 1 ? "article" : "articles"}`}
+		empty={{ title: "Nothing here yet", text: "Browse one of these instead:" }}
+	/>
 </Base>

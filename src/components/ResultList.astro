@@ -1,0 +1,307 @@
+---
+/* ResultList — the listing used by search and the archive pages: count line,
+   result cards (thumbnail, type label, title, excerpt, action link), numbered
+   paging and an empty state. `highlight` marks the search words in titles and
+   excerpts. The "filters" slot sits above the count (search's type tabs). */
+import type { ArchiveItem } from "../lib/archive";
+import { IconSearch } from "./icons/search";
+
+interface Props {
+	items: ArchiveItem[];
+	page: number;
+	pages: number;
+	prevUrl: string | null;
+	nextUrl: string | null;
+	pageUrl: (page: number) => string;
+	/** e.g. "27 results" or "16 articles". */
+	countLabel: string;
+	highlight?: string;
+	empty: { title: string; text: string };
+}
+const { items, page, pages, prevUrl, nextUrl, pageUrl, countLabel, highlight = "", empty } = Astro.props;
+
+const ACTION = { article: "Read article", service: "View service", resource: "View resource" } as const;
+
+// Escape, then wrap each search word in <mark> (titles and excerpts are plain text).
+const escape = (s: string) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
+const words = highlight.split(/\s+/).filter(Boolean).map((w) => escape(w).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+const mark = (s: string) =>
+	words.length ? escape(s).replace(new RegExp(`(${words.join("|")})`, "gi"), "<mark>$1</mark>") : escape(s);
+---
+
+<section class="listing-body">
+	<slot name="filters" />
+
+	{items.length > 0 ? (
+		<>
+			<p class="listing-count">
+				{countLabel}{pages > 1 && <> · page {page} of {pages}</>}
+			</p>
+			<ol class="listing-results">
+				{items.map((item) => (
+					<li class="listing-card">
+						<a class="listing-card__media" href={item.url} tabindex="-1" aria-hidden="true">
+							{item.image ? (
+								<img src={item.image.src} alt="" loading="lazy" />
+							) : (
+								<span class="listing-card__placeholder"><IconSearch /></span>
+							)}
+						</a>
+						<div class="listing-card__body">
+							<span class={`listing-card__type listing-card__type--${item.kind}`}>{item.label}</span>
+							<h2><a href={item.url} set:html={mark(item.title)} /></h2>
+							{item.excerpt && <p set:html={mark(item.excerpt)} />}
+							<a class="listing-card__more" href={item.url}>
+								{ACTION[item.kind ?? "article"]} <span aria-hidden="true">→</span>
+							</a>
+						</div>
+					</li>
+				))}
+			</ol>
+			{pages > 1 && (
+				<nav class="listing-paging" aria-label="Pages">
+					{prevUrl ? <a class="listing-paging__step" href={prevUrl}>← Previous</a> : <span />}
+					<span class="listing-paging__pages">
+						{Array.from({ length: pages }, (_, i) => i + 1).map((n) =>
+							n === page ? <span class="is-current" aria-current="page">{n}</span> : <a href={pageUrl(n)}>{n}</a>,
+						)}
+					</span>
+					{nextUrl ? <a class="listing-paging__step" href={nextUrl}>Next →</a> : <span />}
+				</nav>
+			)}
+		</>
+	) : (
+		<div class="listing-empty">
+			<h2>{empty.title}</h2>
+			<p>{empty.text}</p>
+			<div class="listing-empty__links">
+				<a href="/inspired-features/">Blog articles</a>
+				<a href="/services/">Counseling services</a>
+				<a href="/resources/">Resources</a>
+				<a href="/videos/">Videos</a>
+			</div>
+		</div>
+	)}
+</section>
+
+<style>
+	.listing-body {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 40px 50px 80px;
+		box-sizing: content-box;
+	}
+	.listing-count {
+		margin: 0 0 16px;
+		font-family: Poppins, sans-serif;
+		font-size: 14px;
+		color: #6b6b6b;
+	}
+	.listing-results {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	.listing-card {
+		display: grid;
+		grid-template-columns: 220px minmax(0, 1fr);
+		gap: 24px;
+		padding: 16px;
+		background: #ffffff;
+		border: 1px solid #f0dde7;
+		border-radius: 24px;
+		transition: box-shadow 0.2s, border-color 0.2s;
+	}
+	.listing-card:hover {
+		border-color: #e4c3d4;
+		box-shadow: 0 18px 36px -24px rgba(90, 15, 54, 0.45);
+	}
+	.listing-card__media {
+		display: block;
+		aspect-ratio: 4 / 3;
+		border-radius: 16px;
+		overflow: hidden;
+		background: #bf1e7224;
+	}
+	.listing-card__media img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+	.listing-card__placeholder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		color: #bf1e72;
+	}
+	.listing-card__placeholder :global(svg) {
+		width: 32px;
+		height: 32px;
+		opacity: 0.5;
+	}
+	.listing-card__body {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 8px;
+		padding: 4px 8px 4px 0;
+	}
+	.listing-card__type {
+		padding: 2px 10px;
+		border-radius: 20px;
+		font-family: Poppins, sans-serif;
+		font-size: 12px;
+		line-height: 20px;
+		color: #ffffff;
+		background: #bf1e72;
+	}
+	.listing-card__type--service {
+		background: #5a0f36;
+	}
+	.listing-card__type--resource {
+		background: #ed0d82;
+	}
+	.listing-card h2 {
+		margin: 0;
+		font-family: Nunito, sans-serif;
+		font-weight: 800;
+		font-size: 22px;
+		line-height: 1.25;
+	}
+	.listing-card h2 a {
+		color: #2e2e2e;
+		text-decoration: none;
+	}
+	.listing-card h2 a:hover {
+		color: #bf1e72;
+	}
+	.listing-card p {
+		margin: 0;
+		font-family: Poppins, sans-serif;
+		font-size: 15px;
+		line-height: 24px;
+		color: #555555;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	.listing-card :global(mark) {
+		background: linear-gradient(transparent 58%, #ed0d8240 58%);
+		color: inherit;
+	}
+	.listing-card__more {
+		margin-top: auto;
+		font-family: Nunito, sans-serif;
+		font-weight: 700;
+		font-size: 14px;
+		color: #bf1e72;
+		text-decoration: none;
+	}
+	.listing-card__more:hover {
+		color: #ed0d82;
+	}
+	.listing-paging {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		margin-top: 36px;
+		font-family: Nunito, sans-serif;
+		font-weight: 700;
+		font-size: 15px;
+	}
+	.listing-paging__step {
+		padding: 10px 20px;
+		border: 1px solid #bf1e72;
+		border-radius: 20px;
+		color: #bf1e72;
+		text-decoration: none;
+	}
+	.listing-paging__step:hover {
+		background: #bf1e72;
+		color: #ffffff;
+	}
+	.listing-paging__pages {
+		display: flex;
+		gap: 6px;
+	}
+	.listing-paging__pages > * {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 38px;
+		height: 38px;
+		border-radius: 50%;
+		color: #5a0f36;
+		text-decoration: none;
+	}
+	.listing-paging__pages a:hover {
+		background: #bf1e7224;
+	}
+	.listing-paging__pages .is-current {
+		background: #5a0f36;
+		color: #ffffff;
+	}
+	.listing-empty {
+		padding: 40px;
+		border-radius: 30px;
+		background: #bf1e7224;
+		text-align: center;
+	}
+	.listing-empty h2 {
+		margin: 0 0 8px;
+		font-family: Nunito, sans-serif;
+		font-weight: 800;
+		font-size: 26px;
+		color: #5a0f36;
+		overflow-wrap: anywhere;
+	}
+	.listing-empty p {
+		margin: 0 0 20px;
+		font-family: Poppins, sans-serif;
+		font-size: 16px;
+		color: #2e2e2e;
+	}
+	.listing-empty__links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+	}
+	.listing-empty__links a {
+		padding: 10px 20px;
+		border-radius: 20px;
+		background: #ed0d82;
+		color: #ffffff;
+		font-family: Nunito, sans-serif;
+		font-weight: 600;
+		font-size: 15px;
+		text-decoration: none;
+	}
+	.listing-empty__links a:hover {
+		background: #bf1e72;
+	}
+	@media (max-width: 767px) {
+		.listing-body { padding: 28px 20px 60px; }
+		.listing-card {
+			grid-template-columns: 96px minmax(0, 1fr);
+			gap: 14px;
+			padding: 12px;
+			border-radius: 20px;
+		}
+		.listing-card__media { aspect-ratio: 1; border-radius: 14px; }
+		.listing-card h2 { font-size: 18px; }
+		.listing-card p { font-size: 14px; line-height: 22px; -webkit-line-clamp: 2; }
+		.listing-paging__pages { display: none; }
+		.listing-empty { padding: 28px 20px; }
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.listing-card { transition: none; }
+	}
+</style>

@@ -1,44 +1,19 @@
 ---
-/* WaveHero — plum band with the site's wave edge (the PageHero pattern-flat
-   waves), used by the redesigned blog post and search pages. The slot is the
-   band's content in a 1140 column; `overlap` adds bottom room for something
-   that straddles the wave (the post cover). */
+/* WaveHero — the site's page header (styles: components.css "Page header").
+   Pass `image` for a photo header; without it the band shows the pink circles
+   pattern. `overlap` adds bottom room for a cover that straddles the wave.
+   PageHero.tsx renders the same markup for the React-era pages. */
 interface Props {
+	image?: string;
 	overlap?: boolean;
 }
-const { overlap = false } = Astro.props;
+const { image, overlap = false } = Astro.props;
 ---
 
-<header class:list={["wave-hero", { "wave-hero--overlap": overlap }]}>
+<header
+	class:list={["wave-hero", image ? "wave-hero--photo" : "wave-hero--pattern", { "wave-hero--overlap": overlap }]}
+	style={image ? `--hero-bg: url("${image}")` : undefined}
+>
 	<div class="wave-hero__inner"><slot /></div>
 	<img class="wave-hero__waves" src="/assets/waves.svg" alt="" />
 </header>
-
-<style>
-	.wave-hero {
-		position: relative;
-		background: #5a0f36;
-		color: #ffffff;
-		padding: 70px 50px 100px;
-	}
-	.wave-hero--overlap {
-		padding-bottom: 200px;
-	}
-	.wave-hero__inner {
-		max-width: 1140px;
-		margin: 0 auto;
-	}
-	.wave-hero__waves {
-		position: absolute;
-		bottom: -1px;
-		left: 50%;
-		width: calc(100% + 1.3px);
-		height: 37px;
-		transform: translateX(-50%) rotate(180deg);
-		display: block;
-	}
-	@media (max-width: 767px) {
-		.wave-hero { padding: 40px 20px 80px; }
-		.wave-hero--overlap { padding-bottom: 120px; }
-	}
-</style>

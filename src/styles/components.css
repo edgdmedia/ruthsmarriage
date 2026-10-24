@@ -607,28 +607,69 @@ a.post-card:hover { box-shadow: 0 0 22px -1px rgba(0,0,0,0.5); }
 .resource-card:hover { box-shadow: 0 0 22px -1px rgba(0,0,0,0.5); }
 .resource-card:hover { opacity: 0.5; }
 
-/* PageHero (_global.md). pattern-flat (Singles, Married) keeps its desktop
-   sizes at every width. */
-.page-hero { min-height: 350px; }
-.page-hero--photo { padding: 0 50px; }
-.page-hero--pattern, .page-hero--pattern-flat { padding: 0 10px; }
-.page-hero h1 { font-size: 55px; }
-.page-hero--photo .page-hero__inner { padding-bottom: 50px; }
-.page-hero--pattern .page-hero-waves { height: 23px; }
-.page-hero--pattern-flat .page-hero-waves { height: 37px; }
+/* Page header (owner request 2026-10-24): one design for every page, rendered
+   by WaveHero.astro and PageHero.tsx. A plum band over either the page's photo
+   (--photo: plum gradient, photo shows on the right) or a tiled pattern
+   (--pattern: the pink circles unless the page sets its own), a left-aligned
+   title in the 1140 column, and the wave edge. --overlap leaves room for a
+   cover image that straddles the wave (blog posts). */
+.wave-hero {
+	position: relative;
+	padding: 70px 50px 100px;
+	background-color: #5a0f36;
+	background-image: var(--hero-bg, url("/assets/media/2025/06/pink-overlapping-circles-pattern.webp"));
+	color: #ffffff;
+	overflow: hidden;
+}
+.wave-hero--pattern { background-size: auto; background-position: center; }
+.wave-hero--photo { background-size: cover; background-position: center; padding-top: 120px; padding-bottom: 130px; }
+.wave-hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(90, 15, 54, 0.9);
+}
+.wave-hero--photo::before {
+	background: linear-gradient(90deg, rgba(90, 15, 54, 0.9) 0%, rgba(90, 15, 54, 0.6) 45%, rgba(90, 15, 54, 0.15) 100%);
+}
+.wave-hero--overlap { padding-bottom: 200px; }
+.wave-hero__inner {
+	position: relative;
+	z-index: 1;
+	max-width: 1140px;
+	margin: 0 auto;
+}
+.wave-hero__title {
+	max-width: 900px;
+	margin: 0;
+	font-family: Nunito, sans-serif;
+	font-weight: 800;
+	font-size: 52px;
+	line-height: 1.1;
+	letter-spacing: -0.01em;
+	color: #ffffff;
+	text-wrap: balance;
+}
+.wave-hero__waves {
+	position: absolute;
+	z-index: 1;
+	bottom: -1px;
+	left: 50%;
+	width: calc(100% + 1.3px);
+	height: 37px;
+	transform: translateX(-50%) rotate(180deg);
+	display: block;
+}
 @media (max-width: 1024px) {
-	.page-hero--photo { min-height: 309px; }
-	.page-hero--photo h1 { font-size: 40px; }
-	.page-hero--pattern { min-height: 300px; padding: 0 50px; }
-	.page-hero--pattern h1 { font-size: 40px; }
+	.wave-hero__title { font-size: 42px; }
 }
 @media (max-width: 767px) {
-	.page-hero--photo { min-height: 259px; padding: 0 25px; }
-	.page-hero--photo h1 { font-size: 30px; }
-	.page-hero--photo .page-hero__inner { padding-bottom: 25px; }
-	.page-hero--pattern { min-height: 250px; padding: 0 30px; }
-	.page-hero--pattern h1 { font-size: 35px; }
-	.page-hero--pattern .page-hero-waves { height: 17px; }
+	.wave-hero { padding: 40px 20px 80px; }
+	.wave-hero--photo { padding-top: 80px; padding-bottom: 90px; }
+	.wave-hero--photo::before { background: linear-gradient(0deg, rgba(90, 15, 54, 0.9) 0%, rgba(90, 15, 54, 0.45) 100%); }
+	.wave-hero--overlap { padding-bottom: 120px; }
+	.wave-hero__title { font-size: 32px; }
+	.wave-hero__waves { height: 24px; }
 }
 
 /* Rich page content (PortableText page blocks) */

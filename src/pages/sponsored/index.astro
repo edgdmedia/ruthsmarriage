@@ -21,20 +21,6 @@ const seo = getSeoMeta({
 	canonical={seo.canonical}
 	image={seo.ogImage}
 >
-	<PageHero variant="pattern" title="Sponsored" className="sponsored-hero" />
+	<PageHero variant="pattern" title="Sponsored" />
 	<EmptyState />
 </Base>
-
-<style>
-	.sponsored-hero {
-		width: 1140px;
-		margin: 0 auto;
-	}
-	@media (max-width: 1024px) {
-		.sponsored-hero {
-			width: 100%;
-			padding: 0 10px;
-			box-sizing: border-box;
-		}
-	}
-</style>

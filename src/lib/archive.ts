@@ -1,8 +1,19 @@
 /* Archive helpers for the Hello-default listing pages (category, tag, service
    type, resource type, search). Spec: page-maps/default-pages.md "Archives". */
-import type { ArchiveItem } from "../components/ArchiveList.astro";
+import { youtubeId } from "./youtube";
 import type { Post, Resource, Service } from "../data/types";
 import { archiveExcerpt, contentText } from "./excerpt";
+
+/** One entry in a listing (search and archive pages; see ResultList.astro). */
+export interface ArchiveItem {
+	title: string;
+	url: string;
+	image?: { src: string; alt?: string; width?: number; height?: number } | null;
+	excerpt?: string;
+	/** Content type (search filters) and its display label, e.g. "resource" / "Book". */
+	kind?: "article" | "service" | "resource";
+	label?: string;
+}
 
 export const PER_PAGE = 10;
 
@@ -22,10 +33,15 @@ export const serviceItem = (s: Service): ArchiveItem => ({
 	kind: "service",
 	label: "Service",
 });
+// Videos have no featured image; their YouTube thumbnail stands in.
+const videoThumb = (url: string | null | undefined) => {
+	const id = youtubeId(url);
+	return id ? { src: `https://i.ytimg.com/vi/${id}/hqdefault.jpg` } : null;
+};
 export const resourceItem = (r: Resource): ArchiveItem => ({
 	title: r.title,
 	url: `/resource/${r.slug}/`,
-	image: r.featured_image,
+	image: r.featured_image ?? videoThumb(r.video_url),
 	excerpt: archiveExcerpt(r),
 	kind: "resource",
 	label: r.terms?.resource_type?.[0]?.label ?? "Resource",

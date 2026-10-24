@@ -1,0 +1,101 @@
+---
+/* ListingHero — the plum WaveHero used by search and the archive pages
+   (category, tag, service type, resource type): a small label, the title and
+   a search box (prefilled on search). Content sits in the same 900px column
+   as ResultList below it. */
+import WaveHero from "./WaveHero.astro";
+import { IconSearch } from "./icons/search";
+
+interface Props {
+	eyebrow: string;
+	title: string;
+	/** Prefills the search box (the search page's query). */
+	query?: string;
+}
+const { eyebrow, title, query = "" } = Astro.props;
+---
+
+<WaveHero>
+	<div class="listing-hero">
+		<p class="listing-eyebrow">{eyebrow}</p>
+		<h1 class="listing-title">{title}</h1>
+		<form class="listing-form" action="/" method="get" role="search">
+			<input type="search" name="s" value={query} placeholder="Search the site" aria-label="Search" required />
+			<button type="submit"><IconSearch /><span>Search</span></button>
+		</form>
+	</div>
+</WaveHero>
+
+<style>
+	.listing-hero {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+	.listing-eyebrow {
+		margin: 0 0 10px;
+		font-family: Poppins, sans-serif;
+		font-size: 14px;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.7);
+	}
+	.listing-title {
+		margin: 0 0 28px;
+		font-family: Nunito, sans-serif;
+		font-weight: 800;
+		font-size: 52px;
+		line-height: 1.1;
+		overflow-wrap: anywhere;
+	}
+	.listing-form {
+		display: flex;
+		max-width: 620px;
+		padding: 6px;
+		background: #ffffff;
+		border-radius: 30px;
+		box-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.5);
+	}
+	.listing-form input {
+		flex: 1;
+		min-width: 0;
+		padding: 0 18px;
+		border: 0;
+		background: transparent;
+		font-family: Poppins, sans-serif;
+		font-size: 16px;
+		color: #2e2e2e;
+	}
+	.listing-form input:focus {
+		outline: none;
+	}
+	.listing-form:focus-within {
+		box-shadow: 0 0 0 3px #ed0d82, 0 18px 40px -20px rgba(0, 0, 0, 0.5);
+	}
+	.listing-form button {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		height: 44px;
+		padding: 0 22px;
+		border: 0;
+		border-radius: 24px;
+		background: #ed0d82;
+		color: #ffffff;
+		font-family: Nunito, sans-serif;
+		font-weight: 700;
+		font-size: 15px;
+		cursor: pointer;
+	}
+	.listing-form button:hover {
+		background: #bf1e72;
+	}
+	.listing-form button :global(svg) {
+		width: 14px;
+		height: 14px;
+	}
+	@media (max-width: 767px) {
+		.listing-title { font-size: 34px; }
+		.listing-form button span { display: none; }
+		.listing-form button { padding: 0 16px; }
+	}
+</style>

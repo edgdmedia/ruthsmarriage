@@ -1,8 +1,9 @@
 ---
-/* Resource Type archive (Hello default) — page-maps/default-pages.md "Archives". */
+/* Resource type archive — same page and listing as search (owner request
+   2026-10-24): ListingHero + ResultList, WordPress /page/N/ URLs. */
 import Base from "../../../layouts/Base.astro";
-import HelloMain from "../../../components/HelloMain.astro";
-import ArchiveList from "../../../components/ArchiveList.astro";
+import ListingHero from "../../../components/ListingHero.astro";
+import ResultList from "../../../components/ResultList.astro";
 import { getTerm, published, resources } from "../../../data";
 import { resourceItem, pageNumber, paginate, pagedUrl } from "../../../lib/archive";
 
@@ -11,12 +12,17 @@ const page = pageNumber(Astro.params.page);
 if (!term || page === null) return Astro.rewrite("/404");
 
 const entries = published(resources).filter((e) => e.terms?.resource_type?.some((t) => t.slug === term.slug));
-const result = paginate(entries.map(resourceItem), page, pagedUrl(`/resource-type/${term.slug}/`));
+const pageUrl = pagedUrl(`/resource-type/${term.slug}/`);
+const result = paginate(entries.map(resourceItem), page, pageUrl);
 if (!result) return Astro.rewrite("/404");
 ---
 
-<Base title={`Resource Type: ${term.label}`}>
-	<HelloMain title={`Resource Type: ${term.label}`}>
-		<ArchiveList items={result.items} prevUrl={result.prevUrl} nextUrl={result.nextUrl} />
-	</HelloMain>
+<Base title={`Resource type: ${term.label}`}>
+	<ListingHero eyebrow="Resource type" title={term.label} />
+	<ResultList
+		{...result}
+		pageUrl={pageUrl}
+		countLabel={`${entries.length} ${entries.length === 1 ? "resource" : "resources"}`}
+		empty={{ title: "Nothing here yet", text: "Browse one of these instead:" }}
+	/>
 </Base>
