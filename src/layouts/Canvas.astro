@@ -1,4 +1,10 @@
 ---
+// Elementor canvas pages (no header/footer/marquee), e.g. /askcoach/. Same
+// stylesheets and icons as Base.astro.
+import "../styles/tokens.css";
+import "../styles/base.css";
+import "../styles/components.css";
+
 interface Props {
 	title: string;
 	pageTitle?: string | null;
@@ -19,6 +25,9 @@ const fullTitle = pageTitle ?? title;
 		<title>{fullTitle}</title>
 		{description && <meta name="description" content={description} />}
 		{canonical && <link rel="canonical" href={canonical} />}
+		<link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" href="/favicon-192x192.png" sizes="192x192" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		{image && <meta property="og:image" content={image} />}
 	</head>
 	<body>

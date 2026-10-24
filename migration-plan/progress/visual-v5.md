@@ -23,5 +23,6 @@ Blog post bodies were truncated to 600 chars of plain text by build-seed. Full
 cleaned HTML now comes from the Phase 1 dump (`scripts/reference/post-html.mjs`,
 `fill-post-content.mjs`); four images missing on live too were dropped.
 
-## Open
-- Privacy Policy is ~835px shorter than live at 1440 (content check pending).
+## Privacy Policy
+Only 4 of live's 9 sections had been ported. The full text now comes from
+`discovery/raw/json/pages.json` (inner duplicate h1 dropped, per the page map).

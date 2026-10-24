@@ -9,9 +9,11 @@ const social = settings?.social || {};
 const youtubeUrl = social.youtube || "#";
 const instagramUrl = social.instagram || "#";
 
-// TODO(G3): form submission wired to Resend + Turnstile once keys are provided
-const formSubmitted = false;
-const formError = false;
+// TODO(G3): the Resend + Turnstile action sets this after a submit. Until then
+// ?state=success / ?state=error previews the two messages (V6: UI only).
+const state = Astro.url.searchParams.get("state");
+const formSubmitted = state === "success";
+const formError = state === "error";
 
 const seo = getSeoMeta({
     title: "Need Advice?",
@@ -65,6 +67,7 @@ const seo = getSeoMeta({
                     rows="4"
                     placeholder="Question"
                     class="askcoach-textarea"
+                    required
                 ></textarea>
 
                 {/* TODO(G3): Turnstile managed widget goes here once keys are provided */}
@@ -74,24 +77,19 @@ const seo = getSeoMeta({
                     </div>
                 </div>
 
-                <button
-                    type="submit"
-                    class="askcoach-send"
-                    disabled={formSubmitted || formError}
-                >
-                    Send
-                </button>
+                {/* Elementor replaces the button row with the result message. */}
+                {formSubmitted ? (
+                    <p class="askcoach-message success" role="status">
+                        Your submission was successful.
+                    </p>
+                ) : formError ? (
+                    <p class="askcoach-message error" role="alert">
+                        Your submission failed because of an error.
+                    </p>
+                ) : (
+                    <button type="submit" class="askcoach-send">Send</button>
+                )}
             </form>
-
-            {formSubmitted ? (
-                <p class="askcoach-message success">
-                    Your submission was successful.
-                </p>
-            ) : formError ? (
-                <p class="askcoach-message error">
-                    Your submission failed because of an error.
-                </p>
-            ) : null}
 
             <div class="askcoach-social">
                 <a
@@ -146,7 +144,8 @@ const seo = getSeoMeta({
         width: 86%;
         height: 1px;
         background: #000000;
-        margin: 15px auto 15px;
+        /* 31px widget: 15px either side of the line, plus the 20px widget gap below. */
+        margin: 15px auto 35px;
     }
     .askcoach-intro {
         font-family: Nunito, sans-serif;
@@ -155,13 +154,11 @@ const seo = getSeoMeta({
         font-weight: 500;
         color: #000000;
         text-align: center;
-        margin: 0 0 40px;
+        margin: 0 0 20px;
     }
     .askcoach-form {
         display: flex;
         flex-direction: column;
-        gap: 15px;
-        margin-bottom: 40px;
     }
     .askcoach-label {
         font-family: Poppins, sans-serif;
@@ -169,7 +166,7 @@ const seo = getSeoMeta({
         line-height: 16px;
         font-weight: 400;
         color: #2e2e2e;
-        margin: 0;
+        margin: 0 0 12px;
         display: block;
     }
     .askcoach-select {
@@ -179,12 +176,13 @@ const seo = getSeoMeta({
         font-size: 16px;
         line-height: 1;
         color: #0e0e0e;
-        background: #ffffff;
         border: 1px solid #69727d;
         border-radius: 7px;
         padding: 5px 20px 5px 14px;
-        margin: 0;
+        margin: 0 0 31px;
         appearance: none;
+        /* Elementor's caret (the native arrow is hidden by appearance: none). */
+        background: #ffffff url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 10 6%27%3E%3Cpath d=%27M0 0h10L5 6z%27 fill=%27%23000%27/%3E%3C/svg%3E") no-repeat right 14px center / 10px 6px;
         box-sizing: border-box;
     }
     .askcoach-textarea {
@@ -198,14 +196,14 @@ const seo = getSeoMeta({
         border: 1px solid #69727d;
         border-radius: 7px;
         padding: 5px 14px;
-        margin: 0;
+        margin: 0 0 31px;
         box-sizing: border-box;
         resize: vertical;
     }
     .askcoach-turnstile-placeholder {
         display: flex;
         justify-content: center;
-        margin-top: 8px;
+        margin: 0 0 31px;
     }
     .turnstile-placeholder-box {
         width: 100%;
@@ -246,11 +244,12 @@ const seo = getSeoMeta({
     .askcoach-message {
         font-family: Poppins, sans-serif;
         font-size: 16px;
-        line-height: 1;
-        color: #2e2e2e;
-        text-align: center;
+        line-height: 24px;
         margin: 0;
     }
+    /* Elementor .elementor-message-success / -danger colours. */
+    .askcoach-message.success { color: #5cb85c; }
+    .askcoach-message.error { color: #d9534f; }
     .askcoach-social {
         display: flex;
         justify-content: center;
@@ -269,17 +268,13 @@ const seo = getSeoMeta({
     .askcoach-social-icon :global(svg) { width: 25px; height: 25px; color: #ffffff; }
     .askcoach-social-icon.youtube { background: #CD201F; }
     .askcoach-social-icon.instagram { background: #262626; }
-    .askcoach-send:not(:disabled):hover {
-        background: #252525;
+    .askcoach-send:hover {
         color: #ffffff;
-    }
-    .askcoach-send:disabled {
-        cursor: not-allowed;
-        opacity: 0.6;
     }
     @media (max-width: 767px) {
         .askcoach-send {
             width: 100%;
+            max-width: none;
         }
     }
 </style>
