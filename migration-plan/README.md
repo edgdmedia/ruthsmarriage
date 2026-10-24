@@ -45,7 +45,8 @@ Browser ─▶ Cloudflare (ruthsmarriage.com zone, already proxied)
 | D15 | Hero banners | **No `banner` content type.** The 3 hero slides ship as static content in the homepage hero component (copy/images from `discovery/content/banners.json`, which feeds Phase 3/4 code, not the CMS). Decided by human 2026-10-17, overrides the audit's `banner` CPT and README's "banners" sample content | Ruth doesn't edit hero slides; they're page furniture |
 | D11 | Editor entry | `/admin/` landing page links to `/_emdash/admin`. `/wp-admin*` and `/wp-login.php` → 302 `/admin/`. `/wp-json/*` and `/xmlrpc.php` → 410 | Ruth's team keeps their habits |
 | D12 | Repo | `~/Projects/ruthsmarriage` (this folder), pnpm |
-| D16 | **No CMS** | **EmDash is dropped** (decided by human 2026-10-20). The site is plain Astro: content lives in JSON files under `src/data/`, images as local files under `public/assets/`. `seed/seed.json` stays the captured source of truth and `pnpm data:build` regenerates `src/data/`. This overrides D3/D4/D10/D10b/D11, which all assumed a CMS/admin UI | The site is a faithful visual port; a CMS adds D1/R2, an admin UI and a content pipeline without changing a single pixel. Editors can still be given a CMS later — the data layer is a plain import surface | |
+| D17 | **EmDash on a VPS** | **EmDash comes back** (decided by human 2026-10-24), self-hosted: Node + SQLite on the owner's VPS behind Cloudflare (edge cache + purge by tag), media in an R2 bucket (via EmDash's S3 adapter), DB backups to a separate private R2 bucket. Reverses D16 for content/admin; `src/data/index.ts` stays the import surface, backed by EmDash. No legacy redirects. See phases 9a/9b | Ruth's team edits content in an admin; a VPS avoids Workers Paid |
+| D16 | **No CMS** *(superseded by D17)* | **EmDash is dropped** (decided by human 2026-10-20). The site is plain Astro: content lives in JSON files under `src/data/`, images as local files under `public/assets/`. `seed/seed.json` stays the captured source of truth and `pnpm data:build` regenerates `src/data/`. This overrides D3/D4/D10/D10b/D11, which all assumed a CMS/admin UI | The site is a faithful visual port; a CMS adds D1/R2, an admin UI and a content pipeline without changing a single pixel. Editors can still be given a CMS later — the data layer is a plain import surface | |
 
 ## Human gates 🧑 (opencode must STOP and ask at these)
 
@@ -55,10 +56,16 @@ Browser ─▶ Cloudflare (ruthsmarriage.com zone, already proxied)
 | G2 | V1 | Approve the **header, footer and homepage** side-by-side against live (1440/1024/390) before the other templates are built |
 | G2b | V8 | Visual sign-off of **all 31 pages × 3 widths** (`discovery/qa/REPORT.md` + side-by-sides). Nothing non-visual starts before this |
 | G3 | 6 | Resend API key + verified sending domain (`ruthsmarriage.com` DNS records in Resend), Turnstile site/secret keys, and the YouTube channel URL. (Recipient, socials, marquee and brand name are already decided: D4, D10, D13, D14) |
-| G4 | 9 | Create the editor accounts (names and emails) and review staging |
+| G3b | 9a | Approve the EmDash admin locally (sign in, edit a service, read an Ask Coach question) |
+| G4a | 9b | VPS facts, GitHub repo, staging hostname, approval for each Cloudflare change |
+| G4 | 9b | Create the editor accounts (names and emails) and review staging |
 | G5 | 10 | Approve the cutover window and the DNS/route switch. Decide whether to import all 16 posts now |
 
-## ⏩ Current focus: the visual track (decided 2026-10-22)
+## ⏩ Current focus (2026-10-24): Phase 9a → 9b
+
+G2b is signed off and the Ask Coach backend (6.4) is built. Next: [`phase-09a-emdash.md`](phase-09a-emdash.md), then [`phase-09b-vps-staging.md`](phase-09b-vps-staging.md), then Phase 7 (SEO + perf only), then Phase 10.
+
+## Previous focus: the visual track (decided 2026-10-22, done)
 
 **Work from [`VISUAL-TRACK.md`](VISUAL-TRACK.md) until the human signs off G2b.** It sets the build order (V1 homepage → V8 full sweep), the compare loop (`node scripts/qa/visual-compare.mjs`) and what's paused: the Ask Coach email backend, Phase 7 (SEO/redirects/perf), Phase 9 (deploy) and Phase 10 (cutover). The latest review is [`reviews/G2-home-2026-10-22.md`](reviews/G2-home-2026-10-22.md).
 
@@ -75,7 +82,8 @@ Browser ─▶ Cloudflare (ruthsmarriage.com zone, already proxied)
 | 6 | [phase-06-interactions-forms.md](phase-06-interactions-forms.md) | Booking off-canvas, Ask Coach form, search, mobile nav, carousels finished |
 | 7 | [phase-07-seo-redirects-perf.md](phase-07-seo-redirects-perf.md) | SEO parity, legacy redirects, caching, image delivery |
 | 8 | [phase-08-visual-qa.md](phase-08-visual-qa.md) | Automated pixel-diff + link + a11y checks pass |
-| 9 | [phase-09-deploy-staging.md](phase-09-deploy-staging.md) | Live on `*.workers.dev` with the seed; editors onboarded |
+| 9a | [phase-09a-emdash.md](phase-09a-emdash.md) | EmDash (Node + SQLite) serves the content locally; pixel-identical to G2b; admin approved (G3b) |
+| 9b | [phase-09b-vps-staging.md](phase-09b-vps-staging.md) | VPS staging behind Cloudflare: edge cache + purge, backups, CI, editors (G4) |
 | 10 | [phase-10-cutover.md](phase-10-cutover.md) | Optional full post import, route switch, monitoring, rollback, WP retirement |
 
 ## Skills opencode should load

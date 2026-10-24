@@ -6,8 +6,8 @@
 The plan lives at `~/Projects/ruthsmarriage/migration-plan/` (`$PLAN`). Read `$PLAN/README.md` and `$PLAN/00-site-audit.md` before any work. The visual and content reference is in `discovery/`.
 
 
-## ⏩ Current focus (2026-10-22): visual track
-Work only from `migration-plan/VISUAL-TRACK.md` until the human signs off **G2b**. Start with `migration-plan/reviews/G2-home-2026-10-22.md` (item 1: `@fontsource` imports must be at the top of `tokens.css`; no web fonts load today). Verify every change with `pnpm qa:visual -- --pages <keys>` (`scripts/qa/visual-compare.mjs`). **No deploy, Cloudflare, DNS or Resend work** until G2b. `dev.local` holds a secret: it's git-ignored, so never commit it or print its contents.
+## ⏩ Current focus (2026-10-24): EmDash + VPS
+G2b is signed off. Execute `migration-plan/phase-09a-emdash.md` (EmDash back in locally, **no visual change**), then `phase-09b-vps-staging.md`. Decision **D17** (EmDash on a VPS) supersedes the "No CMS" and Cloudflare-Workers notes below; 9a's last step rewrites those sections. **No server, DNS or Cloudflare change without the owner's approval; the owner runs them.** `.env`, `.dev.vars` and `dev.local` hold real secrets: git-ignored, never commit or print them.
 
 ## Stack
 - Astro (`output: "server"`), `@astrojs/cloudflare`, `@astrojs/react` (the card/header/footer components are React)

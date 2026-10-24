@@ -1,5 +1,8 @@
 ---
+import { actions, isInputError } from "astro:actions";
+import { PUBLIC_TURNSTILE_SITE_KEY } from "astro:env/client";
 import Canvas from "../../layouts/Canvas.astro";
+import { CATEGORIES } from "../../actions";
 import { settings } from "../../data";
 import { IconInstagram } from "../../components/icons/instagram";
 import { IconYoutube } from "../../components/icons/youtube";
@@ -9,11 +12,20 @@ const social = settings?.social || {};
 const youtubeUrl = social.youtube || "#";
 const instagramUrl = social.instagram || "#";
 
-// TODO(G3): the Resend + Turnstile action sets this after a submit. Until then
-// ?state=success / ?state=error previews the two messages (V6: UI only).
-const state = Astro.url.searchParams.get("state");
-const formSubmitted = state === "success";
-const formError = state === "error";
+// The askCoach action (src/actions) posts back to this page.
+const result = Astro.getActionResult(actions.askCoach);
+const formSubmitted = Boolean(result && !result.error);
+const formError = !result?.error
+    ? null
+    : isInputError(result.error)
+      ? (Object.values(result.error.fields).flat()[0] ?? "Please check the form.")
+      : result.error.code === "TOO_MANY_REQUESTS"
+        ? result.error.message
+        : "Your submission failed because of an error.";
+
+// Cloudflare's always-pass test key in dev; without a real key in production the
+// form stays disabled (phase 6.4: no live form until the keys are set).
+const siteKey = PUBLIC_TURNSTILE_SITE_KEY ?? (import.meta.env.DEV ? "1x00000000000000000000AA" : null);
 
 const seo = getSeoMeta({
     title: "Need Advice?",
@@ -44,18 +56,12 @@ const seo = getSeoMeta({
                 <br /> Don't worry, it's strictly anonymous!
             </p>
 
-            {/* TODO(G3): form submission wired to Resend + Turnstile once keys are provided */}
-            <form class="askcoach-form">
+            <form class="askcoach-form" method="POST" action={actions.askCoach}>
                 <label class="askcoach-label" for="category">
                     Category
                 </label>
                 <select id="category" name="category" class="askcoach-select">
-                    <option value="love">Love</option>
-                    <option value="dating">Dating</option>
-                    <option value="marriage">Marriage</option>
-                    <option value="sex">Sex</option>
-                    <option value="faith">Faith</option>
-                    <option value="life">Life</option>
+                    {CATEGORIES.map((c) => <option value={c}>{c}</option>)}
                 </select>
 
                 <label class="askcoach-label" for="question">
@@ -70,24 +76,21 @@ const seo = getSeoMeta({
                     required
                 ></textarea>
 
-                {/* TODO(G3): Turnstile managed widget goes here once keys are provided */}
-                <div class="askcoach-turnstile-placeholder">
-                    <div class="turnstile-placeholder-box">
-                        Turnstile widget (G3)
-                    </div>
-                </div>
+                {siteKey && <div class="cf-turnstile askcoach-turnstile" data-sitekey={siteKey} />}
 
-                {/* Elementor replaces the button row with the result message. */}
+                {/* Elementor replaces the button row with the result message on
+                    success; on an error the message shows and Send stays for a retry. */}
                 {formSubmitted ? (
                     <p class="askcoach-message success" role="status">
                         Your submission was successful.
                     </p>
-                ) : formError ? (
-                    <p class="askcoach-message error" role="alert">
-                        Your submission failed because of an error.
-                    </p>
                 ) : (
-                    <button type="submit" class="askcoach-send">Send</button>
+                    <>
+                        {formError && (
+                            <p class="askcoach-message error" role="alert">{formError}</p>
+                        )}
+                        <button type="submit" class="askcoach-send" disabled={!siteKey}>Send</button>
+                    </>
                 )}
             </form>
 
@@ -113,6 +116,7 @@ const seo = getSeoMeta({
             </div>
         </div>
     </section>
+    {siteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />}
 </Canvas>
 
 <style>
@@ -200,30 +204,9 @@ const seo = getSeoMeta({
         box-sizing: border-box;
         resize: vertical;
     }
-    .askcoach-turnstile-placeholder {
-        display: flex;
-        justify-content: center;
+    .askcoach-turnstile {
+        min-height: 65px;
         margin: 0 0 31px;
-    }
-    .turnstile-placeholder-box {
-        width: 100%;
-        height: 60px;
-        border: 1px dashed #cccccc;
-        border-radius: 7px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888888;
-        font-size: 13px;
-        font-family:
-            system-ui,
-            -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            Roboto,
-            "Helvetica Neue",
-            Arial,
-            sans-serif;
     }
     .askcoach-send {
         width: 25%;
@@ -240,6 +223,13 @@ const seo = getSeoMeta({
         margin: 0;
         cursor: pointer;
         align-self: flex-start;
+    }
+    .askcoach-message.error + .askcoach-send {
+        margin-top: 12px;
+    }
+    .askcoach-send:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
     }
     .askcoach-message {
         font-family: Poppins, sans-serif;

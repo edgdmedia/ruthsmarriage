@@ -233,6 +233,17 @@ const seed = {
         { slug: "order", label: "Order", type: "number" },
       ],
     },
+    {
+      // Ask Coach form submissions (written by src/actions askCoach as drafts; never shown on the site).
+      slug: "ask_coach_questions", label: "Ask Coach Questions", labelSingular: "Ask Coach Question",
+      supports: ["drafts"],
+      commentsEnabled: false,
+      fields: [
+        { slug: "title", label: "Title", type: "string", required: true },
+        { slug: "category", label: "Category", type: "select", required: true, validation: { options: ["Love", "Dating", "Marriage", "Sex", "Faith", "Life"] } },
+        { slug: "question", label: "Question", type: "text", required: true },
+      ],
+    },
   ],
   taxonomies: [
     { name: "category", label: "Categories", labelSingular: "Category", hierarchical: true, collections: ["posts"], terms: [{ slug: "marriage", label: "Marriage" }] },

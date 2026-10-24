@@ -27,8 +27,8 @@ Tip: put `data-section="<live container id>"` on each top-level section (ids are
 Owner decisions (2026-10-24): **no legacy redirects**; deploy to a **VPS** (not Cloudflare Workers) and **set EmDash up** there as the CMS.
 
 1. Phase 6.4: Ask Coach backend (Astro action + Turnstile + **Resend**: the key is in `dev.local`, git-ignored; keep it in a server env file on the VPS, never in git).
-2. Phase 7: SEO, caching, performance. **Skip the legacy redirects.**
-3. Phase 9: deploy to the VPS with EmDash set up (replaces the Workers/D1 staging plan). Phase 10: cutover.
+2. Phase 9a: EmDash back in locally (`phase-09a-emdash.md`), then 9b: VPS staging (`phase-09b-vps-staging.md`). Order changed by the owner 2026-10-24: EmDash + VPS before SEO.
+3. Phase 7: SEO and performance (caching is done in 9b). **Skip the legacy redirects.** Phase 10: cutover.
 
 ## Rules during the visual track
 - The page maps win. If the map and live disagree, check live with the reference tools (`outline.mjs`, `responsive.mjs`, `sections.mjs`) and note it in the progress file; don't guess.

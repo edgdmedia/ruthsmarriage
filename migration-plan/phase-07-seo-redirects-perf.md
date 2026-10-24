@@ -1,5 +1,7 @@
 # Phase 7: SEO, redirects, caching, performance
 
+> **Updated 2026-10-24:** runs **after** 9b. The owner chose **no legacy redirects**, so skip 7.2. Caching (7.3) is done in 9b (Cloudflare edge cache + purge); there are no Astro cache hints on the VPS. What remains: 7.1 SEO and 7.4 performance, against EmDash's SEO fields.
+
 **Goal:** Search engines see the same URLs, titles and descriptions as before (or better), every legacy URL resolves, and pages are fast.
 
 **Skills:** `building-emdash-site` → `references/site-features.md`; `deploying-emdash-cloudflare`; `web-perf`.

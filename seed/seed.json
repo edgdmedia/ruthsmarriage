@@ -264,6 +264,45 @@
           "type": "number"
         }
       ]
+    },
+    {
+      "slug": "ask_coach_questions",
+      "label": "Ask Coach Questions",
+      "labelSingular": "Ask Coach Question",
+      "supports": [
+        "drafts"
+      ],
+      "commentsEnabled": false,
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "slug": "category",
+          "label": "Category",
+          "type": "select",
+          "required": true,
+          "validation": {
+            "options": [
+              "Love",
+              "Dating",
+              "Marriage",
+              "Sex",
+              "Faith",
+              "Life"
+            ]
+          }
+        },
+        {
+          "slug": "question",
+          "label": "Question",
+          "type": "text",
+          "required": true
+        }
+      ]
     }
   ],
   "taxonomies": [
