@@ -2,11 +2,11 @@
 import Base from "../../layouts/Base.astro";
 import { PageHero } from "../../components/PageHero";
 import YouTubeEmbed from "../../components/YouTubeEmbed.astro";
-import { resources, settings } from "../../data";
+import { getResources, settings } from "../../data";
 import { getSeoMeta } from "../../lib/seo";
 
-const videoList = [...resources]
-	.filter((r) => r.status !== "draft")
+const resources = await getResources();
+const videoList = resources
 	.filter((r) => r.terms?.resource_type?.some((t) => t.slug === "video"))
 	.sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
 

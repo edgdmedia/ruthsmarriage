@@ -2,12 +2,11 @@
 import Base from "../../layouts/Base.astro";
 import { PageHero } from "../../components/PageHero";
 import ListingRow from "../../components/ListingRow.astro";
-import { services, settings } from "../../data";
+import { getServices, settings } from "../../data";
 import { getSeoMeta } from "../../lib/seo";
 
-const serviceList = [...services]
-	.filter((s) => s.status !== "draft")
-	.sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
+const services = await getServices();
+const serviceList = [...services].sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
 
 const seo = getSeoMeta({
 	title: "Services",

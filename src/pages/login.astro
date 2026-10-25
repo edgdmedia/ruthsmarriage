@@ -1,0 +1,8 @@
+---
+/**
+ * /login redirects to /_emdash/admin for editors who expect a familiar CMS URL.
+ * The owner decided against WordPress alias redirects (no /wp-admin*.
+ * See AGENTS.md decision D11.
+ */
+return Astro.redirect("/admin/", 301);
+---

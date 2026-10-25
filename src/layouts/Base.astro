@@ -1,5 +1,5 @@
 ---
-import { getMenu, marqueeItems, settings } from "../data";
+import { getMenuByName, getMarqueeItems, settings } from "../data";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import "../styles/tokens.css";
@@ -19,6 +19,13 @@ const { title, pageTitle, description, image, canonical } = Astro.props;
 const fullTitle = pageTitle ?? title;
 const pageDescription = description ?? settings.tagline ?? null;
 const siteTitle = settings.title;
+
+const [primaryMenu, footerServices, footerResources, marqueeItems] = await Promise.all([
+	getMenuByName("primary"),
+	getMenuByName("footer-services"),
+	getMenuByName("footer-resources"),
+	getMarqueeItems(),
+]);
 ---
 
 <!doctype html>
@@ -44,7 +51,7 @@ const siteTitle = settings.title;
 	</head>
 	<body>
 		<Header
-			menu={getMenu("primary") ?? null}
+			menu={primaryMenu}
 			marqueeItems={marqueeItems}
 			logoSrc={settings.logo?.src}
 			client:load
@@ -54,9 +61,9 @@ const siteTitle = settings.title;
 		</main>
 		<Footer
 			menus={{
-				primary: getMenu("primary") ?? undefined,
-				footerServices: getMenu("footer-services") ?? undefined,
-				footerResources: getMenu("footer-resources") ?? undefined,
+				primary: primaryMenu ?? undefined,
+				footerServices: footerServices ?? undefined,
+				footerResources: footerResources ?? undefined,
 			}}
 			settings={settings}
 		/>

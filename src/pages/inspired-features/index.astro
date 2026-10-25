@@ -5,9 +5,10 @@ import Base from "../../layouts/Base.astro";
 import { PageHero } from "../../components/PageHero";
 import { PostCard } from "../../components/PostCard";
 import BlogSidebar from "../../components/BlogSidebar.astro";
-import { posts, published, settings } from "../../data";
+import { getPosts, published, settings } from "../../data";
 import { getSeoMeta } from "../../lib/seo";
 
+const posts = await getPosts();
 const list = published(posts).sort((a, b) =>
 	(b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""),
 );

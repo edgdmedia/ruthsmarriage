@@ -3,14 +3,16 @@
    "Sidebar"). Used by Blog Articles and the single post. The page sets the
    column width and stickiness; "Popular" is the latest 6 posts, as on live. */
 import { IconSearch } from "./icons/search";
-import { posts, published } from "../data";
+import { published } from "../data";
+import { getPosts } from "../data";
 
 interface Props {
 	/** Leave this post out of Popular Posts (the one being read). */
 	exclude?: string;
 }
 const { exclude } = Astro.props;
-const popular = published(posts)
+const allPosts = await getPosts();
+const popular = published(allPosts)
 	.filter((p) => p.slug !== exclude)
 	.sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""))
 	.slice(0, 6);

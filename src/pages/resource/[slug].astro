@@ -10,7 +10,7 @@ import PortableText from "../../components/PortableText.astro";
 import { getResource } from "../../data";
 
 const slug = Astro.params.slug ?? "";
-const resource = getResource(slug);
+const resource = await getResource(slug);
 
 if (!resource || resource.status === "draft") {
 	return Astro.rewrite("/404");

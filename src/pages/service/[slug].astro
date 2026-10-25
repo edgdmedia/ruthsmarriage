@@ -7,7 +7,7 @@ import { IconDotCircle } from "../../components/icons/dot-circle";
 import PortableText from "../../components/PortableText.astro";
 
 const slug = Astro.params.slug ?? "";
-const service = getService(slug);
+const service = await getService(slug);
 
 if (!service) {
 	return Astro.rewrite("/404");

@@ -9,12 +9,20 @@ import { TestimonialCard } from "../components/TestimonialCard";
 import { ResourceCard } from "../components/ResourceCard";
 import { PostCard } from "../components/PostCard";
 import { Button } from "../components/Button";
-import { banners, posts, resources, services, settings, testimonials } from "../data";
+import { banners, settings, published } from "../data";
+import { getPosts, getResources, getServices, getTestimonials } from "../data";
 
 // WordPress search lives at /?s=term; serve it from the search route.
 if (Astro.url.searchParams.has("s")) return Astro.rewrite(`/search/${Astro.url.search}`);
 
 const heroSlides = banners;
+
+const [allPosts, allResources, allServices, allTestimonials] = await Promise.all([
+	getPosts(),
+	getResources(),
+	getServices(),
+	getTestimonials(),
+]);
 
 /** Live picks 6 slides at random on every request (JetEngine `orderby: rand`). */
 const pickRandom = <T,>(items: T[], n: number): T[] => {
@@ -26,18 +34,10 @@ const pickRandom = <T,>(items: T[], n: number): T[] => {
 	return a.slice(0, n);
 };
 
-const serviceSlides = pickRandom(
-	services.filter((s) => s.status !== "draft"),
-	6,
-);
-const resourceSlides = pickRandom(
-	resources.filter((r) => r.status !== "draft"),
-	6,
-);
-const postSlides = pickRandom(
-	posts.filter((p) => p.status !== "draft"),
-	6,
-);
+const serviceSlides = pickRandom(allServices, 6);
+const resourceSlides = pickRandom(allResources, 6);
+const postSlides = pickRandom(published(allPosts), 6);
+const testimonialSlides = pickRandom(published(allTestimonials), 6);
 ---
 
 <Base title={settings.title}>
@@ -86,7 +86,7 @@ const postSlides = pickRandom(
                 className="section-heading--responsive"
             />
             <Carousel variant="content" autoplayMs={5000}>
-                {testimonials.map((t, i) => (
+                {testimonialSlides.map((t, i) => (
                     <div class="swiper-slide">
                         <TestimonialCard
                             testimonial={t}

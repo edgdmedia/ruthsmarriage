@@ -9,11 +9,11 @@ import BlogSidebar from "../../components/BlogSidebar.astro";
 import WaveHero from "../../components/WaveHero.astro";
 import PortableText from "../../components/PortableText.astro";
 import { PostCard } from "../../components/PostCard";
-import { getPost, posts, published, settings } from "../../data";
+import { getPost, getPosts, published, settings } from "../../data";
 import { contentText, htmlToText } from "../../lib/excerpt";
 import { getSeoMeta } from "../../lib/seo";
 
-const post = getPost(Astro.params.slug ?? "");
+const post = await getPost(Astro.params.slug ?? "");
 if (!post || post.status === "draft") return Astro.rewrite("/404");
 
 const seo = getSeoMeta({
@@ -31,7 +31,7 @@ const date = post.publishedAt
 	? new Date(post.publishedAt).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
 	: null;
 const minutes = Math.max(1, Math.round(contentText(post.content).split(" ").length / 200));
-const more = published(posts)
+const more = published(await getPosts())
 	.filter((p) => p.slug !== post.slug)
 	.sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""))
 	.slice(0, 3);

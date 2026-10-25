@@ -4,10 +4,11 @@
 import Base from "../../../layouts/Base.astro";
 import ListingHero from "../../../components/ListingHero.astro";
 import ResultList from "../../../components/ResultList.astro";
-import { getTerm, published, resources } from "../../../data";
+import { getResources, getTaxonomyTerm, published } from "../../../data";
 import { resourceItem, pageNumber, paginate, pagedUrl } from "../../../lib/archive";
 
-const term = getTerm("resource_type", Astro.params.slug ?? "");
+const resources = await getResources();
+const term = await getTaxonomyTerm("resource_type", Astro.params.slug ?? "");
 const page = pageNumber(Astro.params.page);
 if (!term || page === null) return Astro.rewrite("/404");
 

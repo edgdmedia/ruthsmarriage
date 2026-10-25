@@ -1,7 +1,8 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { posts } from "../../data";
+import { getPosts } from "../../data";
 
+const posts = await getPosts();
 const list = [...posts].sort((a, b) =>
 	(b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""),
 );

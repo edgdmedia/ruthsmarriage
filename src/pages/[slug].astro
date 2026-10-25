@@ -4,5 +4,6 @@
 import { getPost } from "../data";
 
 const slug = Astro.params.slug ?? "";
-return Astro.rewrite(getPost(slug) ? `/posts/${slug}/` : "/404");
+const post = await getPost(slug);
+return Astro.rewrite(post ? `/posts/${slug}/` : "/404");
 ---

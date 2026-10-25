@@ -1,0 +1,14 @@
+{
+	"name": "@ruthsmarriage/resend-email",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"description": "EmDash email provider: delivers invites, magic links and recovery mail through the Resend HTTP API.",
+	"exports": {
+		".": "./index.mjs",
+		"./env": "./env.mjs"
+	},
+	"peerDependencies": {
+		"emdash": "*"
+	}
+}
