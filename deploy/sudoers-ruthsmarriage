@@ -1,0 +1,13 @@
+# A narrow sudo rule for the `ruthsmarriage` user: it may restart the site's
+# service, and nothing else.
+#
+# Install as /etc/sudoers.d/ruthsmarriage (mode 440, root-owned):
+#     sudo install -o root -g root -m 440 deploy/sudoers-ruthsmarriage /etc/sudoers.d/ruthsmarriage
+#     sudo visudo -c
+#
+# The rule names the exact command, so `sudo systemctl restart ruthsmarriage`
+# works and `sudo systemctl restart nginx` (or anything else) does not.
+# `sudo -l` lists what the user may do.
+
+ruthsmarriage ALL=(root) NOPASSWD: /usr/bin/systemctl restart ruthsmarriage.service
+ruthsmarriage ALL=(root) NOPASSWD: /usr/bin/systemctl status ruthsmarriage.service

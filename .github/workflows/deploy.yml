@@ -1,0 +1,116 @@
+# dev: typecheck, tests, build. main: deploy to the VPS — no second check.
+#
+# Promote either way:
+#   - a pull request dev → main, merged on GitHub (or from GitHub Desktop), or
+#   - git push origin dev:main
+# The deploy job finds the dev commit whose file tree is identical to main's
+# (the same commit after a push; the PR's head after a merge or squash) and
+# deploys only if that commit passed its check on dev. If main contains
+# anything dev never checked, the trees differ and nothing is deployed.
+#
+# The deploy is one SSH login as the `ruthsmarriage` user. On the server, the
+# key is pinned in ~/.ssh/authorized_keys with command="…deploy-vps.sh", so
+# the key can run the deploy script and nothing else (runbook §13).
+#
+# Repository secrets (Settings → Secrets and variables → Actions):
+#   VPS_HOST              the VPS's public address
+#   VPS_SSH_KEY           the private half of the deploy key
+#   VPS_KNOWN_HOSTS       the server's host key line (ssh-keyscan -t ed25519 <host>)
+#   CLOUDFLARE_ZONE_ID    the zone of ruthsmarriage.com
+#   CLOUDFLARE_PURGE_TOKEN  a token with Zone → Cache Purge
+name: check and deploy
+
+on:
+  push:
+    branches: [dev, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+# Never two deploys at once; a newer push waits for the running one.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Require a passing check on dev for this content
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # The dev commit with exactly main's tree (after a PR merge, main's
+          # SHA is new but its content is the PR head's).
+          tree=$(git rev-parse 'HEAD^{tree}')
+          SHA=$(git log origin/dev -n 50 --format='%H %T' | awk -v t="$tree" '$2 == t { print $1; exit }')
+          if [ -z "$SHA" ]; then
+            echo "::error::main's content matches no recent dev commit — it contains changes dev never checked. Not deploying."; exit 1
+          fi
+          echo "main matches dev commit $SHA"
+          # The dev run may still be going if dev and main were pushed together.
+          for i in $(seq 1 45); do
+            result=$(gh run list -R "$GITHUB_REPOSITORY" --workflow deploy.yml --branch dev \
+              --commit "$SHA" --json status,conclusion \
+              --jq 'map(select(.status == "completed")) | (map(.conclusion) | if index("success") then "success" elif length > 0 then "failed" else "" end)')
+            pending=$(gh run list -R "$GITHUB_REPOSITORY" --workflow deploy.yml --branch dev \
+              --commit "$SHA" --json status --jq 'map(select(.status != "completed")) | length')
+            if [ "$result" = "success" ]; then echo "dev passed for $SHA"; exit 0; fi
+            if [ "$pending" = "0" ] && [ -z "$result" ]; then
+              echo "::error::$SHA was never checked on dev. Push it to dev first, then: git push origin dev:main"; exit 1
+            fi
+            if [ "$pending" = "0" ] && [ "$result" = "failed" ]; then
+              echo "::error::$SHA failed its check on dev — not deploying."; exit 1
+            fi
+            sleep 20
+          done
+          echo "::error::timed out waiting for the dev check of $SHA"; exit 1
+      - name: Deploy over SSH
+        env:
+          SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
+          HOST: ${{ secrets.VPS_HOST }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          # The server's forced command runs the deploy; nothing is sent. The
+          # script smoke-tests the origin after the restart and fails if the
+          # site is down (not from here: Cloudflare's bot rules 403 runners).
+          ssh -i ~/.ssh/deploy_key -o BatchMode=yes ruthsmarriage@"$HOST"
+      - name: Purge Cloudflare's cache
+        # Pages stay at the edge for 30 days and only a publish purges them,
+        # so without this a template change would not show until each page
+        # expired. Needs a token with Zone → Cache Purge.
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_PURGE_TOKEN }}
+          ZONE: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: |
+          if [ -z "$TOKEN" ] || [ -z "$ZONE" ]; then
+            echo "::warning::CLOUDFLARE_PURGE_TOKEN / CLOUDFLARE_ZONE_ID are not set — purge the cache by hand (Caching → Purge Everything)"; exit 0
+          fi
+          curl -sf -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE/purge_cache" \
+            -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}' | grep -q '"success":true' && echo "edge cache purged"

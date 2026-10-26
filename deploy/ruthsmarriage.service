@@ -1,0 +1,72 @@
+# Ruth's Marriage — the Node process that serves the site.
+#
+# Install as /etc/systemd/system/ruthsmarriage.service (root-owned, 644),
+# then:  systemctl daemon-reload && systemctl enable --now ruthsmarriage
+#
+# The app runs as the `ruthsmarriage` user (the one Virtualmin created for
+# this site). It reads its configuration from /etc/ruthsmarriage.env, which
+# systemd reads as root before dropping privileges.
+
+[Unit]
+Description=Ruth's Marriage (Astro + EmDash on Node)
+Documentation=file:/home/ruthsmarriage/app/docs/vps-runbook.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ruthsmarriage
+Group=ruthsmarriage
+WorkingDirectory=/home/ruthsmarriage/app
+
+# Runtime configuration: secrets included. Mode 600, owned by root.
+EnvironmentFile=/etc/ruthsmarriage.env
+
+# The process listens on the loopback only. The web server (nginx, the one
+# Webmin/Virtualmin already runs) proxies to it. Pick a port no other
+# service on this box uses — check with:  ss -ltnp
+#
+# The port itself lives in /etc/ruthsmarriage.env (PORT=), which systemd
+# reads after this file and which therefore wins. It has to be the same
+# port as in deploy/nginx-proxy.conf.
+Environment=HOST=127.0.0.1
+Environment=NODE_ENV=production
+
+# Node 24 for the `ruthsmarriage` user only (installed with fnm under
+# /home/ruthsmarriage, so the other sites on this server keep their own
+# Node). `fnm default 24` makes aliases/default a link to the installed
+# version, so this path survives a Node upgrade. Not `which node`: that prints
+# a per-shell fnm_multishells path that is gone after logout.
+ExecStart=/home/ruthsmarriage/.local/share/fnm/aliases/default/bin/node ./dist/server/entry.mjs
+
+Restart=always
+RestartSec=5
+# A failed start should not become a restart loop that hides the error.
+StartLimitIntervalSec=120
+StartLimitBurst=5
+
+# Give the process time to finish a request when systemd stops it.
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+# Hardening. The app writes only to its data directory (the database, the
+# sessions); everything else on the box stays read-only.
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=read-only
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+ReadWritePaths=/home/ruthsmarriage/data /home/ruthsmarriage/app/.astro
+# The process reads the environment file, which is root-owned: systemd has
+# already read it, so the process itself does not need it.
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ruthsmarriage
+
+[Install]
+WantedBy=multi-user.target

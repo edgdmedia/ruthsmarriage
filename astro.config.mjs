@@ -3,6 +3,7 @@ import react from "@astrojs/react";
 import { defineConfig, envField, sessionDrivers } from "astro/config";
 import emdash, { local, memoryCache, s3 } from "emdash/astro";
 import { sqlite } from "emdash/db";
+import { cloudflarePurge } from "@ruthsmarriage/cloudflare-purge";
 import { resendEmail } from "@ruthsmarriage/resend-email";
 
 // Dev runs on loopback, where EmDash needs no configured origin — and a
@@ -59,6 +60,11 @@ export default defineConfig({
 					from: { email: "noreply@ruthsmarriage.com", name: "Ruth's Marriage" },
 					replyTo: "admin@ruthsmarriage.com",
 				}),
+				// Purges Cloudflare's zone cache when content changes, so a publish
+				// is visible at the edge straight away. Reads its credentials from
+				// the process environment at hook time (CLOUDFLARE_ZONE_ID /
+				// CLOUDFLARE_API_TOKEN); a no-op without them.
+				cloudflarePurge(),
 			],
 		}),
 	],
@@ -107,6 +113,18 @@ export default defineConfig({
 			// EmDash encryption key for sessions/tokens.
 			// Generate with: npx emdash secrets generate
 			EMDASH_ENCRYPTION_KEY: envField.string({
+				context: "server",
+				access: "secret",
+				optional: true,
+			}),
+			// Cloudflare purge plugin (phase 9b.1). In env for clarity, though
+			// the plugin reads them at hook time from the process environment.
+			CLOUDFLARE_ZONE_ID: envField.string({
+				context: "server",
+				access: "public",
+				optional: true,
+			}),
+			CLOUDFLARE_API_TOKEN: envField.string({
 				context: "server",
 				access: "secret",
 				optional: true,
