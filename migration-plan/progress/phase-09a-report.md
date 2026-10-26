@@ -112,6 +112,13 @@ Fix applied:
 ### Content integrity after cleanup (per `emdash doctor` + direct DB read)
 - posts 16, resources 11, testimonials 6, marquee_items 1, services 11 (all non-deleted); ask_coach_questions 0.
 
+### G3b feedback (2026-10-26): "No images" + "Turnstile is not setup" — diagnosis & fixes
+**Images — FIXED (commit `27c79ab`).** Root cause was a media-storage directory mismatch: `emdash seed` writes media blobs to `./uploads/` (its `--uploads-dir` default), but `astro.config.mjs` runtime storage defaulted to `./data/uploads/` → media route 404 → blank images site-wide. Changed the config default to `./uploads` (MEDIA_DIR still overrides on the VPS). Note: Astro does **not** feed `.env` into `process.env` for `astro.config.mjs`, so a `.env` `MEDIA_DIR=` line is inert — the config default is the right place. Verified: every media URL on `/` and `/services/` returns HTTP 200.
+
+**Turnstile — confirmed wired correctly in code; blocked by a Cloudflare dashboard domain config (owner-action).** Site key `0x4AAAA…` + secret are present and valid (siteverify with a dummy token returns `invalid-input-response`, meaning Cloudflare accepted the secret). The widget renders with the script tag. The reported error — widget "Unable to connect to website / problem with challenges.cloudflare.com" — is Cloudflare's iframe-load / domain-not-authorized failure (error codes `200500`/`110200`): **the sitekey's Hostname Management does not include the test domain (`localhost`/`127.0.0.1` / `vps.ruthsmarriage.com`)**. Owner must add these in `dash.cloudflare.com` → Turnstile → widget → Hostname Management. `localhost`/`127.0.0.1` are auto-added by "Spin" but not necessarily by/manual widget creation. The generic "Your submission failed because of an error." is the action's catch-all that also masks a failed Turnstile check (FORBIDDEN maps there).
+
+**ask_coach_questions save path — partially fixed, needs owner secret.** The action's `saveQuestion` requires `EMDASH_URL` + `EMDASH_TOKEN` (EmDash personal access token, scope `content:write`, prefix `ec_pat_`, created in the admin). Both were missing from `.env` — which is exactly why `ask_coach_questions` stays at 0 even when email succeeds. `EMDASH_URL=http://localhost:4321` added to `.env` (git-ignored). **Owner must add `EMDASH_TOKEN`** (generate in `/_emdash/admin` settings). The local endpoint `POST /_emdash/api/content/ask_coach_questions` returns 401 (exists, needs auth) — correct once a valid token is supplied.
+
 ---
 
 ## Open item: `pnpm test` (vitest data layer) is broken — pre-existing
