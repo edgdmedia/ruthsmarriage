@@ -22,12 +22,14 @@ const databasePath = process.env.DATABASE_PATH ?? "./data/emdash.db";
 
 // Media storage: S3 (R2) when S3_BUCKET is set, local otherwise.
 // EMDASH_STORAGE=s3|local forces the choice.
+// The default local dir is `./uploads` — where `emdash seed` writes media
+// blobs (seed's `--uploads-dir` default). MEDIA_DIR overrides for the VPS.
 const storageDriver = process.env.EMDASH_STORAGE ?? (process.env.S3_BUCKET ? "s3" : "local");
 const storage =
 	storageDriver === "s3"
 		? s3()
 		: local({
-				directory: process.env.MEDIA_DIR ?? "./data/uploads",
+				directory: process.env.MEDIA_DIR ?? "./uploads",
 				baseUrl: "/_emdash/api/media/file",
 			});
 
