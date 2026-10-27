@@ -351,37 +351,44 @@ ssh ruthsmarriage@YOUR.VPS.IP 'curl -sI http://127.0.0.1:4322/_emdash/api/media/
 WordPress vhost — leave that file alone; Virtualmin rewrites it. Our file
 goes in conf.d/ where it wins before sites-enabled/.
 
-Get the box's IP first:
+**1. The certificate first** (`nginx -t` fails until these files exist).
+Cloudflare dashboard → **SSL/TLS → Origin Server → Create Certificate**: host
+names `ruthsmarriage.com` and `*.ruthsmarriage.com`, key type RSA, 15 years.
+Cloudflare shows the key **once**. As root:
 
 ```bash
-hostname -I | awk '{print $1}'
+mkdir -p /etc/ssl/ruthsmarriage
+nano /etc/ssl/ruthsmarriage/origin.pem      # paste the Origin Certificate
+nano /etc/ssl/ruthsmarriage/origin.key      # paste the Private Key
+chmod 644 /etc/ssl/ruthsmarriage/origin.pem
+chmod 600 /etc/ssl/ruthsmarriage/origin.key
+openssl x509 -in /etc/ssl/ruthsmarriage/origin.pem -noout -subject -enddate
 ```
 
-Replace `<BOX_IP>` in `deploy/nginx-proxy.conf` with that address.
+Not through Virtualmin: this site isn't a Virtualmin virtual server, and the
+nginx file below points at these paths.
+
+**2. The proxy** (as root). The listen lines are already right for this box
+(`listen 80` and `169.58.2.239:443`; the file explains why). Install the file
+as it is. Don't edit `deploy/` in the checkout: the deploy script refuses a
+dirty tree.
 
 ```bash
 cd /home/ruthsmarriage/app
-sudo sed -i 's/<BOX_IP>/<your-box-ip>/' deploy/nginx-proxy.conf
-sudo install -o root -g root -m 644 deploy/nginx-proxy.conf /etc/nginx/conf.d/ruthsmarriage-node.conf
-sudo nginx -t && sudo systemctl reload nginx
-curl -sI http://127.0.0.1:4322/ | head -3        # the app answers on its own
+install -o root -g root -m 644 deploy/nginx-proxy.conf /etc/nginx/conf.d/ruthsmarriage-node.conf
+nginx -t
+systemctl reload nginx
 ```
 
-**TLS.** Install a Cloudflare Origin Certificate on the virtual server
-(Virtualmin > Manage SSL Certificate > Paste a certificate):
+Only reload when `nginx -t` says "syntax is ok" and "test is successful":
+the other sites on this box share nginx. "conflicting server name" warnings
+for other hosts are expected; one for `vps.ruthsmarriage.com` is not.
 
-- Cloudflare dashboard: **SSL/TLS → Origin Server → Create Certificate**,
-  host names `ruthsmarriage.com` and `*.ruthsmarriage.com`, key type RSA.
-- Copy the cert and key into Virtualmin's SSL form.
-
-The cert goes in `/etc/ssl/ruthsmarriage/origin.pem` and `origin.key`. Then
-Cloudflare can use **Full (strict)**. The DNS record stays proxied.
-
-**Verify from inside the VPS** (strict check against the hostname):
+**3. Verify from inside the VPS** (strict check against the hostname):
 
 ```bash
 # From the VPS, this must 403 (Cloudflare-only origin):
-curl -skI --resolve vps.ruthsmarriage.com:443:<box-ip> https://vps.ruthsmarriage.com/ | head -1
+curl -skI --resolve vps.ruthsmarriage.com:443:169.58.2.239 https://vps.ruthsmarriage.com/ | head -1
 # HTTP/1.1 403 Forbidden
 
 # Through Cloudflare it must work:
