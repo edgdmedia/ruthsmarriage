@@ -54,7 +54,7 @@ Day to day: Section 13 (deploy), Section 14 (restart/logs), Section 10
 | The web server | nginx, the one Webmin/Virtualmin already runs |
 
 ```
-Cloudflare (edge cache)  →  nginx  →  127.0.0.1:4321  →  Node
+Cloudflare (edge cache)  →  nginx  →  127.0.0.1:4322  →  Node
    proxies, orange cloud    allowlist:   the app            (astro)
    30-day TTL, purged      Cloudflare's  the systemd        + emdash
    by tag on publish       IP ranges     service           + SQLite
@@ -72,8 +72,8 @@ setup depends on.
 nginx -v 2>&1
 virtualmin --version 2>&1 | head -1
 
-# 2. Which ports are taken? 4321 is the default.
-ss -ltnp | grep -E ':(80|443|4321|8080|3000)\b'
+# 2. Which ports are taken? 4322 is this site's port (4321 is taken by securityfocus on the shared box).
+ss -ltnp | grep -E ':(80|443|4321|4322|8080|3000)\b'
 
 # 3. How much room is there, and what is the quota for ruthsmarriage?
 df -h /home
@@ -87,7 +87,7 @@ ls -la /home/ruthsmarriage/
 |---|---|---|
 | nginx version | nginx is the web server | Section 8 is the nginx path |
 | virtualmin: command not found | No Virtualmin | Section 8 "without Virtualmin" |
-| 4321 in the port list | The Node port is taken | Pick another port and change PORT= in /etc/ruthsmarriage.env AND in deploy/nginx-proxy.conf |
+| 4322 in the port list | The Node port is taken | Pick another port and change PORT= in /etc/ruthsmarriage.env AND in deploy/nginx-proxy.conf |
 | The quota is smaller than ~2 GB | Not enough room | The media stays in R2, so the space is for the app alone (~500 MB) |
 
 ---
@@ -146,7 +146,7 @@ On the server, clone as the `ruthsmarriage` user.
 ```bash
 # On the VPS, as the ruthsmarriage user:
 sudo -u ruthsmarriage -i bash
-ssh-keygen -t ed25519 -C "ruthsmarriage@<vps>" -N ""
+ssh-keygen -t ed25519 -C "ruthsmarriage@YOUR.VPS.IP" -N ""
 cat ~/.ssh/id_ed25519.pub
 ```
 
@@ -162,17 +162,28 @@ cd app
 git log --oneline -1     # should be phase-09b: VPS staging
 ```
 
-**If there is no SSH access on the server**, copy the app with rsync instead:
+**While the repository is public** you can skip the deploy key and clone over
+HTTPS (later `git pull`s work the same way):
+
+```bash
+git clone --branch main https://github.com/edgdmedia/ruthsmarriage.git app
+```
+
+**If the server can't reach GitHub at all**, copy the app with rsync instead.
+Replace `YOUR.VPS.IP` with the server's address (don't type `<` `>`: zsh
+reads them as redirection). The `.gitignore` filter keeps secrets
+(`.env*`, `.dev.vars`, `dev.local`), the local database (`data/`) and
+`uploads/` on the laptop; never copy those with rsync.
 
 ```bash
 # On the laptop:
-rsync -az --delete \
-  --exclude node_modules --exclude dist --exclude .astro \
-  --exclude .env --exclude .env.local \
-  ~/Projects/ruthsmarriage/ ruthsmarriage@<vps>:/home/ruthsmarriage/app/
+rsync -az --filter=':- .gitignore' --exclude .git ~/Projects/ruthsmarriage/ ruthsmarriage@169.58.2.239:/home/ruthsmarriage/app/
 ```
 
-**Then, in the app directory** (or skip if you rsynced):
+An rsynced copy has no `.git`, so `scripts/deploy-vps.sh` (which pulls) won't
+work until the app is cloned.
+
+**Then, in the app directory** (after cloning or rsyncing):
 
 ```bash
 sudo -u ruthsmarriage -i bash
@@ -220,7 +231,7 @@ S3_ENDPOINT=https://<account-id>.r2.cloudflarestorage.com
 S3_BUCKET=ruthsmarriage-media
 S3_ACCESS_KEY_ID=<the R2 access key id>
 S3_SECRET_ACCESS_KEY=<the R2 secret>
-EMDASH_URL=http://127.0.0.1:4321
+EMDASH_URL=http://127.0.0.1:4322
 EMDASH_TOKEN=<ec_pat_... from 9a>
 TURNSTILE_SECRET_KEY=<from Cloudflare dashboard>
 ```
@@ -300,13 +311,13 @@ up in phase 9a). Copy it to the server with SQLite's backup command:
 cd ~/Projects/ruthsmarriage
 sqlite3 data/emdash.db "PRAGMA integrity_check;"   # must print ok
 sqlite3 data/emdash.db ".backup '/tmp/emdash-staging.db'"
-scp /tmp/emdash-staging.db ruthsmarriage@<vps>:/home/ruthsmarriage/data/emdash.db.new
+scp /tmp/emdash-staging.db ruthsmarriage@YOUR.VPS.IP:/home/ruthsmarriage/data/emdash.db.new
 ```
 
 **On the server, as the ruthsmarriage user:**
 
 ```bash
-ssh ruthsmarriage@<vps>
+ssh ruthsmarriage@YOUR.VPS.IP
 mkdir -p /home/ruthsmarriage/data
 mv /home/ruthsmarriage/data/emdash.db.new /home/ruthsmarriage/data/emdash.db
 chmod 600 /home/ruthsmarriage/data/emdash.db
@@ -321,13 +332,13 @@ to R2 via the S3 adapter — no upload needed.
 **Rebuild the search index** (the FTS5 tables need population):
 
 ```bash
-curl -s "http://127.0.0.1:4321/_emdash/api/search?q=a" > /dev/null
+curl -s "http://127.0.0.1:4322/_emdash/api/search?q=a" > /dev/null
 ```
 
 **Check a media URL** — from INSIDE the VPS (not from outside):
 
 ```bash
-ssh ruthsmarriage@<vps> 'curl -sI http://127.0.0.1:4321/_emdash/api/media/file/$(sqlite3 /home/ruthsmarriage/data/emdash.db "SELECT storage_key FROM media LIMIT 1")' | head -1
+ssh ruthsmarriage@YOUR.VPS.IP 'curl -sI http://127.0.0.1:4322/_emdash/api/media/file/$(sqlite3 /home/ruthsmarriage/data/emdash.db "SELECT storage_key FROM media LIMIT 1")' | head -1
 # HTTP/1.1 200 OK
 ```
 
@@ -353,7 +364,7 @@ cd /home/ruthsmarriage/app
 sudo sed -i 's/<BOX_IP>/<your-box-ip>/' deploy/nginx-proxy.conf
 sudo install -o root -g root -m 644 deploy/nginx-proxy.conf /etc/nginx/conf.d/ruthsmarriage-node.conf
 sudo nginx -t && sudo systemctl reload nginx
-curl -sI http://127.0.0.1:4321/ | head -3        # the app answers on its own
+curl -sI http://127.0.0.1:4322/ | head -3        # the app answers on its own
 ```
 
 **TLS.** Install a Cloudflare Origin Certificate on the virtual server
@@ -437,7 +448,7 @@ cp /home/ruthsmarriage/backups/emdash-YYYY-MM-DD.db /home/ruthsmarriage/data/emd
 rm -f /home/ruthsmarriage/data/emdash.db-wal /home/ruthsmarriage/data/emdash.db-shm
 sqlite3 /home/ruthsmarriage/data/emdash.db "PRAGMA integrity_check;"   # ok
 sudo systemctl start ruthsmarriage
-curl -sI http://127.0.0.1:4321/ | head -3
+curl -sI http://127.0.0.1:4322/ | head -3
 ```
 
 The media is in R2 and is not part of the restore. The uploaded media is
@@ -473,7 +484,7 @@ cd /home/ruthsmarriage/app && bash scripts/deploy-vps.sh
 
 ```bash
 # From the VPS — origin check:
-SITE=http://127.0.0.1:4321
+SITE=http://127.0.0.1:4322
 for u in / /services/ /posts/ /resources/ /askcoach/ /404/; do
   printf "%-30s " "$u"
   curl -s -o /dev/null -w "%{http_code}\n" "$SITE$u"
@@ -573,7 +584,7 @@ sudo journalctl -u ruthsmarriage -p ruthsmarriage   # only the site's own lines
 Health check:
 
 ```bash
-curl -sI http://127.0.0.1:4321/ | head -3
+curl -sI http://127.0.0.1:4322/ | head -3
 ```
 
 ---
@@ -657,9 +668,9 @@ sudo journalctl -u ruthsmarriage -n 10
 | The service will not start | The `ExecStart` path must match the fnm default node; `DATABASE_PATH` must exist and be writable |
 | Every page is a 500 | The database was not migrated, or is not readable: `sqlite3 /home/ruthsmarriage/data/emdash.db "PRAGMA integrity_check;"` |
 | The admin 404s | `EMDASH_ENCRYPTION_KEY` is missing from /etc/ruthsmarriage.env |
-| Images are broken | The R2 credentials are wrong or the bucket name is not `ruthsmarriage-media`: check `curl -sI http://127.0.0.1:4321/_emdash/api/media/file/<id>` and the service log |
+| Images are broken | The R2 credentials are wrong or the bucket name is not `ruthsmarriage-media`: check `curl -sI http://127.0.0.1:4322/_emdash/api/media/file/<id>` and the service log |
 | A publish does not appear | The purge did not happen: check `CLOUDFLARE_ZONE_ID` / `CLOUDFLARE_API_TOKEN` are set. `sudo journalctl -u ruthsmarriage | grep cloudflare-purge` |
-| The origin is being hammered | The edge is not caching: `curl -sI http://127.0.0.1:4321/ | grep cache-control` — must say `s-maxage=2592000` |
+| The origin is being hammered | The edge is not caching: `curl -sI http://127.0.0.1:4322/ | grep cache-control` — must say `s-maxage=2592000` |
 | Bots reach the origin | The allowlist in the vhost is missing or out of date (see deploy/cloudflare-ips.txt) |
 | 403 from nginx | The request did not come through Cloudflare — that is the allowlist working. Test through the proxied hostname. |
 | The deploy script says "node is not on the PATH" | Section 3: the profile lines are missing, or the script runs as a different user |
@@ -699,9 +710,9 @@ backup job. The content URLs do not change.
 
 ## 19. Still open (the owner has to answer)
 
-- The **VPS address** and SSH access (the runbook assumes you can `ssh root@<vps>`).
+- The **VPS address** and SSH access (the runbook assumes you can `ssh root@YOUR.VPS.IP`).
 - The **R2 API token** (read/write on `ruthsmarriage-media`) for the S3 adapter.
 - The **Cloudflare API token** with Zone → Cache Purge for the zone.
 - The **EMDASH_ENCRYPTION_KEY** from the laptop's .env.
 - A **proxied A record** `vps.ruthsmarriage.com` pointing to the VPS (for staging).
-- A free port for the Node process (4321 by default — check what the box already uses).
+- A free port for the Node process (4322; 4321 belongs to securityfocus).

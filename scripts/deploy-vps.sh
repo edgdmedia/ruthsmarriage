@@ -111,7 +111,7 @@ echo
 # Smoke test on the origin itself: from GitHub's runners the site is behind
 # Cloudflare's bot rules, which answer 403 to data-centre traffic. A deploy
 # that leaves the site down fails here, and so does the Actions run.
-PORT_TO_CHECK=${PORT:-4321}
+PORT_TO_CHECK=${PORT:-4322}
 for i in $(seq 1 15); do
 	code=$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:${PORT_TO_CHECK}/" || true)
 	[ "$code" = "200" ] && break
