@@ -5,15 +5,14 @@ on:
     branches:
       - dev
       - main
+  pull_request:
+    branches:
+      - main
 
-# Prevent the deploy job from running on fork pull requests (secrets are not available).
-# CI jobs DO run on fork PRs (with no secrets access, which is fine).
 jobs:
   ci:
     name: Type-check, test & build
     runs-on: ubuntu-latest
-    # Skip on main — the deploy job does a full build.
-    if: github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,10 +40,11 @@ jobs:
       - name: Build
         run: pnpm build
 
+  # Deploys to VPS on every push to main (after CI passes).
+  # Skipped on pull requests — secrets are not available to fork workflows.
   deploy:
     name: Deploy to VPS
     runs-on: ubuntu-latest
-    # Only on main branch pushes (not pull requests, not dev).
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     needs: ci
     environment: production
