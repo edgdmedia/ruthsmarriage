@@ -11,7 +11,7 @@ import PortableText from "../../components/PortableText.astro";
 import { PostCard } from "../../components/PostCard";
 import { ShareButtons } from "../../components/ShareButtons";
 import { getPost, getPosts, published, settings } from "../../data";
-import { contentText, htmlToText } from "../../lib/excerpt";
+import { contentText, htmlToText, archiveExcerpt } from "../../lib/excerpt";
 import { getSeoMeta } from "../../lib/seo";
 
 const post = await getPost(Astro.params.slug ?? "");
@@ -54,6 +54,9 @@ const more = published(await getPosts())
 	.filter((p) => p.slug !== post.slug)
 	.sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""))
 	.slice(0, 3);
+const displayExcerpt = post.excerpt
+	? htmlToText(post.excerpt)
+	: archiveExcerpt({ excerpt: null, content: post.content });
 ---
 
 <Base title={seo.title} pageTitle={seo.ogTitle} description={seo.description} canonical={seo.canonical} image={seo.ogImage} type="article">
@@ -89,7 +92,7 @@ const more = published(await getPosts())
 					<PortableText value={post.content} />
 				</div>
 
-				<ShareButtons title={post.title} url={postUrl} client:load />
+				<ShareButtons title={post.title} url={postUrl} excerpt={displayExcerpt} client:load />
 
 				{tags.length > 0 && (
 					<p class="post-tags">
@@ -205,8 +208,6 @@ const more = published(await getPosts())
 		align-items: start;
 	}
 	.post-layout--no-cover {
-		padding-top: 0;
-		margin-top: -110px;
 		position: relative;
 	}
 	.post-main {
@@ -485,7 +486,6 @@ const more = published(await getPosts())
 		}
 		.post-cover img { border-radius: 20px; }
 		.post-layout { padding: 36px 20px 50px; }
-		.post-layout--no-cover { margin-top: -70px; }
 		.post-content { font-size: 16px; line-height: 28px; }
 		.post-content :global(> p:first-child) { font-size: 18px; line-height: 30px; }
 		.post-content :global(h2) { font-size: 25px; }

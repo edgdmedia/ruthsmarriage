@@ -867,3 +867,52 @@ a.post-card:hover { box-shadow: 0 0 22px -1px rgba(0,0,0,0.5); }
 .booking-book-now.booking-book-now--active:hover {
 	background: #ffffff;
 }
+
+/* Share buttons (ShareButtons React island — rendered on post pages) */
+.share-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin: 28px 0 0;
+}
+.share-label {
+	font-family: Nunito, sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	color: #5a0f36;
+	user-select: none;
+}
+.share-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 14px;
+	border: 1.5px solid #bf1e72;
+	border-radius: 20px;
+	background: transparent;
+	color: #bf1e72;
+	font-family: Nunito, sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background 0.15s, color 0.15s;
+}
+.share-btn:hover {
+	background: #bf1e72;
+	color: #ffffff;
+}
+.share-btn--copy.share-btn--copied {
+	background: #5a0f36;
+	border-color: #5a0f36;
+	color: #ffffff;
+}
+.share-btn__label {
+	display: inline;
+}
+@media (max-width: 767px) {
+	.share-btn__label { display: none; }
+	.share-buttons { gap: 6px; }
+}
