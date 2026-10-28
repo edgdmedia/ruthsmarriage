@@ -10,9 +10,12 @@ on:
       - main
 
 jobs:
+  # Runs on: dev pushes + PRs to main.
+  # Skipped on direct main pushes — deploy handles those.
   ci:
     name: Type-check, test & build
     runs-on: ubuntu-latest
+    if: github.event_name != 'push' || github.ref != 'refs/heads/main'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,28 +41,47 @@ jobs:
       - name: Build
         run: pnpm build
 
-  # Deploys to VPS on every push to main (after CI passes).
-  # Skipped on pull requests — secrets are not available to fork workflows.
+  # Deploys to VPS on direct push to main (after CI passed on dev).
+  # Skipped on PRs — secrets not available to fork workflows.
   deploy:
     name: Deploy to VPS
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    needs: ci
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     environment: production
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Write SSH private key
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
 
       - name: Deploy to VPS
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ruthsmarriage
-          key: ${{ secrets.VPS_SSH_KEY }}
+          key_path: ~/.ssh/id_ed25519
           known_hosts: ${{ secrets.VPS_KNOWN_HOSTS }}
-          # The forced command in authorized_keys limits this key to exactly
-          # one command: bash scripts/deploy-vps.sh
-          # No sudo, no shell, no port forward — only what the deploy script needs.
           command: |
             cd /home/ruthsmarriage/app
             bash scripts/deploy-vps.sh
