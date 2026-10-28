@@ -30,6 +30,7 @@ import type {
   Taxonomy,
   MediaRef,
   Term,
+  EntryLink,
   PortableText,
 } from "./types";
 export * from "./types";
@@ -69,8 +70,38 @@ function resolveImage(
 
 // ── mappers ───────────────────────────────────────────────────────────────────
 
+/**
+ * EmDash hydrates `entry.data.terms` as Record<taxonomyName, TaxonomyTerm[]>
+ * (see hydrateEntryTerms in the query layer). Map to the template shape.
+ * `label` is the term label ("Resource", "Married", …); fall back to the slug.
+ */
+function mapTerms(raw: unknown): Record<string, Term[]> {
+  if (!raw || typeof raw !== "object") return {};
+  const out: Record<string, Term[]> = {};
+  for (const [taxonomy, list] of Object.entries(raw as Record<string, unknown>)) {
+    if (!Array.isArray(list)) continue;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    out[taxonomy] = list
+      .filter((t: any) => t && typeof t.slug === "string")
+      .map((t: any) => ({ slug: t.slug, label: t.label ?? t.slug }));
+  }
+  return out;
+}
+
+/**
+ * The `links` repeater (link + label) — the CTA row on detail pages.
+ * Only rows with a link are kept ("on the front end, only the one with link shows").
+ */
+function mapLinks(raw: unknown): EntryLink[] {
+  if (!Array.isArray(raw)) return [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return raw
+    .map((l: any) => ({ label: (l?.label ?? "").trim(), url: (l?.link ?? "").trim() }))
+    .filter((l) => l.url !== "");
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function mapService(entry: any) {
+export function mapService(entry: any) {
   if (!entry) return null;
   const d = entry.data;
   return {
@@ -86,13 +117,14 @@ function mapService(entry: any) {
     format: d.format ?? null,
     notice: d.notice ?? null,
     booking_url: d.booking_url ?? null,
+    links: mapLinks(d.links),
     content: (d.content ?? []) as PortableText,
-    terms: {} as Record<string, Term[]>,
+    terms: mapTerms(d.terms),
   } satisfies Service;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function mapResource(entry: any) {
+export function mapResource(entry: any) {
   if (!entry) return null;
   const d = entry.data;
   return {
@@ -103,15 +135,14 @@ function mapResource(entry: any) {
     publishedAt: d.publishedAt?.toISOString() ?? undefined,
     title: d.title ?? "",
     featured_image: resolveImage(d.featured_image),
-    badge_label: d.badge_label ?? null,
-    ctas: (d.ctas ?? []).map((c: { label?: string; url?: string }) => ({
-      label: c.label ?? "",
-      url: c.url ?? "",
-    })),
+    // Owner (2026-10-28): default badge to "Learn More" when unset — the
+    // value the listing rows and most live resources already use.
+    badge_label: (d.badge_label ?? "").trim() || "Learn More",
+    links: mapLinks(d.links),
     video_url: d.video_url ?? null,
     excerpt: d.excerpt ?? null,
     content: (d.content ?? []) as PortableText,
-    terms: {} as Record<string, Term[]>,
+    terms: mapTerms(d.terms),
   } satisfies Resource;
 }
 
@@ -128,7 +159,7 @@ function mapPost(entry: any) {
     excerpt: d.excerpt ?? null,
     featured_image: resolveImage(d.featured_image),
     content: (d.content ?? []) as PortableText,
-    terms: {} as Record<string, Term[]>,
+    terms: mapTerms(d.terms),
   } satisfies Post;
 }
 
@@ -145,7 +176,7 @@ function mapTestimonial(entry: any) {
     title: d.title ?? null,
     quote: d.quote ?? null,
     author: d.author ?? null,
-    terms: {} as Record<string, Term[]>,
+    terms: mapTerms(d.terms),
   } satisfies Testimonial;
 }
 

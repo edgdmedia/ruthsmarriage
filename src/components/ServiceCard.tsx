@@ -3,6 +3,9 @@ import type { Service } from "../data/types";
 /* ServiceCard — home "Counseling Services" carousel card (template 159).
    367×300 inside a 387px slide on desktop; full-width on mobile.
    Image is the card background; plum title panel sits at the bottom (flex-end). */
+/* Owner (2026-10-27): the title panel spans the full card width — same width
+   as the image — so image and text read as one continuous card. The card's own
+   30px bottom radius clips the panel's bottom corners. */
 export const ServiceCard = ({ service }: { service: Service }) => {
 	const img = service.featured_image;
 	const imgUrl = img?.src ?? "";
@@ -24,14 +27,15 @@ export const ServiceCard = ({ service }: { service: Service }) => {
 				textDecoration: "none",
 				color: "inherit",
 				boxSizing: "border-box",
-				padding: "0 20px",
 			}}
 		>
 			<div
 				style={{
 					background: "#5A0F36",
-					borderRadius: "0 0 20px 20px",
-					padding: "10px",
+					/* Owner (2026-10-27): the 20px inset lives inside the panel now
+					   that the panel spans the full card width; 20px bottom too
+					   (owner follow-up, 2026-10-28). */
+					padding: "10px 20px 20px",
 					gap: "10px",
 					display: "flex",
 					flexDirection: "column",

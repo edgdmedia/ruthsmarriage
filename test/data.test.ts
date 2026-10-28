@@ -1,85 +1,101 @@
 import { describe, expect, it } from "vitest";
-import { existsSync } from "node:fs";
-import { join } from "node:path";
-import {
-	banners,
-	getMenu,
-	getPost,
-	getResource,
-	getService,
-	getTerm,
-	menus,
-	posts,
-	postsInCategory,
-	postsWithTag,
-	resources,
-	services,
-	settings,
-	taxonomies,
-	testimonials,
-} from "../src/data";
+import { mapResource, mapService } from "../src/data";
+import type { Resource, Service } from "../src/data/types";
 
-const publicDir = join(process.cwd(), "public");
+/* Unit tests of the EmDash → template mappers (phase 9a.4): a fixture entry
+   in, the template type out. The data functions themselves are thin EmDash
+   queries; the mapping is where behaviour lives. */
 
-const imageExists = (src?: string | null) =>
-	!src || (src.startsWith("/") && existsSync(join(publicDir, src.replace(/^\//, ""))));
+const fixtureTerms = {
+	service_type: [{ slug: "married", label: "Married", name: "service_type" }],
+};
 
-describe("content data", () => {
-	it("loads every collection", () => {
-		expect(services.length).toBeGreaterThan(0);
-		expect(resources.length).toBeGreaterThan(0);
-		expect(testimonials.length).toBeGreaterThan(0);
-		expect(posts.length).toBeGreaterThan(0);
-		expect(banners.length).toBeGreaterThan(0);
+const serviceEntry = {
+	id: "private-premarital-counseling-classes",
+	data: {
+		status: "published",
+		order: 3,
+		publishedAt: new Date("2025-01-02T03:04:05Z"),
+		title: "Private Premarital Counseling Classes",
+		featured_image: { meta: { storageKey: "cover.png" }, alt: "cover" },
+		price_label: "₦20,000",
+		audience_label: "(For Engaged Couples)",
+		format: "Virtual (Zoom)",
+		notice: "Booking notice",
+		booking_url: "https://selar.co/booking",
+		links: [
+			{ label: "Selar", link: "https://selar.co/x" },
+			{ label: "Empty", link: "" },
+			{ label: "No link field", link: null },
+		],
+		content: [{ _type: "block", style: "normal", children: [{ _type: "span", text: "Hello" }] }],
+		terms: fixtureTerms,
+	},
+	edit: {},
+};
+
+const resourceEntry = {
+	id: "52-rules-of-dating-and-relationships",
+	data: {
+		status: "published",
+		order: 1,
+		publishedAt: null,
+		title: "52 Rules of Dating and Relationships",
+		featured_image: { src: "https://example.com/a.png", alt: "a" },
+		badge_label: "Learn More",
+		links: [{ label: "Selar (ebook)", link: "https://selar.co/4486h3" }],
+		video_url: null,
+		excerpt: null,
+		content: [],
+		terms: {
+			resource_type: [
+				{ slug: "book", label: "Book", name: "resource_type" },
+			],
+		},
+	},
+	edit: {},
+};
+
+describe("EmDash mappers", () => {
+	it("maps a service entry to the template Service", () => {
+		const s = mapService(serviceEntry) as Service;
+		expect(s).not.toBeNull();
+		expect(s.slug).toBe("private-premarital-counseling-classes");
+		expect(s.title).toBe("Private Premarital Counseling Classes");
+		expect(s.booking_url).toBe("https://selar.co/booking");
+		expect(s.publishedAt).toBe("2025-01-02T03:04:05.000Z");
+		// Media-library values resolve to the media file route.
+		expect(s.featured_image).toEqual({ src: "/_emdash/api/media/file/cover.png", alt: "cover" });
+		expect(s.terms?.service_type).toEqual([{ slug: "married", label: "Married" }]);
 	});
 
-	it("has unique slugs per collection", () => {
-		for (const items of [services, resources, posts]) {
-			const slugs = items.map((i) => i.slug);
-			expect(new Set(slugs).size).toBe(slugs.length);
-		}
+	it("keeps only links that have a link", () => {
+		const s = mapService(serviceEntry) as Service;
+		expect(s.links).toEqual([{ label: "Selar", url: "https://selar.co/x" }]);
 	});
 
-	it("resolves entries by slug", () => {
-		expect(getService(services[0].slug)?.id).toBe(services[0].id);
-		expect(getResource(resources[0].slug)?.id).toBe(resources[0].id);
-		expect(getPost(posts[0].slug)?.id).toBe(posts[0].id);
-		expect(getService("does-not-exist")).toBeUndefined();
+	it("maps a resource entry to the template Resource", () => {
+		const r = mapResource(resourceEntry) as Resource;
+		expect(r.slug).toBe("52-rules-of-dating-and-relationships");
+		expect(r.badge_label).toBe("Learn More");
+		// The links repeater reads `link`, not the old CTA `url`.
+		expect(r.links).toEqual([{ label: "Selar (ebook)", url: "https://selar.co/4486h3" }]);
+		expect(r.terms?.resource_type).toEqual([{ slug: "book", label: "Book" }]);
+		expect(r.featured_image).toEqual({ src: "https://example.com/a.png", alt: "a" });
 	});
 
-	it("resolves menus and taxonomy terms", () => {
-		expect(getMenu("primary")?.items.length).toBeGreaterThan(0);
-		expect(getMenu("footer-services")?.items.length).toBeGreaterThan(0);
-		expect(getMenu("footer-resources")?.items.length).toBeGreaterThan(0);
-		expect(getTerm("category", "marriage")?.label).toBe("Marriage");
-		expect(taxonomies.map((t) => t.name)).toContain("tag");
+	it("falls back safely on absent fields", () => {
+		const r = mapResource({ id: "x", data: { status: "published", title: "X" }, edit: {} }) as Resource;
+		expect(r.links).toEqual([]);
+		expect(r.terms).toEqual({});
+		expect(r.featured_image).toBeNull();
+		// Owner (2026-10-28): badge defaults to "Learn More" when unset.
+		expect(r.badge_label).toBe("Learn More");
+		expect(r.video_url).toBeNull();
 	});
 
-	it("links posts to their taxonomy terms", () => {
-		expect(postsInCategory("marriage").length).toBeGreaterThan(0);
-		expect(postsWithTag("instagram").length).toBeGreaterThan(0);
-	});
-
-	it("has a local file for every referenced image", () => {
-		for (const item of [...services, ...resources, ...posts]) {
-			expect(imageExists(item.featured_image?.src)).toBe(true);
-			expect(imageExists(item.hero_image?.src)).toBe(true);
-		}
-		expect(imageExists(settings.logo?.src)).toBe(true);
-		for (const banner of banners) {
-			expect(imageExists(banner.image)).toBe(true);
-		}
-		// Image blocks inside page content (e.g. story photo columns).
-		// Pages no longer use data-driven content; all page content is hardcoded inline.
-	});
-
-	it("keeps menu urls pointing at real pages", () => {
-		for (const menu of menus) {
-			for (const item of menu.items) {
-				for (const child of item.children ?? []) {
-					expect(child.url.startsWith("/")).toBe(true);
-				}
-			}
-		}
+	it("defaults the badge on an empty-string badge_label too", () => {
+		const r = mapResource({ id: "x", data: { status: "published", title: "X", badge_label: "  " }, edit: {} }) as Resource;
+		expect(r.badge_label).toBe("Learn More");
 	});
 });

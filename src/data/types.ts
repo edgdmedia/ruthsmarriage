@@ -45,6 +45,12 @@ export interface BaseEntry {
 	terms?: Record<string, Term[]>;
 }
 
+/** A link (Selar, Amazon, …) on a service or resource — the CTA. Only rows with a link render. */
+export interface EntryLink {
+	label: string;
+	url: string;
+}
+
 export interface Service extends BaseEntry {
 	title: string;
 	featured_image: MediaRef | null;
@@ -53,19 +59,15 @@ export interface Service extends BaseEntry {
 	format: string | null;
 	notice: string | null;
 	booking_url: string | null;
+	links: EntryLink[];
 	content: PortableText;
-}
-
-export interface ResourceCta {
-	label: string;
-	url: string;
 }
 
 export interface Resource extends BaseEntry {
 	title: string;
 	featured_image: MediaRef | null;
 	badge_label: string | null;
-	ctas: ResourceCta[];
+	links: EntryLink[];
 	video_url: string | null;
 	excerpt: string | null;
 	content: PortableText;

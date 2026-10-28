@@ -9,6 +9,7 @@ import BlogSidebar from "../../components/BlogSidebar.astro";
 import WaveHero from "../../components/WaveHero.astro";
 import PortableText from "../../components/PortableText.astro";
 import { PostCard } from "../../components/PostCard";
+import { ShareButtons } from "../../components/ShareButtons";
 import { getPost, getPosts, published, settings } from "../../data";
 import { contentText, htmlToText } from "../../lib/excerpt";
 import { getSeoMeta } from "../../lib/seo";
@@ -21,9 +22,27 @@ const seo = getSeoMeta({
 	description: htmlToText(post.excerpt) || null,
 	image: post.featured_image?.src ?? null,
 	siteTitle: settings.title,
-	siteUrl: "https://www.ruthsmarriage.com",
+	siteUrl: settings.url,
 	path: `/${post.slug}`,
 });
+
+const postUrl = `${settings.url}/${post.slug}`;
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: post.title,
+	description: htmlToText(post.excerpt) || undefined,
+	image: post.featured_image?.src ? `${settings.url}${post.featured_image.src}` : undefined,
+	datePublished: post.publishedAt ?? undefined,
+	dateModified: post.publishedAt ?? undefined,
+	author: { "@type": "Person", name: "Coach Ruth", url: settings.url },
+	publisher: {
+		"@type": "Organization",
+		name: settings.title,
+		url: settings.url,
+	},
+	url: postUrl,
+};
 
 const category = post.terms?.category?.[0];
 const tags = post.terms?.tag ?? [];
@@ -37,7 +56,8 @@ const more = published(await getPosts())
 	.slice(0, 3);
 ---
 
-<Base title={seo.title} pageTitle={seo.ogTitle} description={seo.description} canonical={seo.canonical} image={seo.ogImage}>
+<Base title={seo.title} pageTitle={seo.ogTitle} description={seo.description} canonical={seo.canonical} image={seo.ogImage} type="article">
+	<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 	<article class="post">
 		<WaveHero overlap>
 				<p class="post-meta">
@@ -68,6 +88,8 @@ const more = published(await getPosts())
 				<div class="post-content">
 					<PortableText value={post.content} />
 				</div>
+
+				<ShareButtons title={post.title} url={postUrl} client:load />
 
 				{tags.length > 0 && (
 					<p class="post-tags">
@@ -388,6 +410,55 @@ const more = published(await getPosts())
 	.post-more__grid :global(.post-card) {
 		max-width: none !important;
 		height: 100%;
+	}
+
+	/* ---------------------------------------------------------- share buttons */
+	.share-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 8px;
+		margin: 28px 0 0;
+	}
+	.share-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		padding: 8px 14px;
+		border: 1.5px solid #bf1e72;
+		border-radius: 20px;
+		background: transparent;
+		color: #bf1e72;
+		font-family: Nunito, sans-serif;
+		font-size: 13px;
+		font-weight: 600;
+		text-decoration: none;
+		cursor: pointer;
+		transition: background 0.15s, color 0.15s;
+	}
+	.share-btn:hover {
+		background: #bf1e72;
+		color: #ffffff;
+	}
+	.share-btn--webshare {
+		background: #bf1e72;
+		color: #ffffff;
+	}
+	.share-btn--webshare:hover {
+		background: #ed0d82;
+		border-color: #ed0d82;
+	}
+	.share-btn--copy.share-btn--copied {
+		background: #5a0f36;
+		border-color: #5a0f36;
+		color: #ffffff;
+	}
+	.share-btn__label {
+		display: inline;
+	}
+	@media (max-width: 767px) {
+		.share-btn__label { display: none; }
+		.share-buttons { gap: 6px; }
 	}
 
 	/* ---------------------------------------------------------- responsive */

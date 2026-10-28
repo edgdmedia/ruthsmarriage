@@ -7,7 +7,9 @@ import Base from "../../layouts/Base.astro";
 import DetailShell from "../../components/DetailShell.astro";
 import YouTubeEmbed from "../../components/YouTubeEmbed.astro";
 import PortableText from "../../components/PortableText.astro";
-import { getResource } from "../../data";
+import { getResource, settings } from "../../data";
+import { getSeoMeta } from "../../lib/seo";
+import { htmlToText } from "../../lib/excerpt";
 
 const slug = Astro.params.slug ?? "";
 const resource = await getResource(slug);
@@ -16,11 +18,37 @@ if (!resource || resource.status === "draft") {
 	return Astro.rewrite("/404");
 }
 
+const seo = getSeoMeta({
+	title: resource.title,
+	description: resource.excerpt ? htmlToText(resource.excerpt) : null,
+	image: resource.featured_image?.src ?? null,
+	siteTitle: settings.title,
+	siteUrl: settings.url,
+	path: `/resource/${resource.slug}`,
+});
+
 const isVideo = resource.terms?.resource_type?.some((t) => t.slug === "video") ?? false;
 const image = resource.featured_image;
+
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": isVideo ? "VideoObject" : "Article",
+	headline: resource.title,
+	description: resource.excerpt ? htmlToText(resource.excerpt) : undefined,
+	image: resource.featured_image?.src ? `${settings.url}${resource.featured_image.src}` : undefined,
+	datePublished: resource.publishedAt ?? undefined,
+	author: { "@type": "Person", name: "Coach Ruth", url: settings.url },
+	publisher: {
+		"@type": "Organization",
+		name: settings.title,
+		url: settings.url,
+	},
+	url: `${settings.url}/resource/${resource.slug}`,
+};
 ---
 
-<Base title={resource.title} image={image?.src ?? null}>
+<Base title={seo.title} pageTitle={seo.ogTitle} description={seo.description} canonical={seo.canonical} image={seo.ogImage}>
+	<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 	<DetailShell variant="resource" section="179cb8b6">
 		{isVideo ? (
 			<YouTubeEmbed slot="image" url={resource.video_url} title={resource.title} />
@@ -41,10 +69,10 @@ const image = resource.featured_image;
 				<PortableText value={resource.content} />
 			</div>
 		)}
-		{!isVideo && resource.ctas?.length > 0 && (
+		{!isVideo && resource.links.length > 0 && (
 			<div class="resource-ctas">
-				{resource.ctas.map((cta) => (
-					<a class="resource-cta" href={cta.url}>{cta.label}</a>
+				{resource.links.map((link) => (
+					<a class="resource-cta" href={link.url}>{link.label || link.url}</a>
 				))}
 			</div>
 		)}

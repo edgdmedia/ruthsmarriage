@@ -11,6 +11,7 @@ import { PostCard } from "../components/PostCard";
 import { Button } from "../components/Button";
 import { banners, settings, published } from "../data";
 import { getPosts, getResources, getServices, getTestimonials } from "../data";
+import { getSeoMeta } from "../lib/seo";
 
 // WordPress search lives at /?s=term; serve it from the search route.
 if (Astro.url.searchParams.has("s")) return Astro.rewrite(`/search/${Astro.url.search}`);
@@ -35,12 +36,45 @@ const pickRandom = <T,>(items: T[], n: number): T[] => {
 };
 
 const serviceSlides = pickRandom(allServices, 6);
-const resourceSlides = pickRandom(allResources, 6);
+// Owner (2026-10-27): the home Resources carousel shows only the "resource"
+// type — not videos or books (they have their own pages).
+const homeResources = allResources.filter((r) =>
+	r.terms?.resource_type?.some((t) => t.slug === "resource")
+);
+const resourceSlides = pickRandom(homeResources, 6);
 const postSlides = pickRandom(published(allPosts), 6);
 const testimonialSlides = pickRandom(published(allTestimonials), 6);
+
+// TODO(G3): settings.tagline is currently "". Fill it in with a meaningful
+// meta description (≈120 chars) to enable the homepage meta description and
+// Open Graph description.
+const homeDescription =
+	settings.tagline ||
+	"Ruth's Marriage — marriage counseling and coaching for couples and singles seeking to grow together God's way.";
+
+const seo = getSeoMeta({
+	title: settings.title,
+	description: homeDescription,
+	image: settings.logo?.src ? `${settings.url}${settings.logo.src}` : null,
+	siteTitle: settings.title,
+	siteUrl: settings.url,
+	path: "/",
+});
+
+const orgJsonLd = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	name: settings.title,
+	url: settings.url,
+	description: homeDescription,
+	logo: settings.logo?.src ? `${settings.url}${settings.logo.src}` : undefined,
+	image: settings.logo?.src ? `${settings.url}${settings.logo.src}` : undefined,
+	sameAs: Object.values(settings.social ?? {}).filter(Boolean) as string[],
+};
 ---
 
-<Base title={settings.title}>
+<Base title={seo.title} description={seo.description} canonical={seo.canonical} image={seo.ogImage}>
+	<script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />
     <HeroSlider slides={heroSlides} />
 
     <!-- Intro statement: full-width section, boxed 1140 inner, 50px top/bottom -->

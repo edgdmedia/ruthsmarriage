@@ -231,8 +231,9 @@
 .marquee-inner {
 	max-width: 1140px;
 	margin: 0 auto;
-	padding: 10px 0;
-	height: 32px;
+	/* Full bar height (border-box): the track is flex-centred inside it, so
+	   the text sits in the middle of the 52px bar (owner, 2026-10-27). */
+	height: 100%;
 	position: relative;
 	overflow: hidden;
 }
@@ -240,7 +241,9 @@
 	position: absolute;
 	left: 100%;
 	top: 0;
+	height: 100%;
 	display: flex;
+	align-items: center;
 	gap: 0;
 	animation: marquee 11s linear infinite;
 	white-space: nowrap;

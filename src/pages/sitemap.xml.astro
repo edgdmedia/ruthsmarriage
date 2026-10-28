@@ -1,0 +1,69 @@
+---
+/* Sitemap — all published posts, resources and services.
+   Search engines automatically pick up /sitemap.xml when also listed in robots.txt. */
+import { getPosts, getResources, getServices, published, settings } from "../data";
+
+const siteUrl = settings.url;
+
+const allPosts = published(await getPosts());
+const allResources = published(await getResources());
+const allServices = published(await getServices());
+
+interface SitemapUrl {
+	url: string;
+	modified: string | undefined;
+	priority: number;
+}
+
+const staticPages: SitemapUrl[] = [
+	{ url: siteUrl, modified: undefined, priority: 1.0 },
+	{ url: `${siteUrl}/about/`, modified: undefined, priority: 0.8 },
+	{ url: `${siteUrl}/services/`, modified: undefined, priority: 0.9 },
+	{ url: `${siteUrl}/resources/`, modified: undefined, priority: 0.9 },
+	{ url: `${siteUrl}/posts/`, modified: undefined, priority: 0.8 },
+	{ url: `${siteUrl}/videos/`, modified: undefined, priority: 0.8 },
+	{ url: `${siteUrl}/books/`, modified: undefined, priority: 0.8 },
+	{ url: `${siteUrl}/freebies/`, modified: undefined, priority: 0.8 },
+	{ url: `${siteUrl}/contact/`, modified: undefined, priority: 0.7 },
+	{ url: `${siteUrl}/askcoach/`, modified: undefined, priority: 0.8 },
+	{ url: `${siteUrl}/announcements/`, modified: undefined, priority: 0.6 },
+	{ url: `${siteUrl}/privacy-policy/`, modified: undefined, priority: 0.5 },
+	{ url: `${siteUrl}/cancellation-policy/`, modified: undefined, priority: 0.5 },
+	{ url: `${siteUrl}/confidentiality-policy/`, modified: undefined, priority: 0.5 },
+];
+
+const postUrls: SitemapUrl[] = allPosts.map((p) => ({
+	url: `${siteUrl}/${p.slug}/`,
+	modified: p.publishedAt,
+	priority: 0.7,
+}));
+
+const resourceUrls: SitemapUrl[] = allResources.map((r) => ({
+	url: `${siteUrl}/resource/${r.slug}/`,
+	modified: r.publishedAt,
+	priority: 0.6,
+}));
+
+const serviceUrls: SitemapUrl[] = allServices.map((s) => ({
+	url: `${siteUrl}/service/${s.slug}/`,
+	modified: s.publishedAt,
+	priority: 0.6,
+}));
+
+const allUrls = [...staticPages, ...postUrls, ...resourceUrls, ...serviceUrls];
+
+function isoDate(d: string | undefined): string {
+	if (!d) return new Date().toISOString().split("T")[0];
+	return d.split("T")[0];
+}
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{allUrls.map((u) => (
+	<url>
+		<loc>{u.url}</loc>
+		{u.modified && <lastmod>{isoDate(u.modified)}</lastmod>}
+		<priority>{u.priority.toFixed(1)}</priority>
+	</url>
+))}
+</urlset>

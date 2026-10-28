@@ -5,6 +5,7 @@ import { getService, settings } from "../../data";
 import { BookingModal } from "../../components/BookingModal";
 import { IconDotCircle } from "../../components/icons/dot-circle";
 import PortableText from "../../components/PortableText.astro";
+import { getSeoMeta } from "../../lib/seo";
 
 const slug = Astro.params.slug ?? "";
 const service = await getService(slug);
@@ -19,9 +20,33 @@ const notice =
 	service.notice ??
 	settings.notice ??
 	"After clicking “Book Service,” you’ll be guided to our policy page before proceeding to the payment section, where you can choose your preferred currency and complete your booking.";
+
+const seo = getSeoMeta({
+	title: service.title,
+	description: null,
+	image: service.featured_image?.src ?? null,
+	siteTitle: settings.title,
+	siteUrl: settings.url,
+	path: `/service/${service.slug}`,
+});
+
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	name: service.title,
+	description: service.audience_label ?? undefined,
+	image: service.featured_image?.src ? `${settings.url}${service.featured_image.src}` : undefined,
+	provider: {
+		"@type": "Organization",
+		name: settings.title,
+		url: settings.url,
+	},
+	url: `${settings.url}/service/${service.slug}`,
+};
 ---
 
-<Base title={service.title} image={service.featured_image?.src ?? null}>
+<Base title={seo.title} pageTitle={seo.ogTitle} description={seo.description} canonical={seo.canonical} image={seo.ogImage}>
+	<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 	<DetailShell variant="service" section="d355bcc">
 		{service.featured_image && (
 			<img
@@ -47,6 +72,13 @@ const notice =
 		</div>
 		{notice && <p class="service-notice">{notice}</p>}
 		<button type="button" class="service-book-btn" data-booking-open>Book Service</button>
+		{service.links.length > 0 && (
+			<div class="service-links">
+				{service.links.map((link) => (
+					<a class="service-link-btn" href={link.url}>{link.label || link.url}</a>
+				))}
+			</div>
+		)}
 	</DetailShell>
 
 	<BookingModal bookingUrl={service.booking_url ?? ""} client:load />
@@ -141,5 +173,28 @@ const notice =
 		border-radius: 20px;
 		padding: 12px 24px;
 		cursor: pointer;
+	}
+	/* Platform links (Selar, Amazon, …) — same pill as the book button, wrapped
+	   and centred; mirrors the resource CTA row. Rows with an empty link are
+	   dropped by the data layer and never render. */
+	.service-links {
+		width: 100%;
+		box-sizing: border-box;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 20px;
+		padding: 10px;
+	}
+	.service-link-btn {
+		font-family: Nunito, sans-serif;
+		font-size: 15px;
+		line-height: 15px;
+		font-weight: 600;
+		color: #ffffff;
+		background: #ed0d82;
+		border-radius: 20px;
+		padding: 12px 24px;
+		text-decoration: none;
 	}
 </style>

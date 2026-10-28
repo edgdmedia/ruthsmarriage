@@ -723,3 +723,74 @@ backup job. The content URLs do not change.
 - The **EMDASH_ENCRYPTION_KEY** from the laptop's .env.
 - A **proxied A record** `vps.ruthsmarriage.com` pointing to the VPS (for staging).
 - A free port for the Node process (4322; 4321 belongs to securityfocus).
+
+---
+
+## 20. Auto-deploy setup (one-time)
+
+GitHub Actions handles CI on every `dev` push and deploys to the VPS on every
+`main` push. The CI workflow is already in `.github/workflows/deploy.yml`.
+This section sets it up.
+
+### On the VPS — generate the deploy key
+
+```bash
+# Log in as ruthsmarriage
+sudo -u ruthsmarriage -i bash
+
+# Generate a key pair just for GitHub Actions (no passphrase)
+ssh-keygen -t ed25519 -C "github-actions@ruthsmarriage" -N "" -f ~/.ssh/github-actions
+
+# Show the public key — copy it (next step)
+cat ~/.ssh/github-actions.pub
+```
+
+### On GitHub — add the deploy key
+
+1. Go to: **GitHub → repo → Settings → Deploy Keys → Add deploy key**
+2. Title: `VPS deploy key`
+3. Key: paste the output of `cat ~/.ssh/github-actions.pub` above
+4. ✅ **Allow write access** (needed for the forced command to work)
+5. Save.
+
+### On GitHub — add the repository secrets
+
+Go to **GitHub → repo → Settings → Secrets and variables → Actions →
+New repository secret** (each one is a separate secret):
+
+| Secret name | Value |
+|---|---|
+| `VPS_HOST` | Your VPS hostname or IP address, e.g. `vps.ruthsmarriage.com` |
+| `VPS_SSH_KEY` | The **entire contents** of `~/.ssh/github-actions` (the private key). Use `cat ~/.ssh/github-actions` and copy everything including `-----BEGIN OPENSSH PRIVATE KEY-----` |
+| `VPS_KNOWN_HOSTS` | Run `ssh-keyscan -t ed25519 <your-vps-host>` on your laptop and paste the output |
+
+### On the VPS — lock the deploy key to the deploy script
+
+The private key GitHub uses must be restricted so it can **only** run the deploy
+script. Add this line to `~/.ssh/authorized_keys` (all on one line, no line breaks):
+
+```
+command="cd /home/ruthsmarriage/app && bash scripts/deploy-vps.sh",no-port-forwarding,no-agent-forwarding,no-X11-forwarding,no-pty <PASTE THE PUBLIC KEY HERE>
+```
+
+The public key is the one you just added to GitHub (the `.pub` file).
+Verify the line is in `~/.ssh/authorized_keys`.
+
+**Test locally** (on the VPS, as the `ruthsmarriage` user):
+
+```bash
+# Simulate what GitHub Actions will do — connect and run the deploy script
+ssh -i ~/.ssh/github-actions -o "command=cd /home/ruthsmarriage/app && bash scripts/deploy-vps.sh" localhost
+```
+
+### Verify the workflow
+
+Push any change to a `dev` branch. In the GitHub repo → Actions tab, you should
+see the CI run (typecheck + test + build). If it passes, merge to `main` — the
+deploy run should trigger and the site on the VPS should update automatically.
+
+The workflow:
+- **Push to `dev`** → CI (typecheck + test + build) only. No deploy.
+- **Push to `main`** → CI first, then deploy to VPS via SSH.
+- The SSH key is restricted to the deploy script via `command=` in `authorized_keys`.
+- No other SSH commands, no shell access, no sudo via the deploy key.

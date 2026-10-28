@@ -1,5 +1,6 @@
 ---
 // Renders PortableText content (block/span shape) used by services, resources and posts.
+// Handles all standard marks: bold, italic, underline, link (href lives on the mark itself).
 import type { PortableText } from "../data/types";
 
 interface Props {
@@ -9,18 +10,67 @@ interface Props {
 const { value } = Astro.props;
 const blocks = value ?? [];
 
+/** Escape HTML special characters. */
+function esc(text: string): string {
+	return text
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;")
+		.replace(/"/g, "&quot;")
+		.replace(/'/g, "&#39;");
+}
+
+interface Span {
+	_type: "span";
+	text: string;
+	marks?: Array<{ _type: string; href?: string }>;
+}
+
+interface Block {
+	_type: "block";
+	style?: string;
+	children: Span[];
+}
+
+/** Apply marks to a string of already-escaped text, outermost-first. */
+function applyMarks(text: string, marks: Array<{ _type: string; href?: string }>): string {
+	for (const mark of marks) {
+		if (mark._type === "link" && mark.href) {
+			const href = esc(mark.href);
+			text = `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+		} else if (mark._type === "bold") {
+			text = `<strong>${text}</strong>`;
+		} else if (mark._type === "italic") {
+			text = `<em>${text}</em>`;
+		} else if (mark._type === "underline") {
+			text = `<u>${text}</u>`;
+		} else if (mark._type === "strike-through") {
+			text = `<s>${text}</s>`;
+		} else if (mark._type === "code") {
+			text = `<code>${text}</code>`;
+		}
+	}
+	return text;
+}
+
+/** Render a block's children as a string of HTML (already escaped). */
+function renderChildren(children: Span[]): string {
+	return (children ?? []).map((c) => applyMarks(esc(c.text ?? ""), c.marks ?? [])).join("");
+}
 ---
+
 {blocks.map((block) => {
-	// PortableText block: { _type: "block", style, children: [{ _type: "span", text }] }
 	if (block._type === "block") {
-		const text = (block.children ?? []).map((c: any) => c.text).join("");
-		switch (block.style) {
-			case "h1": return <h1 set:html={text} />;
-			case "h2": return <h2 set:html={text} />;
-			case "h3": return <h3 set:html={text} />;
-			case "h4": return <h4 set:html={text} />;
-			case "blockquote": return <blockquote set:html={text} />;
-			default: return <p set:html={text} />;
+		const b = block as Block;
+		const inner = renderChildren(b.children);
+
+		switch (b.style) {
+			case "h1": return <h1 set:html={inner} />;
+			case "h2": return <h2 set:html={inner} />;
+			case "h3": return <h3 set:html={inner} />;
+			case "h4": return <h4 set:html={inner} />;
+			case "blockquote": return <blockquote set:html={inner} />;
+			default: return <p set:html={inner} />;
 		}
 	}
 	if (block._type === "html") return <Fragment set:html={block.html} />;

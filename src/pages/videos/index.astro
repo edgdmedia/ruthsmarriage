@@ -31,6 +31,11 @@ const seo = getSeoMeta({
 		{videoList.map((video) => (
 			<div class="video-item">
 				<YouTubeEmbed url={video.video_url} title={video.title} />
+				<!-- Owner (2026-10-28): live shows bare embeds; the title (linked to
+				     the detail page, like every other listing) is an approved addition. -->
+				<h2 class="video-item__title">
+					<a href={`/resource/${video.slug}/`}>{video.title}</a>
+				</h2>
 			</div>
 		))}
 	</section>
@@ -46,6 +51,21 @@ const seo = getSeoMeta({
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 20px;
+	}
+	/* Owner (2026-10-28): titles under the embeds (live shows bare embeds —
+	   approved deviation). Card-title style: Nunito 700 22px, centred. */
+	.video-item__title {
+		font-family: "Nunito", sans-serif;
+		font-size: 22px;
+		line-height: 22px;
+		font-weight: 700;
+		color: #000000;
+		text-align: center;
+		margin: 10px 0 0;
+	}
+	.video-item__title a {
+		color: inherit;
+		text-decoration: none;
 	}
 	@media (max-width: 767px) {
 		.video-list {

@@ -12,9 +12,18 @@ interface Props {
 	description?: string | null;
 	image?: string | null;
 	canonical?: string | null;
+	/** Open Graph type. Defaults to "website". Use "article" for blog posts. */
+	type?: string;
 }
 
-const { title, pageTitle, description, image, canonical } = Astro.props;
+const {
+	title,
+	pageTitle,
+	description,
+	image,
+	canonical,
+	type = "website",
+} = Astro.props;
 
 const fullTitle = pageTitle ?? title;
 const pageDescription = description ?? settings.tagline ?? null;
@@ -40,7 +49,7 @@ const [primaryMenu, footerServices, footerResources, marqueeItems] = await Promi
 		<link rel="icon" href="/favicon-192x192.png" sizes="192x192" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<meta property="og:site_name" content={siteTitle} />
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content={type} />
 		<meta property="og:title" content={fullTitle} />
 		{pageDescription && <meta property="og:description" content={pageDescription} />}
 		{image && <meta property="og:image" content={image} />}

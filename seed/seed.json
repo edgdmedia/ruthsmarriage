@@ -118,6 +118,25 @@
           "type": "url"
         },
         {
+          "slug": "links",
+          "label": "Links (Selar, Amazon, ...)",
+          "type": "repeater",
+          "validation": {
+            "subFields": [
+              {
+                "slug": "link",
+                "label": "Link",
+                "type": "url"
+              },
+              {
+                "slug": "label",
+                "label": "Label",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        {
           "slug": "order",
           "label": "Order",
           "type": "number"
@@ -162,20 +181,20 @@
           "type": "string"
         },
         {
-          "slug": "ctas",
-          "label": "CTAs",
+          "slug": "links",
+          "label": "Links (Selar, Amazon, ...)",
           "type": "repeater",
           "validation": {
             "subFields": [
               {
+                "slug": "link",
+                "label": "Link",
+                "type": "url"
+              },
+              {
                 "slug": "label",
                 "label": "Label",
                 "type": "string"
-              },
-              {
-                "slug": "url",
-                "label": "URL",
-                "type": "url"
               }
             ]
           }
