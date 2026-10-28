@@ -1,6 +1,7 @@
 ---
 // Renders PortableText content (block/span shape) used by services, resources and posts.
-// Handles all standard marks: bold, italic, underline, link (href lives on the mark itself).
+// Handles marks stored as STRING KEYS that reference block.markDefs (for links)
+// and inline mark type strings (for bold, italic, etc.).
 import type { PortableText } from "../data/types";
 
 interface Props {
@@ -20,33 +21,65 @@ function esc(text: string): string {
 		.replace(/'/g, "&#39;");
 }
 
+interface MarkDef {
+	_key: string;
+	_type: string;
+	href?: string;
+}
+
 interface Span {
 	_type: "span";
 	text: string;
-	marks?: Array<{ _type: string; href?: string }>;
+	marks?: string[]; // actual data: e.g. ['qm1sopipp'] or ['bold']
 }
 
 interface Block {
 	_type: "block";
 	style?: string;
+	markDefs?: MarkDef[];
 	children: Span[];
 }
 
+/** Inline mark types that are applied directly (not looked up in markDefs). */
+const INLINE_MARKS = new Set(["bold", "italic", "underline", "strike-through", "code"]);
+
+/**
+ * Resolve a mark string to its definition.
+ * - If markId is an inline mark type (bold/italic/etc.) → return { type: markId }
+ * - If markId is a key → look it up in markDefs and return { type: def._type, href: def.href }
+ * - Otherwise return null.
+ */
+function resolveMark(
+	markId: string,
+	markDefs: MarkDef[] | undefined,
+): { type: string; href?: string } | null {
+	if (INLINE_MARKS.has(markId)) return { type: markId };
+	const def = markDefs?.find((m) => m._key === markId);
+	if (def) return { type: def._type, href: def.href };
+	return null;
+}
+
 /** Apply marks to a string of already-escaped text, outermost-first. */
-function applyMarks(text: string, marks: Array<{ _type: string; href?: string }>): string {
-	for (const mark of marks) {
-		if (mark._type === "link" && mark.href) {
+function applyMarks(
+	text: string,
+	markIds: string[],
+	markDefs: MarkDef[] | undefined,
+): string {
+	for (const markId of markIds) {
+		const mark = resolveMark(markId, markDefs);
+		if (!mark) continue;
+		if (mark.type === "link" && mark.href) {
 			const href = esc(mark.href);
 			text = `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
-		} else if (mark._type === "bold") {
+		} else if (mark.type === "bold") {
 			text = `<strong>${text}</strong>`;
-		} else if (mark._type === "italic") {
+		} else if (mark.type === "italic") {
 			text = `<em>${text}</em>`;
-		} else if (mark._type === "underline") {
+		} else if (mark.type === "underline") {
 			text = `<u>${text}</u>`;
-		} else if (mark._type === "strike-through") {
+		} else if (mark.type === "strike-through") {
 			text = `<s>${text}</s>`;
-		} else if (mark._type === "code") {
+		} else if (mark.type === "code") {
 			text = `<code>${text}</code>`;
 		}
 	}
@@ -54,15 +87,17 @@ function applyMarks(text: string, marks: Array<{ _type: string; href?: string }>
 }
 
 /** Render a block's children as a string of HTML (already escaped). */
-function renderChildren(children: Span[]): string {
-	return (children ?? []).map((c) => applyMarks(esc(c.text ?? ""), c.marks ?? [])).join("");
+function renderChildren(children: Span[], markDefs: MarkDef[] | undefined): string {
+	return (children ?? [])
+		.map((c) => applyMarks(esc(c.text ?? ""), c.marks ?? [], markDefs))
+		.join("");
 }
 ---
 
 {blocks.map((block) => {
 	if (block._type === "block") {
 		const b = block as Block;
-		const inner = renderChildren(b.children);
+		const inner = renderChildren(b.children, b.markDefs);
 
 		switch (b.style) {
 			case "h1": return <h1 set:html={inner} />;
