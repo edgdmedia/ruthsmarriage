@@ -9,6 +9,13 @@ on:
     branches:
       - main
 
+permissions:
+  actions: read   # needed for the "Require a passing check on dev" step
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   # Runs on: dev pushes + PRs to main.
   # Skipped on direct main pushes — deploy handles those.
@@ -26,7 +33,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "24"
           cache: pnpm
 
       - name: Install
@@ -49,39 +56,52 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     environment: production
     steps:
-      - name: Checkout
+      # Require a passing check on dev before deploying (AbilityX pattern).
+      # Finds the dev commit whose tree == this main commit, checks its status.
+      - name: Require a passing check on dev
         uses: actions/checkout@v4
         with:
+          ref: dev
           fetch-depth: 0
+          persist-credentials: false
+        id: dev_checkout
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: pnpm
-
-      - name: Install
-        run: pnpm install --frozen-lockfile
-
-      - name: Build
-        run: pnpm build
-
-      - name: Write SSH private key
+      - name: Check dev CI
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MAIN_SHA: ${{ github.event.after }}
         run: |
-          mkdir -p ~/.ssh
-          printf '%s\n' "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
+          DEV_SHA=$(git rev-parse HEAD)
+          echo "dev SHA: $DEV_SHA  main SHA: $MAIN_SHA"
+          if ! git merge-base --is-ancestor "$DEV_SHA" "$MAIN_SHA"; then
+            echo "main contains commits never checked on dev — refusing to deploy"
+            exit 1
+          fi
+          status=$(curl -s -L \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$DEV_SHA/status")
+          state=$(echo "$status" | python3 -c "import sys,json; print(json.load(sys.stdin)['state'])")
+          echo "dev commit state: $state"
+          if [ "$state" != "success" ]; then
+            echo "dev CI has not passed — refusing to deploy"
+            exit 1
+          fi
 
-      - name: Deploy to VPS
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ruthsmarriage
-          key_path: ~/.ssh/id_ed25519
-          known_hosts: ${{ secrets.VPS_KNOWN_HOSTS }}
-          command: |
-            cd /home/ruthsmarriage/app
-            bash scripts/deploy-vps.sh
+      # Write SSH key and known_hosts, then connect.
+      # The server's forced command runs scripts/deploy-vps.sh and nothing else.
+      - name: Deploy over SSH
+        env:
+          SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
+          HOST: ${{ secrets.VPS_HOST }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          ssh -i ~/.ssh/deploy_key \
+              -o BatchMode=yes \
+              -o StrictHostKeyChecking=acceptnew \
+              ruthsmarriage@"$HOST"
