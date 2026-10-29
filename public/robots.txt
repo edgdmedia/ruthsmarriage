@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /admin
 Allow: /
 
-Sitemap: https://www.ruthsmarriage.com/sitemap.xml
+Sitemap: https://ruthsmarriage.com/sitemap.xml
