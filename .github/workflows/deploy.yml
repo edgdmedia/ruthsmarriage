@@ -100,5 +100,5 @@ jobs:
           ssh -v -i ~/.ssh/deploy_key \
               -o BatchMode=yes \
               -o IdentitiesOnly=yes \
-              -o StrictHostKeyChecking=acceptnew \
+              -o StrictHostKeyChecking=accept-new \
               ruthsmarriage@"$HOST"
