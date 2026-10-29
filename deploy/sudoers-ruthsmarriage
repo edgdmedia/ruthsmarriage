@@ -10,4 +10,4 @@
 # `sudo -l` lists what the user may do.
 
 ruthsmarriage ALL=(root) NOPASSWD: /usr/bin/systemctl restart ruthsmarriage.service
-ruthsmarriage ALL=(root) NOPASSWD: /usr/bin/systemctl status ruthsmarriage.service
+ruthsmarriage ALL=(root) NOPASSWD: /usr/bin/systemctl status ruthsmarriage.service --no-pager --lines=10
