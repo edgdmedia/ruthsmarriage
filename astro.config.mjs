@@ -14,7 +14,7 @@ import { resendEmail } from "@ruthsmarriage/resend-email";
 // mount its routes when astro.config passes a function to defineConfig.)
 const siteUrl =
 	process.env.NODE_ENV === "production"
-		? (process.env.EMDASH_SITE_URL ?? "https://www.ruthsmarriage.com")
+		? (process.env.EMDASH_SITE_URL ?? "https://ruthsmarriage.com")
 		: undefined;
 
 // The database is a SQLite file. The path comes from the environment so the
